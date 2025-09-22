@@ -9,7 +9,7 @@ from rest_framework.permissions import IsAuthenticated
 
 class CadastroView(APIView):
     def post(self, request):
-        serializer = UsuarioSerializer(data=request.data)
+        serializer = UsuarioSerializer(data=request.data) # Cria um serializer que irá validar e salvar os dados
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -23,7 +23,7 @@ class LoginView(APIView):
         if not email or not password:
             return Response({'error': 'Por favor, forneça email e senha.'}, status=status.HTTP_400_BAD_REQUEST)
 
-        user = authenticate(email=email, password=password)
+        user = authenticate(email=email, password=password) # Aqui tenta autenticar o usuário
 
         if user:
             # Aqui você pode gerar e retornar um token (veremos isso no futuro)
