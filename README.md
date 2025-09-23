@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <a href="https://unb-mds.github.io/Mural-UnB/">
+  <a href="https://unb-mds.github.io/2025-2-Mural-UnB">
     <img src="https://img.shields.io/badge/GitHub%20Pages-Docs-blue?style=for-the-badge&logo=github" alt="Docs"/>
   </a>
   <a href="https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0">
