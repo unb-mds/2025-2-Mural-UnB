@@ -1,5 +1,7 @@
 /* Global Style*/
 
+@tailwind utilities;
+
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: light --default;
@@ -8,7 +10,7 @@
 @theme {
   --color-verdeMain: #006633;
   --color-azulMain: #003366;
-  --color-brancoMain: #F6F6ED
+  --color-brancoMain: #F6F6ED;
 }
 
 :root {
