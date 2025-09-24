@@ -1,0 +1,79 @@
+# Node.js / Next.js / TypeScript
+# --------------------------------
+# Diretórios e arquivos gerados pelo Node
+node_modules/
+.next/
+out/
+dist/
+build/
+
+# Arquivos de cache e logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Diretórios específicos de ambiente de desenvolvimento
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Diretórios de testes temporários
+coverage/
+
+# Arquivos de build e configuração do Next.js
+.next/cache/
+
+# Django
+# ------------------------------
+# Diretórios e arquivos gerados pelo Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+db.sqlite3
+media/
+static/
+
+# Arquivos de configuração de ambiente
+.env
+*.env
+
+# FastAPI
+# ------------------------------
+# Diretórios e arquivos gerados pelo FastAPI
+*.log
+*.sqlite3
+__pycache__/
+
+# Pytest e arquivos de cobertura de testes
+*.coverage
+coverage/
+
+# Arquivos de ambiente
+.env
+*.env
+
+# Outros arquivos gerais
+# ------------------------------
+# Arquivos temporários do sistema operacional
+Thumbs.db
+.DS_Store
+
+# Arquivos de IDEs
+.vscode/
+.idea/
+
+# Arquivos de backup e temporários
+*.swp
+*.swo
+*~
+
+# Ignorar package.json e package-lock.json na raiz
+/package.json
+/package-lock.json
