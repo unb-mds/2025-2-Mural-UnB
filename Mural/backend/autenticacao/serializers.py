@@ -1,4 +1,7 @@
 from rest_framework import serializers
+from django.contrib.auth.tokens import default_token_generator
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes
 from .models import UsuarioPersonalizado
 
 class UsuarioSerializer(serializers.ModelSerializer):
@@ -15,3 +18,19 @@ class UsuarioSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user
+
+# Serializer para solicitar reset de senha.
+# Valida se o email existe no sistema.
+class PasswordResetRequestSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    def validate_email(self, value):
+        if not UsuarioPersonalizado.objects.filter(email=value).exists():
+            raise serializers.ValidationError("Usuário com este email não existe.")
+        return value
+
+# Serializer para confirmar o reset de senha.
+# Recebe uid, token e nova senha.
+class PasswordResetConfirmSerializer(serializers.Serializer):
+    uid = serializers.CharField()
+    token = serializers.CharField()
+    new_password = serializers.CharField(min_length=8)
