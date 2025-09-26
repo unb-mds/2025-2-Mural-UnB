@@ -1,0 +1,66 @@
+site_name: Mural UnB
+repo_url: https://github.com/unb-mds/2025-2-Mural-UnB
+
+nav:
+  - Início: index.md
+  - 'Como Contribuir': contribuir.md
+  - 'Arquitetura': arquitetura.md
+  - Sprints:
+    - 'Sprint 0': sprints/sprint-0.md
+    - 'Sprint 1': sprints/sprint-1.md
+    - 'Sprint 2': sprints/sprint-2.md
+    - 'Sprint 3': sprints/sprint-3.md
+    - 'Sprint 4': sprints/sprint-4.md
+    - 'Sprint 5': sprints/sprint-5.md
+
+theme:
+  name: material
+  icon:
+    logo: material/calendar-text        
+  palette:
+    - scheme: default
+      primary: light green
+      accent: green
+      toggle:
+        icon: material/weather-sunny
+        name: Alternar para modo escuro
+    - scheme: slate
+      primary: green
+      accent: light green
+      toggle:
+        icon: material/weather-night
+        name: Alternar para modo claro
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+extra:
+  palette:
+    - scheme: default
+      primary: light green
+      accent: green
+    - scheme: slate
+      primary: green
+      accent: light green
+  
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/unb-mds
+      name: GitHub da UnB-MDS
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
