@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w!@-w12)jascrdrbx30s97!f_df6$2lnn@26q@2ca9eigs)pm^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 if DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backend.console.EmailBackend' #apenas para desenvolvimento, para testar o email
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #apenas para desenvolvimento, para testar o email
 
 ALLOWED_HOSTS = []
 

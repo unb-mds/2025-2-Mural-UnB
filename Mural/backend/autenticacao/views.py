@@ -60,7 +60,7 @@ class PasswordResetRequestView(APIView):
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             # Gerando o token:
             token = default_token_generator.make_token(user)
-            reset_url = f"{request.build_absolute_uri('/')}reset-password-confirm/?uid={uid}&token={token}"
+            reset_url = f"{request.build_absolute_uri('/')}autenticacao/password-reset-confirm/?uid={uid}&token={token}"
             send_mail(
                 'Redefinição de senha',
                 f'Use este link para redefinir sua senha: {reset_url}',
