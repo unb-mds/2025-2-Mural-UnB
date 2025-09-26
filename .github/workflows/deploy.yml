@@ -3,7 +3,7 @@ name: Deploy Docs
 on:
   push:
     branches:
-      - gitpages
+      - docs/gitpages
     paths:
       - 'docs/**'
 
