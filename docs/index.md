@@ -67,3 +67,45 @@ Em resumo, o Mural UnB funciona como um mural virtual, que vai além de apenas l
     </td>
   </tr>
 </table>
+
+
+## Como Funciona
+
+1. **Cadastro do estudante** → O usuário cria seu perfil acadêmico.  
+2. **Análise de perfil** → O sistema identifica interesses e habilidades relevantes.  
+3. **Recomendações personalizadas** → O estudante recebe oportunidades alinhadas ao seu perfil.
+
+---
+
+# Motivação
+
+A falta de um canal centralizado dificulta o acesso dos estudantes às oportunidades dentro da UnB.  
+Atualmente, informações estão dispersas em murais físicos, e-mails institucionais e redes sociais, o que leva muitos alunos a **perderem prazos importantes**.  
+
+O **Mural UnB** surge como resposta a esse problema, oferecendo **eficiência, transparência**.
+
+---
+
+## Tecnologias Utilizadas
+
+### Frontend
+- **React**
+- **Next Js**
+- **TypeScript**  
+- **Tailwind CSS**
+
+### Backend
+- **Django**  
+- **Python**  
+- **SQLite**  
+
+### Outros
+- Git & GitHub  
+- Docker (para containerização)  
+- GitHub Actions (para CI/CD)  
+
+---
+
+
+
+ 
