@@ -9,8 +9,8 @@ nav:
       - 'Não Funcionais': requisitos/nao-funcionais.md
   - 'Arquitetura': arquitetura.md
   - 'Dados':
-      - 'EJs': requisitos/ejs.md
-      - 'Labs': requisitos/labs.md
+      - 'EJs': dados/ejs.md
+      - 'Labs': dados/labs.md
   - Sprints:
       - 'Sprint 0': sprints/sprint-0.md
       - 'Sprint 1': sprints/sprint-1.md
@@ -67,6 +67,3 @@ markdown_extensions:
   - pymdownx.superfences
   - toc:
       permalink: true
-
-extra_css:
-  - stylesheets/extra.css

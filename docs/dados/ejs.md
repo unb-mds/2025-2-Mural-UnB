@@ -4,9 +4,6 @@ Este documento descreve a estrutura dos dados relacionados às **Empresas Junior
 
 Os dados das EJs foram **extraídos do PDF do portfólio das EJs da UnB**, utilizando um **script de leitura e extração de dados desenvolvido por [Tiago Bittencourt](https://github.com/TiagoSBittencourt)**.  
 
-<img src="../images/dados/ejs_capa_portifolio.png" alt="Capa do Portfólio EJs" width="300px">
-
-Link para o PDF original: [PORTFÓLIO EJs 2023](https://unb.br/images/Noticias/2023/Documentos/PORTFLIO_EJS.pdf)
 
 Ele serve como referência para desenvolvedores, analistas e para o fluxo de ETL, garantindo consistência e padronização na coleta, armazenamento e uso desses dados.
 

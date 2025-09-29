@@ -4,11 +4,6 @@ Este documento descreve a estrutura dos dados relacionados aos **Laboratórios d
 
 Os dados foram **extraídos do PDF de infraestrutura e laboratórios da UnB e do site de cada uma das engenharias da fcte**, extração feita por: **[Tiago Bittencourt](https://github.com/TiagoSBittencourt)**.  
 
-<img src="../images/dados/labs_capa_portifolio.png" alt="Capa do Portfólio EJs" width="300px">
-
-Link para o PDF original: [Infraestrutura de Pesquisa e Inovação](http://pesquisa.unb.br/images/Infraestrutura/InfraPesquisa_Inovao.pdf)
-
-
 Esta documentação serve como referência para desenvolvedores, analistas e para o fluxo de ETL, garantindo consistência e padronização na coleta, armazenamento e uso desses dados.
 
 ---
