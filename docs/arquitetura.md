@@ -59,7 +59,7 @@ O Diagrama de Entidade e Relacionamento (DER) abaixo, definido pela equipe, serv
 
 As entidades principais (`User`, `Oportunidade`, `Lab`, `EJ`, etc.) e seus relacionamentos (1-N e N-N) foram modelados para refletir as necessidades do design do Figma. A `Oportunidade` serve como uma entidade base, com `Lab` e `EJ` sendo suas especializações.
 
-### 3.4. Endpoints da API (Contrato com o Frontend)
+### 3.4. Endpoints da API (Contato com o Frontend)
 
 Estes são os endpoints que o backend oferece. A URL base para autenticação é `/autenticacao/`.
 
