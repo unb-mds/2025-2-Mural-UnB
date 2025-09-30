@@ -6,6 +6,8 @@ Os dados foram **extraídos do PDF de infraestrutura e laboratórios da UnB e do
 
 Esta documentação serve como referência para desenvolvedores, analistas e para o fluxo de ETL, garantindo consistência e padronização na coleta, armazenamento e uso desses dados.
 
+![Portifolio Labs](../assets/images/labs_capa_portifolio.png){ width="300" }
+
 ---
 
 ## Estrutura da Tabela: Laboratórios (.csv)

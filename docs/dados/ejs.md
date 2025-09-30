@@ -7,6 +7,8 @@ Os dados das EJs foram **extraídos do PDF do portfólio das EJs da UnB**, utili
 
 Ele serve como referência para desenvolvedores, analistas e para o fluxo de ETL, garantindo consistência e padronização na coleta, armazenamento e uso desses dados.
 
+![Portifolio EJs](../assets/images/ejs_capa_portifolio.png){ width="300" }
+
 ---
 
 ## Estrutura da Tabela: Empresas Juniores (.csv)
