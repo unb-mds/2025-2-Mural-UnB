@@ -9,7 +9,11 @@ nav:
   - "Requisitos":
       - "Funcionais": requisitos/funcionais.md
       - "Não Funcionais": requisitos/nao-funcionais.md
-  - "Arquitetura": arquitetura.md
+  - "Arquitetura":
+      - "Visão Geral": arquitetura/visao-geral.md
+      - "Arquitetura Frontend": arquitetura/arquitetura-front.md
+      - "Arquitetura Backend": arquitetura/arquitetura-back.md
+      - "Arquitetura IA": arquitetura/arquitetura-ia.md
   - "Dados":
       - "EJs": dados/ejs.md
       - "Labs": dados/labs.md
