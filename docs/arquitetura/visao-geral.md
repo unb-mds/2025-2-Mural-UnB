@@ -12,12 +12,16 @@ O sistema é composto por três grandes componentes:
 
 O fluxo de comunicação principal é: o **Frontend** se comunica exclusivamente com o **Backend**. O **Backend**, por sua vez, se comunica com o **Servidor de IA** para obter as recomendações personalizadas.
 
-### **Diagrama de Containers**
+### 1.1 **Diagrama de Containers**
 
 ![Diagrama de Containers](../assets/images/Diagrama_containers.png)
 
 ---
 
-### **Diagrama de Componentes**
+### 1.2 **Diagrama de Componentes**
 
 ![Diagrama de Componentes](../assets/images/Diagrama_componentes.png)
+
+### 2. Arquitetura de pastas
+
+A arquitetura de pastas paras os 3 componentes do servidor estão no nosso Figma (HUB) nesse **[FIGMA](https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=zPE9vrXMLYmNhGSM-0)**
