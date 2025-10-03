@@ -27,18 +27,19 @@ nav:
 
 theme:
   name: material
-  icon:
-    logo: material/calendar-text
+  logo: assets/logo_white.png
+  custom_dir: docs/overrides 
   palette:
     - scheme: default
-      primary: light green
-      accent: green
+      primary: custom 
+      accent: custom  
       toggle:
         icon: material/weather-sunny
         name: Alternar para modo escuro
+
     - scheme: slate
-      primary: green
-      accent: light green
+      primary: green 
+      accent: custom 
       toggle:
         icon: material/weather-night
         name: Alternar para modo claro
