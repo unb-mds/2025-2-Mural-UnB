@@ -1,12 +1,12 @@
-## 3. Arquitetura do Backend
+## 1. Arquitetura do Backend
 
 O Backend é uma API RESTful que serve como o coração do sistema.
 
-### 3.1. Visão Geral do Backend
+### 1.1. Visão Geral do Backend
 
 Construído com Django e Django REST Framework, sua função é expor endpoints seguros para o Frontend consumir, abstraindo toda a complexidade do banco de dados e da lógica de negócio.
 
-### 3.2. Arquitetura de Dados (DER)
+### 1.2. Arquitetura de Dados (DER)
 
 O Diagrama de Entidade e Relacionamento (DER) abaixo, definido pela equipe, serve como a planta baixa do nosso banco de dados.
 
@@ -14,7 +14,7 @@ O Diagrama de Entidade e Relacionamento (DER) abaixo, definido pela equipe, serv
 
 As entidades principais (`User`, `Oportunidade`, `Lab`, `EJ`, etc.) e seus relacionamentos (1-N e N-N) foram modelados para refletir as necessidades do design do Figma. A `Oportunidade` serve como uma entidade base, com `Lab` e `EJ` sendo suas especializações.
 
-### 3.3. Arquitetura Lógica (Diagrama de Pacotes)
+### 1.3. Arquitetura Lógica (Diagrama de Pacotes)
 
 A estrutura do backend é modular, organizada em "apps" Django, onde cada app tem uma responsabilidade única.
 
@@ -25,7 +25,7 @@ A estrutura do backend é modular, organizada em "apps" Django, onde cada app te
 - **`interesses`**: Gerencia as `Tags` e as preferências dos usuários.
 - **`favoritos`**: Implementa a lógica de "salvar para ver depois".
 
-### 3.4. Endpoints da API (Contato com o Frontend)
+### 1.4. Endpoints da API (Contato com o Frontend)
 
 Estes são os principais endpoints que o backend oferece ao frontend, organizados por funcionalidade.
 
