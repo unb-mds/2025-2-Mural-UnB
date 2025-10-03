@@ -4,46 +4,73 @@ repo_url: https://github.com/unb-mds/2025-2-Mural-UnB
 nav:
   - Início: index.md
   - "Open Source":
-      - "Contribuir": open-source/contribuir.md
-      - "Code of Conduct": open-source/code-of-conduct.md
+    - "Contribuir": open-source/contribuir.md
+    - "Code of Conduct": open-source/code-of-conduct.md
   - "Requisitos":
-      - "Funcionais": requisitos/funcionais.md
-      - "Não Funcionais": requisitos/nao-funcionais.md
+    - "Funcionais": requisitos/funcionais.md
+    - "Não Funcionais": requisitos/nao-funcionais.md
   - "Arquitetura":
-      - "Visão Geral": arquitetura/visao-geral.md
-      - "Arquitetura Frontend": arquitetura/arquitetura-front.md
-      - "Arquitetura Backend": arquitetura/arquitetura-back.md
-      - "Arquitetura IA": arquitetura/arquitetura-ia.md
+    - "Visão Geral": arquitetura/visao-geral.md
+    - "Arquitetura Frontend": arquitetura/arquitetura-front.md
+    - "Arquitetura Backend": arquitetura/arquitetura-back.md
+    - "Arquitetura IA": arquitetura/arquitetura-ia.md
   - "Dados":
-      - "EJs": dados/ejs.md
-      - "Labs": dados/labs.md
+    - "EJs": dados/ejs.md
+    - "Labs": dados/labs.md
   - Sprints:
-      - "Sprint 0": sprints/sprint-0.md
-      - "Sprint 1": sprints/sprint-1.md
-      - "Sprint 2": sprints/sprint-2.md
-      - "Sprint 3": sprints/sprint-3.md
-      - "Sprint 4": sprints/sprint-4.md
-      - "Sprint 5": sprints/sprint-5.md
+    - "Sprint 0": sprints/sprint-0.md
+    - "Sprint 1": sprints/sprint-1.md
+    - "Sprint 2": sprints/sprint-2.md
+    - "Sprint 3": sprints/sprint-3.md
+    - "Sprint 4": sprints/sprint-4.md
+    - "Sprint 5": sprints/sprint-5.md
+  - Estudos:
+    - "Índice": coelhos/README.md
+    - Git & Github & GH-Pages:
+      - "Git & Github": coelhos/Git-Github/README.md
+      - "Github Pages": coelhos/Github-Pages/README.md
+    - Requisitos:
+      - "Requisitos": coelhos/Requisitos/README.md
+    - Arquitetura:
+      - "Diagrama Geral": coelhos/Arquitetura/Diagrama-Geral/README.md
+      - "Diagrama de Pacotes": coelhos/Arquitetura/Diagrama-de-Pacotes/README.md
+      - "Diagrama Fishbone": coelhos/Arquitetura/Diagrama-Fishbone/README.md
+      - "Tech-Stack": coelhos/Arquitetura/Tech-Stack/README.md
+    - Backend:
+      - "Django": coelhos/Backend/Django/README.md
+      - "SQL SQlite": coelhos/Backend/SQL-SQlite/README.md
+    - Frontend:
+      - "React & Axios": coelhos/Frontend/React-Axios/README.md
+      - "Typescript": coelhos/Frontend/Typescript/README.md
+    - Machine Learning:
+      - "Classificação": coelhos/Machine-Learn/Scikit-Learn/Classificacao/README.md
+      - "Clustering": coelhos/Machine-Learn/Scikit-Learn/Clustering/README.md
+      - "PreProcessamento": coelhos/Machine-Learn/Scikit-Learn/PreProcessamento/README.md
+      - "Regressao": coelhos/Machine-Learn/Scikit-Learn/Regressao/README.md
+      - "Validacao": coelhos/Machine-Learn/Scikit-Learn/Validacao/README.md
+    - Figma:
+      - "Figma": coelhos/Figma/README.md
+
 
 theme:
   name: material
   logo: assets/logo_white.png
-  custom_dir: docs/overrides 
+  custom_dir: docs/overrides
   palette:
+    # Modo Claro
     - scheme: default
-      primary: custom 
-      accent: custom  
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
         name: Alternar para modo escuro
-
+    # Modo Escuro
     - scheme: slate
-      primary: green 
-      accent: custom 
+      primary: green
+      accent: custom
       toggle:
         icon: material/weather-night
         name: Alternar para modo claro
-
   features:
     - navigation.tabs
     - navigation.sections
@@ -55,14 +82,6 @@ theme:
     - content.code.copy
 
 extra:
-  palette:
-    - scheme: default
-      primary: light green
-      accent: green
-    - scheme: slate
-      primary: green
-      accent: light green
-
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/unb-mds
@@ -77,7 +96,7 @@ markdown_extensions:
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.arithmatex:
-      generic: true    
+      generic: true
   - toc:
       permalink: true
 
