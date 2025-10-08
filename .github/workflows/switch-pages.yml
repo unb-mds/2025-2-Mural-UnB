@@ -1,0 +1,40 @@
+name: Switch Active Site
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Qual versão ativar? (docs ou site)"
+        required: true
+        default: "site"
+        type: choice
+        options:
+          - site
+          - docs
+
+jobs:
+  switch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Selecionar branch alvo
+        run: |
+          if [ "${{ github.event.inputs.target }}" = "docs" ]; then
+            SOURCE_BRANCH="gh-pages-docs"
+          else
+            SOURCE_BRANCH="gh-pages-site"
+          fi
+          echo "SOURCE_BRANCH=$SOURCE_BRANCH" >> $GITHUB_ENV
+
+      - name: Copiar conteúdo para gh-pages
+        run: |
+          git fetch origin $SOURCE_BRANCH
+          git checkout -B gh-pages origin/$SOURCE_BRANCH
+          git push origin gh-pages --force

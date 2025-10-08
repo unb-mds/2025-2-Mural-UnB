@@ -14,19 +14,14 @@ jobs:
   docs:
     name: mkdocs deploy
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: ["3.11"]
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: "3.11"
     
     - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
 
@@ -40,5 +35,12 @@ jobs:
 
     - run: pip install mkdocs-material 
 
-    - name: Deploy Docs
-      run: mkdocs gh-deploy --force
+    - name: Build Docs
+      run: mkdocs build --site-dir public
+
+    - name: Deploy Docs to gh-pages-docs
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        publish_branch: gh-pages-docs
