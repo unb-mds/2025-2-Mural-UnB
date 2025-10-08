@@ -1,0 +1,33 @@
+name: Deploy Site
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'site/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Build React
+        working-directory: ./site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy to gh-pages-site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages-site
+          publish_dir: ./site/build
