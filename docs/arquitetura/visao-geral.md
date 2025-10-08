@@ -1,5 +1,7 @@
 # Arquitetura Geral do Projeto - MuralUnB
 
+> Ocorreram mudanças drásticas na arquitura geral do projeto. Documentação das mudanças em desenvolvimento
+
 ## 1. Visão Geral da Arquitetura
 
 A arquitetura do projeto MuralUnB é baseada em um modelo de **componentes desacoplados**, onde cada parte principal do sistema opera de forma independente, comunicando-se através de APIs. Essa abordagem facilita o desenvolvimento paralelo, a manutenção e a escalabilidade.

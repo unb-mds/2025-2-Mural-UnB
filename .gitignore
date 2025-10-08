@@ -74,6 +74,3 @@ Thumbs.db
 *.swo
 *~
 
-# Ignorar package.json e package-lock.json na raiz
-/package.json
-/package-lock.json
