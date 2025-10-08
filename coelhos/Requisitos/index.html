@@ -1,0 +1,2538 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Github-Pages/">
+      
+      
+        <link rel="next" href="../Arquitetura/Diagrama-Geral/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Requisitos - Mural UnB</title>
+      
+    
+    
+  
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+  <style>
+    :root {
+      /* Cores do modo claro */
+      --md-primary-fg-color:        #006633; /* Cor da navbar (accent) */
+      --md-primary-fg-color--light: #008040;
+      --md-primary-fg-color--dark:  #004d26;
+      --md-primary-bg-color:        #F6F6ED; /* Cor de fundo primária (primary) */
+      
+      /* Cores do modo escuro */
+      [data-md-color-scheme="slate"] {
+        --md-primary-fg-color:        #003366; /* Cor da navbar (accent) modo escuro */
+        --md-primary-fg-color--light: #004080;
+        --md-primary-fg-color--dark:  #00264d;
+      }
+    }
+  </style>
+
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#requisitos-de-software" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Mural UnB" class="md-header__button md-logo" aria-label="Mural UnB" data-md-component="logo">
+      
+  <img src="../../assets/logo_white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Mural UnB
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Requisitos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Alternar para modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="custom"  aria-label="Alternar para modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Alternar para modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/unb-mds/2025-2-Mural-UnB" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Início
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../open-source/contribuir/" class="md-tabs__link">
+          
+  
+  
+  Open Source
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../requisitos/funcionais/" class="md-tabs__link">
+          
+  
+  
+  Requisitos
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../arquitetura/visao-geral/" class="md-tabs__link">
+          
+  
+  
+  Arquitetura
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dados/ejs/" class="md-tabs__link">
+          
+  
+  
+  Dados
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sprints/sprint-0/" class="md-tabs__link">
+          
+  
+  
+  Sprints
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Estudos
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Mural UnB" class="md-nav__button md-logo" aria-label="Mural UnB" data-md-component="logo">
+      
+  <img src="../../assets/logo_white.png" alt="logo">
+
+    </a>
+    Mural UnB
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unb-mds/2025-2-Mural-UnB" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Open Source
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Open Source
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-source/contribuir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contribuir
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../open-source/code-of-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Requisitos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Requisitos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requisitos/funcionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Funcionais
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requisitos/nao-funcionais/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Não Funcionais
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/visao-geral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visão Geral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/arquitetura-front/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitetura Frontend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/arquitetura-back/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitetura Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../arquitetura/arquitetura-ia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitetura IA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Dados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Dados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dados/ejs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EJs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dados/labs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Labs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sprints
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Sprints
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/sprint-0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sprint 0
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/sprint-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sprint 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/sprint-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sprint 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/sprint-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sprint 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/sprint-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sprint 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprints/sprint-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sprint 5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Estudos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Estudos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Índice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Git & Github & GH-Pages
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Git & Github & GH-Pages
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git-Github/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Git & Github
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Github-Pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Github Pages
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Requisitos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Requisitos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Requisitos
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisitos
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tipos-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Tipos de Requisitos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Tipos de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Funcionais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Não Funcionais
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-elicitacao-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Elicitação de Requisitos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Elicitação de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-tecnicas-de-elicitacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Técnicas de Elicitação:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Principais Técnicas de Elicitação:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-objetivo-da-elicitacao-nao-e-apenas-coletar-funcionalidades-mas-entender-o-problema-do-cliente-para-que-a-solucao-desenvolvida-realmente-atenda-as-suas-necessidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      👉 O objetivo da elicitação não é apenas coletar funcionalidades, mas entender o problema do cliente para que a solução desenvolvida realmente atenda às suas necessidades.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-modelagem-e-documentacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Modelagem e Documentação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Modelagem e Documentação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formas-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formas comuns:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-validacao-e-verificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Validação e Verificação
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gerenciamento-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Gerenciamento de Requisitos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Gerenciamento de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-atividades-de-gerenciamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Atividades de Gerenciamento:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-tecnica-moscow" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Técnica MoSCoW
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Boas Práticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-exemplos-visuais" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Exemplos Visuais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Exemplos Visuais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#story-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Story Map
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Story Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principais-conceitos-do-story-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais Conceitos do Story Map:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-usar-story-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que usar Story Mapping?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matriz-de-acao-e-prioridade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matriz de Ação e Prioridade
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Matriz de Ação e Prioridade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quadrantes-da-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quadrantes da Matriz:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#por-que-usar-essa-matriz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Por que usar essa matriz?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Conclusão
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Conclusão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10-linksbibliografia" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Links/Bibliografia
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Arquitetura
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            Arquitetura
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Arquitetura/Diagrama-Geral/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama Geral
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Arquitetura/Diagrama-de-Pacotes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama de Pacotes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Arquitetura/Diagrama-Fishbone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama Fishbone
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Arquitetura/Tech-Stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tech-Stack
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_5" id="__nav_7_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Backend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_5">
+            <span class="md-nav__icon md-icon"></span>
+            Backend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backend/Django/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Django
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backend/SQL-SQlite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQL SQlite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_6" id="__nav_7_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_6">
+            <span class="md-nav__icon md-icon"></span>
+            Frontend
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend/React-Axios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    React & Axios
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Frontend/Typescript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Typescript
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_7" id="__nav_7_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Machine Learning
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            Machine Learning
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine-Learn/Scikit-Learn/Classificacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Classificação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine-Learn/Scikit-Learn/Clustering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Clustering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine-Learn/Scikit-Learn/PreProcessamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PreProcessamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine-Learn/Scikit-Learn/Regressao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Regressao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Machine-Learn/Scikit-Learn/Validacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Validacao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_8" id="__nav_7_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Figma
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_8">
+            <span class="md-nav__icon md-icon"></span>
+            Figma
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Figma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Figma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="requisitos-de-software">📌 Requisitos de Software<a class="headerlink" href="#requisitos-de-software" title="Permanent link">&para;</a></h1>
+<h2 id="1-introducao">1. Introdução<a class="headerlink" href="#1-introducao" title="Permanent link">&para;</a></h2>
+<p>Requisitos de software são <strong>descrições do que o sistema deve fazer</strong> e <strong>como ele deve funcionar</strong>.<br />
+Eles servem como um "contrato" entre o cliente e a equipe de desenvolvimento.  </p>
+<ul>
+<li>Sem requisitos bem definidos → o sistema pode ser construído errado.  </li>
+<li>Com requisitos claros → maior chance de sucesso no projeto.  </li>
+</ul>
+<p><strong>Exemplo:</strong><br />
+- Mal definido: <em>"O sistema deve ser rápido."</em><br />
+- Bem definido: <em>"O sistema deve responder em até 2 segundos em 95% das requisições."</em>  </p>
+<hr />
+<h2 id="2-tipos-de-requisitos">2. Tipos de Requisitos<a class="headerlink" href="#2-tipos-de-requisitos" title="Permanent link">&para;</a></h2>
+<h3 id="21-funcionais">2.1 Funcionais<a class="headerlink" href="#21-funcionais" title="Permanent link">&para;</a></h3>
+<p>São as <strong>funções que o sistema precisa realizar</strong>.<br />
+- Cadastro de usuário<br />
+- Login e autenticação<br />
+- Geração de relatórios  </p>
+<p>👉 Respondem à pergunta: <strong>O que o sistema faz?</strong>  </p>
+<h3 id="22-nao-funcionais">2.2 Não Funcionais<a class="headerlink" href="#22-nao-funcionais" title="Permanent link">&para;</a></h3>
+<p>São restrições e qualidades do sistema.<br />
+- Desempenho (tempo de resposta, consumo de memória)<br />
+- Segurança (criptografia, controle de acesso)<br />
+- Usabilidade (interface amigável, acessibilidade)  </p>
+<p>👉 Respondem à pergunta: <strong>Como o sistema deve ser?</strong>  </p>
+<hr />
+<h2 id="3-elicitacao-de-requisitos">3. Elicitação de Requisitos<a class="headerlink" href="#3-elicitacao-de-requisitos" title="Permanent link">&para;</a></h2>
+<p>"Elicitar" significa <strong>levantar, coletar e descobrir requisitos</strong> junto às partes interessadas (<em>stakeholders</em>), que podem ser clientes, usuários finais, gestores ou até especialistas do negócio.  </p>
+<p>Esse processo geralmente começa em uma reunião inicial chamada <strong>Kick Off</strong> (pontapé inicial).<br />
+➡️ Nela, os principais representantes do cliente e da equipe de desenvolvimento se reúnem para alinhar <strong>objetivos, expectativas e problemas que o sistema precisa resolver</strong>.  </p>
+<h3 id="principais-tecnicas-de-elicitacao">Principais Técnicas de Elicitação:<a class="headerlink" href="#principais-tecnicas-de-elicitacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Entrevistas</strong>  → conversar diretamente com usuários ou gestores para entender necessidades.  </li>
+<li><strong>Questionários</strong> → úteis quando há muitos usuários e é preciso coletar respostas em massa.  </li>
+<li><strong>Observação</strong>  → acompanhar como os usuários realizam suas tarefas no dia a dia.  </li>
+<li><strong>Prototipação</strong>  → criar esboços ou telas simples que ajudam a validar ideias antes da implementação.  </li>
+</ul>
+<h4 id="o-objetivo-da-elicitacao-nao-e-apenas-coletar-funcionalidades-mas-entender-o-problema-do-cliente-para-que-a-solucao-desenvolvida-realmente-atenda-as-suas-necessidades">👉 O objetivo da elicitação não é apenas coletar funcionalidades, mas <strong>entender o problema do cliente</strong> para que a solução desenvolvida realmente atenda às suas necessidades.<a class="headerlink" href="#o-objetivo-da-elicitacao-nao-e-apenas-coletar-funcionalidades-mas-entender-o-problema-do-cliente-para-que-a-solucao-desenvolvida-realmente-atenda-as-suas-necessidades" title="Permanent link">&para;</a></h4>
+<hr />
+<h2 id="4-modelagem-e-documentacao">4. Modelagem e Documentação<a class="headerlink" href="#4-modelagem-e-documentacao" title="Permanent link">&para;</a></h2>
+<p>Depois de coletar os requisitos, é preciso <strong>organizar e registrar</strong>.  </p>
+<h3 id="formas-comuns">Formas comuns:<a class="headerlink" href="#formas-comuns" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Casos de uso (UML)</strong> → mostram interações do usuário com o sistema.  </li>
+<li><strong>User stories (ágeis)</strong> → pequenas frases que descrevem funcionalidades.  </li>
+<li>Exemplo: <em>"Como aluno, quero acessar minhas notas online para acompanhar meu desempenho."</em>  </li>
+<li><strong>Backlog de produto</strong> → lista priorizada de requisitos.  </li>
+</ul>
+<hr />
+<h2 id="5-validacao-e-verificacao">5. Validação e Verificação<a class="headerlink" href="#5-validacao-e-verificacao" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Validação</strong>: verificar se os requisitos realmente atendem às necessidades do cliente.  </li>
+<li><strong>Verificação</strong>: conferir se os requisitos foram implementados corretamente no sistema.  </li>
+</ul>
+<p>📌 Métodos:<br />
+- Revisões com stakeholders.<br />
+- Prototipagem validada.<br />
+- Testes de aceitação.  </p>
+<hr />
+<h2 id="6-gerenciamento-de-requisitos">6. Gerenciamento de Requisitos<a class="headerlink" href="#6-gerenciamento-de-requisitos" title="Permanent link">&para;</a></h2>
+<p>Durante o ciclo de vida de um projeto, é comum que os <strong>requisitos mudem</strong>.<br />
+Novas demandas podem surgir, outras se tornarem obsoletas, ou ainda precisarem de ajustes.<br />
+Por isso, não basta só elicitar requisitos: é necessário <strong>gerenciar</strong>.  </p>
+<h3 id="principais-atividades-de-gerenciamento">Principais Atividades de Gerenciamento:<a class="headerlink" href="#principais-atividades-de-gerenciamento" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Controle de mudanças</strong>    </li>
+<li>Cada alteração deve ser registrada, avaliada e aprovada antes de ser implementada.  </li>
+<li>
+<p>Isso evita que mudanças inesperadas prejudiquem o cronograma ou aumentem custos.  </p>
+</li>
+<li>
+<p><strong>Rastreabilidade</strong>  </p>
+</li>
+<li>Significa acompanhar o “caminho” de cada requisito:  <ul>
+<li>Onde surgiu (usuário/cliente)  </li>
+<li>Onde foi documentado  </li>
+<li>Onde é implementado no código  </li>
+<li>Onde é testado e validado  </li>
+</ul>
+</li>
+<li>
+<p>Isso ajuda a garantir que nada importante seja perdido.  </p>
+</li>
+<li>
+<p><strong>Priorização</strong>   </p>
+</li>
+<li>Como os recursos (tempo, equipe, orçamento) são limitados, nem todos os requisitos podem ser feitos ao mesmo tempo.  </li>
+<li>Para decidir o que vem primeiro, uma técnica simples e bastante usada é a <strong>MoSCoW</strong> (ou <strong>Impact/Effort Matrix</strong> no final do documento):  </li>
+</ul>
+<h3 id="a-tecnica-moscow">A Técnica MoSCoW<a class="headerlink" href="#a-tecnica-moscow" title="Permanent link">&para;</a></h3>
+<p>MoSCoW é um acrônimo que ajuda a classificar requisitos em quatro categorias:<br />
+➡️ Significado (imagem em <code>./assets/MoSCoW.png</code>):<br />
+<img alt="Exemplo de MoSCoW" src="assets/MoSCoW.png" /><br />
+Retirado de: <a href="https://www.youtube.com/watch?v=QfZo9cxnQgY">Agile in Practice: Prioritisation using MoSCoW</a></p>
+<ol>
+<li><strong>Must Have (Deve ter)</strong> ✅  </li>
+<li>Requisitos obrigatórios, sem eles o sistema não funciona.  </li>
+<li>
+<p>Exemplo: “O usuário deve conseguir fazer login.”  </p>
+</li>
+<li>
+<p><strong>Should Have (Deveria ter)</strong> 👍  </p>
+</li>
+<li>Muito importantes, mas não críticos. Podem ser entregues depois.  </li>
+<li>
+<p>Exemplo: “O sistema deveria ter autenticação em dois fatores.”  </p>
+</li>
+<li>
+<p><strong>Could Have (Poderia ter)</strong> ✨  </p>
+</li>
+<li>Funcionalidades desejáveis, mas opcionais.  </li>
+<li>
+<p>Exemplo: “O sistema poderia ter modo escuro.”  </p>
+</li>
+<li>
+<p><strong>Won’t Have (Não terá por agora)</strong> ❌  </p>
+</li>
+<li>Requisitos que foram discutidos, mas decididos para não serem implementados nesta versão.  </li>
+<li>Exemplo: “Integração com redes sociais não será feita nesta release.”  </li>
+</ol>
+<p>👉 Essa técnica ajuda equipes a focarem no que <strong>realmente entrega valor ao usuário primeiro</strong>, deixando extras para depois.  </p>
+<hr />
+<h2 id="7-boas-praticas">7. Boas Práticas<a class="headerlink" href="#7-boas-praticas" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Escrever requisitos de forma <strong>clara e objetiva</strong>.  </li>
+<li>Evitar termos ambíguos (<em>rápido</em>, <em>fácil</em>, <em>eficiente</em>).  </li>
+<li>Manter os requisitos sempre <strong>atualizados</strong>.  </li>
+<li>Validar constantemente com o cliente.  </li>
+</ul>
+<hr />
+<h2 id="8-exemplos-visuais">8. Exemplos Visuais<a class="headerlink" href="#8-exemplos-visuais" title="Permanent link">&para;</a></h2>
+<h3 id="story-map">Story Map<a class="headerlink" href="#story-map" title="Permanent link">&para;</a></h3>
+<p>O <strong>Story Map</strong> é uma técnica visual usada para <strong>organizar requisitos de software</strong> de forma que todos entendam como o usuário interage com o sistema.  </p>
+<p>➡️ Estrutura básica (imagem em <code>./assets/StoryMap.png</code>):<br />
+<img alt="Exemplo de Story Map" src="assets/StoryMap.png" /><br />
+Retirado de: <a href="https://www.youtube.com/watch?v=uj3PlPDAlHU">User Story Mapping Tutorial (How to create, read, and use story maps)</a></p>
+<h4 id="principais-conceitos-do-story-map">Principais Conceitos do Story Map:<a class="headerlink" href="#principais-conceitos-do-story-map" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Backbone</strong>  → Linha superior com as narrativas principais (grandes funcionalidades).  </li>
+<li><strong>Narrativa</strong>  → Sequência de passos lida na horizontal (mostra o fluxo da interação do usuário).  </li>
+<li><strong>Atividade</strong> → Conjunto de passos necessários para alcançar um objetivo.  </li>
+<li><strong>Step (Passo)</strong>  → Qualquer item no mapa, representando uma ação do usuário.  </li>
+<li><strong>Prioridade</strong>  → Itens mais importantes ficam no topo (alto valor para o usuário), os menos importantes abaixo.  </li>
+<li><strong>Milestones</strong>  → Divisões que mostram entregas incrementais do sistema.  </li>
+</ul>
+<h4 id="por-que-usar-story-mapping">Por que usar Story Mapping?<a class="headerlink" href="#por-que-usar-story-mapping" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Ajuda a <strong>visualizar o produto inteiro</strong>.  </li>
+<li>Facilita a <strong>priorização de funcionalidades</strong>.  </li>
+<li>Mostra como os <strong>requisitos se conectam</strong> em jornadas de usuário.  </li>
+<li>Útil em <strong>times ágeis</strong>, pois conecta requisitos com releases e backlog.  </li>
+</ul>
+<h3 id="matriz-de-acao-e-prioridade">Matriz de Ação e Prioridade<a class="headerlink" href="#matriz-de-acao-e-prioridade" title="Permanent link">&para;</a></h3>
+<p>A <strong>Action Priority Matrix</strong> é uma ferramenta visual usada para <strong>priorizar requisitos, tarefas ou funcionalidades</strong> com base em dois critérios:<br />
+- <strong>Esforço (Effort)</strong> → quanto trabalho ou recurso é necessário.<br />
+- <strong>Impacto (Impact)</strong> → quanto valor ou benefício traz para o usuário ou negócio.  </p>
+<p>➡️ Estrutura básica (imagem em <code>./assets/ActionPriorityMatrix.png</code>):<br />
+<img alt="Exemplo de Matriz de Ação e Prioridade" src="assets/ActionPriorityMatrix.png" />  </p>
+<h4 id="quadrantes-da-matriz">Quadrantes da Matriz:<a class="headerlink" href="#quadrantes-da-matriz" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Quick Wins (Vitórias Rápidas)</strong> 🟩  </li>
+<li>Baixo esforço, alto impacto.  </li>
+<li>
+<p>São as tarefas que devem ser priorizadas primeiro.  </p>
+</li>
+<li>
+<p><strong>Important Tasks (Tarefas Importantes)</strong> 🟨  </p>
+</li>
+<li>Alto esforço, alto impacto.  </li>
+<li>
+<p>Exigem mais tempo e recursos, mas trazem grande valor.  </p>
+</li>
+<li>
+<p><strong>Other Tasks (Outras Tarefas)</strong> ⬜  </p>
+</li>
+<li>Baixo esforço, baixo impacto.  </li>
+<li>
+<p>Podem ser feitas se sobrar tempo, mas não são prioridade.  </p>
+</li>
+<li>
+<p><strong>Ungrateful Tasks (Tarefas Ingratas)</strong> 🟥  </p>
+</li>
+<li>Alto esforço, baixo impacto.  </li>
+<li>Geralmente devem ser evitadas ou deixadas por último.  </li>
+</ul>
+<h4 id="por-que-usar-essa-matriz">Por que usar essa matriz?<a class="headerlink" href="#por-que-usar-essa-matriz" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Ajuda a <strong>decidir onde investir tempo e recursos</strong>.  </li>
+<li>Facilita a <strong>gestão de requisitos</strong> quando há muitas demandas.  </li>
+<li>Apoia a <strong>tomada de decisão ágil</strong> em times de software.  </li>
+</ul>
+<hr />
+<h2 id="9-conclusao">9. Conclusão<a class="headerlink" href="#9-conclusao" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Os requisitos de software são a <strong>base do desenvolvimento</strong>.  </li>
+<li>Um projeto com requisitos mal definidos tende a falhar.  </li>
+<li>Aprender a elicitar, documentar, validar e gerenciar requisitos é essencial para qualquer engenheiro de software.  </li>
+</ul>
+<hr />
+<h3 id="10-linksbibliografia">10. Links/Bibliografia<a class="headerlink" href="#10-linksbibliografia" title="Permanent link">&para;</a></h3>
+<p>Levantamento de Requisitos: O Guia Definitivo para QUALQUER PROJETO na Programação: https://www.youtube.com/watch?v=xEdGAC0qzgY<br />
+Requisito Funcional e Não Funcional de Software: entenda a diferença.:https://www.youtube.com/watch?v=YLd6AWKVyas<br />
+Definition of ready vs Definition of done | CT Academy: https://www.youtube.com/watch?v=kfSeI6Qvt_Q  <br />
+User Story Mapping Tutorial (How to create, read, and use story maps): https://www.youtube.com/watch?v=uj3PlPDAlHU  <br />
+Requisito Funcional e Não Funcional de Software: entenda a diferença.:https://www.youtube.com/watch?v=YLd6AWKVyas<br />
+Agile in Practice: Prioritisation using MoSCoW: https://www.youtube.com/watch?v=QfZo9cxnQgY</p>
+<p><sub>Documentação criada por <strong>Tiago Bittencourt</strong>: (<a href="https://github.com/TiagoSBittencourt">@TiagoSBittencourt</a>)</sub></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/unb-mds" target="_blank" rel="noopener" title="GitHub da UnB-MDS" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.integrate", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

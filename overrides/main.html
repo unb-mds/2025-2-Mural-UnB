@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  {{ super() }}
+  <style>
+    :root {
+      /* Cores do modo claro */
+      --md-primary-fg-color:        #006633; /* Cor da navbar (accent) */
+      --md-primary-fg-color--light: #008040;
+      --md-primary-fg-color--dark:  #004d26;
+      --md-primary-bg-color:        #F6F6ED; /* Cor de fundo primária (primary) */
+      
+      /* Cores do modo escuro */
+      [data-md-color-scheme="slate"] {
+        --md-primary-fg-color:        #003366; /* Cor da navbar (accent) modo escuro */
+        --md-primary-fg-color--light: #004080;
+        --md-primary-fg-color--dark:  #00264d;
+      }
+    }
+  </style>
+{% endblock %}
