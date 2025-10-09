@@ -74,3 +74,4 @@ Thumbs.db
 *.swo
 *~
 
+/venv/
