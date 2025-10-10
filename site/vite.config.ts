@@ -8,5 +8,5 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: 'https://unb-mds.github.io/2025-2-Mural-UnB/',
+  base: '/2025-2-Mural-UnB/',
 })
