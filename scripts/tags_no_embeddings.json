@@ -1,0 +1,198 @@
+{
+  "categorias": [
+    {
+      "nome_categoria": "Domínios e Áreas de Conhecimento Técnico",
+      "descricao": "Áreas de estudo e especialização técnica dentro das engenharias.",
+      "subcategorias": [
+        {
+          "nome_subcategoria": "Engenharia de Software",
+          "tags": [
+            {"id": "desenvolvimento_web", "label": "Desenvolvimento Web", "description": "Criação de sites e aplicações para a internet, incluindo Frontend e Backend."},
+            {"id": "desenvolvimento_backend", "label": "Desenvolvimento Backend", "description": "Foco na lógica do servidor, APIs e bancos de dados de uma aplicação."},
+            {"id": "desenvolvimento_frontend", "label": "Desenvolvimento Frontend", "description": "Foco na interface e experiência do usuário em aplicações web."},
+            {"id": "desenvolvimento_mobile", "label": "Desenvolvimento Mobile", "description": "Criação de aplicativos para dispositivos móveis (iOS e Android)."},
+            {"id": "desenvolvimento_jogos", "label": "Desenvolvimento de Jogos", "description": "Criação de jogos digitais, incluindo gameplay, gráficos e física."},
+            {"id": "inteligencia_artificial", "label": "Inteligência Artificial", "description": "Desenvolvimento de sistemas que simulam a inteligência humana. Inclui Machine Learning e Deep Learning."},
+            {"id": "machine_learning", "label": "Machine Learning", "description": "Algoritmos que permitem que sistemas aprendam a partir de dados."},
+            {"id": "deep_learning", "label": "Deep Learning", "description": "Subárea de Machine Learning baseada em redes neurais profundas."},
+            {"id": "visao_computacional", "label": "Visão Computacional", "description": "Permite que computadores 'enxerguem' e interpretem o mundo visual."},
+            {"id": "pln", "label": "Processamento de Linguagem Natural (PLN)", "description": "Capacidade de computadores entenderem e processarem a linguagem humana."},
+            {"id": "ciencia_dados", "label": "Ciência de Dados", "description": "Extração de conhecimento e insights a partir de dados estruturados e não estruturados."},
+            {"id": "analise_dados", "label": "Análise de Dados", "description": "Inspeção, limpeza e modelagem de dados para descobrir informações úteis."},
+            {"id": "big_data", "label": "Big Data", "description": "Tecnologias para lidar com grandes volumes de dados."},
+            {"id": "banco_dados_sql", "label": "Banco de Dados SQL", "description": "Uso de bancos de dados relacionais como PostgreSQL, MySQL."},
+            {"id": "banco_dados_nosql", "label": "Banco de Dados NoSQL", "description": "Uso de bancos de dados não relacionais como MongoDB, Cassandra."},
+            {"id": "arquitetura_software", "label": "Arquitetura de Software", "description": "Projeto da estrutura fundamental de um sistema de software."},
+            {"id": "microsservicos", "label": "Microsserviços", "description": "Arquitetura que estrutura uma aplicação como uma coleção de serviços independentes."},
+            {"id": "cloud_computing", "label": "Computação em Nuvem", "description": "Uso de serviços de nuvem como AWS, Azure e GCP."},
+            {"id": "devops", "label": "DevOps", "description": "Práticas que unem desenvolvimento de software (Dev) e operações de TI (Ops)."},
+            {"id": "seguranca_informacao", "label": "Segurança da Informação", "description": "Proteção de sistemas, redes e dados contra ataques cibernéticos."},
+            {"id": "engenharia_dados", "label": "Engenharia de Dados", "description": "Construção e manutenção de pipelines de dados."},
+            {"id": "qa_testes", "label": "Qualidade de Software (QA) e Testes", "description": "Garantia de qualidade e automação de testes de software."},
+            {"id": "sistemas_operacionais", "label": "Sistemas Operacionais", "description": "Estudo e desenvolvimento em nível de sistema operacional (Linux, Windows)."},
+            {"id": "redes_computadores", "label": "Redes de Computadores", "description": "Princípios e protocolos de comunicação entre sistemas."},
+            {"id": "realidade_virtual_aumentada", "label": "Realidade Virtual/Aumentada (VR/AR)", "description": "Desenvolvimento de aplicações imersivas e de realidade mista."},
+            {"id": "blockchain", "label": "Blockchain", "description": "Tecnologia de registro distribuído usada em criptomoedas e outras aplicações."}
+          ]
+        },
+        {
+          "nome_subcategoria": "Engenharia Eletrônica e de Energia",
+          "tags": [
+            {"id": "sistemas_embarcados", "label": "Sistemas Embarcados", "description": "Projeto de sistemas computacionais dedicados integrados em dispositivos."},
+            {"id": "microcontroladores_processadores", "label": "Microcontroladores e Processadores", "description": "Programação e design com MCUs (AVR, ARM) e processadores."},
+            {"id": "circuitos_digitais_analogicos", "label": "Circuitos Digitais e Analógicos", "description": "Projeto, simulação e montagem de circuitos eletrônicos."},
+            {"id": "eletronica_potencia", "label": "Eletrônica de Potência", "description": "Conversão e controle de energia elétrica em alta potência."},
+            {"id": "processamento_sinais_dsp", "label": "Processamento Digital de Sinais (DSP)", "description": "Manipulação digital de sinais como áudio, vídeo e dados de sensores."},
+            {"id": "sistemas_controle", "label": "Sistemas de Controle", "description": "Teoria e aplicação de sistemas de controle para automação e robótica."},
+            {"id": "robotica", "label": "Robótica", "description": "Projeto, construção e programação de robôs."},
+            {"id": "iot", "label": "Internet das Coisas (IoT)", "description": "Desenvolvimento de dispositivos conectados à internet."},
+            {"id": "hdl_fpga_asic", "label": "VHDL/Verilog e FPGAs", "description": "Linguagens de descrição de hardware para circuitos programáveis."},
+            {"id": "telecomunicacoes", "label": "Telecomunicações", "description": "Sistemas de comunicação, RF, antenas e propagação."},
+            {"id": "energias_renovaveis", "label": "Energias Renováveis", "description": "Foco em energia solar, eólica, biomassa e outras fontes limpas."},
+            {"id": "sistemas_eletricos_potencia", "label": "Sistemas Elétricos de Potência", "description": "Geração, transmissão e distribuição de energia elétrica."},
+            {"id": "smart_grids", "label": "Redes Elétricas Inteligentes (Smart Grids)", "description": "Modernização da rede elétrica com tecnologia da informação."},
+            {"id": "armazenamento_energia", "label": "Armazenamento de Energia", "description": "Tecnologias de baterias, células de combustível e outros sistemas."}
+          ]
+        },
+        {
+          "nome_subcategoria": "Engenharia Aeroespacial",
+          "tags": [
+            {"id": "aerodinamica", "label": "Aerodinâmica", "description": "Estudo do movimento do ar e suas interações com corpos sólidos."},
+            {"id": "dinamica_voo", "label": "Dinâmica de Voo", "description": "Estudo do comportamento e controle de veículos em voo."},
+            {"id": "sistemas_propulsao", "label": "Sistemas de Propulsão", "description": "Desenvolvimento de motores a jato, foguetes e outros sistemas propulsores."},
+            {"id": "estruturas_aeroespaciais", "label": "Estruturas Aeroespaciais", "description": "Projeto e análise de estruturas leves e resistentes para aeronaves e foguetes."},
+            {"id": "materiais_compositos", "label": "Materiais Compósitos", "description": "Uso de materiais avançados como fibra de carbono em estruturas."},
+            {"id": "mecanica_orbital", "label": "Mecânica Orbital", "description": "Estudo do movimento de satélites e corpos celestes."},
+            {"id": "gnc", "label": "Guiagem, Navegação e Controle (GNC)", "description": "Sistemas que controlam a trajetória de veículos aeroespaciais."},
+            {"id": "satelites_cubesats", "label": "Satélites e CubeSats", "description": "Projeto, construção e operação de satélites de pequeno porte."},
+            {"id": "foguetes", "label": "Foguetes", "description": "Projeto e construção de foguetes de sondagem e experimentais."},
+            {"id": "vants_drones", "label": "VANTs/Drones", "description": "Desenvolvimento de Veículos Aéreos Não Tripulados."},
+            {"id": "modelagem_simulacao_aero", "label": "Modelagem e Simulação Aeroespacial", "description": "Uso de software para simular condições de voo e comportamento de sistemas."},
+            {"id": "avionica", "label": "Aviônica", "description": "Sistemas eletrônicos utilizados em aeronaves, satélites e espaçonaves."}
+          ]
+        },
+        {
+          "nome_subcategoria": "Engenharia Automotiva",
+          "tags": [
+            {"id": "dinamica_veicular", "label": "Dinâmica Veicular", "description": "Estudo do comportamento de veículos em movimento (suspensão, direção, freios)."},
+            {"id": "sistemas_automotivos", "label": "Sistemas Automotivos", "description": "Projeto e integração de sistemas mecânicos e eletrônicos em veículos."},
+            {"id": "motores_combustao", "label": "Motores a Combustão", "description": "Estudo e desenvolvimento de motores de combustão interna."},
+            {"id": "mobilidade_eletrica", "label": "Mobilidade Elétrica", "description": "Desenvolvimento de veículos elétricos, baterias e sistemas de recarga."},
+            {"id": "veiculos_autonomos", "label": "Veículos Autônomos", "description": "Desenvolvimento de sistemas de percepção, controle e navegação para carros autônomos."},
+            {"id": "eletronica_automotiva_embarcada", "label": "Eletrônica Embarcada Automotiva", "description": "Uso de microcontroladores e redes (CAN) em sistemas veiculares."},
+            {"id": "design_automotivo_cad", "label": "Design Automotivo e CAD", "description": "Modelagem de componentes e sistemas veiculares usando softwares CAD."},
+            {"id": "powertrain", "label": "Powertrain", "description": "Projeto de sistemas de trem de força, incluindo motor, transmissão e eixos."}
+          ]
+        }
+      ]
+    },
+    {
+      "nome_categoria": "Ferramentas, Softwares e Tecnologias",
+      "descricao": "Linguagens, frameworks e softwares específicos usados nos projetos.",
+      "subcategorias": [
+        {
+          "nome_subcategoria": "Linguagens de Programação",
+          "tags": [
+            {"id": "python", "label": "Python", "description": ""},
+            {"id": "c_cpp", "label": "C/C++", "description": ""},
+            {"id": "java", "label": "Java", "description": ""},
+            {"id": "javascript_ts", "label": "JavaScript/TypeScript", "description": ""},
+            {"id": "matlab", "label": "MATLAB", "description": ""},
+            {"id": "sql", "label": "SQL", "description": ""},
+            {"id": "rust", "label": "Rust", "description": ""},
+            {"id": "go", "label": "Go", "description": ""},
+            {"id": "kotlin", "label": "Kotlin", "description": ""}
+          ]
+        },
+        {
+          "nome_subcategoria": "Frameworks e Bibliotecas",
+          "tags": [
+            {"id": "react", "label": "React", "description": ""},
+            {"id": "angular", "label": "Angular", "description": ""},
+            {"id": "vuejs", "label": "Vue.js", "description": ""},
+            {"id": "nodejs", "label": "Node.js", "description": ""},
+            {"id": "django", "label": "Django", "description": ""},
+            {"id": "flask", "label": "Flask", "description": ""},
+            {"id": "spring_boot", "label": "Spring Boot", "description": ""},
+            {"id": "tensorflow", "label": "TensorFlow", "description": ""},
+            {"id": "pytorch", "label": "PyTorch", "description": ""},
+            {"id": "scikit_learn", "label": "Scikit-learn", "description": ""},
+            {"id": "pandas", "label": "Pandas", "description": ""},
+            {"id": "opencv", "label": "OpenCV", "description": ""},
+            {"id": "ros", "label": "ROS", "description": "Robot Operating System"}
+          ]
+        },
+        {
+          "nome_subcategoria": "Plataformas e Softwares",
+          "tags": [
+            {"id": "git", "label": "Git", "description": "Sistema de controle de versão."},
+            {"id": "docker", "label": "Docker", "description": "Plataforma de contêineres."},
+            {"id": "kubernetes", "label": "Kubernetes", "description": "Orquestração de contêineres."},
+            {"id": "aws", "label": "AWS", "description": "Amazon Web Services."},
+            {"id": "gcp", "label": "Google Cloud", "description": "Google Cloud Platform."},
+            {"id": "azure", "label": "Azure", "description": "Microsoft Azure."},
+            {"id": "solidworks", "label": "SolidWorks", "description": "Software CAD 3D."},
+            {"id": "catia", "label": "CATIA", "description": "Software CAD/CAE/CAM."},
+            {"id": "ansys", "label": "ANSYS", "description": "Software de simulação (FEA, CFD)."},
+            {"id": "simulink", "label": "Simulink", "description": "Ambiente de simulação gráfica."},
+            {"id": "ltspice", "label": "LTspice", "description": "Simulador de circuitos eletrônicos."},
+            {"id": "altium", "label": "Altium Designer", "description": "Software para design de PCB."},
+            {"id": "labview", "label": "LabVIEW", "description": "Software de instrumentação virtual."},
+            {"id": "linux", "label": "Linux", "description": "Sistema operacional de código aberto."}
+          ]
+        },
+        {
+          "nome_subcategoria": "Hardware",
+          "tags": [
+            {"id": "arduino", "label": "Arduino", "description": ""},
+            {"id": "raspberry_pi", "label": "Raspberry Pi", "description": ""},
+            {"id": "esp32", "label": "ESP32", "description": ""},
+            {"id": "impressao_3d", "label": "Impressão 3D", "description": ""},
+            {"id": "cnc", "label": "Usinagem CNC", "description": ""}
+          ]
+        }
+      ]
+    },
+    {
+      "nome_categoria": "Tipo de Oportunidade e Foco de Atuação",
+      "descricao": "Natureza da vaga e tipo de trabalho a ser desenvolvido.",
+      "subcategorias": [
+        {
+          "nome_subcategoria": "",
+          "tags": [
+            {"id": "empresa_junior", "label": "Empresa Júnior", "description": "Vivência empresarial durante a graduação."},
+            {"id": "laboratorio_pesquisa", "label": "Laboratório de Pesquisa", "description": "Atuação em projetos de pesquisa acadêmica."},
+            {"id": "equipe_competicao", "label": "Equipe de Competição", "description": "Projetar e construir para competir (ex: Baja, F-SAE, Foguetes)."},
+            {"id": "iniciacao_cientifica", "label": "Iniciação Científica (IC)", "description": "Bolsa de pesquisa com orientação de um professor."},
+            {"id": "projeto_extensao", "label": "Projeto de Extensão", "description": "Projetos que conectam a universidade com a comunidade externa."},
+            {"id": "estagio", "label": "Estágio", "description": "Experiência profissional em uma empresa."},
+            {"id": "startup_universitaria", "label": "Startup Universitária", "description": "Desenvolvimento de um novo negócio de base tecnológica."}
+          ]
+        }
+      ]
+    },
+    {
+      "nome_categoria": "Habilidades Interpessoais (Soft Skills)",
+      "descricao": "Competências comportamentais e sociais valorizadas no ambiente de trabalho.",
+      "subcategorias": [
+        {
+          "nome_subcategoria": "",
+          "tags": [
+            {"id": "lideranca", "label": "Liderança", "description": ""},
+            {"id": "trabalho_equipe", "label": "Trabalho em Equipe", "description": ""},
+            {"id": "comunicacao", "label": "Comunicação", "description": ""},
+            {"id": "oratória_apresentacao", "label": "Oratória e Apresentação", "description": ""},
+            {"id": "resolucao_problemas", "label": "Resolução de Problemas", "description": ""},
+            {"id": "pensamento_critico", "label": "Pensamento Crítico", "description": ""},
+            {"id": "criatividade_inovacao", "label": "Criatividade e Inovação", "description": ""},
+            {"id": "proatividade", "label": "Proatividade", "description": ""},
+            {"id": "gestao_tempo", "label": "Gestão de Tempo", "description": ""},
+            {"id": "adaptabilidade", "label": "Adaptabilidade", "description": ""},
+            {"id": "negociacao", "label": "Negociação", "description": ""},
+            {"id": "mentoria", "label": "Mentoria", "description": ""}
+          ]
+        }
+      ]
+    }
+  ]
+}
