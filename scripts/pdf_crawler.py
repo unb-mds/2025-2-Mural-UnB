@@ -70,7 +70,7 @@ except requests.exceptions.ConnectionError:
 except requests.exceptions.HTTPError as e:
     print(f"\n✗ ERRO HTTP: {e}")
     exit(1)
-except requests.exceptions.RequestException as motivo: #categoria de todos os erros que podem vir na biblioteca requests, guarde a info no 'motivo'
+except requests.exceptions.RequestException as motivo: # categoria de todos os erros que podem vir na biblioteca requests, guarde a info no 'motivo'
     print(f"\n✗ Erro ao acessar a página: {motivo}")
     exit(1)
 
