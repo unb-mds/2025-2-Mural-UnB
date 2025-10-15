@@ -1,6 +1,6 @@
 import os
 import json
-from datetime import datetime
+from datetime import datetime # mais para debug do que funcional
 from config_ej import GEMINI_API_KEY, PDF_URL_EJS, OUTPUT_DIR, OUTPUT_JSON, PROCESSAR_POR_PAGINA, MAX_PAGINAS_POR_REQUISICAO, PAGINA_INICIAL_EJS
 from pdf_processor_ejs import PDFProcessorEJs
 
@@ -184,4 +184,5 @@ def main():
         print("   - PDF não contém informações de empresas juniores")
 
 if __name__ == "__main__":
+
     main()
