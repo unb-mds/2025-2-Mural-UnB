@@ -107,11 +107,12 @@ def encontrar_pdf_empresas_juniores(url_alvo):
         return None
 
 if __name__ == "__main__":
-    # URL pra exemplo - substituir dps pela URL real do portfólio de EJs
+    # URL pra exemplo - substituir dps pela URL real do portfólio de EJ
     url_ejs = "http://exemplo.com/ejuniores"
     pdf_path = encontrar_pdf_empresas_juniores(url_ejs)
     
     if pdf_path:
         print(f"\nPDF disponível em: {pdf_path}")
     else:
+
         print("\nNão foi possível obter o PDF.")
