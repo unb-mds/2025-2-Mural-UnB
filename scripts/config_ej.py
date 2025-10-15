@@ -13,4 +13,5 @@ OUTPUT_JSON = "empresas_juniores_consolidadas.json"
 # Configurações do processamento
 PROCESSAR_POR_PAGINA = True
 MAX_PAGINAS_POR_REQUISICAO = 2
+# pagina onde o processo começa, aqui pq a página 10 é o sumário ent evita erros
 PAGINA_INICIAL_EJS = 11  
