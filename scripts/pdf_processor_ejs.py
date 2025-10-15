@@ -1,4 +1,3 @@
-# pdf_processor_ejs.py
 import requests
 import json
 import pdfplumber
@@ -102,7 +101,7 @@ class PDFProcessorEJs:
         return texto
     
     def criar_prompt_gemini(self, texto: str, info_pagina: str = "") -> str:
-        """Cria prompt mais específico e com melhor formatação"""
+        """Criando prompt mais específico"""
         prompt = f"""
         ANALISE O TEXTO E EXTRAIA INFORMAÇÕES SOBRE EMPRESAS JUNIORES.
 
@@ -259,7 +258,7 @@ class PDFProcessorEJs:
         return texto
     
     def processar_pdf_paginado(self, pdf_path: str, saida_json: str, max_paginas_por_requisicao: int = 2, pagina_inicial: int = 1):
-        """Processa PDF página por página com melhor logging"""
+        """Processa PDF página por página"""
         
         print("=== INICIANDO PROCESSAMENTO PAGINADO ===")
         
@@ -301,7 +300,7 @@ class PDFProcessorEJs:
             print(f"   ✅ Empresas novas neste lote: {empresas_novas}")
             print(f"   📊 Total acumulado: {len(todas_empresas)} empresas")
             
-            # Pausa para evitar rate limiting
+            # Pausa para evitar rate limiting do LLM
             if i + max_paginas_por_requisicao < len(dados_paginas):
                 print("   ⏳ Aguardando 3 segundos...")
                 time.sleep(3)
@@ -350,4 +349,5 @@ class PDFProcessorEJs:
                 print(f"📊 Estatísticas: {len(dados)} empresas, {total_campos} campos totais")
                 
         except Exception as e:
+
             print(f"✗ Erro ao salvar JSON: {e}")
