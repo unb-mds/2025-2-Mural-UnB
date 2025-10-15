@@ -32,7 +32,7 @@ def encontrar_pdf_empresas_juniores(url_alvo):
             href = link['href']
             texto_link = link.get_text(strip=True)
             
-            # Critérios para identificar PDF de empresas juniores
+            # Critérios para identificar PDF de empresas junior
             criterios_pdf_ej = [
                 href.endswith('.pdf'),
                 any(termo in texto_link.upper() for termo in ['EMPRESA', 'JÚNIOR', 'JUNIOR', 'EJ', 'PORTFÓLIO']),
@@ -116,4 +116,5 @@ if __name__ == "__main__":
     else:
 
         print("\nNão foi possível obter o PDF.")
+
 
