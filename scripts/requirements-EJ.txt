@@ -9,3 +9,5 @@ pillow==10.0.1
 # - Sua GEMINI_API_KEY
 
 # - A URL do PDF de empresas juniors
+
+# - Para iniciar o processo após a configuração, ative extrair_empresas_juniores.py 
