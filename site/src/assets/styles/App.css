@@ -1,0 +1,13 @@
+@font-face {
+  font-family: GowunBatang-Regular;
+  src: url('@/assets/fonts/GowunBatang-Regular.ttf');
+}
+
+@import "tailwindcss";
+@plugin "daisyui"{
+  themes: light --default;
+}
+
+@theme {
+  --font-gowunR: GowunBatang-Regular, sans-serif;
+}

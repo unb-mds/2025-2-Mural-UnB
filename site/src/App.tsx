@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+import { Routes, Route } from "react-router-dom"
+import Navbar from "./components/NavBar"
+import Home from "./pages/Home/Home"
+import Academicos from "./pages/Academicos/Academicos"
+import Profissionais from "./pages/Profissionais/Profissionais"
+import './assets/styles/App.css'
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-base-100 text-base-content font-gowunR">
+      <Navbar />
+      <Routes>
+        <Route path='/' element = {<Home />} />
+        <Route path='/Academicos' element = {<Academicos />} />
+        <Route path='/Profissionais' element = {<Profissionais />} />
+      </Routes>
+    </div>
+  );
+}
+=======
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -33,3 +54,4 @@ function App() {
 }
 
 export default App
+>>>>>>> 17e311137a9a8bc594ce68d30aa61eb31bdaee8b

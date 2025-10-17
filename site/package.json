@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+<<<<<<< HEAD
+=======
   "homepage": "https://unb-mds.github.io/2025-2-Mural-UnB/",
+>>>>>>> 17e311137a9a8bc594ce68d30aa61eb31bdaee8b
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -14,6 +17,11 @@
     "@tailwindcss/vite": "^4.1.14",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+<<<<<<< HEAD
+    "react-router": "^7.9.4",
+    "react-router-dom": "^7.9.4",
+=======
+>>>>>>> 17e311137a9a8bc594ce68d30aa61eb31bdaee8b
     "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
@@ -21,6 +29,10 @@
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
+<<<<<<< HEAD
+    "@types/react-router-dom": "^5.3.3",
+=======
+>>>>>>> 17e311137a9a8bc594ce68d30aa61eb31bdaee8b
     "@vitejs/plugin-react": "^5.0.4",
     "daisyui": "^5.1.31",
     "eslint": "^9.36.0",
