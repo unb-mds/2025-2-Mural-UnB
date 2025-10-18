@@ -1,7 +1,208 @@
+import requests
+from bs4 import BeautifulSoup
+import urllib.parse
+import urllib3
+from ddgs import DDGS
+from unidecode import unidecode
+import time
 import fitz  # PyMuPDF
 import re
 import csv
 import os
+
+    # Desabilita os avisos de segurança sobre certificados SSL inválidos
+    # (Seu script vai acessar muitos sites, é bom ter isso)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+    # --- MÓDULO DE BUSCA DE IMAGEM ---
+
+    # Lista de palavras comuns que queremos ignorar ao buscar
+    # Sinta-se à vontade para adicionar mais palavras aqui se notar "ruído"
+STOP_WORDS = [
+    'laboratorio', 'lab', 'de', 'e', 'da', 'do', 'dos', 'das', 'a', 'o',
+    'em', 'para', 'com', 'sistemas', 'pesquisa', 'grupo', 'nucleo', 
+    'centro', 'automacao', 'aplicada', 'aplicados', 'estudos', 'avancados',
+    'unb', 'fga'
+]
+
+SCRIPT_DIR = os.path.dirname(__file__)
+PASTA_IMAGENS_LABS = os.path.join(SCRIPT_DIR, "..", "data", "images", "labs")
+CAMINHO_PLACEHOLDER = os.path.join("..", "data", "images", "placeholders", "default_lab.jpg") # fazer o caminho das imagens placeholder
+
+def extrair_palavra_chave(nome_do_lab):
+    """
+    Pega um nome de laboratório completo e extrai a palavra-chave mais importante.
+    Ex: "Laboratório de Robótica e Sistemas Embarcados" -> "robotica"
+    Ex: "Laboratório de Microeletrônica" -> "microeletronica"
+    """
+    try:
+        # 1. Normaliza: Converte para minúsculo e remove acentos
+        # Ex: "Laboratório de Robótica" -> "laboratorio de robotica"
+        nome_normalizado = unidecode(nome_do_lab.lower())
+        
+        # 2. Divide o nome em palavras individuais
+        # Ex: ["laboratorio", "de", "robotica"]
+        palavras = nome_normalizado.split()
+        
+        # 3. Filtra as palavras
+        for palavra in palavras:
+            # Se a palavra NÃO ESTÁ na lista de stop words E tem mais de 3 letras...
+            if palavra not in STOP_WORDS and len(palavra) > 3:
+                # ...nós a encontramos!
+                return palavra # Ex: "robotica"
+                
+        # 4. Plano B (Se o filtro falhar)
+        # Se não encontrar, apenas retorna a primeira palavra "longa"
+        for palavra in palavras:
+            if len(palavra) > 4:
+                return palavra # Ex: "microeletronica" (se 'microeletronica' não estivesse nas stop words)
+
+    except Exception:
+        # Se tudo der errado, retorna uma chave genérica
+        pass
+
+    # 5. Plano C (Último recurso)
+    # Retorna uma palavra-chave genérica que sempre dará algum resultado
+    return "pesquisa"
+
+def baixar_imagem(url_imagem, caminho_salvar):
+    """
+    Tenta baixar uma imagem de uma URL e salvá-la localmente.
+    Retorna True se for bem-sucedido, False se falhar.
+    """
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+        # Usamos stream=True para baixar a imagem "em pedaços"
+        response = requests.get(url_imagem, headers=headers, timeout=10, verify=False, stream=True)
+        response.raise_for_status()
+
+        # Cria a pasta de destino se ela não existir
+        os.makedirs(os.path.dirname(caminho_salvar), exist_ok=True)
+        
+        # Salva a imagem no arquivo
+        with open(caminho_salvar, 'wb') as f:
+            for chunk in response.iter_content(8192): # Salva em pedaços de 8KB
+                f.write(chunk)
+        
+        print(f"    [Download] ✅ Imagem salva em: {caminho_salvar}")
+        return True # Sucesso!
+        
+    except Exception as e:
+        print(f"    [Download] ❌ Falha ao baixar {url_imagem}: {e}")
+        return False # Falha
+
+
+def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
+    """
+    Recebe um nome de laboratório, busca na web, filtra,
+    ENCONTRA a URL, BAIXA a imagem e RETORNA o caminho local.
+    """
+    
+    # 1. Gera a palavra-chave dinamicamente
+    keyword = extrair_palavra_chave(nome_do_lab)
+    query_de_busca = f'"{nome_do_lab}" OR "{keyword} FGA UnB"'
+    
+    print(f"  [Busca Imagem] Buscando por: {query_de_busca} (chave: {keyword})")
+    
+    try:
+        resultados_da_busca = []
+        with DDGS() as ddgs:
+            resultados_gen = ddgs.text(query_de_busca, region='br-pt', max_results=5)
+            if resultados_gen:
+                resultados_da_busca = list(resultados_gen)
+        
+        time.sleep(1.0) # Pausa de cortesia
+
+        if resultados_da_busca:
+            homepage_url = None
+            
+            for resultado in resultados_da_busca:
+                titulo_normalizado = unidecode(resultado['title'].lower())
+                url_normalizada = unidecode(resultado['href'].lower())
+                
+                if keyword in titulo_normalizado or keyword in url_normalizada:
+                    homepage_url = resultado['href']
+                    break 
+            
+            if not homepage_url:
+                homepage_url = resultados_da_busca[0]['href']
+            
+            # --- Início da Caça à Imagem ---
+            try:
+                headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+                response_lab = requests.get(homepage_url, headers=headers, timeout=10, verify=False)
+                response_lab.raise_for_status() 
+
+                soup_lab = BeautifulSoup(response_lab.content, 'html.parser')
+                url_imagem_encontrada = None
+
+                # Alvo #1: 'og:image'
+                meta_og_image = soup_lab.find('meta', property='og:image')
+                if meta_og_image and meta_og_image.get('content'):
+                    url_imagem_encontrada = meta_og_image.get('content')
+
+                # Alvo #2: Logo
+                if not url_imagem_encontrada:
+                    seletores_logo = [
+                        'img[id*="logo"]', 'img[class*="logo"]', 'img[src*="logo"]',
+                        'img[id*="brand"]', 'img[class*="brand"]'
+                    ]
+                    for seletor in seletores_logo:
+                        logo_img = soup_lab.select_one(seletor)
+                        if logo_img and logo_img.get('src'):
+                            url_imagem_encontrada = logo_img.get('src')
+                            break
+
+                # Alvo #3: Header/Banner
+                if not url_imagem_encontrada:
+                    header = soup_lab.find('header')
+                    if header:
+                        img_header = header.find('img')
+                        if img_header and img_header.get('src'):
+                            url_imagem_encontrada = img_header.get('src')
+                    if not url_imagem_encontrada:
+                        banner = soup_lab.find('div', class_=lambda x: x and 'banner' in x.lower())
+                        if banner:
+                            img_banner = banner.find('img')
+                            if img_banner and img_banner.get('src'):
+                                url_imagem_encontrada = img_banner.get('src')
+
+                # Alvo #4: Conteúdo
+                if not url_imagem_encontrada:
+                    seletores_conteudo = ['main', 'article', 'div[class*="content"]', 'div[class*="post"]']
+                    for seletor in seletores_conteudo:
+                        area_conteudo = soup_lab.select_one(seletor)
+                        if area_conteudo:
+                            img_conteudo = area_conteudo.find('img')
+                            if img_conteudo and img_conteudo.get('src'):
+                                url_imagem_encontrada = img_conteudo.get('src')
+                                break
+                
+                # --- Resultado da Caça ---
+                if url_imagem_encontrada:
+                    url_imagem_completa = urllib.parse.urljoin(homepage_url, url_imagem_encontrada)
+                    
+                    # --- NOVO BLOCO DE DOWNLOAD ---
+                    # 1. Cria um nome de arquivo "seguro" a partir da palavra-chave
+                    nome_arquivo = f"{keyword}.jpg" # Ex: "robotica.jpg"
+                    
+                    # 2. Define o caminho completo para salvar
+                    caminho_local_salvar = os.path.join(pasta_base_imagem, nome_arquivo)
+                    
+                    # 3. Tenta baixar
+                    if baixar_imagem(url_imagem_completa, caminho_local_salvar):
+                        return caminho_local_salvar # Retorna o CAMINHO LOCAL
+                    # Se o download falhar, ele continua e retorna None
+                    
+            except requests.exceptions.RequestException as e:
+                print(f"    [Busca Imagem] ❌ Erro ao acessar homepage {homepage_url}: {e}")
+
+    except Exception as e:
+        print(f"    [Busca Imagem] ❌ Erro geral na busca: {e}")
+    
+    # Se qualquer coisa falhar, retorna None
+    print("    [Busca Imagem] ❌ Nenhuma imagem encontrada.")
+    return None
 
 def limpar_texto(texto):
     """
@@ -91,6 +292,20 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
                         'contato': '',
                         'descricao': ''
                     }
+                        # a integração da imagem
+                    print(f"\nIniciando busca de imagem para: {lab_atual['nome']}")
+                    caminho_imagem_local = encontrar_imagem_para_lab(lab_atual['nome'], PASTA_IMAGENS_LABS)
+                    
+                    if caminho_imagem_local:
+                        # Solução 2: Imagem baixada!
+                        # Precisamos salvar o caminho relativo ao CSV (que está em ../Labs)
+                        lab_atual['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
+                    else:
+                        # Solução 1: Placeholder
+                        lab_atual['caminho_imagem'] = CAMINHO_PLACEHOLDER
+                    
+                    time.sleep(1.5) # Para não sobrecarregar
+                    # --- FIM DA INTEGRAÇÃO ---
                     i += 2
                     continue
         
@@ -106,7 +321,7 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
 
             # FILTRO 2: Rejeita cabeçalhos em MAIÚSCULAS
             palavras_significativas = [p for p in nome_sem_numero.split() 
-                                       if len(p) > 2 and p.isalpha()]
+                                    if len(p) > 2 and p.isalpha()]
             if palavras_significativas:
                 maiusculas = sum(1 for p in palavras_significativas if p.isupper())
                 if maiusculas / len(palavras_significativas) > 0.7:
@@ -141,6 +356,21 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
                     'contato': '',
                     'descricao': ''
                 }
+                # --- INÍCIO DA INTEGRAÇÃO DA IMAGEM ---
+                print(f"\nIniciando busca de imagem para: {lab_atual['nome']}")
+                # chama o script
+                caminho_imagem_local = encontrar_imagem_para_lab(lab_atual['nome'], PASTA_IMAGENS_LABS)
+                
+                if caminho_imagem_local:
+                    # Solução 2: Imagem baixada!
+                    # Precisamos salvar o caminho relativo ao CSV (que está em ../Labs)
+                    lab_atual['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
+                else:
+                    # Solução 1: Placeholder
+                    lab_atual['caminho_imagem'] = CAMINHO_PLACEHOLDER
+                
+                time.sleep(1.5) 
+                # --- FIM DA INTEGRAÇÃO ---
         # Se estamos rastreando um laboratório, tenta preencher informações
         elif lab_atual:
             # COORDENADOR ou COORDENADORES (singular e plural)
@@ -177,7 +407,7 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
                     if proxima_linha and (':' in proxima_linha and 
                         any(proxima_linha.startswith(palavra) for palavra in 
                             ['GRUPOS', 'EQUIPAMENTOS', 'COORDENADOR', 'COORDENADORES', 
-                             'CONTATO', 'LABORATÓRIO', 'NÚCLEO', 'CENTRO'])):
+                            'CONTATO', 'LABORATÓRIO', 'NÚCLEO', 'CENTRO'])):
                         break
 
                     # Para se encontrar marcadores de rodapé ou nova seção
@@ -187,7 +417,7 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
                             break
                         # Detecta rodapé institucional
                         if any(palavra in proxima_linha.upper() for palavra in 
-                               ['UNIVERSIDADE DE BRASÍLIA', 'PORTFÓLIO', 'INFRAESTRUTURA DE PESQUISA', 
+                            ['UNIVERSIDADE DE BRASÍLIA', 'PORTFÓLIO', 'INFRAESTRUTURA DE PESQUISA', 
                                 'DPI CPAIP', 'CIÊNCIAS EXATAS E TECNOLÓGICAS', 'CIÊNCIAS EXATAS E DA TERRA']):
                             break
 
@@ -252,7 +482,7 @@ def filtrar_labs_fga(pdf_path, csv_saida):
     if labs_fga_final:
         # Salva no CSV de saída
         with open(csv_saida, 'w', newline='', encoding='utf-8') as f:
-            campos = ['nome', 'coordenador', 'contato', 'descricao']
+            campos = ['nome', 'coordenador', 'contato', 'descricao', 'caminho_imagem']
             writer = csv.DictWriter(f, fieldnames=campos)
             writer.writeheader()
             writer.writerows(labs_fga_final)
