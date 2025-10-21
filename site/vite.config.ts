@@ -9,10 +9,16 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: 'https://unb-mds.github.io/2025-2-Mural-UnB/',
+  server: {
+    open: '/2025-2-Mural-UnB/home'
+  },
+  base: process.env.NODE_ENV === 'production' 
+    ? 'https://unb-mds.github.io/2025-2-Mural-UnB/' 
+    : '/2025-2-Mural-UnB/',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // com isso basta importar com @/'pasta dentro do src'/'item'
+      components: path.resolve(__dirname, "src/components"),
+      assets: path.resolve(__dirname, "src/assets"),
     },
-  }
+  },
 })
