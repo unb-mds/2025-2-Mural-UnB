@@ -22,7 +22,7 @@ jobs:
       - name: Build React (Vite)
         working-directory: ./site
         run: |
-          npm ci
+          npm install
           npm run build
 
       - name: Deploy to gh-pages-site
