@@ -9,7 +9,6 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-<<<<<<< HEAD
   base: 'https://unb-mds.github.io/2025-2-Mural-UnB/',
   resolve: {
     alias: {
