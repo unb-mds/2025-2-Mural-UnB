@@ -14,6 +14,5 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'), // com isso basta importar com @/'pasta dentro do src'/'item'
     },
-  },
-  base: '/2025-2-Mural-UnB/',
+  }
 })
