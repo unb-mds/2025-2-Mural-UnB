@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Routes, Route } from "react-router-dom"
 import Navbar from "./components/NavBar"
 import Home from "./pages/Home/Home"
