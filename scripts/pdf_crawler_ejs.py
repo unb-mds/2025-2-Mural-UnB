@@ -70,7 +70,7 @@ def encontrar_pdf_empresas_juniores(url_alvo):
             print(f"URL: {pdf_principal['url']}")
             
             # Define o caminho onde salvar
-            pasta_saida = os.path.join(os.path.dirname(__file__), "..", "data_ejs", "EJs")
+            pasta_saida = os.path.join(os.path.dirname(__file__), "..", "data", "EJs")
             os.makedirs(pasta_saida, exist_ok=True)
             
             nome_arquivo = "Portfolio_Empresas_Juniores_UnB.pdf"
@@ -116,5 +116,6 @@ if __name__ == "__main__":
     else:
 
         print("\nNão foi possível obter o PDF.")
+
 
 
