@@ -22,7 +22,7 @@ def processar_pdf_empresas_juniores(processador: PDFProcessorEJs, url_pdf: str):
     """Processa o PDF de empresas juniores"""
     print(f"\n{'='*60}")
     print(" PROCESSANDO PDF DE EMPRESAS JUNIORES")
-    print(f"📎 URL: {url_pdf}")
+    print(f" URL: {url_pdf}")
     print(f"{'='*60}")
     
     try:
