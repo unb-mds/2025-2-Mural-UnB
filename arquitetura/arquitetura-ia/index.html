@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../arquitetura-back/">
+        <link rel="prev" href="../arquitetura-dados/">
       
       
-        <link rel="next" href="../../dados/ejs/">
+        <link rel="next" href="../arquitetura-front/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modulo-de-recomendacao-por-ia" class="md-skip">
+        <a href="#arquitetura-de-inteligencia-artificial" class="md-skip">
           Skip to content
         </a>
       
@@ -713,35 +713,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../arquitetura-front/" class="md-nav__link">
+      <a href="../arquitetura-dados/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Arquitetura Frontend
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../arquitetura-back/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Arquitetura Backend
+    Arquitetura Dados
     
   </span>
   
@@ -809,94 +786,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-visao-geral" class="md-nav__link">
+  <a href="#1-o-conceito-principal-embeddings-vetores-semanticos" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Visão Geral
+      1. O Conceito Principal: Embeddings (Vetores Semânticos)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-arquitetura-logica-e-componentes" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Arquitetura Lógica e Componentes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Arquitetura Lógica e Componentes">
+    <nav class="md-nav" aria-label="1. O Conceito Principal: Embeddings (Vetores Semânticos)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#descricao-dos-componentes" class="md-nav__link">
+  <a href="#geracao-de-embeddings-fase-offline" class="md-nav__link">
     <span class="md-ellipsis">
-      Descrição dos Componentes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Descrição dos Componentes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#servico-de-geracao-de-embeddings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Serviço de Geração de Embeddings
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#banco-de-dados-vetorial-vector-db" class="md-nav__link">
-    <span class="md-ellipsis">
-      Banco de Dados Vetorial (Vector DB)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#servico-de-recomendacao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Serviço de Recomendação
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-fluxos-de-dados-principais" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Fluxos de Dados Principais
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-modelo-de-ia-e-logica-de-embedding" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Modelo de IA e Lógica de Embedding
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Modelo de IA e Lógica de Embedding">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#logica-de-agregacao-de-vetores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lógica de Agregação de Vetores
+      Geração de Embeddings (Fase Offline)
     </span>
   </a>
   
@@ -908,19 +810,55 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-contrato-da-api-de-recomendacao" class="md-nav__link">
+  <a href="#2-o-banco-de-dados-vetorial-um-json-estatico" class="md-nav__link">
     <span class="md-ellipsis">
-      5. Contrato da API de Recomendação
+      2. O "Banco de Dados Vetorial": Um JSON Estático
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="5. Contrato da API de Recomendação">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-a-busca-vetorial-fase-online-no-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. A Busca Vetorial (Fase Online no Frontend)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. A Busca Vetorial (Fase Online no Frontend)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#51-api-interna-backend-servico-de-ia" class="md-nav__link">
+  <a href="#etapa-1-o-usuario-define-o-interesse" class="md-nav__link">
     <span class="md-ellipsis">
-      5.1. API Interna (Backend -&gt; Serviço de IA)
+      Etapa 1: O Usuário Define o Interesse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-2-calculo-do-vetor-de-interesse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etapa 2: Cálculo do Vetor de Interesse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-3-calculo-de-similaridade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etapa 3: Cálculo de Similaridade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapa-4-ranking-e-exibicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Etapa 4: Ranking e Exibição
     </span>
   </a>
   
@@ -935,6 +873,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquitetura-front/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitetura Frontend
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2091,165 +2052,81 @@
   
 
 
-<h1 id="modulo-de-recomendacao-por-ia">Módulo de Recomendação por IA<a class="headerlink" href="#modulo-de-recomendacao-por-ia" title="Permanent link">&para;</a></h1>
-<h2 id="1-visao-geral">1. Visão Geral<a class="headerlink" href="#1-visao-geral" title="Permanent link">&para;</a></h2>
-<p>O Módulo de Recomendação por Inteligência Artificial é o componente central responsável por personalizar a experiência do usuário na plataforma, indo além de simples buscas por palavras-chave.</p>
-<p>O objetivo principal é entender o <strong>significado semântico</strong> dos interesses de um usuário e das características de uma oportunidade, para então conectar os dois de forma inteligente. Em vez de apenas casar a tag "IA" com oportunidades que contenham a palavra "IA", o sistema é capaz de inferir que um usuário interessado em <code>Intelligência Artificial</code> também pode se interessar por oportunidades com as tags <code>Machine Learning</code>, <code>Ciência de Dados</code> e <code>Processamento de Linguagem Natural</code>.</p>
-<p>Isso é alcançado através do uso de <strong>Embeddings Vetoriais</strong> para representar tags, usuários e oportunidades em um espaço matemático multidimensional.</p>
-<hr />
-<h2 id="2-arquitetura-logica-e-componentes">2. Arquitetura Lógica e Componentes<a class="headerlink" href="#2-arquitetura-logica-e-componentes" title="Permanent link">&para;</a></h2>
-<p>A arquitetura do módulo de IA é composta por um conjunto de serviços especializados que trabalham em conjunto.</p>
-<div class="admonition info">
-<p class="admonition-title">Diagrama de Alto Nível</p>
-<p>O diagrama abaixo ilustra a interação entre os principais componentes do Módulo de IA e o resto do sistema. Note que o Módulo de IA <strong>não acessa</strong> o Banco de Dados Relacional; ele apenas retorna IDs para o Backend API.</p>
-<pre class="mermaid"><code>graph TD
-    subgraph Sistema Principal
-        A[Backend API]
-        D[Banco de Dados Relacional]
-    end
-
-    subgraph Módulo de IA
-        B[Serviço de Recomendação]
-        C[Banco de Dados Vetorial]
-        E[Serviço de Geração de Embeddings]
-    end
-
-    subgraph Terceiros
-        F[API da OpenAI]
-    end
-
-    A -- 1. Requisição de Recomendações --&gt; B
-    B -- 2. Busca por Similaridade --&gt; C
-    C -- 3. Retorna IDs Relevantes --&gt; B
-    B -- 4. Retorna lista de IDs para o Backend --&gt; A
-    A -- 5. Busca Detalhes dos IDs --&gt; D
-    D -- 6. Retorna Detalhes --&gt; A
-
-    A -- Cadastro de Oportunidade --&gt; E
-    E -- Gera Vetor --&gt; F
-    F -- Retorna Vetor --&gt; E
-    E -- Armazena Vetor --&gt; C</code></pre>
-</div>
-<h3 id="descricao-dos-componentes">Descrição dos Componentes<a class="headerlink" href="#descricao-dos-componentes" title="Permanent link">&para;</a></h3>
-<h4 id="servico-de-geracao-de-embeddings">Serviço de Geração de Embeddings<a class="headerlink" href="#servico-de-geracao-de-embeddings" title="Permanent link">&para;</a></h4>
+<h1 id="arquitetura-de-inteligencia-artificial">Arquitetura de Inteligência Artificial<a class="headerlink" href="#arquitetura-de-inteligencia-artificial" title="Permanent link">&para;</a></h1>
+<p>A Inteligência Artificial no MuralUnB é o motor que possibilita a recomendação semântica de oportunidades. Ela permite que o sistema entenda o significado por trás das tags que o usuário seleciona e encontre as vagas mais relevantes, mesmo que as palavras-chave não correspondam exatamente.</p>
+<p>Diferente de uma abordagem tradicional, o MuralUnB não utiliza um servidor de IA em tempo real. Para manter o projeto com custo zero, adotamos uma arquitetura em duas fases:</p>
 <ul>
-<li><strong>Responsabilidade:</strong> Interfacear com a API da OpenAI para converter textos (nossas tags) em vetores numéricos (embeddings). Este serviço é usado tanto na indexação de novas oportunidades quanto na criação de perfis de usuário.</li>
-</ul>
-<h4 id="banco-de-dados-vetorial-vector-db">Banco de Dados Vetorial (Vector DB)<a class="headerlink" href="#banco-de-dados-vetorial-vector-db" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Responsabilidade:</strong> Armazenar os vetores de todas as oportunidades. É altamente otimizado para realizar buscas de similaridade em alta velocidade, sendo o coração da nossa lógica de recomendação.</li>
-</ul>
-<h4 id="servico-de-recomendacao">Serviço de Recomendação<a class="headerlink" href="#servico-de-recomendacao" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Responsabilidade:</strong> Orquestrar o processo de recomendação. Ele recebe o ID de um usuário, calcula (ou busca) seu vetor de interesses, consulta o Banco Vetorial para encontrar os IDs das oportunidades mais relevantes e <strong>retorna essa lista de IDs ordenada por relevância</strong> para o serviço que o chamou (o Backend API).</li>
+<li><strong>Fase Offline (Geração de Embeddings):</strong> Ocorre durante o pipeline de ingestão de dados. Aqui, usamos um modelo de IA (Google Gemini) para "vetorizar" todo o conteúdo.  </li>
+<li><strong>Fase Online (Busca Vetorial):</strong> Ocorre no Frontend (no navegador do usuário). Aqui, usamos matemática (Similaridade de Cosseno) para comparar os vetores e criar o ranking de recomendações.</li>
 </ul>
 <hr />
-<h2 id="3-fluxos-de-dados-principais">3. Fluxos de Dados Principais<a class="headerlink" href="#3-fluxos-de-dados-principais" title="Permanent link">&para;</a></h2>
-<p>Existem dois fluxos críticos para o funcionamento do sistema de IA.</p>
-<div class="admonition success">
-<p class="admonition-title">Fluxo 1: Indexação de uma Nova Oportunidade</p>
-<p>Este fluxo ocorre quando um administrador cadastra uma nova oportunidade no sistema. (Este fluxo permanece inalterado).</p>
-<pre class="mermaid"><code>sequenceDiagram
-    participant Admin
-    participant Backend API
-    participant Serviço de Indexação (IA)
-    participant Banco Vetorial
-
-    Admin-&gt;&gt;Backend API: Cadastra Oportunidade com Tags [IA, Software]
-    Backend API-&gt;&gt;Serviço de Indexação (IA): Solicita indexação da Oportunidade #123
-    Serviço de Indexação (IA)-&gt;&gt;Serviço de Indexação (IA): Calcula vetor médio a partir das tags
-    Note right of Serviço de Indexação (IA): V_oport = avg(V_IA, V_Softare)
-    Serviço de Indexação (IA)-&gt;&gt;Banco Vetorial: Armazena (ID: #123, Vetor: V_oport)
-    Banco Vetorial--&gt;&gt;Serviço de Indexação (IA): Confirmação
-    Serviço de Indexação (IA)--&gt;&gt;Backend API: Oportunidade Indexada</code></pre>
-</div>
-<div class="admonition success">
-<p class="admonition-title">Fluxo 2: Geração de Recomendações para um Usuário (Arquitetura Revisada)</p>
-<p>Este fluxo foi atualizado para refletir o desacoplamento. O Serviço de IA apenas retorna os IDs, e o Backend API busca os dados completos.</p>
-<pre class="mermaid"><code>sequenceDiagram
-    participant Usuário
-    participant Backend API
-    participant Serviço de Recomendação (IA)
-    participant Banco Vetorial
-    participant DB Relacional
-
-    Usuário-&gt;&gt;Backend API: GET /api/recommendations
-    Backend API-&gt;&gt;Serviço de Recomendação (IA): Solicita recomendações para User #ABC
-
-    Note over Serviço de Recomendação (IA), Banco Vetorial: Início da Lógica de IA
-    Serviço de Recomendação (IA)-&gt;&gt;Serviço de Recomendação (IA): Calcula/Busca vetor do User #ABC
-    Serviço de Recomendação (IA)-&gt;&gt;Banco Vetorial: Busca K vizinhos mais próximos de V_user
-    Banco Vetorial--&gt;&gt;Serviço de Recomendação (IA): Retorna IDs e Scores [Op #123, Op #456]
-    Serviço de Recomendação (IA)--&gt;&gt;Backend API: Retorna JSON com IDs e Scores
-    Note over Serviço de Recomendação (IA), Banco Vetorial: Fim da Lógica de IA
-
-    Note over Backend API, DB Relacional: Início do Enriquecimento de Dados
-    Backend API-&gt;&gt;DB Relacional: Busca detalhes das Oportunidades ONDE ID in [#123, #456]
-    DB Relacional--&gt;&gt;Backend API: Retorna detalhes completos
-    Backend API-&gt;&gt;Backend API: Compila a resposta final para o usuário
-    Backend API--&gt;&gt;Usuário: Retorna JSON com as recomendações completas</code></pre>
-</div>
+<h2 id="1-o-conceito-principal-embeddings-vetores-semanticos">1. O Conceito Principal: Embeddings (Vetores Semânticos)<a class="headerlink" href="#1-o-conceito-principal-embeddings-vetores-semanticos" title="Permanent link">&para;</a></h2>
+<p>Para que a IA funcione, precisamos primeiro converter palavras e frases em um formato que um computador possa entender e comparar: números.<br />
+É aqui que entram os <strong>Embeddings (ou Vetores Semânticos)</strong>.</p>
+<p>Pense em um embedding como um endereço em um mapa de significados. Em vez de um endereço com rua e número, é um endereço com centenas de dimensões (ex: 768 números).  </p>
+<ul>
+<li>Palavras ou frases com significados semelhantes (como "programação web", "desenvolvimento frontend" e "React.js") terão "endereços" (vetores) muito próximos nesse mapa.  </li>
+<li>Palavras com significados distintos (como "React.js" e "biologia molecular") terão "endereços" muito distantes.  </li>
+</ul>
+<p>No nosso projeto, todo texto relevante (descrições de oportunidades, nomes de tags) é convertido em um vetor numérico.</p>
 <hr />
-<h2 id="4-modelo-de-ia-e-logica-de-embedding">4. Modelo de IA e Lógica de Embedding<a class="headerlink" href="#4-modelo-de-ia-e-logica-de-embedding" title="Permanent link">&para;</a></h2>
-<p>A escolha do modelo e a lógica de agregação são decisões críticas que impactam diretamente a qualidade das recomendações.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Parâmetro</th>
-<th style="text-align: left;">Valor Escolhido</th>
-<th style="text-align: left;">Justificativa</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Modelo de Embedding</strong></td>
-<td style="text-align: left;"><code>text-embedding-3-small</code> (OpenAI)</td>
-<td style="text-align: left;">Excelente equilíbrio entre custo, performance e alta qualidade semântica para textos em português.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Banco Vetorial</strong></td>
-<td style="text-align: left;">ChromaDB</td>
-<td style="text-align: left;">Solução open-source robusta que suporta busca vetorial.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Métrica de Distância</strong></td>
-<td style="text-align: left;"><strong>Similaridade de Cosseno</strong></td>
-<td style="text-align: left;">Padrão da indústria para medir a similaridade de orientação entre vetores textuais, independentemente de sua magnitude.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="logica-de-agregacao-de-vetores">Lógica de Agregação de Vetores<a class="headerlink" href="#logica-de-agregacao-de-vetores" title="Permanent link">&para;</a></h3>
-<p>Para criar um único vetor que represente uma entidade com múltiplas tags (seja uma oportunidade ou um usuário), utilizamos a <strong>média aritmética dos vetores de suas tags</strong>. A fórmula é:</p>
-<div class="arithmatex">\[\vec{V}_{\text{entidade}} = \frac{1}{N} \sum_{i=1}^{N} \vec{V}_{\text{tag}_i}\]</div>
-<p>Onde <span class="arithmatex">\(N\)</span> é o número de tags associadas à entidade. Este vetor resultante é então normalizado para ter um comprimento unitário antes de ser armazenado ou usado em buscas.</p>
-<hr />
-<h2 id="5-contrato-da-api-de-recomendacao">5. Contrato da API de Recomendação<a class="headerlink" href="#5-contrato-da-api-de-recomendacao" title="Permanent link">&para;</a></h2>
-<p>Com a nova arquitetura, temos dois contratos de API a considerar: a interna (entre Backend e IA) e a externa (entre Backend e Cliente).</p>
-<h3 id="51-api-interna-backend-servico-de-ia">5.1. API Interna (Backend -&gt; Serviço de IA)<a class="headerlink" href="#51-api-interna-backend-servico-de-ia" title="Permanent link">&para;</a></h3>
-<p><strong>Endpoint no Serviço de IA:</strong> <code>POST /recommend</code></p>
-<p><strong>Request Body (Exemplo):</strong>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;user_vector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.15</span><span class="p">,</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span><span class="w"> </span><span class="mf">0.25</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4</span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;limit&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span>
-<span class="p">}</span>
+<h3 id="geracao-de-embeddings-fase-offline">Geração de Embeddings (Fase Offline)<a class="headerlink" href="#geracao-de-embeddings-fase-offline" title="Permanent link">&para;</a></h3>
+<p>Como descrito na arquitetura de dados, este processo é feito de forma assíncrona:</p>
+<ol>
+<li>O <strong>Data Handler</strong> envia um pedaço de texto limpo (ex: "Vaga para designer de interfaces com Figma") para o componente <strong>Content Embedding</strong>.  </li>
+<li>Este componente usa a API do <strong>Google Gemini</strong> (ex: <code>text-embedding-bison</code>) para processar esse texto.  </li>
+<li>A API do Gemini retorna o embedding: um vetor (uma lista de números) que captura o significado semântico daquele texto.  </li>
+</ol>
+<p><strong>Exemplo:</strong>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;vector&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">0.012</span><span class="p">,</span><span class="w"> </span><span class="mf">-0.45</span><span class="p">,</span><span class="w"> </span><span class="mf">0.881</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">,</span><span class="w"> </span><span class="mf">0.123</span><span class="p">]</span>
+<span class="err">O</span><span class="w"> </span><span class="err">Vec</span><span class="kc">t</span><span class="err">or</span><span class="w"> </span><span class="err">Wri</span><span class="kc">ter</span><span class="w"> </span><span class="err">Service</span><span class="w"> </span><span class="err">salva</span><span class="w"> </span><span class="err">esse</span><span class="w"> </span><span class="err">ve</span><span class="kc">t</span><span class="err">or</span><span class="w"> </span><span class="err">dire</span><span class="kc">ta</span><span class="err">me</span><span class="kc">nte</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="w"> </span><span class="err">arquivo</span><span class="w"> </span><span class="err">JSON</span><span class="p">,</span><span class="w"> </span><span class="err">associado</span><span class="w"> </span><span class="err">à</span><span class="w"> </span><span class="err">sua</span><span class="w"> </span><span class="err">respec</span><span class="kc">t</span><span class="err">iva</span><span class="w"> </span><span class="err">opor</span><span class="kc">tun</span><span class="err">idade</span><span class="w"> </span><span class="err">ou</span><span class="w"> </span><span class="kc">ta</span><span class="err">g.</span>
 </code></pre></div>
-<strong>Success Response (200 OK) - O que o Serviço de IA retorna:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;recommendations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;opportunity_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;opp_cdef9012&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9234</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;opportunity_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;opp_abcd5678&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.8971</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-<blockquote>
-<p>Note que o Backend API é quem calcula ou busca o user_vector e o envia para o serviço de IA.</p>
-</blockquote>
+4. O <strong>Vector Writer Service</strong> salva esse vetor diretamente no arquivo JSON, associado à sua respectiva oportunidade ou tag.</p>
+<h2 id="2-o-banco-de-dados-vetorial-um-json-estatico">2. O "Banco de Dados Vetorial": Um JSON Estático<a class="headerlink" href="#2-o-banco-de-dados-vetorial-um-json-estatico" title="Permanent link">&para;</a></h2>
+<p>Um "Banco de Dados Vetorial" é, em essência, um sistema otimizado para armazenar e consultar vetores de forma eficiente.</p>
+<p>Para manter o custo zero e a simplicidade, nosso banco de dados vetorial é o próprio arquivo JSON estático (ex: <code>Oportunidades DB.json</code>).</p>
+<p>Não utilizamos um serviço de banco de dados vetorial dedicado (como Pinecone, Weaviate ou ChromaDB).<br />
+A lógica de "banco de dados" é substituída por arquivos estáticos que o frontend baixa e processa na memória.</p>
+<ul>
+<li><strong>Oportunidades DB.json:</strong> Contém os metadados de cada vaga e seu <code>vector</code> pré-calculado.  </li>
+<li><strong>Tags DB.json:</strong> Contém os nomes das tags e seus <code>vector</code> pré-calculados.  </li>
+</ul>
+<p>Esta abordagem só é viável porque nosso volume de dados é relativamente pequeno (centenas ou alguns milhares de oportunidades), permitindo que um navegador moderno execute os cálculos de busca em milissegundos.</p>
+<hr />
+<h2 id="3-a-busca-vetorial-fase-online-no-frontend">3. A Busca Vetorial (Fase Online no Frontend)<a class="headerlink" href="#3-a-busca-vetorial-fase-online-no-frontend" title="Permanent link">&para;</a></h2>
+<p>Esta é a "mágica" que o usuário vê. Ela acontece inteiramente no cliente, através dos componentes <strong>User Vector Merge</strong> e <strong>Vector Search Service</strong> no Frontend.</p>
+<p>O fluxo é o seguinte:</p>
+<hr />
+<h3 id="etapa-1-o-usuario-define-o-interesse">Etapa 1: O Usuário Define o Interesse<a class="headerlink" href="#etapa-1-o-usuario-define-o-interesse" title="Permanent link">&para;</a></h3>
+<p>O usuário seleciona uma ou mais tags na interface (ex: "Python", "Data Science" e "Inteligência Artificial").</p>
+<hr />
+<h3 id="etapa-2-calculo-do-vetor-de-interesse">Etapa 2: Cálculo do Vetor de Interesse<a class="headerlink" href="#etapa-2-calculo-do-vetor-de-interesse" title="Permanent link">&para;</a></h3>
+<p><strong>(Componente: User Vector Merge)</strong></p>
+<p>O sistema não busca cada tag individualmente.<br />
+Em vez disso, ele cria um único <strong>"vetor de interesse"</strong> que representa a combinação dos desejos do usuário.</p>
+<ul>
+<li>O serviço busca os vetores pré-calculados das tags "Python", "Data Science" e "IA" no <code>Tags DB.json</code>.  </li>
+<li>Ele então "funde" esses vetores. Uma abordagem comum é calcular a <strong>média</strong> desses vetores, criando um novo vetor que aponta para o <strong>centro semântico</strong> de todos os interesses do usuário.</li>
+</ul>
+<hr />
+<h3 id="etapa-3-calculo-de-similaridade">Etapa 3: Cálculo de Similaridade<a class="headerlink" href="#etapa-3-calculo-de-similaridade" title="Permanent link">&para;</a></h3>
+<p><strong>(Componente: Vector Search Service)</strong></p>
+<p>Agora, o sistema compara este "vetor de interesse" com o vetor de cada oportunidade no <code>Oportunidades DB.json</code>.</p>
+<p><strong>Cálculo Matemático:</strong><br />
+O serviço usa um cálculo chamado <strong>Similaridade de Cosseno (Cosine Similarity)</strong>.</p>
+<p><strong>O que é?</strong><br />
+A Similaridade de Cosseno mede o ângulo (<span class="arithmatex">\(\theta\)</span>) entre dois vetores.<br />
+Ela não se importa com o "tamanho" (magnitude) do vetor, apenas com a sua "direção" no mapa de significados.</p>
+<ul>
+<li>Se dois vetores apontam exatamente na mesma direção, o ângulo é <strong>0°</strong> e a similaridade é <strong>1</strong> (match perfeito).  </li>
+<li>Se são ortogonais (não relacionados), o ângulo é <strong>90°</strong> e a similaridade é <strong>0</strong> (sem relação).  </li>
+<li>Se apontam em direções opostas, o ângulo é <strong>180°</strong> e a similaridade é <strong>-1</strong> (opostos).</li>
+</ul>
+<hr />
+<h3 id="etapa-4-ranking-e-exibicao">Etapa 4: Ranking e Exibição<a class="headerlink" href="#etapa-4-ranking-e-exibicao" title="Permanent link">&para;</a></h3>
+<p>O <strong>Vector Search Service</strong> calcula essa pontuação de similaridade (um valor entre -1 e 1) para todas as oportunidades.<br />
+Em seguida, ele simplesmente ordena a lista, da pontuação mais alta para a mais baixa.</p>
+<p>A <strong>User Web UI</strong> (interface) exibe essa lista ordenada para o aluno, mostrando as vagas mais relevantes (com maior similaridade) no topo.</p>
 
 
 

@@ -12,7 +12,7 @@
         <link rel="prev" href="../../requisitos/nao-funcionais/">
       
       
-        <link rel="next" href="../arquitetura-front/">
+        <link rel="next" href="../arquitetura-dados/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#arquitetura-geral-do-projeto-muralunb" class="md-skip">
+        <a href="#1-visao-geral-da-arquitetura" class="md-skip">
           Skip to content
         </a>
       
@@ -740,16 +740,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-visao-geral-da-arquitetura" class="md-nav__link">
+  <a href="#estrutura-operacional" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Visão Geral da Arquitetura
+      Estrutura Operacional
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. Visão Geral da Arquitetura">
+    <nav class="md-nav" aria-label="Estrutura Operacional">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#sistema-de-consulta-online-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema de Consulta (Online / Frontend)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sistema-de-ingestao-offline-pipeline-de-dados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sistema de Ingestão (Offline / Pipeline de Dados)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#11-diagrama-de-containers" class="md-nav__link">
     <span class="md-ellipsis">
       1.1 Diagrama de Containers
@@ -757,20 +780,30 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#12-diagrama-de-componentes" class="md-nav__link">
     <span class="md-ellipsis">
       1.2 Diagrama de Componentes
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1.2 Diagrama de Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-fluxo-de-consulta-online-logica-no-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 A. Fluxo de Consulta (Online — Lógica no Frontend)
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-arquitetura-de-pastas" class="md-nav__link">
+  <a href="#b-fluxo-de-ingestao-de-dados-offline-pipeline-de-github-actions" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Arquitetura de pastas
+      🔸 B. Fluxo de Ingestão de Dados (Offline — Pipeline de GitHub Actions)
     </span>
   </a>
   
@@ -797,35 +830,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../arquitetura-front/" class="md-nav__link">
+      <a href="../arquitetura-dados/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Arquitetura Frontend
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../arquitetura-back/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Arquitetura Backend
+    Arquitetura Dados
     
   </span>
   
@@ -849,6 +859,29 @@
   
   <span class="md-ellipsis">
     Arquitetura IA
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquitetura-front/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitetura Frontend
     
   </span>
   
@@ -2010,95 +2043,73 @@
   
 
 
-<h1 id="arquitetura-geral-do-projeto-muralunb">Arquitetura Geral do Projeto - MuralUnB<a class="headerlink" href="#arquitetura-geral-do-projeto-muralunb" title="Permanent link">&para;</a></h1>
-<blockquote>
-<p>Ocorreram mudanças drásticas na arquitura geral do projeto. Documentação das mudanças em desenvolvimento</p>
-</blockquote>
-<h2 id="1-visao-geral-da-arquitetura">1. Visão Geral da Arquitetura<a class="headerlink" href="#1-visao-geral-da-arquitetura" title="Permanent link">&para;</a></h2>
-<p>A arquitetura do projeto MuralUnB é baseada em um modelo de <strong>componentes desacoplados</strong>, onde cada parte principal do sistema opera de forma independente, comunicando-se através de APIs. Essa abordagem facilita o desenvolvimento paralelo, a manutenção e a escalabilidade.</p>
-<p>O sistema é composto por três grandes componentes:</p>
-<ol>
-<li><strong>Frontend:</strong> A aplicação web com a qual o usuário interage diretamente. É responsável por toda a camada de apresentação e experiência do usuário.</li>
-<li><strong>Backend (API):</strong> O servidor central que orquestra a lógica de negócio, gerencia a autenticação de usuários e a persistência de dados no banco de dados.</li>
-<li><strong>Servidor de IA (AI Server):</strong> Um microserviço especializado, responsável por executar os algoritmos de recomendação.</li>
-</ol>
-<p>O fluxo de comunicação principal é: o <strong>Frontend</strong> se comunica exclusivamente com o <strong>Backend</strong>. O <strong>Backend</strong>, por sua vez, se comunica com o <strong>Servidor de IA</strong> para obter as recomendações personalizadas.</p>
-<h3 id="11-diagrama-de-containers">1.1 <strong>Diagrama de Containers</strong><a class="headerlink" href="#11-diagrama-de-containers" title="Permanent link">&para;</a></h3>
-<p><pre class="mermaid"><code>graph TD
-    subgraph unb_ecosystem [Ecossistema Mural UnB]
-        direction LR
-
-        user("
-            &lt;b&gt;Estudante da UnB&lt;/b&gt;
-            &lt;br /&gt;
-            [Person]
-            &lt;br /&gt;
-            Navega e descobre oportunidades.
-        ")
-
-        subgraph spa [Frontend Web Application]
-            direction TB
-
-            ui_components("
-                &lt;b&gt;UI Components&lt;/b&gt;
-                &lt;br /&gt;
-                [React (JSX, CSS)]
-                &lt;br /&gt;
-                Renderiza a interface, captura&lt;br/&gt;as seleções de tags do usuário.
-            ")
-
-            state_store("
-                &lt;b&gt;Application State Store&lt;/b&gt;
-                &lt;br /&gt;
-                [React Context / Zustand]
-                &lt;br /&gt;
-                Gerencia o estado global:&lt;br/&gt;tags selecionadas, resultados da busca.
-            ")
-
-            vector_search_engine("
-                &lt;b&gt;Vector Search Engine&lt;/b&gt;
-                &lt;br /&gt;
-                [JavaScript/TypeScript Module]
-                &lt;br /&gt;
-                &lt;b&gt;O cérebro da busca no cliente.&lt;/b&gt;&lt;br/&gt;Calcula a similaridade de cosseno.
-            ")
-
-            data_service("
-                &lt;b&gt;Data Service&lt;/b&gt;
-                &lt;br /&gt;
-                [JavaScript/TypeScript Module]
-                &lt;br /&gt;
-                Busca os arquivos JSON&lt;br/&gt;do repositório.
-            ")
-
-            %% Fluxo interno da SPA
-            ui_components -- "2. Atualiza perfil do usuário" --&gt; state_store
-            ui_components -- "3. Dispara a busca" --&gt; vector_search_engine
-            vector_search_engine -- "4. Obtém tags do usuário" --&gt; state_store
-            vector_search_engine -- "5. Solicita dados" --&gt; data_service
-            vector_search_engine -- "7. Calcula similaridade e ranqueia" --&gt; vector_search_engine
-            vector_search_engine -- "8. Armazena resultados ordenados" --&gt; state_store
-            state_store -- "9. Notifica UI para re-renderizar" --&gt; ui_components
-        end
-
-        github_pages("
-            &lt;b&gt;GitHub Pages/Repo&lt;/b&gt;
-            &lt;br /&gt;
-            [External System]
-            &lt;br /&gt;
-            Armazena e serve os arquivos estáticos&lt;br/&gt;(JSON com embeddings).
-        ")
-    end
-
-    %% Relações principais
-    user -- "1. Seleciona suas tags de interesse" --&gt; ui_components
-    data_service -- "6. Fetch dos arquivos JSON [HTTPS]" --&gt; github_pages</code></pre>
+<h1 id="1-visao-geral-da-arquitetura">1. Visão Geral da Arquitetura<a class="headerlink" href="#1-visao-geral-da-arquitetura" title="Permanent link">&para;</a></h1>
+<p>A arquitetura do projeto <strong>MuralUnB</strong> foi redesenhada para ser um sistema <strong>serverless</strong>, de <strong>manutenção mínima</strong> e <strong>custo zero</strong>.<br />
+Ela se baseia em <strong>componentes desacoplados</strong>, separando completamente o <strong>pipeline de ingestão de dados (offline)</strong> do <strong>sistema de consulta (online)</strong>.</p>
+<p>💡 <strong>Justificativa:</strong><br />
+A principal motivação desse design é garantir <strong>longevidade e gratuidade</strong>.<br />
+A arquitetura evita custos com servidores e bancos de dados pagos, utilizando exclusivamente:
+- <strong>GitHub Pages</strong> e <strong>GitHub Actions</strong> (infraestrutura gratuita do GitHub)<br />
+- <strong>Gemini (plano de estudante)</strong> para geração de embeddings e classificação das tags.</p>
+<hr />
+<h2 id="estrutura-operacional">Estrutura Operacional<a class="headerlink" href="#estrutura-operacional" title="Permanent link">&para;</a></h2>
+<p>O sistema é composto por <strong>dois contextos operacionais distintos</strong>:</p>
+<h3 id="sistema-de-consulta-online-frontend">Sistema de Consulta (Online / Frontend)<a class="headerlink" href="#sistema-de-consulta-online-frontend" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Aplicação web (SPA) com a qual o usuário interage  </li>
+<li>Hospedada no <strong>GitHub Pages</strong>  </li>
+<li>Toda a lógica de negócio — incluindo <strong>busca vetorial</strong> e <strong>consulta de dados</strong> — é executada <strong>no navegador do cliente</strong>  </li>
+<li>Consome <strong>arquivos JSON estáticos</strong>  </li>
+</ul>
+<h3 id="sistema-de-ingestao-offline-pipeline-de-dados">Sistema de Ingestão (Offline / Pipeline de Dados)<a class="headerlink" href="#sistema-de-ingestao-offline-pipeline-de-dados" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Workflow automatizado via <strong>GitHub Actions</strong>  </li>
+<li>Responsável por <strong>extrair, processar e vetorizar</strong> (usando a <strong>API do Gemini</strong>) os dados de origem (ex: PDFs)  </li>
+<li>Gera e atualiza os <strong>bancos de dados JSON estáticos</strong> consumidos pelo frontend  </li>
+</ul>
+<p>❌ <strong>Não há backend tradicional</strong> (como Django, Node.js, etc.)<br />
+Toda a lógica e o armazenamento são gerenciados via GitHub Actions e arquivos JSON estáticos.</p>
+<hr />
+<h2 id="11-diagrama-de-containers">1.1 Diagrama de Containers<a class="headerlink" href="#11-diagrama-de-containers" title="Permanent link">&para;</a></h2>
+<p>Este diagrama mostra a visão de alto nível do sistema, separando o <strong>Frontend</strong> (interface do usuário) do <strong>sistema de Dados</strong>.</p>
+<p><strong>Componentes:</strong>
+- <strong>Frontend (React GH-page):</strong> SPA que roda no navegador do usuário<br />
+- <strong>Data Base (JSON):</strong> Arquivos estáticos que armazenam as oportunidades e tags com seus embeddings<br />
 <img alt="Diagrama de Containers" src="../../assets/images/Diagrama_containers.png" /></p>
 <hr />
-<h3 id="12-diagrama-de-componentes">1.2 <strong>Diagrama de Componentes</strong><a class="headerlink" href="#12-diagrama-de-componentes" title="Permanent link">&para;</a></h3>
+<h2 id="12-diagrama-de-componentes">1.2 Diagrama de Componentes<a class="headerlink" href="#12-diagrama-de-componentes" title="Permanent link">&para;</a></h2>
+<p>Este diagrama detalha os <strong>componentes internos</strong> do Frontend e do pipeline de Dados, bem como suas <strong>interações</strong>.</p>
+<p>A arquitetura opera em <strong>dois fluxos independentes</strong>:</p>
 <p><img alt="Diagrama de Componentes" src="../../assets/images/Diagrama_componentes.png" /></p>
-<h3 id="2-arquitetura-de-pastas">2. Arquitetura de pastas<a class="headerlink" href="#2-arquitetura-de-pastas" title="Permanent link">&para;</a></h3>
-<p>A arquitetura de pastas paras os 3 componentes do servidor estão no nosso Figma (HUB) nesse <strong><a href="https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&amp;p=f&amp;t=zPE9vrXMLYmNhGSM-0">FIGMA</a></strong></p>
+<hr />
+<h3 id="a-fluxo-de-consulta-online-logica-no-frontend">🔹 A. Fluxo de Consulta (Online — Lógica no Frontend)<a class="headerlink" href="#a-fluxo-de-consulta-online-logica-no-frontend" title="Permanent link">&para;</a></h3>
+<p>Ocorre inteiramente no <strong>navegador do usuário</strong>, dentro do container <em>Frontend</em>:</p>
+<ol>
+<li>O aluno interage com a <strong>User Web UI</strong> (interface React)  </li>
+<li>A UI dispara uma <strong>Busca Básica</strong> ao <strong>Vector Search Service</strong>  </li>
+<li>O <strong>Vector Search Service</strong> aciona o <strong>Data Service</strong> para <strong>Buscar Vetores</strong>  </li>
+<li>O <strong>Data Service</strong> realiza um <strong>fetch</strong> diretamente nos bancos:</li>
+<li><code>Tags DB.json</code></li>
+<li><code>Oportunidades DB.json</code></li>
+<li>Esses bancos estão hospedados junto com o site  </li>
+<li><strong>User Vector Merge</strong> e <strong>State Storage</strong> gerenciam o estado da aplicação e recalculam o vetor de interesse do usuário com base nas tags selecionadas  </li>
+</ol>
+<hr />
+<h3 id="b-fluxo-de-ingestao-de-dados-offline-pipeline-de-github-actions">🔸 B. Fluxo de Ingestão de Dados (Offline — Pipeline de GitHub Actions)<a class="headerlink" href="#b-fluxo-de-ingestao-de-dados-offline-pipeline-de-github-actions" title="Permanent link">&para;</a></h3>
+<p>Fluxo automatizado (container <em>Dados</em>) que roda de forma assíncrona:</p>
+<ol>
+<li>Inicia com <strong>dados brutos</strong> (ex: Portfólios em PDF)  </li>
+<li>O <strong>PDF Extractor</strong> (script Python) extrai o texto  </li>
+<li>O <strong>Data Handler</strong> formata e normaliza os dados extraídos  </li>
+<li>Os dados limpos são enviados ao <strong>Content Embedding (Gemini)</strong> para <strong>Vetorização</strong>  </li>
+<li>O <strong>Vector Writer Service</strong> atualiza os arquivos:</li>
+<li><code>Tags DB.json</code></li>
+<li><code>Oportunidades DB.json</code></li>
+</ol>
+<p>Esses arquivos são armazenados no repositório do projeto e utilizados pelo frontend.</p>
+<hr />
+<h1 id="2-arquitetura-de-pastas">2. Arquitetura de Pastas<a class="headerlink" href="#2-arquitetura-de-pastas" title="Permanent link">&para;</a></h1>
+<p>A <strong>arquitetura de pastas</strong> dos três componentes do servidor está documentada no <a href="https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&amp;p=f&amp;t=zPE9vrXMLYmNhGSM-0"><strong>Figma (HUB)</strong></a></p>
 
 
 
