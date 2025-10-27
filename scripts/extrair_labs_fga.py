@@ -2,6 +2,25 @@ import fitz  # PyMuPDF
 import re
 import csv
 import os
+import requests                     # Para fazer requisições HTTP (baixar HTML, baixar imagens)
+from bs4 import BeautifulSoup       # Para "ler" e navegar pelo HTML das páginas web
+import urllib.parse                 # Para montar URLs completas (juntar URL base com caminhos relativos)
+import urllib3                      # Usado internamente pelo requests, importamos para controlar avisos
+from ddgs import DDGS               # Para fazer buscas na web usando o DuckDuckGo
+from unidecode import unidecode     # Para remover acentos de textos (ex: "Robótica" -> "Robotica")
+import time                         # Para adicionar pausas (sleep) no script
+
+# Desabilita avisos sobre certificados SSL inválidos (basicamente, quando certificados são inválidos e tem chance de ser scan)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+# Diretório onde este script (extrair_labs_fga.py) está localizado
+SCRIPT_DIR = os.path.dirname(__file__)
+# Caminho completo para a pasta onde as imagens dos laboratórios serão salvas
+PASTA_IMAGENS_LABS = os.path.join(SCRIPT_DIR, "..", "data", "images", "labs")
+# Este é o caminho que será salvo no CSV se a busca de imagem falhar.
+# O caminho é relativo à pasta onde o CSV será salvo (data/Labs/)
+CAMINHO_PLACEHOLDER = os.path.join("..", "data", "images", "placeholders", "default_lab.jpg")
+
 
 def limpar_texto(texto):
     """
