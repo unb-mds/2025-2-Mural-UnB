@@ -12,7 +12,6 @@ nav:
   - "Arquitetura":
     - "Visão Geral": arquitetura/visao-geral.md
     - "Arquitetura Frontend": arquitetura/arquitetura-front.md
-    - "Arquitetura Backend": arquitetura/arquitetura-back.md
     - "Arquitetura IA": arquitetura/arquitetura-ia.md
   - "Dados":
     - "EJs": dados/ejs.md
@@ -94,7 +93,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: pymdownx.superfences.fence_code_format
   - pymdownx.arithmatex:
       generic: true
   - toc:
