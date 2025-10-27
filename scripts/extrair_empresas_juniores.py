@@ -145,7 +145,7 @@ def mostrar_estatisticas_finais(dados_empresas: list):
         print(f"  {i:2d}. {nome}")
         print(f"      📚 {cursos}")
     
-    # Estatísticas por campo (funny)
+    # Estatísticas por campo 
     campos_preenchidos = {}
     for campo in ['Nome', 'Cursos', 'Sobre', 'Missao', 'Visao', 'Valores', 'Servicos', 'Site', 'Instagram']:
         preenchidos = sum(1 for ej in empresas_unicas if ej.get(campo) and ej.get(campo) not in ['', 'N/A'])
