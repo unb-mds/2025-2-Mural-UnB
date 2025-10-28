@@ -414,27 +414,6 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
                         'contato': '',
                         'descricao': ''
                     }
-                    # --- INÍCIO DA INTEGRAÇÃO DA IMAGEM ---
-                    print(f"\n---> Iniciando busca de imagem para: {lab_atual['nome']}")
-                    # Chama a função principal (Commit 4) para encontrar/baixar a imagem
-                    # Passa o nome do lab e a pasta onde as imagens devem ser salvas
-                    caminho_imagem_local = encontrar_imagem_para_lab(lab_atual['nome'], PASTA_IMAGENS_LABS)
-
-                    if caminho_imagem_local:
-                        # A imagem foi encontrada e baixada.
-                        # Monta o caminho relativo que será salvo no CSV.
-                        # os.path.basename pega só o nome do arquivo (ex: lab_robotica.jpg)
-                        # os.path.join monta o caminho como "../images/labs/lab_robotica.jpg"
-                        # (Relativo à pasta data/Labs/ onde o CSV fica)
-                        lab_atual['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
-                        print(f"---> Imagem associada: {lab_atual['caminho_imagem']}")
-                    else:
-                        # A busca/download falhou. Usamos o placeholder.
-                        lab_atual['caminho_imagem'] = CAMINHO_PLACEHOLDER
-                        print(f"---> Usando placeholder: {lab_atual['caminho_imagem']}")
-
-                    time.sleep(1.5) # Pausa educada entre as buscas para não sobrecarregar
-                    # --- FIM DA INTEGRAÇÃO ---
                     i += 2
                     continue
         
@@ -485,24 +464,6 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
                     'contato': '',
                     'descricao': ''
                 }
-                # --- INÍCIO DA INTEGRAÇÃO DA IMAGEM ---
-                print(f"\n---> Iniciando busca de imagem para: {lab_atual['nome']}")
-                # Chama a função principal para encontrar/baixar a imagem
-                # Passa o nome do lab e a pasta onde as imagens devem ser salvas
-                caminho_imagem_local = encontrar_imagem_para_lab(lab_atual['nome'], PASTA_IMAGENS_LABS)
-
-                if caminho_imagem_local:
-                    # A imagem foi encontrada e baixada.
-                    # Monta o caminho relativo que será salvo no CSV.
-                    lab_atual['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
-                    print(f"---> Imagem associada: {lab_atual['caminho_imagem']}")
-                else:
-                    # A busca/download falhou. Placeholder.
-                    lab_atual['caminho_imagem'] = CAMINHO_PLACEHOLDER
-                    print(f"---> Usando placeholder: {lab_atual['caminho_imagem']}")
-
-                time.sleep(1.5) # Pausa para não sobrecarregar
-                # --- FIM DA INTEGRAÇÃO ---                
         # Se estamos rastreando um laboratório, tenta preencher informações
         elif lab_atual:
             # COORDENADOR ou COORDENADORES (singular e plural)
@@ -611,13 +572,42 @@ def filtrar_labs_fga(pdf_path, csv_saida):
     print()
     print(f"RESULTADO: {len(labs_fga_final)} laboratorios da FGA ")
     print()
-    if labs_fga_final:
+# --- ENRIQUECIMENTO COM IMAGENS (NOVO LOCAL) ---
+    print(f"\n--- Iniciando busca de imagens para os {len(labs_fga_final)} laboratórios FGA encontrados ---")
+    labs_enriquecidos = [] # Nova lista para guardar os labs com imagem
+
+    for lab in labs_fga_final:
+        print(f"\n---> Buscando imagem para: {lab['nome']}")
+        # Chama a função principal para encontrar/baixar a imagem
+        caminho_imagem_local = encontrar_imagem_para_lab(lab['nome'], PASTA_IMAGENS_LABS)
+
+        if caminho_imagem_local:
+            # SUCESSO! Monta o caminho relativo para o CSV
+            lab['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
+            print(f"---> Imagem associada: {lab['caminho_imagem']}")
+        else:
+            # FALHA! Usa o placeholder
+            lab['caminho_imagem'] = CAMINHO_PLACEHOLDER
+            print(f"---> Usando placeholder: {lab['caminho_imagem']}")
+
+        # Adiciona o laboratório (agora com a chave 'caminho_imagem') à nova lista
+        labs_enriquecidos.append(lab)
+
+        time.sleep(1.5) # Pausa educada entre as buscas
+
+    print("\n--- Busca de imagens concluída ---")
+    # --- FIM DO ENRIQUECIMENTO ---
+
+    # Agora, a escrita do CSV usa a lista 'labs_enriquecidos'
+    if labs_enriquecidos: # Verifica a nova lista
         # Salva no CSV de saída
         with open(csv_saida, 'w', newline='', encoding='utf-8') as f:
+            # A lista de campos já está correta (inclui 'caminho_imagem')
             campos = ['nome', 'coordenador', 'contato', 'descricao', 'caminho_imagem']
             writer = csv.DictWriter(f, fieldnames=campos)
             writer.writeheader()
-            writer.writerows(labs_fga_final)
+            # USA A NOVA LISTA AQUI!
+            writer.writerows(labs_enriquecidos)
 
 def main():
     # Caminhos
