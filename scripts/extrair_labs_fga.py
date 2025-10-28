@@ -78,6 +78,66 @@ def extrair_palavra_chave(nome_do_lab):
     print(f"    [Palavra Chave] Não foi possível extrair chave de '{nome_do_lab}'. Usando 'pesquisa'.")
     return "pesquisa"
 
+# --- FUNÇÃO PARA BAIXAR IMAGEM DA WEB ---
+
+def baixar_imagem(url_imagem, caminho_salvar):
+    """
+    Tenta baixar um arquivo de imagem a partir de uma URL e salvá-lo
+    no caminho especificado.
+
+    Args:
+        url_imagem (str): A URL completa da imagem a ser baixada.
+        caminho_salvar (str): O caminho completo no disco onde a imagem
+                              deve ser salva (incluindo o nome do arquivo).
+
+    Returns:
+        bool: True se o download e salvamento foram bem-sucedidos, False caso contrário.
+    """
+    try:
+        print(f"    [Download] Tentando baixar imagem de: {url_imagem}")
+        # Headers para simular um navegador, importante para evitar bloqueios
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+
+        # Faz a requisição usando stream=True. Isso é crucial para arquivos
+        # grandes (como imagens), pois baixa o conteúdo em "pedaços"
+        # sem carregar tudo na memória de uma vez.
+        response = requests.get(url_imagem, headers=headers, timeout=15, verify=False, stream=True)
+        response.raise_for_status() # Verifica se a URL respondeu com sucesso (status 200 OK)
+
+        # Verificação extra: Checa se o servidor está realmente enviando uma imagem
+        content_type = response.headers.get('content-type')
+        if not content_type or not content_type.startswith('image/'):
+             print(f"    [Download] ⚠️ URL não retornou um tipo de conteúdo de imagem válido (recebido: {content_type}). Pulando download.")
+             return False # Aborta se não for uma imagem
+
+        # Garante que a pasta onde a imagem será salva exista.
+        # os.path.dirname(caminho_salvar) pega o caminho da pasta (ex: data/images/labs/)
+        # exist_ok=True evita erro se a pasta já existir.
+        os.makedirs(os.path.dirname(caminho_salvar), exist_ok=True)
+
+        # Abre o arquivo local no modo "escrita binária" ('wb')
+        with open(caminho_salvar, 'wb') as f:
+            # Itera sobre os "pedaços" (chunks) da resposta da imagem
+            for chunk in response.iter_content(8192): # Lê em pedaços de 8KB
+                if chunk: # Garante que o pedaço não está vazio
+                    f.write(chunk) # Escreve o pedaço no arquivo local
+
+        print(f"    [Download] ✅ Imagem salva com sucesso em: {caminho_salvar}")
+        return True # Retorna True indicando sucesso
+
+    # Tratamento de erros específicos para o download
+    except requests.exceptions.Timeout:
+        print(f"    [Download] ❌ Falha ao baixar {url_imagem}: A requisição demorou demais (Timeout).")
+        return False
+    except requests.exceptions.RequestException as e:
+        # Captura outros erros de conexão, URL inválida, etc.
+        print(f"    [Download] ❌ Falha ao baixar {url_imagem}: {e}")
+        return False
+    except Exception as e:
+        # Captura erros inesperados ao criar pasta, salvar arquivo, etc.
+        print(f"    [Download] ❌ Erro inesperado durante o download/salvamento de {url_imagem}: {e}")
+        return False
+
 
 def limpar_texto(texto):
     """
