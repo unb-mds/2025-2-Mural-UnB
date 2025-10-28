@@ -36,6 +36,7 @@ STOP_WORDS = [
 
 # --- DICIONÁRIO PARA CATEGORIZAÇÃO DE PLACEHOLDERS ---
 CATEGORIAS_KEYWORDS = {
+    # Categorias Principais (com 2 variações de placeholder cada)
     "software": [
         "software", "computacao", "computacional", "informática", "digital",
         "ia", "inteligencia artificial", "algoritmos", "dados", "bioinformatica"
@@ -44,30 +45,12 @@ CATEGORIAS_KEYWORDS = {
         "eletronica", "microeletronica", "hardware", "embarcados", "circuitos",
         "semicondutores", "telecomunicacoes"
     ],
-    "automotiva": [
-        "automotiva", "automotivo", "veicular", "veiculo", "motor", "combustao",
-        "transporte"
+    "mecanica_materiais": [ # Agrupa Automotiva, Aero, Energia, Materiais, Física
+        "automotiva", "automotivo", "veicular", "aeroespacial", "aeronautica",
+        "energia", "eletrica", "renovaveis", "potencia", "materiais", "nanotecnologia",
+        "polimeros", "fisica", "mecanica", "controle", "robotica", "automacao" # Adicionei Robótica aqui também
     ],
-    "aeroespacial": [
-        "aeroespacial", "aeronautica", "espacial", "satelite", "foguete",
-        "aerodinamica", "propulsao"
-    ],
-    "energia": [
-        "energia", "eletrica", "renovaveis", "potencia", "fotovoltaica",
-        "solar", "redes", "eficiencia energetica"
-    ],
-    "robotica": [
-        "robotica", "automacao", "mecatronica", "controle", "robo", "drone",
-        "manipuladores"
-    ],
-    "fisica": [
-        "fisica", "astrofisica", "cosmologia", "optica", "plasma",
-        "espectroscopia", "acustica", "biofisica"
-    ],
-    "materiais": [
-        "materiais", "nanotecnologia", "polimeros", "ceramica", "compósitos",
-        "metalurgia"
-    ],
+    # A função categorizar_lab retornará "default" se nenhuma destas for encontrada
 }
 
 # --- FUNÇÃO PARA CATEGORIZAR LABORATÓRIO ---
@@ -655,18 +638,23 @@ def filtrar_labs_fga(pdf_path, csv_saida):
             lab['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
             print(f"---> Imagem associada: {lab['caminho_imagem']}")
         else:
-            # --- LÓGICA DE FALLBACK COM CATEGORIAS E VARIAÇÕES ---
-            # 1. Chama a função categorizar para obter a categoria do lab
-            categoria = categorizar_lab(lab['nome']) # Ex: "software", "robotica", "default"
+        # --- LÓGICA DE FALLBACK ---
+            # 1. Chama a função para obter a categoria do lab
+            categoria = categorizar_lab(lab['nome']) # Ex: "software", "eletronica", "mecanica_materiais", "default"
 
-            # 2. Escolhe um número aleatório entre 1 e 3 (assumindo 3 variações por categoria)
-            numero_variacao = random.randint(1, 3)
+            # 2. Verifica se é uma das categorias principais ou default
+            if categoria in ["software", "eletronica", "mecanica_materiais", "default"]:
+                # Escolhe um número aleatório entre 1 e 2 (assumindo 2 variações)
+                numero_variacao = random.randint(1, 2)
+                # Monta o nome do arquivo placeholder (ex: software_2.jpg, default_1.jpg)
+                nome_placeholder = f"{categoria}_{numero_variacao}.jpg"
+            else:
+                # Segurança extra: Se categorizar_lab retornar algo inesperado, usa o default_1
+                numero_variacao = 1
+                nome_placeholder = f"default_{numero_variacao}.jpg"
+                categoria = "default" # Força a categoria para o print
 
-            # 3. Monta o nome do arquivo placeholder dinamicamente
-            # Ex: "software_2.jpg", "default_1.jpg"
-            nome_placeholder = f"{categoria}_{numero_variacao}.jpg"
-
-            # 4. Monta o caminho relativo que será salvo no CSV
+            # 3. Monta o caminho relativo que será salvo no CSV
             # Ex: "../data/images/placeholders/software_2.jpg"
             lab['caminho_imagem'] = os.path.join("..", "data", "images", "placeholders", nome_placeholder)
             print(f"---> Usando placeholder ({categoria} variação {numero_variacao}): {lab['caminho_imagem']}")
