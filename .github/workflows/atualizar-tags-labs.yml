@@ -54,7 +54,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "GitHub Actions Bot"
           git add data/Labs/labs_com_tags_embeddings.json
-          git commit -m " Atualização automática das tags dos laboratórios [skip ci]"
+          git commit -m " Atualização automática das tags dos laboratórios"
           git push
 
       - name: Notificar sucesso
