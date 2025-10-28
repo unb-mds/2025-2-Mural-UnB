@@ -9,6 +9,7 @@ import urllib3                      # Usado internamente pelo requests, importam
 from ddgs import DDGS               # Para fazer buscas na web usando o DuckDuckGo
 from unidecode import unidecode     # Para remover acentos de textos (ex: "Robótica" -> "Robotica")
 import time                         # Para adicionar pausas (sleep) no script
+import random
 
 # Desabilita avisos sobre certificados SSL inválidos (basicamente, quando certificados são inválidos e tem chance de ser scan)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -650,14 +651,26 @@ def filtrar_labs_fga(pdf_path, csv_saida):
         caminho_imagem_local = encontrar_imagem_para_lab(lab['nome'], PASTA_IMAGENS_LABS)
 
         if caminho_imagem_local:
-            # SUCESSO! Monta o caminho relativo para o CSV
+            # Monta o caminho relativo para o CSV
             lab['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
             print(f"---> Imagem associada: {lab['caminho_imagem']}")
         else:
-            # FALHA! Usa o placeholder
-            lab['caminho_imagem'] = CAMINHO_PLACEHOLDER
-            print(f"---> Usando placeholder: {lab['caminho_imagem']}")
+            # --- LÓGICA DE FALLBACK COM CATEGORIAS E VARIAÇÕES ---
+            # 1. Chama a função categorizar para obter a categoria do lab
+            categoria = categorizar_lab(lab['nome']) # Ex: "software", "robotica", "default"
 
+            # 2. Escolhe um número aleatório entre 1 e 3 (assumindo 3 variações por categoria)
+            numero_variacao = random.randint(1, 3)
+
+            # 3. Monta o nome do arquivo placeholder dinamicamente
+            # Ex: "software_2.jpg", "default_1.jpg"
+            nome_placeholder = f"{categoria}_{numero_variacao}.jpg"
+
+            # 4. Monta o caminho relativo que será salvo no CSV
+            # Ex: "../data/images/placeholders/software_2.jpg"
+            lab['caminho_imagem'] = os.path.join("..", "data", "images", "placeholders", nome_placeholder)
+            print(f"---> Usando placeholder ({categoria} variação {numero_variacao}): {lab['caminho_imagem']}")
+            # --- FIM DA LÓGICA DE FALLBACK ---
         # Adiciona o laboratório (agora com a chave 'caminho_imagem') à nova lista
         labs_enriquecidos.append(lab)
 
