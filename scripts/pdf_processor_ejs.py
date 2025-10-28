@@ -1,4 +1,3 @@
-import requests
 import json
 import pdfplumber
 import google.generativeai as genai
@@ -6,15 +5,81 @@ import os
 import time
 from typing import Dict, List
 import re
+import fitz
+import requests
 
 class PDFProcessorEJs:
     def __init__(self, gemini_api_key: str):
         self.gemini_api_key = gemini_api_key
         genai.configure(api_key=gemini_api_key)
         self.model = genai.GenerativeModel('gemini-2.5-flash-lite')
+
+    def extrair_imagens_pdf(self, pdf_path: str, output_dir: str) -> List[str]:
+        """Extração de todas as imagens do PDF"""
+        print(f"\n Extraindo imagens do PDF...")
+
+        imagens_extraidas = []
+
+        try:
+            # Create images directory if it doesn't exist
+            images_dir = os.path.join(output_dir, "images")
+            os.makedirs(images_dir, exist_ok=True)
+            
+            # Open PDF with PyMuPDF
+            pdf_document = fitz.open(pdf_path)
+            
+            total_images = 0
+            
+            for page_num in range(len(pdf_document)):
+                page = pdf_document[page_num]
+                
+                # Get image list
+                image_list = page.get_images()
+                
+                if image_list:
+                    print(f"  Página {page_num + 1}: {len(image_list)} imagem(ns) encontrada(s)")
+                    
+                    for img_index, img in enumerate(image_list):
+                        # Get the XREF of the image
+                        xref = img[0]
+                        
+                        # Extract the image
+                        base_image = pdf_document.extract_image(xref)
+                        image_bytes = base_image["image"]
+                        image_ext = base_image["ext"]
+                        
+                        # Generate filename
+                        image_filename = f"pagina_{page_num + 1}_imagem_{img_index + 1}.{image_ext}"
+                        image_path = os.path.join(images_dir, image_filename)
+                        
+                        # Save the image
+                        with open(image_path, "wb") as image_file:
+                            image_file.write(image_bytes)
+                        
+                        imagens_extraidas.append({
+                            "caminho": image_path,
+                            "pagina": page_num + 1,
+                            "numero": img_index + 1,
+                            "formato": image_ext,
+                            "tamanho": len(image_bytes)
+                        })
+                        
+                        total_images += 1
+                        print(f"    💾 Salvo: {image_filename}")
+                else:
+                    print(f"  Página {page_num + 1}: Nenhuma imagem encontrada")
+            
+            pdf_document.close()
+            
+            print(f"✓ Extração de imagens concluída: {total_images} imagens salvas em '{images_dir}'")
+            return imagens_extraidas
+            
+        except Exception as e:
+            print(f"✗ Erro ao extrair imagens do PDF: {e}")
+            return []
     
     def baixar_pdf_direto(self, url: str, caminho_saida: str) -> str:
-        """Baixa PDF diretamente de uma URL"""
+        """Baixa PDF de uma URL"""
         try:
             print(f"Baixando PDF de {url}...")
             headers = {
@@ -35,7 +100,7 @@ class PDFProcessorEJs:
         except Exception as e:
             print(f"✗ Erro ao baixar PDF: {e}")
             raise
-    
+
     def extrair_texto_por_pagina(self, pdf_path: str, pagina_inicial: int = 1) -> List[Dict]:
         """Extrai texto do PDF página por página"""
         paginas_texto = []
