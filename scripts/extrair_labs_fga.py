@@ -21,6 +21,63 @@ PASTA_IMAGENS_LABS = os.path.join(SCRIPT_DIR, "..", "data", "images", "labs")
 # O caminho é relativo à pasta onde o CSV será salvo (data/Labs/)
 CAMINHO_PLACEHOLDER = os.path.join("..", "data", "images", "placeholders", "default_lab.jpg")
 
+# --- FUNÇÃO PARA EXTRAIR PALAVRA-CHAVE DO NOME ---
+
+# Lista de palavras comuns (em minúsculo e sem acentos) que queremos ignorar
+# ao determinar a palavra-chave principal de um laboratório.
+STOP_WORDS = [
+    'laboratorio', 'lab', 'de', 'e', 'da', 'do', 'dos', 'das', 'a', 'o',
+    'em', 'para', 'com', 'sistemas', 'pesquisa', 'grupo', 'nucleo',
+    'centro', 'automacao', 'aplicada', 'aplicados', 'estudos', 'avancados',
+    'unb', 'fga'
+    # Adicione mais palavras aqui se necessário
+]
+
+def extrair_palavra_chave(nome_do_lab):
+    """
+    Analisa um nome completo de laboratório e tenta extrair a palavra
+    mais significativa (a "palavra-chave") para usar em buscas web.
+
+    Processo:
+    1. Normaliza o nome (minúsculas, sem acentos).
+    2. Divide em palavras.
+    3. Retorna a primeira palavra que não está na lista STOP_WORDS e é longa o suficiente.
+    4. Se falhar, retorna a primeira palavra longa.
+    5. Se falhar novamente, retorna uma chave genérica "pesquisa".
+
+    Args:
+        nome_do_lab (str): O nome completo do laboratório (ex: "Laboratório de Robótica").
+
+    Returns:
+        str: A palavra-chave extraída (ex: "robotica").
+    """
+    try:
+        # 1. sem acento e minusculo
+        nome_normalizado = unidecode(nome_do_lab.lower())
+
+        # 2. Divide
+        palavras = nome_normalizado.split()
+
+        # 3. Filtra usando STOP_WORDS
+        for palavra in palavras:
+            # Verifica se não é stop word e tem um tamanho mínimo (evita 'ia', 'ti')
+            if palavra not in STOP_WORDS and len(palavra) > 3:
+                return palavra # Encontrou a palavra-chave principal
+
+        # 4. Plano B: Primeira palavra longa (se o filtro não achar nada útil)
+        for palavra in palavras:
+             if len(palavra) > 4:
+                return palavra # Retorna a primeira palavra com mais de 4 letras
+
+    except Exception as e:
+        # Em caso de erro inesperado durante o processamento do nome
+        print(f"    [Palavra Chave] Erro ao extrair chave de '{nome_do_lab}': {e}")
+        pass # Continua para retornar a chave genérica
+
+    # 5. Plano C: Chave genérica (último recurso)
+    print(f"    [Palavra Chave] Não foi possível extrair chave de '{nome_do_lab}'. Usando 'pesquisa'.")
+    return "pesquisa"
+
 
 def limpar_texto(texto):
     """
