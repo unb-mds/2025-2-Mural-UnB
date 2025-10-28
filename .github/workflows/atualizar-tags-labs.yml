@@ -37,7 +37,7 @@ jobs:
           cd scripts
           python alocar_tags_embeddings.py
 
-      - name: 🔍 Verificar alterações
+      - name: Verificar alterações
         id: verificar
         run: |
           if git diff --quiet data/Labs/labs_com_tags_embeddings.json; then
