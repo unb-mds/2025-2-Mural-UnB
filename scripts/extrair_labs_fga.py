@@ -614,7 +614,7 @@ def filtrar_labs_fga(pdf_path, csv_saida):
     if labs_fga_final:
         # Salva no CSV de saída
         with open(csv_saida, 'w', newline='', encoding='utf-8') as f:
-            campos = ['nome', 'coordenador', 'contato', 'descricao']
+            campos = ['nome', 'coordenador', 'contato', 'descricao', 'caminho_imagem']
             writer = csv.DictWriter(f, fieldnames=campos)
             writer.writeheader()
             writer.writerows(labs_fga_final)
