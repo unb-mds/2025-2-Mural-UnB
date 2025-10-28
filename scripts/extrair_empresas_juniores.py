@@ -137,7 +137,7 @@ def mostrar_estatisticas_finais(dados_empresas: list):
     print(f"{'='*60}")
     print(f"Total de empresas juniores: {len(empresas_unicas)}")
     
-    # Top empresas (só pelo funny)
+    # Top empresas (consolidação de dados para análise)
     print(f"\n PRINCIPAIS EMPRESAS IDENTIFICADAS:")
     for i, empresa in enumerate(empresas_unicas[:10], 1):
         nome = empresa.get('Nome', 'Sem nome')
@@ -145,7 +145,7 @@ def mostrar_estatisticas_finais(dados_empresas: list):
         print(f"  {i:2d}. {nome}")
         print(f"      📚 {cursos}")
     
-    # Estatísticas por campo 
+    # Estatísticas por campo (consolidação de dados para análise)
     campos_preenchidos = {}
     for campo in ['Nome', 'Cursos', 'Sobre', 'Missao', 'Visao', 'Valores', 'Servicos', 'Site', 'Instagram']:
         preenchidos = sum(1 for ej in empresas_unicas if ej.get(campo) and ej.get(campo) not in ['', 'N/A'])
@@ -175,6 +175,7 @@ def main():
         consolidar_dados_empresas(dados_empresas, caminho_saida_consolidado)
         mostrar_estatisticas_finais(dados_empresas)
     else:
+        #debug messages
         print("\nNenhum dado foi extraído.")
         print("   Possíveis causas:")
         print("   - PDF não contém texto legível")
