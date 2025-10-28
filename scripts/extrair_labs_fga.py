@@ -414,6 +414,27 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
                         'contato': '',
                         'descricao': ''
                     }
+                    # --- INÍCIO DA INTEGRAÇÃO DA IMAGEM ---
+                    print(f"\n---> Iniciando busca de imagem para: {lab_atual['nome']}")
+                    # Chama a função principal (Commit 4) para encontrar/baixar a imagem
+                    # Passa o nome do lab e a pasta onde as imagens devem ser salvas
+                    caminho_imagem_local = encontrar_imagem_para_lab(lab_atual['nome'], PASTA_IMAGENS_LABS)
+
+                    if caminho_imagem_local:
+                        # A imagem foi encontrada e baixada.
+                        # Monta o caminho relativo que será salvo no CSV.
+                        # os.path.basename pega só o nome do arquivo (ex: lab_robotica.jpg)
+                        # os.path.join monta o caminho como "../images/labs/lab_robotica.jpg"
+                        # (Relativo à pasta data/Labs/ onde o CSV fica)
+                        lab_atual['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
+                        print(f"---> Imagem associada: {lab_atual['caminho_imagem']}")
+                    else:
+                        # A busca/download falhou. Usamos o placeholder.
+                        lab_atual['caminho_imagem'] = CAMINHO_PLACEHOLDER
+                        print(f"---> Usando placeholder: {lab_atual['caminho_imagem']}")
+
+                    time.sleep(1.5) # Pausa educada entre as buscas para não sobrecarregar
+                    # --- FIM DA INTEGRAÇÃO ---
                     i += 2
                     continue
         
@@ -464,6 +485,24 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
                     'contato': '',
                     'descricao': ''
                 }
+                # --- INÍCIO DA INTEGRAÇÃO DA IMAGEM ---
+                print(f"\n---> Iniciando busca de imagem para: {lab_atual['nome']}")
+                # Chama a função principal para encontrar/baixar a imagem
+                # Passa o nome do lab e a pasta onde as imagens devem ser salvas
+                caminho_imagem_local = encontrar_imagem_para_lab(lab_atual['nome'], PASTA_IMAGENS_LABS)
+
+                if caminho_imagem_local:
+                    # A imagem foi encontrada e baixada.
+                    # Monta o caminho relativo que será salvo no CSV.
+                    lab_atual['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
+                    print(f"---> Imagem associada: {lab_atual['caminho_imagem']}")
+                else:
+                    # A busca/download falhou. Placeholder.
+                    lab_atual['caminho_imagem'] = CAMINHO_PLACEHOLDER
+                    print(f"---> Usando placeholder: {lab_atual['caminho_imagem']}")
+
+                time.sleep(1.5) # Pausa para não sobrecarregar
+                # --- FIM DA INTEGRAÇÃO ---                
         # Se estamos rastreando um laboratório, tenta preencher informações
         elif lab_atual:
             # COORDENADOR ou COORDENADORES (singular e plural)
