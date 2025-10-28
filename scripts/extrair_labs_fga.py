@@ -138,6 +138,193 @@ def baixar_imagem(url_imagem, caminho_salvar):
         print(f"    [Download] ❌ Erro inesperado durante o download/salvamento de {url_imagem}: {e}")
         return False
 
+# --- FUNÇÃO PRINCIPAL: ENCONTRAR E BAIXAR IMAGEM PARA UM LAB ---
+
+def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
+    """
+    Orquestra o processo completo de encontrar uma imagem para um laboratório:
+    1. Extrai a palavra-chave do nome.
+    2. Busca na web pela homepage.
+    3. Filtra os resultados para achar a URL mais relevante.
+    4. Acessa a homepage e procura por uma imagem de destaque ("caça medalhas").
+    5. Se encontrar a URL da imagem, chama a função para baixá-la.
+    6. Retorna o caminho local da imagem baixada ou None se qualquer etapa falhar.
+
+    Args:
+        nome_do_lab (str): O nome completo do laboratório (vindo do PDF).
+        pasta_base_imagem (str): O caminho da pasta onde as imagens baixadas
+                                 devem ser salvas (ex: data/images/labs/).
+
+    Returns:
+        str or None: O caminho local completo para a imagem baixada
+                     (ex: "data/images/labs/robotica.jpg") ou None se falhar.
+    """
+
+    # --- FASE 1: PREPARAÇÃO E BUSCA WEB ---
+    # Usa a função extrair_palavra_chave para obter a palavra-chave
+    keyword = extrair_palavra_chave(nome_do_lab)
+    # Monta uma query de busca: tenta o nome exato OU busca no site da unb pela chave + FGA
+    query_de_busca = f'"{nome_do_lab}" OR site:unb.br "{keyword} FGA"'
+
+    print(f"  [Busca Imagem] Buscando por: {query_de_busca} (chave: {keyword})")
+
+    try:
+        resultados_da_busca = []
+        # Usa o gerenciador de contexto do DDGS para garantir fechamento
+        with DDGS() as ddgs:
+            # Faz a busca web, pedindo 5 resultados para o Brasil
+            resultados_gen = ddgs.text(query_de_busca, region='br-pt', max_results=5)
+            # Converte o gerador (promessa) em uma lista real, se houver resultados
+            if resultados_gen:
+                resultados_da_busca = list(resultados_gen)
+
+        time.sleep(1.0) # Pausa de cortesia após a busca
+
+        if not resultados_da_busca:
+             print("    [Busca Imagem] ❌ Nenhum resultado encontrado na busca web.")
+             return None # Se a busca falhar, não adianta continuar
+
+        # --- FASE 2: FILTRO DE RELEVÂNCIA ---
+        homepage_url = None # Onde guardaremos a URL vencedora
+        print(f"    [Busca Imagem] Filtrando resultados por '{keyword}'...")
+
+        for resultado in resultados_da_busca:
+            # Normaliza (minúsculo, sem acentos) para comparação robusta
+            titulo_normalizado = unidecode(resultado['title'].lower())
+            url_normalizada = unidecode(resultado['href'].lower())
+
+            # Condição do filtro: Palavra-chave no título OU na URL E NÃO é link de documento
+            if (keyword in titulo_normalizado or keyword in url_normalizada) and \
+               not any(ext in url_normalizada for ext in ['.pdf', '.doc', '.docx', '.odt']):
+                homepage_url = resultado['href'] # Guarda a URL original
+                print(f"    [Busca Imagem] 🎯 Relevante encontrado: {homepage_url}")
+                break # Para no primeiro resultado relevante
+
+        # Plano B: Se o filtro não achou nada com a palavra-chave
+        if not homepage_url:
+            for resultado in resultados_da_busca:
+                 url_normalizada = unidecode(resultado['href'].lower())
+                 # Pega o primeiro resultado que não seja link de documento
+                 if not any(ext in url_normalizada for ext in ['.pdf', '.doc', '.docx', '.odt']):
+                      homepage_url = resultado['href']
+                      print(f"    [Busca Imagem] ⚠️ Filtro falhou. Usando primeiro resultado válido: {homepage_url}")
+                      break
+
+        # Plano C: Se nem o plano B funcionou (só achou links de documentos?)
+        if not homepage_url:
+             print("    [Busca Imagem] ❌ Nenhum resultado web parece ser uma homepage válida.")
+             return None 
+
+        # --- FASE 3: CAÇA À IMAGEM NA HOMEPAGE SELECIONADA ---
+        print(f"    [Busca Imagem] Caçando imagem em: {homepage_url}")
+        try:
+            # Prepara headers e faz a requisição para a homepage
+            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+            response_lab = requests.get(homepage_url, headers=headers, timeout=15, verify=False)
+            response_lab.raise_for_status() # Verifica se a página respondeu OK
+
+            # Prepara o BeautifulSoup para ler o HTML da página
+            soup_lab = BeautifulSoup(response_lab.content, 'html.parser')
+            url_imagem_encontrada = None # Onde guardaremos a URL da imagem achada
+
+            # Alvo #1 (Ouro): Tag <meta property="og:image"> (padrão para compartilhamento)
+            meta_og_image = soup_lab.find('meta', property='og:image')
+            if meta_og_image and meta_og_image.get('content'):
+                url_imagem_encontrada = meta_og_image.get('content')
+                print("      [Caça] 🥇 Ouro ('og:image')")
+
+            # Alvo #2 (Prata): Imagem de Logo (busca por 'logo' ou 'brand')
+            if not url_imagem_encontrada:
+                seletores_logo = [
+                    'img[id*="logo"]', 'img[class*="logo"]', 'img[src*="logo"]',
+                    'img[id*="brand"]', 'img[class*="brand"]'
+                ]
+                for seletor in seletores_logo:
+                    logo_img = soup_lab.select_one(seletor)
+                    if logo_img and logo_img.get('src'):
+                        # Verifica se a imagem não é muito pequena (evita ícones)
+                        width = logo_img.get('width', '0').replace('px', '')
+                        height = logo_img.get('height', '0').replace('px', '')
+                        try:
+                           if int(width) > 30 or int(height) > 30: # Ajuste o tamanho mínimo se necessário
+                                url_imagem_encontrada = logo_img.get('src')
+                                print(f"      [Caça] 🥈 Prata (seletor: '{seletor}')")
+                                break
+                        except ValueError: pass # Ignora width/height não numéricos
+
+            # Alvo #3 (Bronze): Imagem dentro do <header> ou de um 'banner'
+            if not url_imagem_encontrada:
+                header = soup_lab.find('header')
+                if header:
+                    img_header = header.find('img')
+                    if img_header and img_header.get('src'):
+                        url_imagem_encontrada = img_header.get('src')
+                        print("      [Caça] 🥉 Bronze (<header> img)")
+                if not url_imagem_encontrada: # Só procura banner se não achar no header
+                    banner = soup_lab.find('div', class_=lambda x: x and 'banner' in x.lower())
+                    if banner:
+                        img_banner = banner.find('img')
+                        if img_banner and img_banner.get('src'):
+                            url_imagem_encontrada = img_banner.get('src')
+                            print("      [Caça] 🥉 Bronze (banner div img)")
+
+            # Alvo #4 (Cobre): Primeira imagem grande dentro do conteúdo principal
+            if not url_imagem_encontrada:
+                seletores_conteudo = ['main', 'article', 'div[class*="content"]', 'div[class*="post"]', 'body'] # Adicionado 'body' como último recurso
+                for seletor in seletores_conteudo:
+                    area_conteudo = soup_lab.select_one(seletor)
+                    if area_conteudo:
+                        img_conteudo = area_conteudo.find('img')
+                        if img_conteudo and img_conteudo.get('src'):
+                            # Verifica se a imagem é razoavelmente grande
+                            width = img_conteudo.get('width', '0').replace('px', '')
+                            height = img_conteudo.get('height', '0').replace('px', '')
+                            try:
+                               if int(width) > 50 or int(height) > 50: # Ajuste o tamanho mínimo
+                                    url_imagem_encontrada = img_conteudo.get('src')
+                                    print(f"      [Caça] 🥉 Cobre ('{seletor}' img)")
+                                    break
+                            except ValueError: pass
+
+            # --- FASE 4: DOWNLOAD E RETORNO DO RESULTADO ---
+            if url_imagem_encontrada:
+                # Garante que a URL da imagem seja absoluta
+                url_imagem_completa = urllib.parse.urljoin(homepage_url, url_imagem_encontrada)
+
+                # Cria um nome de arquivo "seguro" e mais descritivo
+                # Remove caracteres inválidos da palavra-chave
+                nome_base = "".join(c for c in keyword if c.isalnum() or c in ('_')).rstrip()
+                # Pega as 3 primeiras letras do nome do lab (seguro para nomes de arquivo)
+                nome_prefixo = "".join(c for c in nome_do_lab if c.isalnum())[:3].lower()
+                # Combina: ex -> "lab_robotica.jpg"
+                nome_arquivo = f"{nome_prefixo}_{nome_base}.jpg" # Assume JPG, pode melhorar depois
+
+                # Monta o caminho completo onde a imagem será salva
+                caminho_local_salvar = os.path.join(pasta_base_imagem, nome_arquivo)
+
+                # Chama a função de download (do Commit 3)
+                if baixar_imagem(url_imagem_completa, caminho_local_salvar):
+                    # Se o download deu certo, retorna o caminho local
+                    return caminho_local_salvar
+
+            else:
+                 print("      [Caça] ❌ Nenhuma imagem encontrada na página após todas as tentativas.")
+
+
+        except requests.exceptions.Timeout:
+             print(f"    [Busca Imagem] ❌ Timeout ao acessar homepage {homepage_url}.")
+        except requests.exceptions.RequestException as e:
+            print(f"    [Busca Imagem] ❌ Erro de conexão/HTTP ao acessar homepage {homepage_url}: {e}")
+
+        # Se chegou aqui, alguma etapa falhou (busca, filtro, caça ou download)
+        print("    [Busca Imagem] ❌ Falha geral ao encontrar/baixar imagem para este laboratório.")
+        return None # Retorna None para indicar falha
+
+    except Exception as e:
+        # Captura erros inesperados na busca DDGS ou na lógica de filtro
+        print(f"    [Busca Imagem] ❌ Erro inesperado durante o processo: {e}")
+        return None
+
 
 def limpar_texto(texto):
     """
