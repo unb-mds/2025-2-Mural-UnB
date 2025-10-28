@@ -33,6 +33,74 @@ STOP_WORDS = [
     # Adicione mais palavras aqui se necessário
 ]
 
+# --- DICIONÁRIO PARA CATEGORIZAÇÃO DE PLACEHOLDERS ---
+CATEGORIAS_KEYWORDS = {
+    "software": [
+        "software", "computacao", "computacional", "informática", "digital",
+        "ia", "inteligencia artificial", "algoritmos", "dados", "bioinformatica"
+    ],
+    "eletronica": [
+        "eletronica", "microeletronica", "hardware", "embarcados", "circuitos",
+        "semicondutores", "telecomunicacoes"
+    ],
+    "automotiva": [
+        "automotiva", "automotivo", "veicular", "veiculo", "motor", "combustao",
+        "transporte"
+    ],
+    "aeroespacial": [
+        "aeroespacial", "aeronautica", "espacial", "satelite", "foguete",
+        "aerodinamica", "propulsao"
+    ],
+    "energia": [
+        "energia", "eletrica", "renovaveis", "potencia", "fotovoltaica",
+        "solar", "redes", "eficiencia energetica"
+    ],
+    "robotica": [
+        "robotica", "automacao", "mecatronica", "controle", "robo", "drone",
+        "manipuladores"
+    ],
+    "fisica": [
+        "fisica", "astrofisica", "cosmologia", "optica", "plasma",
+        "espectroscopia", "acustica", "biofisica"
+    ],
+    "materiais": [
+        "materiais", "nanotecnologia", "polimeros", "ceramica", "compósitos",
+        "metalurgia"
+    ],
+}
+
+# --- FUNÇÃO PARA CATEGORIZAR LABORATÓRIO ---
+
+def categorizar_lab(nome_do_lab):
+    """
+    Tenta classificar um laboratório em uma categoria pré-definida
+    baseado em palavras-chave encontradas em seu nome.
+
+    Usado para selecionar um placeholder mais relevante quando a busca
+    de imagem real falha.
+
+    Args:
+        nome_do_lab (str): O nome completo do laboratório.
+
+    Returns:
+        str: O nome da categoria encontrada (ex: "software") ou "default".
+    """
+    try:
+        nome_normalizado = unidecode(nome_do_lab.lower())
+
+        # Itera sobre as categorias e suas palavras-chave definidas globalmente
+        for categoria, keywords in CATEGORIAS_KEYWORDS.items():
+            # any(...) retorna True se *qualquer* palavra-chave da lista for encontrada no nome
+            if any(keyword in nome_normalizado for keyword in keywords):
+                return categoria # Retorna o nome da categoria assim que encontrar a primeira correspondência
+
+    except Exception as e:
+        print(f"    [Categorizar] Erro ao categorizar '{nome_do_lab}': {e}")
+        # Em caso de erro, continua para retornar a categoria padrão
+
+    # Se nenhum loop encontrou uma correspondência ou se houve erro
+    return "default" # Retorna a categoria padrão
+
 def extrair_palavra_chave(nome_do_lab):
     """
     Analisa um nome completo de laboratório e tenta extrair a palavra
