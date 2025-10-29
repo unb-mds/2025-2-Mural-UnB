@@ -1,0 +1,58 @@
+.feed-page {
+  min-height: calc(100vh - 73px);
+  background-color: #f5f5f5;
+}
+
+.feed-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+}
+
+.feed-main {
+  min-width: 0;
+}
+
+.feed-header {
+  margin-bottom: 2rem;
+}
+
+.feed-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.feed-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.opportunities-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .feed-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .feed-container {
+    padding: 1rem;
+  }
+
+  .feed-title {
+    font-size: 2rem;
+  }
+
+  .feed-subtitle {
+    font-size: 1rem;
+  }
+}
