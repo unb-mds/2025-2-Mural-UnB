@@ -7,13 +7,14 @@ import './assets/styles/App.css'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-base-100 text-base-content font-gowunR">
+    <div data-theme="mural" className="min-h-screen w-screen bg-base-200 text-base-content font-gowun">
       <Navbar />
       <Routes>
-        <Route path='/' element = {<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path='/Academicos' element = {<Academicos />} />
         <Route path='/Profissionais' element = {<Profissionais />} />
       </Routes>
     </div>
   );
 }
+
