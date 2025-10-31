@@ -37,7 +37,6 @@ const Carousel = () => {
 
   return (
     <div className="relative w-full max-w-4xl mx-auto">
-      {/* Container responsivo - removi largura fixa */}
       <div className="carousel w-full h-[400px] rounded-box shadow-xl mx-auto">
         {slides.map((slide, index) => (
           <div
@@ -61,7 +60,7 @@ const Carousel = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`btn btn-xs ${index === currentSlide ? 'btn-primary' : 'btn-ghost'}`}
+            className={`btn btn-xs ${index === currentSlide ? 'btn-secondary' : 'btn-ghost'}`}
           >
             {index + 1}
           </button>

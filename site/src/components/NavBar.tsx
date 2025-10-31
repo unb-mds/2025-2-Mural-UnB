@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from "@/assets/images/MuralLogo_M.svg";
+import Logo from "assets/images/MuralLogo_M.svg";
 import { Link,useLocation } from 'react-router-dom';
 
 
@@ -11,15 +11,15 @@ const Navbar: React.FC = () => {
     <div className="navbar-start">
       <img src={Logo} className="w-25 h-13 m-3.5"></img>
 
-      <Link to="/" className={`btn btn-ghost ${location.pathname === "/" ? "btn-active" : ""}`}>
+      <Link to="/" className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/" ? "btn-active" : ""}`}>
         Home
       </Link>
 
-      <Link to='/Academicos' className={`btn btn-ghost ${location.pathname === "/Academicos" ? "btn-active" : ""}`}>
+      <Link to='/Academicos' className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/Academicos" ? "btn-active" : ""}`}>
         Acadêmicos
       </Link>
       
-      <Link to='/Profissionais' className={`btn btn-ghost ${location.pathname === "/Profissionais" ? "btn-active" : ""}`}>
+      <Link to='/Profissionais' className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/Profissionais" ? "btn-active" : ""}`}>
         Profissionais
       </Link>
     

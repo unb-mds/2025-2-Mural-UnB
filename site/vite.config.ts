@@ -10,11 +10,11 @@ export default defineConfig({
     tailwindcss()
   ],
   server: {
-    open: '/2025-2-Mural-UnB/home'
+    open: false,
   },
   base: process.env.NODE_ENV === 'production' 
     ? 'https://unb-mds.github.io/2025-2-Mural-UnB/' 
-    : '/2025-2-Mural-UnB/',
+    : '/',
   resolve: {
     alias: {
       components: path.resolve(__dirname, "src/components"),
