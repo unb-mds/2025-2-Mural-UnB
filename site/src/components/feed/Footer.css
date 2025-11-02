@@ -1,205 +1,204 @@
 .footer {
-    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 100%);
-    color: white;
-    margin-top: auto;
+  position: relative;
+  background-color: #2e8b57;
+  color: white;
+  padding: 2rem 2rem 1rem;
+  overflow: hidden;
+}
+
+.footer-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  font-weight: 700;
+  color: #2f6b57;
+  opacity: 0.15;
+  z-index: 0;
+  white-space: nowrap;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Left Section */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo-img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-logo-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.footer-separators {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin: 0.25rem 0;
+}
+
+.footer-separator {
+  height: 2px;
+  background: white;
+  opacity: 0.3;
+}
+
+.footer-separator:nth-child(1) {
+  width: 40px;
+}
+
+.footer-separator:nth-child(2) {
+  width: 35px;
+}
+
+.footer-separator:nth-child(3) {
+  width: 30px;
+}
+
+.footer-contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-contact-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.footer-contact-info {
+  font-size: 0.9rem;
+  color: white;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.footer-social-icon {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.footer-social-icon:hover {
+  background: white;
+  color: #2e8b57;
+  transform: translateY(-2px);
+}
+
+/* Right Section */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-pages-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav-link {
+  color: white;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.footer-nav-link:hover {
+  opacity: 0.8;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+
+.footer-bottom-line {
+  width: 100%;
+  height: 1px;
+  background: white;
+  opacity: 0.3;
+  margin-bottom: 0.75rem;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.875rem;
+  color: white;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 1.5rem 1rem;
   }
-  
+
   .footer-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-  
-  /* Left Section - Organization Info */
-  .footer-org-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: white;
+
+  .footer-watermark {
+    font-size: 5rem;
   }
-  
-  .footer-address {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0.25rem 0;
+
+  .footer-right {
+    margin-top: 1rem;
   }
-  
-  /* Middle Section - Contact Info */
-  .footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  
-  .footer-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .footer-icon {
-    flex-shrink: 0;
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .footer-email {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: underline;
-    transition: color 0.2s;
-  }
-  
-  .footer-email:hover {
-    color: white;
-  }
-  
-  /* Right Section - CTA Button */
-  .footer-cta {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-  }
-  
-  .footer-button {
-    background-color: #4a9eff;
-    color: white;
-    padding: 0.875rem 1.75rem;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.875rem;
-    text-decoration: none;
-    transition: background-color 0.2s;
-    white-space: nowrap;
-  }
-  
-  .footer-button:hover {
-    background-color: #3a8eef;
-  }
-  
-  /* Bottom Section */
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 1.5rem 2rem;
-  }
-  
-  .footer-bottom-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  /* Social Media Icons */
-  .footer-social {
-    display: flex;
-    gap: 1rem;
-    /* Centralizando o ícone único do Instagram */
-    align-items: center;
-  }
-  
-  .footer-social-link {
-    color: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Adicionando background circular e hover effect para destaque */
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  .footer-social-link:hover {
-    color: white;
-    /* Efeito hover mais suave e atraente */
-    background-color: rgba(74, 158, 255, 0.3);
-    transform: translateY(-2px);
-  }
-  
-  /* Navigation Links */
-  .footer-nav {
-    display: flex;
-    gap: 2rem;
-    flex: 1;
-    justify-content: center;
-  }
-  
-  .footer-link {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s;
-    white-space: nowrap;
-  }
-  
-  .footer-link:hover {
-    color: white;
-    text-decoration: underline;
-  }
-  
-  /* Logo/Badge */
-  .footer-badge {
-    display: flex;
-    align-items: center;
-  }
-  
-  .footer-logo {
-    height: 50px;
-    width: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 1024px) {
-    .footer-content {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-    }
-  
-    .footer-cta {
-      justify-content: flex-start;
-    }
-  
-    .footer-bottom-content {
-      flex-direction: column;
-      text-align: center;
-      gap: 1.5rem;
-    }
-  
-    .footer-nav {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      padding: 2rem 1.5rem;
-      gap: 2rem;
-    }
-  
-    .footer-bottom {
-      padding: 1.5rem 1.5rem;
-    }
-  
-    .footer-nav {
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-  
-    .footer-button {
-      width: 100%;
-      text-align: center;
-    }
-  }
-  
+}
