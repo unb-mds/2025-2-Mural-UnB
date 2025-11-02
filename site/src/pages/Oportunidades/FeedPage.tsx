@@ -16,14 +16,13 @@ export default function FeedPage() {
       // Filtrar por termo de busca
       const matchesSearch =
         searchTerm === "" ||
-        opp.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        opp.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        opp.name.toLowerCase().includes(searchTerm.toLowerCase())
+        opp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        opp.shortDescription.toLowerCase().includes(searchTerm.toLowerCase())
 
       // Filtrar por tags
       const matchesTags =
         selectedTags.length === 0 ||
-        selectedTags.every((tagId) => opp.tags.includes(tagId))
+        (opp.tags && selectedTags.every((tagId) => opp.tags?.includes(tagId)))
 
       return matchesSearch && matchesTags
     })
@@ -60,11 +59,11 @@ export default function FeedPage() {
                   key={opportunity.id}
                   opportunity={{
                     id: opportunity.id,
-                    title: opportunity.title,
-                    description: opportunity.description,
-                    date: opportunity.date,
-                    location: opportunity.location,
-                    tags: opportunity.tags,
+                    title: opportunity.name,
+                    description: opportunity.shortDescription,
+                    date: "",
+                    location: "",
+                    tags: opportunity.tags || [],
                     link: `/Oportunidades/${opportunity.id}`,
                     logo: opportunity.logo
                   }}

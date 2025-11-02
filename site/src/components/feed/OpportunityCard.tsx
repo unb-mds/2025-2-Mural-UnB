@@ -18,49 +18,16 @@ interface OpportunityCardProps {
 }
 
 export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
-  // Criar um placeholder de logo baseado no nome
-  const getLogoPlaceholder = () => {
-    const initial = opportunity.title.charAt(0).toUpperCase()
-    return (
-      <div style={{
-        width: '100%',
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: '2rem',
-        fontWeight: 'bold',
-        color: '#1a7f4e',
-        background: '#f0f9f4'
-      }}>
-        {initial}
-      </div>
-    )
-  }
-
   return (
     <Link to={`/Oportunidades/${opportunity.id}`} className="opportunity-card">
-      <div className="card-logo">
-        {opportunity.logo ? (
+      {opportunity.logo && (
+        <div className="card-logo">
           <img 
             src={opportunity.logo} 
             alt={`${opportunity.title} logo`}
-            onError={(e) => {
-              const target = e.currentTarget
-              target.style.display = 'none'
-              const placeholder = target.parentElement?.querySelector('.logo-placeholder') as HTMLElement
-              if (placeholder) {
-                placeholder.style.display = 'flex'
-              }
-            }}
           />
-        ) : null}
-        {!opportunity.logo && (
-          <div className="logo-placeholder">
-            {getLogoPlaceholder()}
-          </div>
-        )}
-      </div>
+        </div>
+      )}
       
       <div className="card-content">
         <div className="card-header">
