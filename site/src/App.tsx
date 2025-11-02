@@ -3,6 +3,8 @@ import Navbar from "./components/NavBar"
 import Home from "./pages/Home/Home"
 import Academicos from "./pages/Academicos/Academicos"
 import Profissionais from "./pages/Profissionais/Profissionais"
+import FeedPage from "./pages/Oportunidades/FeedPage"
+import DetailPage from "./pages/Oportunidades/DetailPage"
 import './assets/styles/App.css'
 
 export default function App() {
@@ -13,6 +15,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path='/Academicos' element = {<Academicos />} />
         <Route path='/Profissionais' element = {<Profissionais />} />
+        <Route path='/Oportunidades' element={<FeedPage />} />
+        <Route path='/Oportunidades/:id' element={<DetailPage />} />
       </Routes>
     </div>
   );
