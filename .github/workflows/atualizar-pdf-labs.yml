@@ -1,0 +1,70 @@
+name: Atualizar PDF de Laboratórios
+on:
+  schedule:
+    - cron: "0 3 1 * *" # dia 1 de cada mês às meia noite Brasília
+
+  workflow_dispatch:
+
+  push:
+    paths:
+      - "scripts/labs_pdf.py"
+
+jobs:
+  baixar-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Baixar PDF de Laboratórios
+        run: |
+          cd scripts
+          python labs_pdf.py
+
+      - name: Verificar alterações
+        id: verificar
+        run: |
+          if git diff --quiet data/Labs/Portfolio_Infraestrutura_UnB.pdf; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "Nenhuma alteração no PDF"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "PDF atualizado detectado"
+          fi
+
+      - name: Commit e Push do PDF atualizado
+        if: steps.verificar.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add data/Labs/Portfolio_Infraestrutura_UnB.pdf
+          git commit -m " Atualização automática do PDF de laboratórios [skip ci]"
+          git push
+
+      - name: Notificar sem mudanças
+        if: steps.verificar.outputs.changed == 'false'
+        run: |
+          echo "PDF já está atualizado. Nenhuma ação necessária."
+
+      - name: Notificar sucesso
+        if: success() && steps.verificar.outputs.changed == 'true'
+        run: |
+          echo "PDF de laboratórios atualizado com sucesso!"
+          echo "Arquivo: data/Labs/Portfolio_Infraestrutura_UnB.pdf"
+
+      - name: Notificar erro
+        if: failure()
+        run: |
+          echo "Erro ao baixar/atualizar PDF de laboratórios!"
+          echo "Verifique os logs acima para mais detalhes"
