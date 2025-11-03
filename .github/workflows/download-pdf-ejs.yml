@@ -1,0 +1,64 @@
+name: Download PDF Empresas Juniores
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "15 3 1 * *" # Dia 1 de cada mês às 0h15 (Brasília)
+
+  push:
+    paths:
+      - "scripts/pdf_crawler_ejs.py"
+
+jobs:
+  baixar-pdf-ejs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          pip install requests beautifulsoup4
+
+      - name: Baixar PDF de Empresas Juniores
+        run: |
+          cd scripts
+          python pdf_crawler_ejs.py
+        continue-on-error: true
+
+      - name: Verificar se PDF foi baixado
+        id: check_pdf
+        run: |
+          if [ -f "data/EJs/Portfolio_Empresas_Juniores_UnB.pdf" ]; then
+            echo "pdf_downloaded=true" >> $GITHUB_OUTPUT
+            echo " PDF baixado com sucesso!"
+            
+            # Verifica se houve mudanças
+            if git diff --quiet data/EJs/Portfolio_Empresas_Juniores_UnB.pdf; then
+              echo "changes=false" >> $GITHUB_OUTPUT
+              echo "PDF não teve alterações"
+            else
+              echo "changes=true" >> $GITHUB_OUTPUT
+              echo "PDF foi atualizado!"
+            fi
+          else
+            echo "pdf_downloaded=false" >> $GITHUB_OUTPUT
+            echo " PDF não foi baixado. Verifique os logs."
+            exit 1
+          fi
+
+      - name: Commit e push do PDF
+        if: steps.check_pdf.outputs.pdf_downloaded == 'true' && steps.check_pdf.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/EJs/Portfolio_Empresas_Juniores_UnB.pdf
+          git commit -m "chore: atualizar PDF empresas juniores [skip ci]"
+          git push
