@@ -1,0 +1,92 @@
+name: Processar Empresas Juniores
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 3 1 * *" # Dia 1 de cada mês às 0h30 (Brasília) - 15min após download
+
+  push:
+    paths:
+      - "scripts/pdf_processor_ejs.py"
+      - "scripts/extrair_empresas_juniores.py"
+      - "scripts/config_ej.py"
+      - "data/EJs/Portfolio_Empresas_Juniores_UnB.pdf"
+
+jobs:
+  processar-ejs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          pip install pdfplumber google-generativeai PyMuPDF requests
+
+      - name: Processar PDF de Empresas Juniores
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cd scripts
+          python extrair_empresas_juniores.py
+        continue-on-error: true
+
+      - name: Verificar arquivos gerados
+        id: check_output
+        run: |
+          if [ -f "data/EJs/empresas_juniores_consolidadas.json" ]; then
+            echo "json_generated=true" >> $GITHUB_OUTPUT
+            echo "JSON de empresas juniores gerado com sucesso!"
+            
+            # Conta quantas empresas foram extraídas
+            num_empresas=$(python -c "import json; data=json.load(open('data/EJs/empresas_juniores_consolidadas.json')); print(len(data))")
+            echo "Total de empresas extraídas: $num_empresas"
+            echo "num_empresas=$num_empresas" >> $GITHUB_OUTPUT
+            
+            # Verifica se houve mudanças
+            if git diff --quiet data/EJs/empresas_juniores_consolidadas.json; then
+              echo "changes=false" >> $GITHUB_OUTPUT
+              echo "Dados não sofreram alterações"
+            else
+              echo "changes=true" >> $GITHUB_OUTPUT
+              echo "Dados foram atualizados!"
+            fi
+          else
+            echo "json_generated=false" >> $GITHUB_OUTPUT
+            echo "JSON não foi gerado. Verifique os logs."
+            exit 1
+          fi
+
+      - name: Verificar imagens extraídas
+        if: steps.check_output.outputs.json_generated == 'true'
+        run: |
+          if [ -d "data/EJs/images" ]; then
+            num_imagens=$(find data/EJs/images -type f | wc -l)
+            echo "Total de imagens extraídas: $num_imagens"
+          else
+            echo "Nenhuma imagem foi extraída"
+          fi
+
+      - name: Commit e push dos dados
+        if: steps.check_output.outputs.json_generated == 'true' && steps.check_output.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Adiciona o JSON principal
+          git add data/EJs/empresas_juniores_consolidadas.json
+
+          # Adiciona imagens se existirem
+          if [ -d "data/EJs/images" ]; then
+            git add data/EJs/images/
+          fi
+
+          git commit -m "chore: atualizar dados empresas juniores (${{ steps.check_output.outputs.num_empresas }} empresas)"
+          git push
