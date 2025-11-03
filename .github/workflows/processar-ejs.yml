@@ -43,24 +43,24 @@ jobs:
         run: |
           if [ -f "data/EJs/empresas_juniores_consolidadas.json" ]; then
             echo "json_generated=true" >> $GITHUB_OUTPUT
-            echo "JSON de empresas juniores gerado com sucesso!"
+            echo " JSON de empresas juniores gerado com sucesso!"
             
-            # Conta quantas empresas foram extraídas
-            num_empresas=$(python -c "import json; data=json.load(open('data/EJs/empresas_juniores_consolidadas.json')); print(len(data))")
-            echo "Total de empresas extraídas: $num_empresas"
+            # Conta quantas empresas foram extraídas (considera estrutura com metadados)
+            num_empresas=$(python -c "import json; data=json.load(open('data/EJs/empresas_juniores_consolidadas.json')); print(len(data.get('empresas_juniores', [])) if isinstance(data, dict) else len(data))")
+            echo " Total de empresas extraídas: $num_empresas"
             echo "num_empresas=$num_empresas" >> $GITHUB_OUTPUT
             
             # Verifica se houve mudanças
             if git diff --quiet data/EJs/empresas_juniores_consolidadas.json; then
               echo "changes=false" >> $GITHUB_OUTPUT
-              echo "Dados não sofreram alterações"
+              echo " Dados não sofreram alterações"
             else
               echo "changes=true" >> $GITHUB_OUTPUT
-              echo "Dados foram atualizados!"
+              echo " Dados foram atualizados!"
             fi
           else
             echo "json_generated=false" >> $GITHUB_OUTPUT
-            echo "JSON não foi gerado. Verifique os logs."
+            echo " JSON não foi gerado. Verifique os logs."
             exit 1
           fi
 
@@ -69,9 +69,9 @@ jobs:
         run: |
           if [ -d "data/EJs/images" ]; then
             num_imagens=$(find data/EJs/images -type f | wc -l)
-            echo "Total de imagens extraídas: $num_imagens"
+            echo " Total de imagens extraídas: $num_imagens"
           else
-            echo "Nenhuma imagem foi extraída"
+            echo " Nenhuma imagem foi extraída"
           fi
 
       - name: Commit e push dos dados
@@ -88,5 +88,5 @@ jobs:
             git add data/EJs/images/
           fi
 
-          git commit -m "chore: atualizar dados empresas juniores (${{ steps.check_output.outputs.num_empresas }} empresas)"
+          git commit -m "chore: atualizar dados empresas juniores (${{ steps.check_output.outputs.num_empresas }} empresas) "
           git push
