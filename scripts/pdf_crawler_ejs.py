@@ -138,6 +138,3 @@ if __name__ == "__main__":
     else:
 
         print("\nNão foi possível obter o PDF.")
-
-
-

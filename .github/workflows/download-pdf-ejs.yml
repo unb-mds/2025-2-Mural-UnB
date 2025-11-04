@@ -13,6 +13,8 @@ on:
 jobs:
   baixar-pdf-ejs:
     runs-on: ubuntu-latest
+    # Não roda em PRs, merges ou com [skip ci]
+    if: ${{ github.event_name != 'pull_request' && !startsWith(github.event.head_commit.message, 'Merge') && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]') }}
 
     steps:
       - name: Checkout do repositório
