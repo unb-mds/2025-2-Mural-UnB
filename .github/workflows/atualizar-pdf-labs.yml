@@ -46,8 +46,8 @@ jobs:
       - name: Commit e Push do PDF atualizado
         if: steps.verificar.outputs.changed == 'true'
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "GitHub Actions Bot"
+          git config --local user.email "lucaasft16@gmail.com"
+          git config --local user.name "Lucasft16"
           git add data/Labs/Portfolio_Infraestrutura_UnB.pdf
           git commit -m " Atualização automática do PDF de laboratórios [skip ci]"
           git push

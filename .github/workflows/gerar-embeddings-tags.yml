@@ -49,8 +49,8 @@ jobs:
       - name: Commit e push das mudanças
         if: steps.check_changes.outputs.changes == 'true'
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "lucaasft16@gmail.com"
+          git config --local user.name "Lucasft16"
           git add scripts/tags_with_embeddings_gemini.json
           git commit -m "chore: atualizar embeddings das tags"
           git push
