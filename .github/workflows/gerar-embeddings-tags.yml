@@ -32,6 +32,7 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
+          cp data/tags.json scripts/tags.json  
           cd scripts
           python generate_embeddings_gemini.py
 
