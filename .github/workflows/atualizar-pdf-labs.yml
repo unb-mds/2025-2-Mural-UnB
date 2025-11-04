@@ -12,6 +12,8 @@ on:
 jobs:
   baixar-pdf:
     runs-on: ubuntu-latest
+    # Não roda em merges (detecta "Merge" no início da mensagem) nem com [skip ci]
+    if: ${{ !startsWith(github.event.head_commit.message, 'Merge') && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]') }}
 
     steps:
       - name: Checkout do repositório
