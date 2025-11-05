@@ -1,4 +1,4 @@
-name: Download PDF de Laboratórios
+name: 0. Download PDF de Laboratórios
 on:
   schedule:
     - cron: "0 3 1 * *" # dia 1 de cada mês às meia noite Brasília

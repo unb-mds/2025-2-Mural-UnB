@@ -1,4 +1,4 @@
-name: Extrair Laboratórios FGA do PDF
+name: 1. Extrair Laboratórios FGA do PDF
 
 on:
   push:

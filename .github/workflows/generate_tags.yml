@@ -1,4 +1,4 @@
-name: Gerar Embeddings gemini
+name: Gerar Tags Embeddings gemini
 
 on:
   push:
