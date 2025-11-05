@@ -1,8 +1,14 @@
+"""
+Classe e funções para extrair texto e imagens de PDFs e chamar Gemini para extrair campos.
+Contém lógica de limpeza, prompts e processamento paginado/unificado para EJs.
+"""
 import json
 import pdfplumber
 import google.generativeai as genai
 import os
 import time
+ # Classe e funções para extrair texto e imagens de PDFs e chamar Gemini para extrair campos.
+ # Contém lógica de limpeza, prompts e processamento paginado/unificado para EJs.
 from typing import Dict, List
 import re
 import fitz

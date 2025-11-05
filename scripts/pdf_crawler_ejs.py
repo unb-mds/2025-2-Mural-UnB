@@ -1,3 +1,7 @@
+"""
+Rastreia páginas para localizar e baixar o PDF das Empresas Juniores.
+Detecta links PDF relevantes e salva o Portfólio em `data/EJs`.
+"""
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse

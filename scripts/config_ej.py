@@ -1,3 +1,8 @@
+"""
+Configurações usadas para baixar e processar o PDF das Empresas Juniores (URL, saída e opções).
+Inclui chave da API Gemini, caminhos de saída, página inicial e flag de extração de imagens.
+"""
+
 import os
 import google.generativeai as genai
 

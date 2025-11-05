@@ -1,3 +1,8 @@
+"""
+Gera embeddings das tags usando a API Gemini e salva em JSON.
+Lê `tags.json`, solicita embeddings e grava `tags_with_embeddings_gemini.json`.
+"""
+
 import json
 import google.generativeai as genai
 import numpy as np

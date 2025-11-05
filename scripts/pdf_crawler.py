@@ -1,3 +1,8 @@
+"""
+Rastreia uma página e lista/filtra links que terminam em .pdf.
+Imprime URLs encontradas para uso manual ou automação.
+"""
+
 import requests  # baixa o HTML
 from bs4 import BeautifulSoup  # organiza o HTML em python
 import urllib.parse  # manipula URLs

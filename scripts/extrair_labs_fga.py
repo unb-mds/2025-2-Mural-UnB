@@ -1,3 +1,7 @@
+"""
+Extrai e filtra informações de laboratórios da FGA a partir do PDF (parsing e heurísticas).
+Gera CSV com laboratórios da FGA e remove duplicatas/ruído.
+"""
 import fitz  # PyMuPDF
 import re
 import csv

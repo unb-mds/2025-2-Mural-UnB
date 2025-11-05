@@ -1,3 +1,8 @@
+"""
+Busca e baixa o PDF do portfólio de infraestrutura no site da UnB.
+Salva o arquivo em `data/Labs` para processamento posterior.
+"""
+
 import requests  # baixa o HTML
 from bs4 import BeautifulSoup  # organiza o HTML em python
 import urllib.parse  # manipula URLs

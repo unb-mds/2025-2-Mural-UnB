@@ -1,3 +1,8 @@
+"""
+Agrega embeddings de tags para cada laboratório (média das embeddings das tags).
+Lê lookup de tags, calcula embedding médio e salva resultado em JSON.
+"""
+
 import json
 import numpy as np
 import os

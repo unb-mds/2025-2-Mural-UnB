@@ -1,3 +1,8 @@
+"""
+Script que orquestra o download e processamento do PDF de Empresas Juniores (usa `pdf_processor_ejs`).
+Baixa o PDF, executa extração por página e consolida resultados em JSON.
+"""
+
 import os
 import json
 from datetime import datetime # para debug
