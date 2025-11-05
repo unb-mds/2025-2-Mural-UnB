@@ -1,5 +1,6 @@
 {
   "metadados": {
+    "data_processamento": "2025-11-05T14:49:09.823151",
     "data_processamento": "2025-11-05T13:46:19.876599",
     "total_empresas_unicas": 44,
     "total_empresas_bruto": 44,
@@ -8,6 +9,7 @@
   },
   "empresas_juniores": [
     {
+      "id": "100001",
       "Nome": "Astrodatum",
       "Cursos": "Geografia",
       "Sobre": "A Astrodatum foi fundada em 2018 com a ótica de aproximar o aluno do curso de Geografia da Universidade de Brasília ao mercado de trabalho, pois, contribui com a experiência em ambiente profissional e auxilia na capacitação de seus membros. Com o passar dos anos, este papel se consolida cada vez mais, devido ao preenchimento de vagas de emprego por alunos ex-membros da nossa EJ, transformando-se no nosso principal motivo de orgulho ao demonstrar que nossa missão está sendo cumprida.",
@@ -19,6 +21,7 @@
       "Instagram": "@lamparinadesign"
     },
     {
+      "id": "100002",
       "Nome": "Ateliê Muda",
       "Cursos": "Arquitetura e Urbanismo",
       "Sobre": "O Ateliê Muda é uma empresa júnior formada por estudantes da Faculdade de Arquitetura e Urbanismo - FAU em 16 de dezembro de 2016, inicialmente com o nome Croqui. Algum tempo depois, por meio de um concurso surge o nome Ateliê Muda e a identidade visual atual, desde a federação em 2019 a empresa segue trabalhando para alcançar as metas e proporcionar o contato com o mercado de trabalho para os alunos da graduação. Dentre projetos de destaque, podemos citar o projeto de paisagismo do Jardim Louise Ribeiro em parceria com a prefeitura da UnB.",
@@ -26,10 +29,11 @@
       "Visao": "Ser um exemplo de empresa que garanta a valorização, bem-estar e capacitação de seus membros, produzindo trabalhos com excelência.",
       "Valores": "Responsabilidade social e ambiental, resiliência, comprometimento e profissionalismo, empatia, honestidade e transparência.",
       "Servicos": "Projetos arquitetônicos, projetos paisagísticos adequados às condições de clima espaço e função, projetos urbanísticos além de consultorias de análise e orientação estética e funcional de projetos.",
-      "Site": "atelliermuda.com",
+      "Site": "ateliemuda.com",
       "Instagram": "@Ateliê.muda"
     },
     {
+      "id": "100003",
       "Nome": "Avenir",
       "Cursos": "Ciência Política, Saúde Coletiva",
       "Sobre": "A EJ foi idealizada por um grupo de alunos e amigos; fundada em 2020, durante a pandemia da Covid-19, atuando até o momento de forma remota. Embora seja uma empresa nova, temos o orgulho de ser a Primeira empresa Júnior de Saúde coletiva do Brasil - talvez do mundo - e de possibilitar, aos futuros graduandos do curso de saúde coletiva, um lugar para desenvolver seus conhecimentos e habilidades adquiridos durante o curso, além de abrir espaço para o futuro profissional sanitarista, no mercado de trabalho.",
@@ -41,6 +45,7 @@
       "Instagram": "@avenircs"
     },
     {
+      "id": "100004",
       "Nome": "Cogitatus",
       "Cursos": "Enfermagem",
       "Sobre": "A Cogitatus surgiu da ideia de um aluno de enfermagem que chamou outros 4 colegas e, juntamente com 2 professores orientadores, fundaram a empresa em 2019. Um fato curioso foi que esse aluno, ao conversar com um professor e ter a ideia, foi em todas as sedes de EJs da UnB para buscar orientação e, assim, começamos a ter o auxílio da Concentro para fazer todos os trâmites para a aprovação em colegiado, preparação de documentação e fundação oficial.",
@@ -52,6 +57,7 @@
       "Instagram": "@cogitatus_empresajr"
     },
     {
+      "id": "100005",
       "Nome": "Concreta",
       "Cursos": "Civil, Ambiental e Arquitetura",
       "Sobre": "A Concreta foi fundada em 1996 como uma empresa apenas de Engenharia Civil, porém em 1998 tivemos um período de inatividade, voltando suas atividades apenas em 2003, logo, em 2006 tivemos e entrada da Arquitetura e Urbanismo como curso integrante. Em 2011, a entrada de Engenharia Ambiental foi destaque junto a Federação a Concentro, e desde então, de 2017 a 2020 a Concreta vem recebendo prêmios de EJ alto crescimento.",
@@ -63,7 +69,8 @@
       "Instagram": "@concretaej"
     },
     {
-      "Nome": "ConFiE Jr.",
+      "id": "100006",
+      "Nome": "ConFiE Jr",
       "Cursos": "Fisioterapia",
       "Sobre": "A ideia de fundar a ConFiE partiu de duas estudantes de Fisioterapia da UnB, da turma XVII turma em 2019. A partir daí novos integrantes foram se unindo para formar a 1ª Empresa Junior de Fisioterapia da região Centro-Oeste do Brasil! Temos orgulho em ter o pioneirismo como nosso principal valor e motivação. Somos uma equipe formada por jovens empreendedores comprometidos e capazes de transformar o cenário da Fisioterapia e do Empreendedorismo no Brasil.",
       "Missao": "Difundir a importância da fisioterapia, influenciando estudantes por meio do empreendedorismo.",
@@ -74,6 +81,7 @@
       "Instagram": "@confie.ej"
     },
     {
+      "id": "100007",
       "Nome": "Cráton",
       "Cursos": "Geologia",
       "Sobre": "O curso de geologia da Universidade de Brasília (UnB) tem 55 anos de história. É avaliado com nota máxima pelo MEC (5) e pelo Guia do Estudante (5 estrelas), conta com 100% de docentes doutores, reconhecidos nacional e internacionalmente. Em 2015, um grupo de alunos com sonho empreendedor de proporcionar uma vivência empresarial ainda na universidade criaram a Cráton, Consultoria em Geologia.",
@@ -85,17 +93,19 @@
       "Instagram": "@craton_ej"
     },
     {
-      "Nome": "CSTQ Jr.",
+      "id": "100008",
+      "Nome": "CSTQ Jr",
       "Cursos": "Química",
       "Sobre": "Formada por alunos dos cursos do Instituto de Química da Universidade de Brasília, nós da CSTQ Jr. buscamos proporcionar aos membros uma vivência empresarial através da realização de projetos e consultoria de excelência, formando líderes para o futuro. Nosso Slogan é \"Reaja, Transforme, Solucione\" e a sigla CSTQ Jr. surgiu como uma relação com o principal tipo de reator contínuo usado na indústria química, o reator CSTR (Continuou Stirred Tank Reactor). Temos como logo uma cadeia benzênica azul com ramificação metil laranja, que junto a dois carbonos do anel aromático se complementam, formando uma seta apontando para",
       "Missao": "Promover mudanças no nosso ecossistema a partir de soluções inovadoras, capacitando membros e concretizando ideias de clientes.",
       "Visao": "Ser uma empresa de impacto neste triênio, incentivando responsabilidade social.",
       "Valores": "Proatividade, Resiliência, Foco no cliente, Melhoria contínua, Transparência, Integração, Sentimento de dono.",
-      "Servicos": "Projetos de desenvolvimento e aperfeiçoamento de produtos: Consultoria em métodos de conservação; Estudo legislativo; Estudo bibliográfico; Prototipagem. PROJETOS DE OTMIZAÇÃO DE PROCESSOS E SERVIÇOS: Manual de boas práticas; Desenvolvimento de layout; Projeto de laboratório; Análise de viabilidade. PROJETOS DE CONSULTORIA AMBIENTAL: Consultoria em gestão de resíduos; Tratamento de efluentes; Reúso de água. PROJETOS DE ANÁLISES QUÍMICAS: Análise de água; Análise físico-química; Análise alimentícia; Caracterização de amostra. PROJETOS DE EDUCAÇÃO QUÍMICA: Minicursos.",
+      "Servicos": "Projetos de desenvolvimento e aperfeiçoamento de produtos: Consultoria em métodos de conservação; Estudo bibliográfico; Prototipagem. PROJETOS DE OTIMIZAÇÃO DE PROCESSOS E SERVIÇOS: Manual de boas práticas; Desenvolvimento de layout; Projeto de laboratório; Análise de viabilidade. PROJETOS DE CONSULTORIA AMBIENTAL: Consultoria em gestão de resíduos; Tratamento de efluentes; Reúso de água. PROJETOS DE ANÁLISES QUÍMICAS: Análise de água; Análise físico-química; Análise alimentícia; Caracterização de amostra. PROJETOS DE EDUCAÇÃO QUÍMICA: Minicursos.",
       "Site": "cstqjr.com.br",
       "Instagram": "@cstqjr"
     },
     {
+      "id": "100009",
       "Nome": "Doisnovemeia",
       "Cursos": "Comunicação",
       "Sobre": "A Doisnovemeia - também conhecida como Dois, portinha verde, ninho ou laboratório - foi criada como um projeto de conclusão de curso no 2º semestre de 1996 (2º de 96… é daí que vem o nome). Com mais de 25 anos de história, o ninho já recebeu algumas premiações, como o Lusófonos, e passou por algumas adaptações visuais, afinal, sendo um laboratório de ideias precisamos estar em constante evolução. Mas também curtimos celebrar o passado e as conquistas, como o Almanaque - evento de publicidade produzido por nós que já foi o maior do centro-oeste. Caloura nas ideias, veterana nas soluções. Nosso lema engloba tudo que você precisa saber sobre a Dois: buscamos inovação e diferentes maneiras de trabalhar a comunicação para garantir os melhores resultados aos clientes.",
@@ -107,6 +117,7 @@
       "Instagram": "@doisnovemeia"
     },
     {
+      "id": "100010",
       "Nome": "Domani",
       "Cursos": "Relações Internacionais",
       "Sobre": "A Domani Consultoria foi fundada há 27 anos quando duas estudantes inconformadas tiveram a iniciativa de criar no curso uma alternativa prática dentro de um curso extremamente acadêmico. Em 1995 nascia a Rel Júnior, a primeira Empresa Júnior de Relações Internacionais do Brasil. A empresa pioneira enfrentou dificuldades, contudo soube se reinventar e passou a se chamar Domani, (\"amanhã\" em italiano) e, embora tenha trabalhado com diversos escopos, optou por se aprofundar em comércio exterior e auxiliar pequenos e médios empresários a internacionalizar seus produtos e serviços.",
@@ -118,28 +129,31 @@
       "Instagram": "@domaniconsultoria"
     },
     {
+      "id": "100011",
       "Nome": "Ecoflor",
       "Cursos": "Engenharia Florestal",
       "Sobre": "A EMPRESA JÚNIOR FLORESTAL PLANALTO VERDE, com nome fantasia \"Ecoflor\", foi fundada em 08 de julho de 2008, é uma Pessoa Jurídica de Direito Privado, constituída por tempo indeterminado e vinculada à Universidade de Brasília-UnB, sem fins lucrativos, com caráter representativo e educacional, com a finalidade de representação dos (as) alunos (as) de Engenharia Florestal que a ela se associam. A Ecoflor tem por objetivos realizar projetos na área de atuação do curso de Engenharia Florestal, proporcionando aos seus membros as condições necessárias à aplicação prática de conhecimentos teóricos relativos à área de formação profissional do curso de Engenharia Florestal.",
-      "Missao": "Formar profissionais que sejam capazes de contribuir para a sociedade oferecendo soluções inteligentes de alto valor agregado em projetos sustentáveis, gerando vantagens competitivas a todos os seus clientes e parceiros.",
-      "Visao": "Ser uma empresa que ofereça serviços de qualidade com capacidade de concorrer com consultorias do mercado. Com uma equipe motivada e altamente capacitada. A marca da Ecoflor representa dois aspectos importantes: a formação dos alunos e a realização profissional, a capacidade lógica e a capacidade de entender o meio ambiente à sua volta. A representação do meio ambiente é feita pelo movimento fractal, que está presente em diversas estruturas naturais e também pela disposição circular, que remete à forma de uma flor e à ideia de um ciclo.",
+      "Missao": "formar profissionais que sejam capazes de contribuir para a sociedade oferecendo soluções inteligentes de alto valor agregado em projetos sustentáveis, gerando vantagens competitivas a todos os seus clientes e parceiros.",
+      "Visao": "ser uma empresa que ofereça serviços de qualidade com capacidade de concorrer com consultorias do mercado. Com uma equipe motivada e altamente capacitada. A marca da Ecoflor representa dois aspectos importantes: a formação dos alunos e a realização profissional, a capacidade lógica e a capacidade de entender o meio ambiente à sua volta. A representação do meio ambiente é feita pelo movimento fractal, que está presente em diversas estruturas naturais e também pela disposição circular, que remete à forma de uma flor e à ideia de um ciclo.",
       "Valores": "N/A",
       "Servicos": "Inventário Florestal e ASV; Neutralização de Carbono; Cadastro Ambiental Rural (CAR); Arborização e Paisagismo; Valoração Ambiental; Georreferenciamento; PRAD; Análise de Solo e Recomendação de Plantio; Venda de Cursos.",
       "Site": "ecoflorconsultoria.com/#servicos",
       "Instagram": "@Ecoflor"
     },
     {
+      "id": "100012",
       "Nome": "Econsult",
       "Cursos": "Ciências Econômicas",
       "Sobre": "A Econsult foi fundada em 2000, e um fato curioso é que um dos fundadores foi Sandro Meira Ricci, que é árbitro referência no futebol brasileiro, assim, batizamos nosso mascote com seu sobrenome. Um traço cultural peculiar da nossa EJ é o uivo, uma vez que nosso mascote é um lobo, sendo algo que diverte a empresa e agrega à cultura. O maior CASE de sucesso da empresa foi a montagem de todo o plano de negócios e da viabilidade econômica da Startup Moeda, empresa que auxilia pequenos agricultores, sobretudo mulheres, a conseguir crédito para diferenciar seus produtos, elevando a sua renda. Atualmente, a Moeda já conta com mais de 80 funcionários espalhados em diversos pagócios e estudos de mercado para empreendedores e a realização de valuations e assessoria econômica de empresas. A Econsult se orgulha de ser uma EJ que valoriza a camaradagem e a diversidade, principalmente, focamos em manter um ambiente de trabalho positivo, no qual os membros ajudam uns aos outros a crescer e se desenvolver, além das amizades que se iniciam na EJ. Como sabemos, o curso de economia é composto, em sua maioria, por estudantes do sexo masculino, o que se reflete na empresa. No entanto, pela primeira vez, no último processo seletivo, tivemos a entrada de mais mulheres do que homens, o que nos deixou orgulhosos ao perceber que a nossa cultura, que preza tanto pela diversidade, está se desenvolvendo.",
       "Missao": "Desenvolver estudantes para viabilizar sonhos empresariais.",
       "Visao": "Realizar projetos efetivos, tornando relevantes no mercado e na sociedade, além de focar na jornada do membro dentro da empresa, valorizando a diversidade de cada um.",
       "Valores": "Camaradagem, capacitação, comunicação aberta, garra, resultados, conciliação.",
-      "Servicos": "Serviços de consultoria empresarial através de diversos escopos, tais como: estudos de viabilidade empresarial, elaborações de carta-consultas para FCO, de planos de negócios e estudos de mercado para empreendedores e a realização de valuations e assessoria econômica de empresas.",
+      "Servicos": "Estudos de viabilidade empresarial, elaborações de carta-consultas para FCO, de planos de negócios e estudos de mercado para empreendedores e a realização de valuations e assessoria econômica de empresas.",
       "Site": "econsult.org.br",
       "Instagram": "@econsultconsultoria"
     },
     {
+      "id": "100013",
       "Nome": "EletronJun",
       "Cursos": "Engenharia Eletrônica",
       "Sobre": "A EletronJun começou o ano de 2019 com grandes problemas financeiros. Apesar da empresa ter alcançado o alto crescimento em 2018, não foi o suficiente para quitar as dívidas daquele ano, envolvendo impostos e contador. Se juntasse essa dívida com os gastos que teríamos durante o ano, precisaríamos alcançar em torno de 18 mil reais para quitar tudo e abrir o ano de 2020 zerados no caixa, faturamento que seria equivalente a mais do que o dobro do ano anterior, que foi o maior que já tivemos em 5 anos de existência. Com base nisso foi decidido que a meta para a EletronJun para bater o Alto Crescimento seria exatamente a meta necessária para quitar tudo, incluindo os centavos, e caso não conseguíssemos, os diretores estavam considerando fechar a empresa. Naquele ano todos os membros estavam bem engajados e decididos a não deixar que a EletronJun fechasse, então mês após mês a equipe foi se reinventando para que fosse possível bater a meta, e então chegou o mês de outubro de 2019. Em menos de 7 dias foram fechados os 2 maiores contratos da história da empresa, até então, e batemos o Alto Crescimento, ou seja, tínhamos o suficiente para sair do vermelho e mais o suficiente para garantir as despesas do ano seguinte. Mas aquela equipe queria mais, ainda faltava uma meta a ser batida no portal, a meta de ações compartilhadas. Então como um último esforço em conjunto antes da premiação, e várias estratégias traçadas, conseguimos o número necessário de ações compartilhadas, chegamos no Alto Impacto e aquele que poderia ser o pior ano da história da EletronJun, se tornou o melhor da história.",
@@ -151,6 +165,7 @@
       "Instagram": "@eletronjun"
     },
     {
+      "id": "100014",
       "Nome": "Embragea",
       "Cursos": "Gestão Ambiental",
       "Sobre": "Fundada em 2009, a EMBRAGEA, Empresa Brasileira de Gestão Ambiental Jr, é uma empresa júnior, composta exclusivamente por alunos graduandos do curso de Gestão Ambiental, vinculada à Universidade de Brasília, Planaltina, atualmente sendo a única EJ ativa do Campus, nosso objetivo é oferecer serviços de consultoria e soluções ambientais aos clientes, proporcionando oportunidade de crescimento pessoal e profissional para cada um de seus associados. Trabalhamos todos os dias para formar pessoas comprometidas e capazes de transformar o Brasil por meio da realização de mais e melhores projetos. Dentre as maiores conquistas e motivo de orgulho, vale lembrar do legado em do time de 2019 o desafio Caixa seguradora, do mesmo ano.",
@@ -162,6 +177,7 @@
       "Instagram": "@embragea"
     },
     {
+      "id": "100015",
       "Nome": "Endêmica Júnior",
       "Cursos": "Ciências Biológicas",
       "Sobre": "A Endêmica foi fundada em 2020, em pleno cenário pandêmico. Portanto, todo o trabalho ainda tem sido no ambiente remoto, mas agora contamos com a perspectiva de mudança, com a retomada da modalidade presencial! Na Endêmica, graduandos em Biologia - na Universidade de Brasília - têm a oportunidade de vivenciar vários momentos marcantes. Um dos acontecimentos preferidos dentro da empresa foi o contato que tivemos com o IBRAM/DF, para a possibilidade de uma parceria. E não para por aí: a Endêmica não está restrita ao quadradinho, já se fez presente em Brasilândia de Minas - MG para o estudo de um projeto de restauração de nascentes. Fazer parte da Endêmica é um aprendizado diário sobre a atuação dos futuros biólogos no mercado de trabalho!",
@@ -173,6 +189,7 @@
       "Instagram": "@endemicajr"
     },
     {
+      "id": "100016",
       "Nome": "Enetec",
       "Cursos": "Engenharia Elétrica",
       "Sobre": "Fundada em 2006, a ENETEC é uma empresa Júnior de consultoria, elaboração e execução de projetos na área de Engenharia Elétrica formada por alunos da UnB. É uma empresa sem fins lucrativos, que busca desenvolvimento pessoal e profissionalmente seus membros por meio de vivência empresarial, elaborando projetos de consultoria.",
@@ -184,6 +201,7 @@
       "Instagram": "@enetec"
     },
     {
+      "id": "100017",
       "Nome": "EngNet",
       "Cursos": "Engenharia de Redes de Comunicação, Eng. Elétrica, Eng. de Software, Eng. Mecatrônica e Eng. Ciência da Computação",
       "Sobre": "Fundada em 06 de outubro de 2007, a EngNet Consultoria, antes chamada de EngNet Consultoria e Implementação, é a empresa júnior de Engenharia de Redes de Comunicação da Universidade de Brasília. Hoje também aberta aos cursos de Eng. Elétrica, Eng. de Software, Eng. Mecatrônica e Eng. Ciência da Computação. A EngNet apresenta uma proposta de fomentar a prática empreendedora de seus integrantes ao oferecer-lhes um ambiente propício ao crescimento pessoal e profissional explorando as diferentes áreas do conhecimento dos diversos cursos para oferecer soluções cada vez mais completas e inovadoras para os clientes. A área da tecnologia da informação está em constante crescimento e estamos formando aqui os engenheiros que irão liderar essa frente no futuro. Estamos nesse ambiente de constante evolução e aprendizado para transformar a vida de todos que passam pela EJ, sejam clientes, membros ou até mesmo parceiros. Somos transformação, despertamos propósito e concretizamos sonhos.",
@@ -195,6 +213,7 @@
       "Instagram": "@engnetconsultoria"
     },
     {
+      "id": "100018",
       "Nome": "Engrena",
       "Cursos": "Engenharia Automotiva",
       "Sobre": "Somos uma Empresa Júnior de Engenharia Automotiva da Universidade de Brasília focada em ser um sistema replicável e sustentável em engenharia automotiva no Brasil, entregando inovação e exclusividade aos nossos clientes. Estudamos, desenvolvemos e geramos soluções para problemas atrelados ao setor automotivo alavancando jovens talentos empreendedores.",
@@ -206,6 +225,7 @@
       "Instagram": "@engrenaengenharia"
     },
     {
+      "id": "100019",
       "Nome": "Estat",
       "Cursos": "Estatística",
       "Sobre": "A ESTAT Consultoria é a empresa júnior do curso de estatística da UnB sendo fundada em 1995. Em 2022 estamos em busca do 5° ano consecutivo reconhecida como EJ impacto, alcançando todas as metas estabelecidas para o ano, sendo a maior EJ do curso de estatística do Brasil. Representando a adaptabilidade da nossa empresa aos diversos cenários e desafios do mercado, temos nosso querido \"ESTATorrinco\" como mascote, sendo ícone da nossa cultura e valores que prezamos. Somos orgulhosos de representar a nossa cor e nosso sangue A11D21, prezando nosso trabalho como estatísticos entregando informações pertinentes que estão por trás dos dados impactando nosso meio. Representando esse compromisso, entregamos uma simulação da Covid-19 em meio a pandemia, comparando os cenários de distânciamento social e menor circulação contra circunstâncias de vida normal sem cuidados preventivos, mostrando os impactos de transmissão, sendo divulgada pela TV Globo.",
@@ -217,6 +237,7 @@
       "Instagram": "@estatconsultoria"
     },
     {
+      "id": "100020",
       "Nome": "Facto",
       "Cursos": "Comunicação",
       "Sobre": "A Facto acredita e vende a ideia de que a comunicação é o centro de todo bom negócio, portanto, deve ser usada como estratégia fundamental em qualquer organização. Para ajudar o mercado a atingir esse objetivo, oferecemos serviços com expertise em Publicidade, Marketing, Design Gráfico e Jornalismo, executados por graduandos de todas as habilitações da Faculdade de Comunicação presente na Universidade de Brasília. Reconhecida 3 vezes por entregar melhores projetos, que resolvem os problemas dos clientes e geram impacto na sociedade, com alto nível de satisfação e em coerência com os Objetivos de Desenvolvimento Sustentável da ONU. Reconhecida por fortalecer as conexões da Rede por meio da cultura empreendedora a fim de aumentar o comprometimento com o propósito do Movimento Empresa Júnior.",
@@ -228,6 +249,7 @@
       "Instagram": "@factoagencia"
     },
     {
+      "id": "100021",
       "Nome": "Flua",
       "Cursos": "Engenharia Civil e Ambiental",
       "Sobre": "Criada em 2018 com o propósito de ser uma empresa júnior de engenharia civil e ambiental que fornecesse soluções sustentáveis para os seus clientes, impactando toda uma sociedade e universidade. Ganhou prêmios como Projeto Alto Impacto e Germinar. Possui uma cultura forte, com mascote (fuinha), sede, hino e gritos. Utiliza memes e termos internos para descontrair os membros. Voltou ao presencial em 2021/2022 e tem metas de faturamento crescentes.",
@@ -239,6 +261,7 @@
       "Instagram": "@fluaconsultoria"
     },
     {
+      "id": "100022",
       "Nome": "Genesys",
       "Cursos": "Biotecnologia",
       "Sobre": "Primeira empresa júnior de biotecnologia de Brasília, fundada em 2016. Visa promover o espírito empreendedor e de liderança em seus membros, tornando-os mais aptos para o mercado de trabalho. Orientada por professores da UnB, atua na sociedade com projetos que melhoram a qualidade de vida e ações sociais. Possui dois prêmios EJ Impacto.",
@@ -250,6 +273,7 @@
       "Instagram": "@genesysbiotec"
     },
     {
+      "id": "100023",
       "Nome": "Grupo Gestão",
       "Cursos": "Engenharia de Produção",
       "Sobre": "Fundada em 2009, esforça-se para entregar o melhor e oferecer vivência de mercado sênior aos membros. Já realizou mais de 500 projetos e possui mais de 30 parceiros. Foco no cliente e no aluno da UnB. Afirma que 80% dos membros saem da EJ e em até 1 mês conseguem emprego ou abrem o próprio negócio. Tornou-se a maior empresa júnior de engenharia de produção do país, com prêmios como melhor EJ do Brasil (2018) e melhor projeto do DF e EJ de Alto Impacto por 4 anos seguidos.",
@@ -261,6 +285,7 @@
       "Instagram": "@grupogestao"
     },
     {
+      "id": "100024",
       "Nome": "Lamparina",
       "Cursos": "Design",
       "Sobre": "Fundada em 2004 com o propósito de incluir estudantes no mercado de trabalho de forma menos agressiva. Mantém contato com os fundadores, que são apoiadores fiéis. As maiores conquistas são membros que criam seus próprios negócios, empresas seniores e estúdios após passarem pela EJ. Possui uma cultura marcante com características que se repetem e cada diretoria com uma 'personalidade'.",
@@ -272,6 +297,7 @@
       "Instagram": "@lamparinadesign"
     },
     {
+      "id": "100025",
       "Nome": "Matriz",
       "Cursos": "Engenharia de Energia",
       "Sobre": "Fundada em 27 de janeiro de 2015, atua para diminuir a necessidade do uso de fontes de energia não renováveis. Impactou escolas com palestras e workshops e proporcionou economia de energia para diversos clientes, refletindo em mais renda e menor impacto ambiental.",
@@ -283,17 +309,19 @@
       "Instagram": "@matrizenergia"
     },
     {
+      "id": "100026",
       "Nome": "MecaJun",
       "Cursos": "Engenharia Mecatrônica",
       "Sobre": "Fundada há 20 anos, inicialmente como gestora de equipes de competição (droid), consolidou-se como empresa júnior em 2008. Possui orgulho de sua cultura familiar, onde todos que entram se tornam parte da família Mecajun.",
       "Missao": "Formar engenheiros capazes de impactar a sociedade por meio da tecnologia e proporcionar a melhor experiência para o aluno da UnB.",
-      "Visao": "Nos tornarmos uma EJ referência em capacitação e proatividade nos serviços de mecatrônica, no Brasil.",
+      "Visao": "Tornar-se uma EJ referência em capacitação e proatividade nos serviços de mecatrônica, no Brasil.",
       "Valores": "Crescer Juntos; Compromisso com Resultados; Proatividade; Orgulho de ser Mecajun!",
       "Servicos": "Automação agrícola, e outras automações no geral.",
       "Site": "mecajun.com",
       "Instagram": "@Mecajun"
     },
     {
+      "id": "100027",
       "Nome": "Museotec",
       "Cursos": "Museologia",
       "Sobre": "Criada por volta de 2018 por um grupo de alunos com o objetivo de aproximar a prática da teoria. Destaca a montagem de exposições em locais reconhecidos de Brasília. Peculiaridade é o foco na cultura, que por vezes dificulta a inserção no mercado devido à desvalorização cultural. Orgulho em ver membros participando da montagem e desmontagem de exposições e em projetos em andamento. Baseada em ética, união, transparência, pluralidade e cordialidade, priorizando valorização da cultura e responsabilidade fiscal, social e econômica.",
@@ -305,6 +333,7 @@
       "Instagram": "@museotec.jr"
     },
     {
+      "id": "100028",
       "Nome": "Nutrir",
       "Cursos": "Nutrição",
       "Sobre": "Fundada em 2010 por estudantes inconformadas e determinadas a colocar em prática o conhecimento da faculdade. Trabalha com eventos, restaurantes renomados e instituições escolares, promovendo a disseminação de uma alimentação justa e coerente com normas de segurança, garantindo segurança e credibilidade aos clientes.",
@@ -316,17 +345,19 @@
       "Instagram": "@nutrirconsultoriajr"
     },
     {
+      "id": "100029",
       "Nome": "O2",
       "Cursos": "Ciências Ambientais",
       "Sobre": "Fundada por estudantes de Ciências Ambientais da UnB, atuando no mercado desde 2012. Oferece um vasto campo de atuação devido à sua interdisciplinaridade e propostas diferenciadas, permitindo ser referência no mercado de trabalho. Propõe intervenções inteligentes, considerando a preservação do meio ambiente e o equilíbrio ecossistêmico. Destaca um projeto no evento Brasília Capital Moto Week (BCMW) em 2018, com ações para redução de resíduos sólidos e educação ambiental para motociclistas e comerciantes.",
       "Missao": "Proporcionar aos membros a oportunidade de aplicar seus conhecimentos em situações reais, aplicando os conceitos de sustentabilidade na administração estratégica aos negócios de nossos clientes.",
       "Visao": "Reconhecimento no mercado nacional e regional, apresentando soluções criativas, sustentáveis e inteligentes às problemáticas ambientais.",
       "Valores": "Empreendedorismo, diversidade, colaboração, responsabilidade socioambiental, desenvolvimento sustentável e proatividade.",
-      "Servicos": "Planejamento e Gestão de Resíduos Sólidos; Neutralização de Gases de Efeito Estufa; Implementação de hortas residenciais; Educação Ambiental; Cursos online na área ambiental; Geoprocessamento; Implantação e Manejo de Sistemas Agroflorestais; Avaliação de Impacto Ambiental; Cadastro no SiCAR; Elaboração e execução de Plano de Recuperação de Áreas Degradadas; Monitoramento Ambiental.",
+      "Servicos": "Planejamento e Gestão de Resíduos Sólidos; Neutralização de Gases de Efeito Estufa; Implementação de hortas residenciais; Educação Ambiental; Cursos online na área ambiental; Geoprocessamento; Implantação e Manejo de Sistemas Agroflorestais; Avaliação de Impacto Ambiental; Cadastro no SiCAR - Sistema de Cadastro Ambiental Rural; Elaboração e execução de Plano de Recuperação de Áreas Degradadas; Monitoramento Ambiental.",
       "Site": "N/A",
       "Instagram": "@O2ConsultoriaAmbientalJr"
     },
     {
+      "id": "100030",
       "Nome": "Olé Júnior",
       "Cursos": "Educação Física",
       "Sobre": "Empresa júnior dos estudantes de Educação Física da UnB. Pioneira na área de Gestão e Marketing Esportivo no Centro Oeste. Atua nas mais diversas áreas da Educação Física e traz ao mercado estudantes interessados e capacitados em gerenciar espaços do ambiente esportivo. Atualmente tenta se consolidar como EJ, mas teve dificuldades ao longo dos anos.",
@@ -338,17 +369,19 @@
       "Instagram": "@olé.unb"
     },
     {
+      "id": "100031",
       "Nome": "Orc'estra",
       "Cursos": "Engenharia de Software",
       "Sobre": "Fundada em 2017, a Empresa Júnior de Engenharia de Software da UnB tem o propósito de ressignificar a vida das pessoas através da gamificação, tornando a vida mais produtiva e prazerosa. A sede é compartilhada com 4 EJs da FGA - UnB. Conquistou por três anos consecutivos suas metas e foi considerada uma EJ impacto na sociedade pela Brasil Júnior. Realizou projetos para a Caixa Seguradora, Vale S.A, PMO, Gino Terentim, entre outras.",
       "Missao": "Mudar o comportamento das pessoas, através da gamificação, para motivar e engajar nossos parceiros.",
       "Visao": "Ser referência no Movimento Empresa Júnior apresentando um case de sucesso em um veículo de mídia relevante até o final de 2023.",
       "Valores": "Sangue Orc, Sintonia, Família e Crescimento.",
-      "Servicos": "Treinamentos sobre Gamificação, Metodologias Ágeis e Tecnologias de Software, todos com versão simples ou Gamificada. Design da Gamificação: Construir uma gamificação personalizada para o stakeholder, com base no contexto e nas pessoas. Consultoria de Gamificação: Consultar e resolver dores de uma gamificação já existente. Software Gamificado: Um software segundo o desejo do Stakeholder, com uma experiência gamificada, abarcando um design da gamificação em conjunto com o software.",
+      "Servicos": "Treinamentos sobre Gamificação, Metodologias Ágeis e Tecnologias de Software (com versão simples ou Gamificada). Design da Gamificação: Construir uma gamificação personalizada para o stakeholder. Consultoria de Gamificação: Consultar e resolver dores de uma gamificação já existente. Software Gamificado: Um software segundo o desejo do Stakeholder, com uma experiência gamificada, abarcando um design da gamificação em conjunto com o software.",
       "Site": "orcestra.com.br",
       "Instagram": "@orcestragamificacao"
     },
     {
+      "id": "100032",
       "Nome": "Phygeo",
       "Cursos": "Geofísica",
       "Sobre": "A Phygeo foi fundada em 2010, visando complementar a formação dos estudantes de geofísica da UnB. Recebe a tutoria do Prof. Dr. Welitom Borges. Uma das maiores conquistas é proporcionar maior experiência prática e ser um incentivo para os estudantes, diminuindo a evasão.",
@@ -360,17 +393,19 @@
       "Instagram": "@phygeojr"
     },
     {
+      "id": "100033",
       "Nome": "Polaris Jr.",
       "Cursos": "Turismo",
       "Sobre": "Sendo a primeira e única Empresa Júnior de Turismo do Distrito Federal, a Polaris Jr. surgiu em 2015, através dos esforços dos alunos, professores e coordenação do Centro de Excelência em Turismo da UnB. A empresa tem como base o interesse dos jovens bacharéis em turismo que acreditam no empreendedorismo responsável. Em 2019 foi premiada como empresa júnior Sangue Azul pela Federação das Empresas Juniores do Distrito Federal (Concentro).",
       "Missao": "Exercer com excelência os serviços no campo da consultoria, eventos e roteiros turísticos de forma responsável, ética e social em Brasília e entorno.",
       "Visao": "Tornar-se empresa de turismo referência no setor turístico regional.",
       "Valores": "Inovação, Excelência e Sinérgia.",
-      "Servicos": "Planejamento e organização de eventos, em formato presencial e online, assessoria para viagens (planejamento, emissão de documentos, reservas, etc.), consultoria turística, e operação e agenciamento, no campo da consultoria, roteiros turísticos, tanto de turismo receptivo como emissivo, além de eventos presenciais e on-line.",
+      "Servicos": "Planejamento e organização de eventos (presencial e online), assessoria para viagens (planejamento, emissão de documentos, reservas, etc.), consultoria turística, e operação e agenciamento (tanto de turismo receptivo como emissivo), além de eventos presenciais e on-line.",
       "Site": "polarisjrblog.wordpress.com",
       "Instagram": "@polaris.jr"
     },
     {
+      "id": "100034",
       "Nome": "Práxis",
       "Cursos": "Psicologia e Gestão de Pessoas",
       "Sobre": "Em 1995, nasce a primeira EJ de Psicologia do Brasil, e a segunda EJ da Universidade de Brasília: a Praxis Consultoria Jr. A empresa foi criada com o intuito de aplicar os conhecimentos teóricos do curso de Psicologia, desenvolver seus membros e impactar o ecossistema, mudando assim a relação das pessoas com a Psicologia e por meio dela. Dois membros do grupo fundador são hoje professores do Departamento de Psicologia Social e do Trabalho, do Instituto de Psicologia da UnB. A Praxis é federada à Concentro e confederada à Brasil Júnior desde 2008. Entre 2010 e 2012, membros da Praxis fizeram parte do corpo executivo e até mesmo da direção da Concentro. Em 2011, organizou parte do Concentra (encontro das empresas juniores do Distrito Federal) e em 2012 assumiu a organização geral do evento. Teve projetos de destaque para o Banco Central do Brasil e para o Conselho Regional de Psicologia do DF (CRP-01).",
@@ -382,6 +417,7 @@
       "Instagram": "@praxisconsultoriajr"
     },
     {
+      "id": "100035",
       "Nome": "Publicae",
       "Cursos": "Políticas Públicas",
       "Sobre": "A Publicae Consultoria Jr. foi fundada em 2016 por alunos do curso de Gestão de Políticas Públicas, completando 6 anos em novembro de 2022. Realizou trabalhos de grande impacto para a população do Distrito Federal, como auxiliando no desenvolvimento da política do BRT exclusivo para mulheres, projeto de iniciativa do Deputado Distrital Leandro Grass. Em 2018 atuou no projeto Câmara Barata em conjunto com o Observatório Social de Brasília, que consistiu na formulação de um projeto de lei de iniciativa popular visando a redução dos gastos e mais transparência da Câmara Legislativa do DF (CLDF). Em 2021, pela primeira vez em sua história o Conselho Diretor foi formado unicamente por mulheres. Ao fim do mesmo ano, a empresa havia alcançado todas as metas estabelecidas e foi reconhecida como EJ Alto Impacto (o maior nível de reconhecimento) pela Concentro.",
@@ -393,6 +429,7 @@
       "Instagram": "@publicaeconsultoriajr"
     },
     {
+      "id": "100036",
       "Nome": "Pupila",
       "Cursos": "Comunicação e Audiovisual",
       "Sobre": "A Pupila foi fundada em 2008, é a única EJ de audiovisual do DF e a maior do Brasil. Atua há mais de 10 anos com o foco de trazer soluções audiovisuais criativas ao mercado. Por ser formada por estudantes universitários, fomenta também o desenvolvimento da educação no Brasil e na formação de jovens empreendedores. Fez projetos para ONU, Sushiloko, AISEC, Pão dourado, entre outros.",
@@ -404,28 +441,31 @@
       "Instagram": "@pupilaaudiovisual"
     },
     {
+      "id": "100037",
       "Nome": "Quark Up",
       "Cursos": "Física",
       "Sobre": "A concepção da ideia de uma empresa júnior da física, que mais tarde viria a se tornar a QuarkUp, se deu inicialmente em 2019. Sua fundação concreta envolveu diversas mudanças, inclusive o nome. Suas maiores conquistas foram passar pelas burocracias de fundação e conseguir participação conjunta com instituto. Teve participação no stand da Semana Brasileira de Progresso da Ciência.",
       "Missao": "Transformar a educação e a ciência através da física.",
       "Visao": "Ser referência em inclusão, excelência e simplicidade na resolução de problemas.",
       "Valores": "Persistência, união, diversidade e criatividade.",
-      "Servicos": "Serviços relacionados aos conhecimentos desenvolvidos pelos discentes da física, como análise de dados, modelagem de sistemas e ensino nas áreas de física e matemática para ensino médio e graduação.",
+      "Servicos": "Serviços relacionados aos conhecimentos já desenvolvidos pelos discentes da física, como análise de dados, modelagem de sistemas e ensino nas áreas de física e matemática para ensino médio e graduação.",
       "Site": "N/A",
       "Instagram": "@quarkup_oficial"
     },
     {
+      "id": "100038",
       "Nome": "Quimera",
       "Cursos": "Letras",
       "Sobre": "A Quimera é a Empresa Júnior de Letras da UnB. Foi fundada em 2014 pelo curso de Línguas Estrangeiras Aplicadas e, em 2016, foi aberta para todas as 15 habilitações de graduação presencial do Instituto de Letras. Sua cultura empresarial é baseada no grupo estelar Plêiades. Seu maior orgulho é trabalhar para trazer diversidade e acessibilidade a todos os âmbitos acadêmicos e profissionais. Projetos de destaque incluem a recepção multilíngue na Feira de Internacionalização da INT/UnB, a legendagem do vídeo de outorga do título de doutor honoris causa a Noam Chomsky, e a revisão dos números 7 e 8 da Revista ARQUI, da FAU/UnB.",
       "Missao": "N/A",
       "Visao": "N/A",
       "Valores": "Transparência, Excelência, Respeito, Inclusão, Compromisso",
-      "Servicos": "Trabalha com português, espanhol, inglês e francês nas áreas de revisão, tradução, versão, transcrição de áudio, legendagem, monitoria e recepção multilíngue, além de formatação de trabalhos acadêmicos e científicos nos estilos ABNT, APA e Vancouver.",
+      "Servicos": "Trabalhos com português, espanhol, inglês e francês nas áreas de revisão, tradução, versão, transcrição de áudio, legendagem, monitoria e recepção multilíngue, além de formatação de trabalhos acadêmicos e científicos nos estilos ABNT, APA e Vancouver.",
       "Site": "quimeraej.com",
       "Instagram": "@quimeraej"
     },
     {
+      "id": "100039",
       "Nome": "Socius",
       "Cursos": "Ciências Sociais",
       "Sobre": "A SOCIUS, em atuação desde 1998, é uma associação civil sem fins lucrativos, autônoma, de cunho educacional. Seu principal objetivo é fazer com que as/os universitárias/os cresçam e se aperfeiçoem profissionalmente por meio de gerenciamento de projetos e contato com clientes. É regida por um estatuto social e um regimento interno, sendo gerida exclusivamente por alunas/os de graduação em Ciências Sociais da Universidade de Brasília. Busca preencher uma lacuna existente no currículo do curso: o contato com a prática. Muitas/os ex-integrantes relatam como a SOCIUS foi importante no ingresso no mercado de trabalho.",
@@ -437,6 +477,7 @@
       "Instagram": "@sociusconsultoria"
     },
     {
+      "id": "100040",
       "Nome": "Strategos",
       "Cursos": "Ciência Política e Gestão de Políticas Públicas",
       "Sobre": "A Strategos surgiu em 2005, com o intuito de oferecer serviços acessíveis e de qualidade para a sociedade, além de capacitar estudantes para o mercado de trabalho e fomentar o empreendedorismo jovem. Atualmente, é formada por alunos dos cursos de Ciência Política e Gestão de Políticas Públicas da Universidade de Brasília. É a primeira empresa júnior de Ciência Política do Brasil, tendo prestado serviços para clientes de peso, tanto do setor público - Tribunal de Contas da União, Ministério da Ciência e Tecnologia etc. - como do setor privado - Shell, Abrig etc. Ex-membros estão atualmente nos mais diversos setores do mercado, com mais de 70% ocupando cargos de liderança.",
@@ -448,6 +489,7 @@
       "Instagram": "@strategosconsultoria"
     },
     {
+      "id": "100041",
       "Nome": "Struct",
       "Cursos": "Engenharia da Computação",
       "Sobre": "A Struct foi fundada em 2014, por alunos de Engenharia de Computação com o objetivo de trazer maior protagonismo para o curso, dentro do Mercado de Trabalho (tendo em vista que o curso abriu em 2009 na UnB). Um fato curioso é que nós trabalhamos melhor nos anos de pandemia do que depois dela, pois todo o nosso trabalho é no computador. Uma grande conquista nossa é que crescemos exponencialmente desde nossa federação na concentro (rede de EJs do DF), somos tri alto crescimento e uma EJ impacto. Somos obcecados por foguetes, o nosso mascote é um foguetinho, e aqui somos todos pilotos. Outro fato curioso é que, independente do horário, costumamos falar bom dia. Temos muito orgulho de ver a evolução de cada membro durante sua trajetória dentro e fora da Struct. Já fizemos muito sistemas bem robustos, alguns exemplos seriam: O site do conselho de psicologia do DF (https://www.crp-01.org.br), o site do Vai de férias, um sistema de pacotes de férias que incluem hospedagem em destinos, selecionados por todo Brasil (https://vaideferias.com.br).",
@@ -459,6 +501,7 @@
       "Instagram": "@structunb"
     },
     {
+      "id": "100042",
       "Nome": "Tecmec",
       "Cursos": "Engenharia Mecânica",
       "Sobre": "A TECMEC foi fundada em 2004 por estudantes que buscavam um meio de se iniciarem em práticas empreendedoras durante o curso superior. Quando poucas Empresas Juniores existiam na UnB, eles aproveitaram a lacuna para trazer esse ambiente de vivência empresarial para a graduação de Engenharia Mecânica. A empresa realizou diversos projetos ao longo dos anos, com destaque para os projetos de máquinas com fabricação de protótipo. Entre eles, os projetos \"TEC Extruder\", uma extrusora e modeladora de biscoitos, o \"Cuca\", protótipo com mecanismos pneumáticos para rechear cucas, um bolo tradicional do Rio Grande do Sul, e o projeto \"Muither Maravilha\", realizado em parceria com a Mekhane, o Exército Brasileiro e a Harley Davidson, que consiste na fabricação de uma estrutura para comportar cerca de 60 homens e mulheres em uma moto. Todos esses e muito mais projetos renderam à TECMEC diversos prêmios ao longo dos anos, com destaque particular ao prêmio de EJ Alto Impacto, dado por cumprir com todas as metas estabelecidas para o referido ano, o que confere à TECMEC a categoria Cluster 5, o mais alto nível a ser alcançado por uma EJ! A TECMEC se orgulha de ser uma EJ de destaque no país, sendo uma das poucas Empresas Juniores de Engenharia Mecânica em todo o Brasil que oferece serviços personalizados e fabricação de protótipos robustos. A junção de toda a nossa cultura e nossos resultados nos torna a maior EJ de Engenharia Mecânica do Centro-Oeste, e a 2ª maior de todo o Brasil, o que nos faz ter ainda mais orgulho da história que seguimos construindo!",
@@ -481,6 +524,7 @@
       "Instagram": "@terapeuticajr"
     },
     {
+      "id": "100044",
       "Nome": "Zenit Aerospace",
       "Cursos": "Engenharia Aeroespacial",
       "Sobre": "Fundada em 2014, somos uma empresa júnior formada por alunos da Universidade de Brasília, composta por estudantes do curso de Engenharia Aeroespacial. Por isso, a Zenit constitui uma organização sem fins lucrativos regida pela lei 13.267/2016. Comprometidos com a difusão da tecnologia e dos conhecimentos relacionados à imensidão abrigada troposfera acima, somos uma empresa dedicada à inovação do mercado por meio da prestação de serviços de excelência e importância notáveis no ramo aeroespacial. Além disso, possuímos como objetivo o crescimento profissional de nossos membros, tendo em vista capacitações voltadas à inserção no mercado de trabalho. Assim, os alunos são responsáveis pelo funcionamento da empresa e possuem autonomia em sua gestão, tendo à sua disposição um conselho formado pelo corpo docente da UnB.",

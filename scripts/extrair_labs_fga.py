@@ -249,14 +249,35 @@ def filtrar_labs_fga(pdf_path, csv_saida):
         nome_normalizado = lab['nome'].strip().upper()
         if nome_normalizado not in labs_unicos:
             labs_unicos[nome_normalizado] = lab
-    labs_fga_final = list(labs_unicos.values())
+    labs_fga_sem_id = list(labs_unicos.values())
     print()
-    print(f"RESULTADO: {len(labs_fga_final)} laboratorios da FGA ")
+    print(f"RESULTADO: {len(labs_fga_sem_id)} laboratorios da FGA ")
     print()
+    print("Gerando IDs únicos para os laboratórios...")
+    labs_fga_final = [] # Esta será a nova lista final com IDs
+
+    # NOVO BLOCO: Gera IDs únicos
+    print("Gerando IDs únicos para os laboratórios...")
+    labs_fga_final = [] # Esta será a nova lista final com IDs
+
+    for i, lab in enumerate(labs_fga_sem_id):
+        # Gera um ID formatado: "2" + contador com 5 zeros à esquerda
+        # Ex: 200001, 200002, 200003...
+        contador = i + 1
+        id_lab = f"2{contador:05d}" 
+        
+        # Cria um novo dicionário com o ID como primeiro campo
+        lab_atualizado = {'id': id_lab, **lab}
+        
+        # Adiciona à nova lista final
+        labs_fga_final.append(lab_atualizado)
+    
+    print(f"✓ IDs gerados para {len(labs_fga_final)} laboratórios.")
+    
     if labs_fga_final:
         # Salva no CSV de saída
         with open(csv_saida, 'w', newline='', encoding='utf-8') as f:
-            campos = ['nome', 'coordenador', 'contato', 'descricao']
+            campos = ['id','nome', 'coordenador', 'contato', 'descricao']
             writer = csv.DictWriter(f, fieldnames=campos)
             writer.writeheader()
             writer.writerows(labs_fga_final)

@@ -56,6 +56,7 @@ def carregar_laboratorios(caminho_csv: str) -> List[Dict]:
         reader = csv.DictReader(f)
         for row in reader:
             labs.append({
+                'id': row.get('id'),
                 'nome': row['nome'],
                 'coordenador': row['coordenador'],
                 'contato': row['contato'],
@@ -205,7 +206,7 @@ def main():
         ]
         
         labs_com_tags.append({
-            'id': i,
+            'id': lab.get('id', i), # fallback
             'nome': lab['nome'],
             'coordenador': lab['coordenador'],
             'contato': lab['contato'],
