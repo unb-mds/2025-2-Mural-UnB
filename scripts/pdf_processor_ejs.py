@@ -375,6 +375,25 @@ class PDFProcessorEJs:
             if i + max_paginas_por_requisicao < len(dados_paginas):
                 print("   ⏳ Aguardando 3 segundos...")
                 time.sleep(3)
+
+        # NOVO BLOCO: GERAR IDs ÚNICOS PARA EJs
+
+        print("\nGerando IDs únicos para as empresas...")
+        empresas_com_id = []
+        for i, empresa in enumerate(todas_empresas):
+            # Gera um ID formatado: "1" + (5*"0") + contador
+            contador = i + 1
+            id_ej = f"1{contador:05d}" 
+            
+            # Cria um novo dicionário com o ID como primeiro campo
+            empresa_atualizada = {'id': id_ej, **empresa}
+            
+            # Adiciona à nova lista
+            empresas_com_id.append(empresa_atualizada)
+        
+        # Atualiza a lista principal para ser salva
+        todas_empresas = empresas_com_id 
+        print(f"✓ IDs gerados para {len(todas_empresas)} empresas.")
         
         # Salvar resultados
         self.salvar_json(todas_empresas, saida_json)
