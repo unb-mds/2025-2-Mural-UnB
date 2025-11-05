@@ -8,9 +8,9 @@ import numpy as np
 import os
 
 # Nomes dos arquivos
-ARQUIVO_TAGS_MESTRE = '../data/tags.json'
-ARQUIVO_LABS = '../data/Labs/labs_com_tags_embeddings.json' 
-ARQUIVO_SAIDA = '../data/Labs/labs_com_embedding_agregado.json'
+ARQUIVO_TAGS_MESTRE = './data/tags.json'
+ARQUIVO_LABS = './data/Labs/labs_com_tags_embeddings.json' 
+ARQUIVO_SAIDA = './data/Labs/labs_com_embedding_agregado.json'
 
 def carregar_lookup_embeddings(filepath):
     """
