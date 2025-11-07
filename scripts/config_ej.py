@@ -7,7 +7,7 @@ import os
 import google.generativeai as genai
 
 # Configurações da API Gemini
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyDsh0-ex1E0AAsmZG-VVmq-dFwDpKkXoqk') # <- mudar valor sua_chave_aqui nessa instância
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'sua_chave_aqui') # <- mudar valor sua_chave_aqui nessa instância
 
 if GEMINI_API_KEY and GEMINI_API_KEY != 'sua_chave_aqui':
     genai.configure(api_key=GEMINI_API_KEY)
