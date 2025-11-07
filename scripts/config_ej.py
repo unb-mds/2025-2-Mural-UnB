@@ -7,7 +7,7 @@ import os
 import google.generativeai as genai
 
 # Configurações da API Gemini
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'sua_chave_aqui') # <- mudar valor sua_chave_aqui nessa instância
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'sua_chave_aqui') # <-mudar valor sua_chave_aqui nessa instância
 
 if GEMINI_API_KEY and GEMINI_API_KEY != 'sua_chave_aqui':
     genai.configure(api_key=GEMINI_API_KEY)
@@ -28,8 +28,8 @@ IMAGES_DIR = "images"
 # Configurações do processamento
 PROCESSAR_POR_PAGINA = True
 MAX_PAGINAS_POR_REQUISICAO = 10
-# pagina onde o processo começa, a página 10 é o sumário ent desse modo são evitados erros
-PAGINA_INICIAL_EJS = 11  
+# pagina onde o processo começa, a página 4 é o sumário ent desse modo são evitados erros
+PAGINA_INICIAL_EJS = 6  
 
 # Configurações extrair imagens
 EXTRAIR_IMAGENS = True

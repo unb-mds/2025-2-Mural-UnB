@@ -7,12 +7,11 @@ import pdfplumber
 import google.generativeai as genai
 import os
 import time
- # Classe e funções para extrair texto e imagens de PDFs e chamar Gemini para extrair campos.
- # Contém lógica de limpeza, prompts e processamento paginado/unificado para EJs.
 from typing import Dict, List
 import re
 import fitz
 import requests
+from config_ej import PAGINA_INICIAL_EJS
 
 class PDFProcessorEJs:
     def __init__(self, gemini_api_key: str):
@@ -20,42 +19,67 @@ class PDFProcessorEJs:
         genai.configure(api_key=gemini_api_key)
         self.model = genai.GenerativeModel('gemini-2.5-flash-lite')
 
-    def extrair_imagens_pdf(self, pdf_path: str, output_dir: str) -> List[str]:
-        """Extração de todas as imagens do PDF"""
-        print(f"\n Extraindo imagens do PDF...")
+    def extrair_imagens_pdf(self, pdf_path: str, output_dir: str, empresas_com_id: List[Dict] = None) -> List[str]:
+        """Extração de todas as imagens do PDF com novo sistema de nomenclatura"""
+        print(f"\n📸 Extraindo imagens do PDF...")
 
         imagens_extraidas = []
 
         try:
-            # Create images directory if it doesn't exist
+            # Criar diretório de imagens se não existir
             images_dir = os.path.join(output_dir, "images")
             os.makedirs(images_dir, exist_ok=True)
             
-            # Open PDF with PyMuPDF
+            # Abrir pdf com PyMuPDF
             pdf_document = fitz.open(pdf_path)
+            
+            # Criando mapeamento de página para ID da EJ
+            pagina_para_id = {}
+            if empresas_com_id:
+                # Assumindo que cada EJ está em uma página específica
+                for i, empresa in enumerate(empresas_com_id):
+                    
+                    pagina_ej = PAGINA_INICIAL_EJS + i
+                    pagina_para_id[pagina_ej] = empresa.get('id')
+                    print(f"  Mapeamento: Página {pagina_ej} → EJ {empresa.get('id')} - {empresa.get('Nome', 'Sem nome')}")
             
             total_images = 0
             
             for page_num in range(len(pdf_document)):
                 page = pdf_document[page_num]
+                pagina_atual = page_num + 1
                 
-                # Get image list
+                # Pegar lista de imagens
                 image_list = page.get_images()
                 
                 if image_list:
-                    print(f"  Página {page_num + 1}: {len(image_list)} imagem(ns) encontrada(s)")
+                    print(f"  Página {pagina_atual}: {len(image_list)} imagem(ns) encontrada(s)")
+                    
+                    # Verificar se esta página tem uma EJ associada
+                    id_ej_pagina = pagina_para_id.get(pagina_atual)
                     
                     for img_index, img in enumerate(image_list):
-                        # Get the XREF of the image
+                        # Pegar o XREF da imagem
                         xref = img[0]
                         
-                        # Extract the image
+                        # extrair a imagem
                         base_image = pdf_document.extract_image(xref)
                         image_bytes = base_image["image"]
                         image_ext = base_image["ext"]
                         
-                        # Generate filename
-                        image_filename = f"pagina_{page_num + 1}_imagem_{img_index + 1}.{image_ext}"
+                        # SISTEMA DE NOMENCLATURA
+                        if id_ej_pagina:
+                            # Página com EJ - usar ID da EJ
+                            if img_index == 0:
+                                # Primeira imagem da página da EJ
+                                image_filename = f"{id_ej_pagina}.{image_ext}"
+                            else:
+                                # Imagens subsequentes na mesma página da EJ
+                                image_filename = f"{id_ej_pagina}-{img_index + 1}.{image_ext}"
+                        else:
+                            # Página sem EJ - usar sistema antigo
+                            image_filename = f"null-{pagina_atual}-{img_index + 1}.{image_ext}"
+                        
                         image_path = os.path.join(images_dir, image_filename)
                         
                         # Save the image
@@ -64,20 +88,34 @@ class PDFProcessorEJs:
                         
                         imagens_extraidas.append({
                             "caminho": image_path,
-                            "pagina": page_num + 1,
+                            "pagina": pagina_atual,
                             "numero": img_index + 1,
                             "formato": image_ext,
-                            "tamanho": len(image_bytes)
+                            "tamanho": len(image_bytes),
+                            "id_ej_associado": id_ej_pagina,
+                            "nome_arquivo": image_filename
                         })
                         
                         total_images += 1
-                        print(f"    💾 Salvo: {image_filename}")
+                        tipo_nome = "EJ" if id_ej_pagina else "página"
+                        print(f"    💾 Salvo ({tipo_nome}): {image_filename}")
                 else:
-                    print(f"  Página {page_num + 1}: Nenhuma imagem encontrada")
+                    print(f"  Página {pagina_atual}: Nenhuma imagem encontrada")
             
             pdf_document.close()
             
-            print(f"✓ Extração de imagens concluída: {total_images} imagens salvas em '{images_dir}'")
+            # Estatísticas do novo sistema
+            imagens_com_ej = [img for img in imagens_extraidas if img['id_ej_associado']]
+            imagens_sem_ej = [img for img in imagens_extraidas if not img['id_ej_associado']]
+            
+            print(f"\n✓ Extração de imagens concluída: {total_images} imagens salvas em '{images_dir}'")
+            print(f"📊 Estatísticas do novo sistema:")
+            print(f"   • Imagens associadas a EJs: {len(imagens_com_ej)}")
+            print(f"   • Imagens de páginas sem EJ: {len(imagens_sem_ej)}")
+            
+            if imagens_com_ej:
+                print(f"   • IDs de EJs com imagens: {list(set(img['id_ej_associado'] for img in imagens_com_ej))}")
+            
             return imagens_extraidas
             
         except Exception as e:
@@ -181,7 +219,7 @@ class PDFProcessorEJs:
 
         INSTRUÇÕES:
         1. Identifique CADA empresa júnior mencionada no texto
-        2. Para cada empresa, extraia as informações nos campos abaixo
+        2. Para cada empresa, extraia as informações nos campos abaixo 
         3. Se uma informação não for encontrada, use "N/A"
         4. Retorne APENAS um array JSON válido
 
@@ -376,9 +414,8 @@ class PDFProcessorEJs:
                 print("   ⏳ Aguardando 3 segundos...")
                 time.sleep(3)
 
-        # NOVO BLOCO: GERAR IDs ÚNICOS PARA EJs
-
-        print("\nGerando IDs únicos para as empresas...")
+        # GERANDO IDs ÚNICOS PARA EJs
+        print("\n🔢 Gerando IDs únicos para as empresas...")
         empresas_com_id = []
         for i, empresa in enumerate(todas_empresas):
             # Gera um ID formatado: "1" + (5*"0") + contador
@@ -395,6 +432,16 @@ class PDFProcessorEJs:
         todas_empresas = empresas_com_id 
         print(f"✓ IDs gerados para {len(todas_empresas)} empresas.")
         
+        # EXTRAIR IMAGENS COM NOVO SISTEMA DE NOMENCLATURA
+        from config_ej import OUTPUT_DIR, EXTRAIR_IMAGENS
+        if EXTRAIR_IMAGENS:
+            print("\n🖼️  EXTRAINDO IMAGENS COM NOVO SISTEMA DE NOMENCLATURA...")
+            imagens_extraidas = self.extrair_imagens_pdf(pdf_path, OUTPUT_DIR, empresas_com_id)
+            if imagens_extraidas:
+                print(f"✓ Total de imagens extraídas: {len(imagens_extraidas)}")
+            else:
+                print("ℹ️  Nenhuma imagem encontrada no PDF")
+        
         # Salvar resultados
         self.salvar_json(todas_empresas, saida_json)
         
@@ -409,7 +456,8 @@ class PDFProcessorEJs:
             for i, empresa in enumerate(todas_empresas, 1):
                 nome = empresa.get('Nome', 'Sem nome')
                 cursos = empresa.get('Cursos', 'N/A')
-                print(f"  {i:2d}. {nome} | {cursos}")
+                id_ej = empresa.get('id', 'Sem ID')
+                print(f"  {i:2d}. [{id_ej}] {nome} | {cursos}")
         
         return todas_empresas
     
@@ -439,5 +487,4 @@ class PDFProcessorEJs:
                 print(f"📊 Estatísticas: {len(dados)} empresas, {total_campos} campos totais")
                 
         except Exception as e:
-
             print(f"✗ Erro ao salvar JSON: {e}")
