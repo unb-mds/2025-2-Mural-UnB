@@ -19,7 +19,7 @@ export interface Opportunity {
   
   export const opportunities: Opportunity[] = [
     {
-      id: "Orc'estra Gamificação",
+      id: "Orcestra_Gamificacao",
       name: "Orc'estra",
       shortDescription: "EJ de Engenharia de Software",
       category: "Empresas Juniores",

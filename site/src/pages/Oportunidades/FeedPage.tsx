@@ -64,7 +64,7 @@ export default function FeedPage() {
                     date: "",
                     location: "",
                     tags: opportunity.tags || [],
-                    link: `/Oportunidades/${opportunity.id}`,
+                    link: `/Mural/${opportunity.id}`,
                     logo: opportunity.logo
                   }}
                 />

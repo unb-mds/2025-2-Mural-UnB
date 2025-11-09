@@ -60,7 +60,7 @@ export default function FilterSidebar({
           <h3 className="filter-section-title">TAGS</h3>
           <button 
             onClick={() => setIsModalOpen(true)} 
-            className="tags-filter-button"
+            className="tags-filter-button bg-primary"
           >
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
