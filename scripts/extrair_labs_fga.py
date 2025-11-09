@@ -225,6 +225,16 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
         "twitter.com",
         "sigaa.unb.br" 
     ]
+
+    IMAGE_FILENAME_BLACKLIST = [
+        "logo-unb.png",      
+        "unbdpi-logo.png",   
+        "unbpi-logo.png",    
+        "logo_unb1.png",     
+        "opine.png",         
+        "logo.svg"           
+    ]
+
     keyword = extrair_palavra_chave(nome_do_lab)
 
     query_de_busca = f'"{nome_do_lab}" OR site:unb.br "{keyword} FGA"'
@@ -302,23 +312,39 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
             print("    [Busca Imagem] ❌ Nenhum resultado web parece ser uma homepage válida (todos na blacklist?).")
             return None # Desiste
 
-        # --- FASE 3: CAÇA À IMAGEM NA HOMEPAGE SELECIONADA ---
+# --- FASE 3: CAÇA À IMAGEM (V9 - Com Blacklist de Imagem e Anti-SVG) ---
         print(f"    [Busca Imagem] Caçando imagem em: {homepage_url}")
         try:
-            # Prepara headers e faz a requisição para a homepage
             headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
             response_lab = requests.get(homepage_url, headers=headers, timeout=15, verify=False)
-            response_lab.raise_for_status() # Verifica se a página respondeu OK
+            response_lab.raise_for_status() 
 
-            # Prepara o BeautifulSoup para ler o HTML da página
             soup_lab = BeautifulSoup(response_lab.content, 'html.parser')
-            url_imagem_encontrada = None # Onde guardaremos a URL da imagem achada
+            url_imagem_encontrada = None 
 
-            # Alvo #1 (Ouro): Tag <meta property="og:image"> (padrão para compartilhamento)
+            # --- Função helper para verificar a URL da imagem ---
+            def is_url_valida(url_teste):
+                if not url_teste:
+                    return False
+                url_lower = url_teste.lower()
+                # 1. Rejeita se for SVG
+                if url_lower.endswith('.svg'):
+                    print(f"      [Caça] ⚠️ Rejeitado (SVG): {url_teste}")
+                    return False
+                # 2. Rejeita se estiver na blacklist de nomes de arquivo
+                if any(nome_ruim in url_lower for nome_ruim in IMAGE_FILENAME_BLACKLIST):
+                    print(f"      [Caça] ⚠️ Rejeitado (Blacklist): {url_teste}")
+                    return False
+                return True
+            # --- Fim da função helper ---
+
+            # Alvo #1 (Ouro): Tag <meta property="og:image">
             meta_og_image = soup_lab.find('meta', property='og:image')
             if meta_og_image and meta_og_image.get('content'):
-                url_imagem_encontrada = meta_og_image.get('content')
-                print("      [Caça] 🥇 Ouro ('og:image')")
+                url_teste = meta_og_image.get('content')
+                if is_url_valida(url_teste):
+                    url_imagem_encontrada = url_teste
+                    print("      [Caça] 🥇 Ouro ('og:image')")
 
             # Alvo #2 (Prata): Imagem de Logo (busca por 'logo' ou 'brand')
             if not url_imagem_encontrada:
@@ -329,15 +355,16 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
                 for seletor in seletores_logo:
                     logo_img = soup_lab.select_one(seletor)
                     if logo_img and logo_img.get('src'):
-                        # Verifica se a imagem não é muito pequena (evita ícones)
-                        width = logo_img.get('width', '0').replace('px', '')
-                        height = logo_img.get('height', '0').replace('px', '')
-                        try:
-                           if int(width) > 30 or int(height) > 30: # Ajuste o tamanho mínimo se necessário
-                                url_imagem_encontrada = logo_img.get('src')
-                                print(f"      [Caça] 🥈 Prata (seletor: '{seletor}')")
-                                break
-                        except ValueError: pass # Ignora width/height não numéricos
+                        url_teste = logo_img.get('src')
+                        if is_url_valida(url_teste):
+                            width = logo_img.get('width', '0').replace('px', '')
+                            height = logo_img.get('height', '0').replace('px', '')
+                            try:
+                               if int(width) > 30 or int(height) > 30: 
+                                    url_imagem_encontrada = url_teste
+                                    print(f"      [Caça] 🥈 Prata (seletor: '{seletor}')")
+                                    break # Para o loop 'for seletor...'
+                            except ValueError: pass
 
             # Alvo #3 (Bronze): Imagem dentro do <header> ou de um 'banner'
             if not url_imagem_encontrada:
@@ -345,34 +372,42 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
                 if header:
                     img_header = header.find('img')
                     if img_header and img_header.get('src'):
-                        url_imagem_encontrada = img_header.get('src')
-                        print("      [Caça] 🥉 Bronze (<header> img)")
+                        url_teste = img_header.get('src')
+                        if is_url_valida(url_teste):
+                            url_imagem_encontrada = url_teste
+                            print("      [Caça] 🥉 Bronze (<header> img)")
                 if not url_imagem_encontrada: # Só procura banner se não achar no header
                     banner = soup_lab.find('div', class_=lambda x: x and 'banner' in x.lower())
                     if banner:
                         img_banner = banner.find('img')
                         if img_banner and img_banner.get('src'):
-                            url_imagem_encontrada = img_banner.get('src')
-                            print("      [Caça] 🥉 Bronze (banner div img)")
+                            url_teste = img_banner.get('src')
+                            if is_url_valida(url_teste):
+                                url_imagem_encontrada = url_teste
+                                print("      [Caça] 🥉 Bronze (banner div img)")
 
             # Alvo #4 (Cobre): Primeira imagem grande dentro do conteúdo principal
             if not url_imagem_encontrada:
-                seletores_conteudo = ['main', 'article', 'div[class*="content"]', 'div[class*="post"]', 'body'] # Adicionado 'body' como último recurso
+                seletores_conteudo = ['main', 'article', 'div[class*="content"]', 'div[class*="post"]', 'body']
                 for seletor in seletores_conteudo:
                     area_conteudo = soup_lab.select_one(seletor)
                     if area_conteudo:
                         img_conteudo = area_conteudo.find('img')
                         if img_conteudo and img_conteudo.get('src'):
-                            # Verifica se a imagem é razoavelmente grande
-                            width = img_conteudo.get('width', '0').replace('px', '')
-                            height = img_conteudo.get('height', '0').replace('px', '')
-                            try:
-                               if int(width) > 50 or int(height) > 50: # Ajuste o tamanho mínimo
-                                    url_imagem_encontrada = img_conteudo.get('src')
-                                    print(f"      [Caça] 🥉 Cobre ('{seletor}' img)")
-                                    break
-                            except ValueError: pass
+                            url_teste = img_conteudo.get('src')
+                            if is_url_valida(url_teste):
+                                width = img_conteudo.get('width', '0').replace('px', '')
+                                height = img_conteudo.get('height', '0').replace('px', '')
+                                try:
+                                   if int(width) > 50 or int(height) > 50: 
+                                        url_imagem_encontrada = url_teste
+                                        print(f"      [Caça] 🥉 Cobre ('{seletor}' img)")
+                                        break
+                                except ValueError: pass
+                    if url_imagem_encontrada: break # Para o loop 'for seletor...'
 
+            # --- FASE 4: DOWNLOAD E RETORNO DO RESULTADO ---
+            # (Esta parte continua igual)
             # --- FASE 4: DOWNLOAD E RETORNO DO RESULTADO ---
             if url_imagem_encontrada:
                 # Garante que a URL da imagem seja absoluta
