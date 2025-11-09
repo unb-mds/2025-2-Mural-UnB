@@ -227,12 +227,19 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
     ]
 
     IMAGE_FILENAME_BLACKLIST = [
-        "logo-unb.png",      
-        "unbdpi-logo.png",   
-        "unbpi-logo.png",    
-        "logo_unb1.png",     
-        "opine.png",         
-        "logo.svg"           
+        "logo-unb.png",
+        "unbdpi-logo.png",
+        "unbpi-logo.png",
+        "logo_unb1.png",
+        "PCTEC-UnB_logo.png",
+
+        "opine.png",
+        "opine-sobre-o-portal.png",
+
+        "logo.svg",
+
+        "antonio-150x150.jpg", 
+        "cropped-face-12.png" 
     ]
 
     keyword = extrair_palavra_chave(nome_do_lab)
@@ -323,20 +330,29 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
             url_imagem_encontrada = None 
 
             # --- Função helper para verificar a URL da imagem ---
+# --- Função helper para verificar a URL da imagem ---
             def is_url_valida(url_teste):
                 if not url_teste:
                     return False
+
                 url_lower = url_teste.lower()
-                # 1. Rejeita se for SVG
+
+                # 1. Rejeita se for um 'data:image' embutido
+                if url_lower.startswith('data:image'):
+                    print(f"      [Caça] ⚠️ Rejeitado (data:image): {url_teste[:60]}...")
+                    return False
+
+                # 2. Rejeita se for SVG
                 if url_lower.endswith('.svg'):
                     print(f"      [Caça] ⚠️ Rejeitado (SVG): {url_teste}")
                     return False
-                # 2. Rejeita se estiver na blacklist de nomes de arquivo
+
+                # 3. Rejeita se estiver na blacklist de nomes de arquivo
                 if any(nome_ruim in url_lower for nome_ruim in IMAGE_FILENAME_BLACKLIST):
                     print(f"      [Caça] ⚠️ Rejeitado (Blacklist): {url_teste}")
                     return False
+
                 return True
-            # --- Fim da função helper ---
 
             # Alvo #1 (Ouro): Tag <meta property="og:image">
             meta_og_image = soup_lab.find('meta', property='og:image')
@@ -360,7 +376,7 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
                             width = logo_img.get('width', '0').replace('px', '')
                             height = logo_img.get('height', '0').replace('px', '')
                             try:
-                               if int(width) > 30 or int(height) > 30: 
+                               if int(width) > 50 or int(height) > 50: 
                                     url_imagem_encontrada = url_teste
                                     print(f"      [Caça] 🥈 Prata (seletor: '{seletor}')")
                                     break # Para o loop 'for seletor...'
