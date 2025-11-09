@@ -241,6 +241,7 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
         "foto_pessoal_moodles.png", 
         "googleusercontent.com/profile/picture", 
         "grade_curricular_atualizada.png", 
+        "benvindo_rodrigues_pereira_junior.jpg",
     ]
 
     keyword = extrair_palavra_chave(nome_do_lab)
@@ -758,8 +759,7 @@ def filtrar_labs_fga(pdf_path, csv_saida):
 
             # 2. Verifica se é uma das categorias principais ou default
             if categoria in ["software", "eletronica", "mecanica_materiais", "default"]:
-                # Escolhe um número aleatório entre 1 e 2 (assumindo 2 variações)
-                numero_variacao = random.randint(1, 2)
+                numero_variacao = random.randint(1, 3)
                 # Monta o nome do arquivo placeholder (ex: software_2.jpg, default_1.jpg)
                 nome_placeholder = f"{categoria}_{numero_variacao}.jpg"
             else:
