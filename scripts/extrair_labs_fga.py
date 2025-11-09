@@ -212,10 +212,21 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
                      (ex: "data/images/labs/robotica.jpg") ou None se falhar.
     """
 
-    # --- FASE 1: PREPARAÇÃO E BUSCA WEB ---
-    # Usa a função extrair_palavra_chave para obter a palavra-chave
+    URL_BLACKLIST = [
+        "bing.com",
+        "google.com",
+        "escavador.com",
+        "researchgate.net",
+        "academia.edu",
+        "github.com", 
+        "linkedin.com",
+        "facebook.com",
+        "instagram.com",
+        "twitter.com",
+        "sigaa.unb.br" 
+    ]
     keyword = extrair_palavra_chave(nome_do_lab)
-    # Monta uma query de busca: tenta o nome exato OU busca no site da unb pela chave + FGA
+
     query_de_busca = f'"{nome_do_lab}" OR site:unb.br "{keyword} FGA"'
 
     print(f"  [Busca Imagem] Buscando por: {query_de_busca} (chave: {keyword})")
@@ -237,35 +248,59 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
              return None # Se a busca falhar, não adianta continuar
 
         # --- FASE 2: FILTRO DE RELEVÂNCIA ---
-        homepage_url = None # Onde guardaremos a URL vencedora
+        # --- FASE 2: FILTRO DE RELEVÂNCIA (V8 - Com Priorização e Blacklist) ---
+        homepage_url = None
         print(f"    [Busca Imagem] Filtrando resultados por '{keyword}'...")
 
+        url_prioritaria = None
+        url_fallback = None
+        url_ultimo_recurso = None
+
         for resultado in resultados_da_busca:
-            # Normaliza (minúsculo, sem acentos) para comparação robusta
-            titulo_normalizado = unidecode(resultado['title'].lower())
-            url_normalizada = unidecode(resultado['href'].lower())
+            url_original = resultado['href']
+            url_lower = url_original.lower()
+            titulo_lower_normalizado = unidecode(resultado['title'].lower())
+            
+            # 1. Verifica se a URL está na Blacklist
+            if any(site_ruim in url_lower for site_ruim in URL_BLACKLIST):
+                print(f"      [Filtro] Ignorando (Blacklist): {url_original}")
+                continue # Pula este resultado, vai para o próximo
 
-            # Condição do filtro: Palavra-chave no título OU na URL E NÃO é link de documento
-            if (keyword in titulo_normalizado or keyword in url_normalizada) and \
-               not any(ext in url_normalizada for ext in ['.pdf', '.doc', '.docx', '.odt']):
-                homepage_url = resultado['href'] # Guarda a URL original
-                print(f"    [Busca Imagem] 🎯 Relevante encontrado: {homepage_url}")
-                break # Para no primeiro resultado relevante
+            # 2. Verifica se é um link de documento
+            if any(ext in url_lower for ext in ['.pdf', '.doc', '.docx', '.odt']):
+                print(f"      [Filtro] Ignorando (Documento): {url_original}")
+                continue # Pula este resultado
 
-        # Plano B: Se o filtro não achou nada com a palavra-chave
-        if not homepage_url:
-            for resultado in resultados_da_busca:
-                 url_normalizada = unidecode(resultado['href'].lower())
-                 # Pega o primeiro resultado que não seja link de documento
-                 if not any(ext in url_normalizada for ext in ['.pdf', '.doc', '.docx', '.odt']):
-                      homepage_url = resultado['href']
-                      print(f"    [Busca Imagem] ⚠️ Filtro falhou. Usando primeiro resultado válido: {homepage_url}")
-                      break
+            # 3. Salva o primeiro resultado válido (Plano C)
+            if not url_ultimo_recurso:
+                url_ultimo_recurso = url_original
 
-        # Plano C: Se nem o plano B funcionou (só achou links de documentos?)
-        if not homepage_url:
-             print("    [Busca Imagem] ❌ Nenhum resultado web parece ser uma homepage válida.")
-             return None 
+            # 4. Verifica a relevância da palavra-chave
+            keyword_no_titulo = keyword in titulo_lower_normalizado
+            keyword_na_url = keyword in url_lower
+
+            if keyword_no_titulo or keyword_na_url:
+                # 5. PRIORIDADE MÁXIMA: É da UnB E tem a palavra-chave?
+                if ".unb.br" in url_lower:
+                    print(f"    [Busca Imagem] 🎯 Prioritário (UnB + Chave) encontrado: {url_original}")
+                    url_prioritaria = url_original
+                    break # Encontramos o melhor, para o loop
+                
+                # 6. Prioridade Média: Não é da UnB, mas tem a palavra-chave (Plano B)
+                if not url_fallback:
+                    print(f"    [Busca Imagem] ⚠️ Relevante (Externo + Chave) encontrado: {url_original}")
+                    url_fallback = url_original
+
+        # Decide qual URL usar, em ordem de prioridade
+        if url_prioritaria:
+            homepage_url = url_prioritaria   # 1º: UnB + Palavra-Chave
+        elif url_fallback:
+            homepage_url = url_fallback      # 2º: Externo + Palavra-Chave
+        elif url_ultimo_recurso:
+            homepage_url = url_ultimo_recurso # 3º: Primeiro link que não estava na blacklist
+        else:
+            print("    [Busca Imagem] ❌ Nenhum resultado web parece ser uma homepage válida (todos na blacklist?).")
+            return None # Desiste
 
         # --- FASE 3: CAÇA À IMAGEM NA HOMEPAGE SELECIONADA ---
         print(f"    [Busca Imagem] Caçando imagem em: {homepage_url}")
