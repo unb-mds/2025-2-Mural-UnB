@@ -1,6 +1,6 @@
 // src/hooks/useVectorSearch.ts
 import { useState, useEffect } from 'react';
-import type { ILab, ITagsData, Embedding, ITag } from '../utils/types';
+import type { ILab, ITagsData, Embedding } from '../utils/types';
 
 // O mapa de lookup é a estrutura de dados mais importante para performance.
 // Mapeia "tag_id" -> [vetor de embedding]
