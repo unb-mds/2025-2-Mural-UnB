@@ -60,9 +60,7 @@ function Footer() {
           <h3 className="footer-pages-title">Páginas</h3>
           <nav className="footer-nav">
             <Link to="/" className="footer-nav-link">Home</Link>
-            <Link to="/Academicos" className="footer-nav-link">Acadêmicos</Link>
-            <Link to="/Profissionais" className="footer-nav-link">Profissionais</Link>
-            <Link to="/Oportunidades" className="footer-nav-link">Oportunidades</Link>
+            <Link to="/Oportunidades" className="footer-nav-link">Mural</Link>
           </nav>
         </div>
       </div>
