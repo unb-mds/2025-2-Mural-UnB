@@ -1,0 +1,5599 @@
+{
+  "metodo": "similaridade_embeddings",
+  "modelo_embedding": "text-embedding-004",
+  "total_empresas": 49,
+  "data_geracao": "2025-11-09",
+  "parametros": {
+    "min_tags": 5,
+    "max_tags": 15,
+    "threshold_similaridade": 0.45
+  },
+  "empresas_juniores": [
+    {
+      "id": "100001",
+      "Nome": "Ábaco",
+      "Cursos": "Ciências Contábeis",
+      "Site": "abacoconsultoria.com.br",
+      "Instagram": "@abacoconsultoriajr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "ciencia_dados",
+          "label": "Ciência de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.613
+        },
+        {
+          "label": "Estágio",
+          "score": 0.606
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.605
+        }
+      ]
+    },
+    {
+      "id": "100002",
+      "Nome": "AD&M",
+      "Cursos": "Administração",
+      "Site": "admconsultoria.com.br",
+      "Instagram": "@ademconsultoria",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "desenvolvimento_mobile",
+          "label": "Desenvolvimento Mobile",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "realidade_virtual_aumentada",
+          "label": "Realidade Virtual/Aumentada (VR/AR)",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.647
+        },
+        {
+          "label": "Estágio",
+          "score": 0.613
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.588
+        }
+      ]
+    },
+    {
+      "id": "100003",
+      "Nome": "Advocatta",
+      "Cursos": "Direito",
+      "Site": "advocatta.org",
+      "Instagram": "@advocatta",
+      "tags": [
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "lideranca",
+          "label": "Liderança",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "pensamento_critico",
+          "label": "Pensamento Crítico",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "oratória_apresentacao",
+          "label": "Oratória e Apresentação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Estágio",
+          "score": 0.604
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.598
+        },
+        {
+          "label": "Negociação",
+          "score": 0.554
+        }
+      ]
+    },
+    {
+      "id": "100004",
+      "Nome": "Aracá",
+      "Cursos": "Agronomia e Veterinária",
+      "Site": "linktr.ee/ejaraca",
+      "Instagram": "@araca.ej",
+      "tags": [
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Startup Universitária",
+          "score": 0.569
+        },
+        {
+          "label": "Estágio",
+          "score": 0.551
+        },
+        {
+          "label": "Energias Renováveis",
+          "score": 0.55
+        }
+      ]
+    },
+    {
+      "id": "100005",
+      "Nome": "Arch",
+      "Cursos": "Arquivologia",
+      "Site": "archjr.com.br",
+      "Instagram": "@arch.jr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "impressao_3d",
+          "label": "Impressão 3D",
+          "categoria": "Ferramentas, Softwares e Tecnologias",
+          "subcategoria": "Hardware"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "realidade_virtual_aumentada",
+          "label": "Realidade Virtual/Aumentada (VR/AR)",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "design_automotivo_cad",
+          "label": "Design Automotivo e CAD",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "circuitos_digitais_analogicos",
+          "label": "Circuitos Digitais e Analógicos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.66
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.608
+        },
+        {
+          "label": "Estágio",
+          "score": 0.604
+        }
+      ]
+    },
+    {
+      "id": "100006",
+      "Nome": "Astrodatum",
+      "Cursos": "Geografia",
+      "Site": "lamparinadesign.com.br",
+      "Instagram": "@lamparinadesign",
+      "tags": [
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "ciencia_dados",
+          "label": "Ciência de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "satelites_cubesats",
+          "label": "Satélites e CubeSats",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mecanica_orbital",
+          "label": "Mecânica Orbital",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Startup Universitária",
+          "score": 0.601
+        },
+        {
+          "label": "Estágio",
+          "score": 0.597
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.587
+        }
+      ]
+    },
+    {
+      "id": "100007",
+      "Nome": "Ateliê Muda",
+      "Cursos": "Arquitetura e Urbanismo",
+      "Site": "ateliemuda.com",
+      "Instagram": "@Ateliê.muda",
+      "tags": [
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "desenvolvimento_mobile",
+          "label": "Desenvolvimento Mobile",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "desenvolvimento_jogos",
+          "label": "Desenvolvimento de Jogos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Estágio",
+          "score": 0.59
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.578
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.563
+        }
+      ]
+    },
+    {
+      "id": "100008",
+      "Nome": "Avenir",
+      "Cursos": "Ciência Política",
+      "Site": "avenircs.com.br",
+      "Instagram": "@avenircs",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_embarcados",
+          "label": "Sistemas Embarcados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.667
+        },
+        {
+          "label": "Estágio",
+          "score": 0.589
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.573
+        }
+      ]
+    },
+    {
+      "id": "100009",
+      "Nome": "Cogitatus",
+      "Cursos": "Enfermagem",
+      "Site": "N/A",
+      "Instagram": "@cogitatus_empresajr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "seguranca_informacao",
+          "label": "Segurança da Informação",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "pensamento_critico",
+          "label": "Pensamento Crítico",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.581
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.564
+        },
+        {
+          "label": "Estágio",
+          "score": 0.561
+        }
+      ]
+    },
+    {
+      "id": "100010",
+      "Nome": "Concreta",
+      "Cursos": "Civil, Ambiental e Arquitetura",
+      "Site": "concretaconsultoria.com.br",
+      "Instagram": "@concretaej",
+      "tags": [
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "materiais_compositos",
+          "label": "Materiais Compósitos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Estágio",
+          "score": 0.633
+        },
+        {
+          "label": "Energias Renováveis",
+          "score": 0.606
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.603
+        }
+      ]
+    },
+    {
+      "id": "100011",
+      "Nome": "ConFiE Jr.",
+      "Cursos": "Fisioterapia",
+      "Site": "N/A",
+      "Instagram": "@confie.ej",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "motores_combustao",
+          "label": "Motores a Combustão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "dinamica_veicular",
+          "label": "Dinâmica Veicular",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.653
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.581
+        },
+        {
+          "label": "Equipe de Competição",
+          "score": 0.565
+        }
+      ]
+    },
+    {
+      "id": "100012",
+      "Nome": "Cráton",
+      "Cursos": "Geologia",
+      "Site": "https://www.cratonconsultori.com",
+      "Instagram": "@craton_ej",
+      "tags": [
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "ciencia_dados",
+          "label": "Ciência de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Startup Universitária",
+          "score": 0.6
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.576
+        },
+        {
+          "label": "Estágio",
+          "score": 0.563
+        }
+      ]
+    },
+    {
+      "id": "100013",
+      "Nome": "CSTQ Jr.",
+      "Cursos": "Química",
+      "Site": "cstqjr.com.br",
+      "Instagram": "@cstqjr",
+      "tags": [
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "motores_combustao",
+          "label": "Motores a Combustão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Estágio",
+          "score": 0.568
+        },
+        {
+          "label": "Energias Renováveis",
+          "score": 0.564
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.56
+        }
+      ]
+    },
+    {
+      "id": "100014",
+      "Nome": "Doisnovemeia",
+      "Cursos": "Comunicação",
+      "Site": "doisnovemeia.com.br",
+      "Instagram": "@doisnovemeia",
+      "tags": [
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "desenvolvimento_web",
+          "label": "Desenvolvimento Web",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "desenvolvimento_mobile",
+          "label": "Desenvolvimento Mobile",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "desenvolvimento_jogos",
+          "label": "Desenvolvimento de Jogos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Criatividade e Inovação",
+          "score": 0.587
+        },
+        {
+          "label": "Comunicação",
+          "score": 0.576
+        },
+        {
+          "label": "Estágio",
+          "score": 0.573
+        }
+      ]
+    },
+    {
+      "id": "100015",
+      "Nome": "Domani",
+      "Cursos": "Relações Internacionais",
+      "Site": "domaniconsultoria.com",
+      "Instagram": "@domaniconsultoria",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mentoria",
+          "label": "Mentoria",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.63
+        },
+        {
+          "label": "Estágio",
+          "score": 0.592
+        },
+        {
+          "label": "Negociação",
+          "score": 0.57
+        }
+      ]
+    },
+    {
+      "id": "100016",
+      "Nome": "Ecoflor",
+      "Cursos": "Engenharia Florestal",
+      "Site": "ecoflorconsultoria.com/#servicos",
+      "Instagram": "@Ecoflor",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.597
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.592
+        },
+        {
+          "label": "Estágio",
+          "score": 0.568
+        }
+      ]
+    },
+    {
+      "id": "100017",
+      "Nome": "Econsult",
+      "Cursos": "Ciências Econômicas",
+      "Site": "econsult.org.br",
+      "Instagram": "@econsultconsultoria",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_operacionais",
+          "label": "Sistemas Operacionais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.627
+        },
+        {
+          "label": "Estágio",
+          "score": 0.605
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.603
+        }
+      ]
+    },
+    {
+      "id": "100018",
+      "Nome": "EletronJun",
+      "Cursos": "Engenharia Eletrônica",
+      "Site": "eletronjun.com.br",
+      "Instagram": "@eletronjun",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "circuitos_digitais_analogicos",
+          "label": "Circuitos Digitais e Analógicos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "eletronica_potencia",
+          "label": "Eletrônica de Potência",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "resolucao_problemas",
+          "label": "Resolução de Problemas",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.613
+        },
+        {
+          "label": "Estágio",
+          "score": 0.588
+        },
+        {
+          "label": "Mobilidade Elétrica",
+          "score": 0.579
+        }
+      ]
+    },
+    {
+      "id": "100019",
+      "Nome": "Embragea",
+      "Cursos": "Gestão Ambiental",
+      "Site": "embragea.com.br",
+      "Instagram": "@embragea",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_embarcados",
+          "label": "Sistemas Embarcados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.687
+        },
+        {
+          "label": "Estágio",
+          "score": 0.627
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.588
+        }
+      ]
+    },
+    {
+      "id": "100020",
+      "Nome": "Endêmica Júnior",
+      "Cursos": "Ciências Biológicas",
+      "Site": "endemicajr.com",
+      "Instagram": "@endemicajr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.651
+        },
+        {
+          "label": "Estágio",
+          "score": 0.586
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.575
+        }
+      ]
+    },
+    {
+      "id": "100021",
+      "Nome": "Enetec",
+      "Cursos": "Engenharia Elétrica",
+      "Site": "enetec.unb.br",
+      "Instagram": "@enetec",
+      "tags": [
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_eletricos_potencia",
+          "label": "Sistemas Elétricos de Potência",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "eletronica_potencia",
+          "label": "Eletrônica de Potência",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Energias Renováveis",
+          "score": 0.628
+        },
+        {
+          "label": "Mobilidade Elétrica",
+          "score": 0.62
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.618
+        }
+      ]
+    },
+    {
+      "id": "100022",
+      "Nome": "EngNet Consultoria",
+      "Cursos": "Engenharia de Redes de Comunicação, Eng. Elétrica, Eng. de Software, Eng. Mecatrônica e Eng. Ciência da Computação",
+      "Site": "engnetconsultoria.com.br",
+      "Instagram": "@engnetconsultoria",
+      "tags": [
+        {
+          "id": "desenvolvimento_web",
+          "label": "Desenvolvimento Web",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "desenvolvimento_mobile",
+          "label": "Desenvolvimento Mobile",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "desenvolvimento_frontend",
+          "label": "Desenvolvimento Frontend",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_embarcados",
+          "label": "Sistemas Embarcados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "sistemas_operacionais",
+          "label": "Sistemas Operacionais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "desenvolvimento_backend",
+          "label": "Desenvolvimento Backend",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "realidade_virtual_aumentada",
+          "label": "Realidade Virtual/Aumentada (VR/AR)",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "iot",
+          "label": "Internet das Coisas (IoT)",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "qa_testes",
+          "label": "Qualidade de Software (QA) e Testes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Desenvolvimento Web",
+          "score": 0.636
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.632
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.615
+        }
+      ]
+    },
+    {
+      "id": "100023",
+      "Nome": "Engrena",
+      "Cursos": "Engenharia Automotiva",
+      "Site": "engrenaengenharia.com",
+      "Instagram": "@engrenaengenharia",
+      "tags": [
+        {
+          "id": "design_automotivo_cad",
+          "label": "Design Automotivo e CAD",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "powertrain",
+          "label": "Powertrain",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "motores_combustao",
+          "label": "Motores a Combustão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "ansys",
+          "label": "ANSYS",
+          "categoria": "Ferramentas, Softwares e Tecnologias",
+          "subcategoria": "Plataformas e Softwares"
+        },
+        {
+          "id": "dinamica_veicular",
+          "label": "Dinâmica Veicular",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Design Automotivo e CAD",
+          "score": 0.659
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.656
+        },
+        {
+          "label": "Sistemas Automotivos",
+          "score": 0.652
+        }
+      ]
+    },
+    {
+      "id": "100024",
+      "Nome": "ESTAT Consultoria",
+      "Cursos": "Estatística",
+      "Site": "estat.com.br",
+      "Instagram": "@estatconsultoria",
+      "tags": [
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "ciencia_dados",
+          "label": "Ciência de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "qa_testes",
+          "label": "Qualidade de Software (QA) e Testes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_operacionais",
+          "label": "Sistemas Operacionais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Estágio",
+          "score": 0.618
+        },
+        {
+          "label": "Análise de Dados",
+          "score": 0.603
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.6
+        }
+      ]
+    },
+    {
+      "id": "100025",
+      "Nome": "Facto",
+      "Cursos": "Comunicação",
+      "Site": "https://www.factoagencia.com.br/",
+      "Instagram": "@factoagencia",
+      "tags": [
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "telecomunicacoes",
+          "label": "Telecomunicações",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "impressao_3d",
+          "label": "Impressão 3D",
+          "categoria": "Ferramentas, Softwares e Tecnologias",
+          "subcategoria": "Hardware"
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Comunicação",
+          "score": 0.624
+        },
+        {
+          "label": "Estágio",
+          "score": 0.597
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.588
+        }
+      ]
+    },
+    {
+      "id": "100026",
+      "Nome": "Flua",
+      "Cursos": "Civil e Ambiental",
+      "Site": "fluaconsultoria.com.br",
+      "Instagram": "@fluaconsultoria",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.599
+        },
+        {
+          "label": "Energias Renováveis",
+          "score": 0.592
+        },
+        {
+          "label": "Estágio",
+          "score": 0.586
+        }
+      ]
+    },
+    {
+      "id": "100027",
+      "Nome": "Genesys",
+      "Cursos": "Biotecnologia",
+      "Site": "genesysbiotecnologia.com",
+      "Instagram": "@genesysbiotec",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "ansys",
+          "label": "ANSYS",
+          "categoria": "Ferramentas, Softwares e Tecnologias",
+          "subcategoria": "Plataformas e Softwares"
+        },
+        {
+          "id": "qa_testes",
+          "label": "Qualidade de Software (QA) e Testes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "seguranca_informacao",
+          "label": "Segurança da Informação",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.636
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.612
+        },
+        {
+          "label": "Estágio",
+          "score": 0.558
+        }
+      ]
+    },
+    {
+      "id": "100028",
+      "Nome": "Grupo Gestão",
+      "Cursos": "Engenharia de Produção",
+      "Site": "grupogestaosolucoes.com",
+      "Instagram": "@grupogestao",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "powertrain",
+          "label": "Powertrain",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.702
+        },
+        {
+          "label": "Estágio",
+          "score": 0.667
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.619
+        }
+      ]
+    },
+    {
+      "id": "100029",
+      "Nome": "Lamparina",
+      "Cursos": "Design",
+      "Site": "lamparinadesign.com.br",
+      "Instagram": "@lamparinadesign",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "impressao_3d",
+          "label": "Impressão 3D",
+          "categoria": "Ferramentas, Softwares e Tecnologias",
+          "subcategoria": "Hardware"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_embarcados",
+          "label": "Sistemas Embarcados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.629
+        },
+        {
+          "label": "Estágio",
+          "score": 0.581
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.57
+        }
+      ]
+    },
+    {
+      "id": "100030",
+      "Nome": "Matriz",
+      "Cursos": "Engenharia de Energia",
+      "Site": "matrizenergia.com",
+      "Instagram": "@matrizenergia",
+      "tags": [
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_eletricos_potencia",
+          "label": "Sistemas Elétricos de Potência",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "smart_grids",
+          "label": "Redes Elétricas Inteligentes (Smart Grids)",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "armazenamento_energia",
+          "label": "Armazenamento de Energia",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "eletronica_potencia",
+          "label": "Eletrônica de Potência",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Energias Renováveis",
+          "score": 0.692
+        },
+        {
+          "label": "Mobilidade Elétrica",
+          "score": 0.611
+        },
+        {
+          "label": "Sistemas Elétricos de Potência",
+          "score": 0.59
+        }
+      ]
+    },
+    {
+      "id": "100031",
+      "Nome": "MecaJun",
+      "Cursos": "Engenharia Mecatrônica",
+      "Site": "mecajun.com",
+      "Instagram": "@Mecajun",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_controle",
+          "label": "Sistemas de Controle",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "design_automotivo_cad",
+          "label": "Design Automotivo e CAD",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "powertrain",
+          "label": "Powertrain",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "qa_testes",
+          "label": "Qualidade de Software (QA) e Testes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.614
+        },
+        {
+          "label": "Robótica",
+          "score": 0.61
+        },
+        {
+          "label": "Equipe de Competição",
+          "score": 0.588
+        }
+      ]
+    },
+    {
+      "id": "100032",
+      "Nome": "Museotec",
+      "Cursos": "Museologia",
+      "Site": "museotecjr.wordpress.com",
+      "Instagram": "@museotec.jr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "impressao_3d",
+          "label": "Impressão 3D",
+          "categoria": "Ferramentas, Softwares e Tecnologias",
+          "subcategoria": "Hardware"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.635
+        },
+        {
+          "label": "Estágio",
+          "score": 0.603
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.585
+        }
+      ]
+    },
+    {
+      "id": "100033",
+      "Nome": "Nutrir",
+      "Cursos": "Nutrição",
+      "Site": "N/A",
+      "Instagram": "@nutrirconsultoriajr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "resolucao_problemas",
+          "label": "Resolução de Problemas",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "qa_testes",
+          "label": "Qualidade de Software (QA) e Testes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.583
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.574
+        },
+        {
+          "label": "Estágio",
+          "score": 0.562
+        }
+      ]
+    },
+    {
+      "id": "100034",
+      "Nome": "O2",
+      "Cursos": "Ciências Ambientais",
+      "Site": "grupogestaosolucoes.com",
+      "Instagram": "@grupogestao, @eunogrupogestao",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "motores_combustao",
+          "label": "Motores a Combustão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "resolucao_problemas",
+          "label": "Resolução de Problemas",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.597
+        },
+        {
+          "label": "Energias Renováveis",
+          "score": 0.593
+        },
+        {
+          "label": "Equipe de Competição",
+          "score": 0.582
+        }
+      ]
+    },
+    {
+      "id": "100035",
+      "Nome": "Olé Júnior",
+      "Cursos": "Educação Física",
+      "Site": "N/A",
+      "Instagram": "@olé.unb",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "desenvolvimento_jogos",
+          "label": "Desenvolvimento de Jogos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.743
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.593
+        },
+        {
+          "label": "Estágio",
+          "score": 0.585
+        }
+      ]
+    },
+    {
+      "id": "100036",
+      "Nome": "Orc'estra",
+      "Cursos": "Gamificação e Software, Engenharia de Software",
+      "Site": "orcestra.com.br",
+      "Instagram": "@orcestragamificacao",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "desenvolvimento_jogos",
+          "label": "Desenvolvimento de Jogos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "realidade_virtual_aumentada",
+          "label": "Realidade Virtual/Aumentada (VR/AR)",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "qa_testes",
+          "label": "Qualidade de Software (QA) e Testes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "desenvolvimento_mobile",
+          "label": "Desenvolvimento Mobile",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "sistemas_embarcados",
+          "label": "Sistemas Embarcados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "arquitetura_software",
+          "label": "Arquitetura de Software",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.66
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.619
+        },
+        {
+          "label": "Estágio",
+          "score": 0.615
+        }
+      ]
+    },
+    {
+      "id": "100037",
+      "Nome": "Phygeo",
+      "Cursos": "Geofísica",
+      "Site": "phygeo.com",
+      "Instagram": "@phygeojr",
+      "tags": [
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "engenharia_dados",
+          "label": "Engenharia de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Startup Universitária",
+          "score": 0.603
+        },
+        {
+          "label": "Foguetes",
+          "score": 0.588
+        },
+        {
+          "label": "Laboratório de Pesquisa",
+          "score": 0.584
+        }
+      ]
+    },
+    {
+      "id": "100038",
+      "Nome": "Polaris Jr.",
+      "Cursos": "Turismo",
+      "Site": "polarisjrblog.wordpress.com",
+      "Instagram": "@polaris.jr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "realidade_virtual_aumentada",
+          "label": "Realidade Virtual/Aumentada (VR/AR)",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.648
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.55
+        },
+        {
+          "label": "Estágio",
+          "score": 0.549
+        }
+      ]
+    },
+    {
+      "id": "100039",
+      "Nome": "Práxis",
+      "Cursos": "Psicologia e GP (Gestão de Pessoas)",
+      "Site": "N/A",
+      "Instagram": "@praxisconsultoriajr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "pensamento_critico",
+          "label": "Pensamento Crítico",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "lideranca",
+          "label": "Liderança",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.651
+        },
+        {
+          "label": "Estágio",
+          "score": 0.632
+        },
+        {
+          "label": "Proatividade",
+          "score": 0.579
+        }
+      ]
+    },
+    {
+      "id": "100040",
+      "Nome": "Publicae",
+      "Cursos": "Políticas Públicas",
+      "Site": "publicaeconsultoria.com.br",
+      "Instagram": "@publicaeconsultoriajr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "lideranca",
+          "label": "Liderança",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.608
+        },
+        {
+          "label": "Estágio",
+          "score": 0.561
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.544
+        }
+      ]
+    },
+    {
+      "id": "100041",
+      "Nome": "Pupila",
+      "Cursos": "Comunicação e Audiovisual",
+      "Site": "pupilaaudiovisual.com.br",
+      "Instagram": "@pupilaaudiovisual",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "circuitos_digitais_analogicos",
+          "label": "Circuitos Digitais e Analógicos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "impressao_3d",
+          "label": "Impressão 3D",
+          "categoria": "Ferramentas, Softwares e Tecnologias",
+          "subcategoria": "Hardware"
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.601
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.548
+        },
+        {
+          "label": "Estágio",
+          "score": 0.542
+        }
+      ]
+    },
+    {
+      "id": "100042",
+      "Nome": "Quark Up",
+      "Cursos": "Física",
+      "Site": "N/A",
+      "Instagram": "@quarkup_oficial",
+      "tags": [
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "ciencia_dados",
+          "label": "Ciência de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "qa_testes",
+          "label": "Qualidade de Software (QA) e Testes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "inteligencia_artificial",
+          "label": "Inteligência Artificial",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_embarcados",
+          "label": "Sistemas Embarcados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Startup Universitária",
+          "score": 0.638
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.613
+        },
+        {
+          "label": "Estágio",
+          "score": 0.576
+        }
+      ]
+    },
+    {
+      "id": "100043",
+      "Nome": "Quimera",
+      "Cursos": "Letras",
+      "Site": "quimeraej.com",
+      "Instagram": "@quimeraej",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "qa_testes",
+          "label": "Qualidade de Software (QA) e Testes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "telecomunicacoes",
+          "label": "Telecomunicações",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "gestao_tempo",
+          "label": "Gestão de Tempo",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.56
+        },
+        {
+          "label": "Estágio",
+          "score": 0.548
+        },
+        {
+          "label": "Laboratório de Pesquisa",
+          "score": 0.537
+        }
+      ]
+    },
+    {
+      "id": "100044",
+      "Nome": "Socius",
+      "Cursos": "Ciências Sociais",
+      "Site": "socius-consultoria.wixsite.com/socius",
+      "Instagram": "@sociusconsultoria",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "projeto_extensao",
+          "label": "Projeto de Extensão",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "ciencia_dados",
+          "label": "Ciência de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "analise_dados",
+          "label": "Análise de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "sistemas_operacionais",
+          "label": "Sistemas Operacionais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.613
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.611
+        },
+        {
+          "label": "Laboratório de Pesquisa",
+          "score": 0.605
+        }
+      ]
+    },
+    {
+      "id": "100045",
+      "Nome": "Strategos",
+      "Cursos": "Ciência Política",
+      "Site": "strategosconsultoria.com.br",
+      "Instagram": "@strategosconsultoria",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "ciencia_dados",
+          "label": "Ciência de Dados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_operacionais",
+          "label": "Sistemas Operacionais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.63
+        },
+        {
+          "label": "Estágio",
+          "score": 0.609
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.606
+        }
+      ]
+    },
+    {
+      "id": "100046",
+      "Nome": "Struct",
+      "Cursos": "Engenharia da Computação",
+      "Site": "structej.com",
+      "Instagram": "@structunb",
+      "tags": [
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "desenvolvimento_web",
+          "label": "Desenvolvimento Web",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "arquitetura_software",
+          "label": "Arquitetura de Software",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "desenvolvimento_frontend",
+          "label": "Desenvolvimento Frontend",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "sistemas_operacionais",
+          "label": "Sistemas Operacionais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_embarcados",
+          "label": "Sistemas Embarcados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "desenvolvimento_backend",
+          "label": "Desenvolvimento Backend",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "desenvolvimento_mobile",
+          "label": "Desenvolvimento Mobile",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia de Software"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Startup Universitária",
+          "score": 0.633
+        },
+        {
+          "label": "Desenvolvimento Web",
+          "score": 0.626
+        },
+        {
+          "label": "Arquitetura de Software",
+          "score": 0.626
+        }
+      ]
+    },
+    {
+      "id": "100047",
+      "Nome": "Tecmec",
+      "Cursos": "Engenharia Mecânica",
+      "Site": "tecmec.org.br",
+      "Instagram": "@ejtecmec",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "sistemas_automotivos",
+          "label": "Sistemas Automotivos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "motores_combustao",
+          "label": "Motores a Combustão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "design_automotivo_cad",
+          "label": "Design Automotivo e CAD",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "foguetes",
+          "label": "Foguetes",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_embarcados",
+          "label": "Sistemas Embarcados",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.654
+        },
+        {
+          "label": "Equipe de Competição",
+          "score": 0.622
+        },
+        {
+          "label": "Robótica",
+          "score": 0.62
+        }
+      ]
+    },
+    {
+      "id": "100048",
+      "Nome": "Terapêutica Jr.",
+      "Cursos": "Farmácia",
+      "Site": "terapeuticajr.com",
+      "Instagram": "@terapeuticajr",
+      "tags": [
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "laboratorio_pesquisa",
+          "label": "Laboratório de Pesquisa",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "trabalho_equipe",
+          "label": "Trabalho em Equipe",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "negociacao",
+          "label": "Negociação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "proatividade",
+          "label": "Proatividade",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "iniciacao_cientifica",
+          "label": "Iniciação Científica (IC)",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "mobilidade_eletrica",
+          "label": "Mobilidade Elétrica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "resolucao_problemas",
+          "label": "Resolução de Problemas",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "energias_renovaveis",
+          "label": "Energias Renováveis",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "criatividade_inovacao",
+          "label": "Criatividade e Inovação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        },
+        {
+          "id": "comunicacao",
+          "label": "Comunicação",
+          "categoria": "Habilidades Interpessoais (Soft Skills)",
+          "subcategoria": ""
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Empresa Júnior",
+          "score": 0.631
+        },
+        {
+          "label": "Estágio",
+          "score": 0.568
+        },
+        {
+          "label": "Startup Universitária",
+          "score": 0.549
+        }
+      ]
+    },
+    {
+      "id": "100049",
+      "Nome": "Zenit Aerospace",
+      "Cursos": "Engenharia Aeroespacial",
+      "Site": "zenitaerospace.com",
+      "Instagram": "@zenitaerospace",
+      "tags": [
+        {
+          "id": "startup_universitaria",
+          "label": "Startup Universitária",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "empresa_junior",
+          "label": "Empresa Júnior",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "estruturas_aeroespaciais",
+          "label": "Estruturas Aeroespaciais",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "vants_drones",
+          "label": "VANTs/Drones",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "estagio",
+          "label": "Estágio",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "modelagem_simulacao_aero",
+          "label": "Modelagem e Simulação Aeroespacial",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "robotica",
+          "label": "Robótica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "satelites_cubesats",
+          "label": "Satélites e CubeSats",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "veiculos_autonomos",
+          "label": "Veículos Autônomos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Automotiva"
+        },
+        {
+          "id": "equipe_competicao",
+          "label": "Equipe de Competição",
+          "categoria": "Tipo de Oportunidade e Foco de Atuação",
+          "subcategoria": ""
+        },
+        {
+          "id": "aerodinamica",
+          "label": "Aerodinâmica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "sistemas_propulsao",
+          "label": "Sistemas de Propulsão",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "avionica",
+          "label": "Aviônica",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "mecanica_orbital",
+          "label": "Mecânica Orbital",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        },
+        {
+          "id": "gnc",
+          "label": "Guiagem, Navegação e Controle (GNC)",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
+        }
+      ],
+      "total_tags": 15,
+      "top_tags_scores": [
+        {
+          "label": "Startup Universitária",
+          "score": 0.635
+        },
+        {
+          "label": "Empresa Júnior",
+          "score": 0.622
+        },
+        {
+          "label": "Estruturas Aeroespaciais",
+          "score": 0.606
+        }
+      ]
+    }
+  ]
+}
