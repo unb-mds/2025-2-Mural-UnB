@@ -3,13 +3,13 @@ import re
 import csv
 import os
 import requests                     # Para fazer requisições HTTP (baixar HTML, baixar imagens)
-from bs4 import BeautifulSoup       # Para "ler" e navegar pelo HTML das páginas web
-import urllib.parse                 # Para montar URLs completas (juntar URL base com caminhos relativos)
+from bs4 import BeautifulSoup       # Para "ler" e navegar pelo HTML das páginas web              # Para montar URLs completas (juntar URL base com caminhos relativos)
 import urllib3                      # Usado internamente pelo requests, importamos para controlar avisos
 from ddgs import DDGS               # Para fazer buscas na web usando o DuckDuckGo
 from unidecode import unidecode     # Para remover acentos de textos (ex: "Robótica" -> "Robotica")
 import time                         # Para adicionar pausas (sleep) no script
 import random
+from urllib.parse import urljoin, urlparse
 
 # Desabilita avisos sobre certificados SSL inválidos (basicamente, quando certificados são inválidos e tem chance de ser scan)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -231,15 +231,16 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
         "unbdpi-logo.png",
         "unbpi-logo.png",
         "logo_unb1.png",
-        "PCTEC-UnB_logo.png",
+        "pctec-unb_logo.png", 
+        "repositoriocovid19_header.png", 
         "opine.png",
-        "opine-sobre-o-portal.png",
-        "logo.svg",
-        "antonio-150x150.jpg", 
-        "cropped-face-12.png",
-        "foto_pessoal_moodles.png",
-        "grade_curricular_atualizada.png"
-
+        "opine-sobre-o-portal.png", 
+        "clipart/en.svg", 
+        "antonio-150x150.jpg",     
+        "cropped-face-12.png",     
+        "foto_pessoal_moodles.png", 
+        "googleusercontent.com/profile/picture", 
+        "grade_curricular_atualizada.png", 
     ]
 
     keyword = extrair_palavra_chave(nome_do_lab)
@@ -402,14 +403,24 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
                     logo_img = soup_lab.select_one(seletor)
                     if logo_img and logo_img.get('src'):
                         url_teste = logo_img.get('src')
+
+                        # NOVO: Extrai o domínio da homepage_url para verificação
+                        domain_homepage = urlparse(homepage_url).netloc
+
                         if is_url_valida(url_teste):
+                            # MUDANÇA V12: Se a URL da homepage NÃO FOR .unb.br E a imagem contiver "logo" no nome, REJEITAR.
+                            # Isso evita pegar logos de outras universidades (ex: UFPE) como imagem para um lab da UnB.
+                            if not domain_homepage.endswith('.unb.br') and "logo" in url_teste.lower():
+                                print(f"      [Caça] ⚠️ Rejeitado (Logo Externo): {url_teste}")
+                                continue # Pula esta imagem e tenta a próxima
+
                             width_str = logo_img.get('width', '0').replace('px', '')
                             height_str = logo_img.get('height', '0').replace('px', '')
                             try:
-                                # MUDANÇA: Reduzido para 50px aqui, para logos menores mas ainda relevantes
+                                # Exige tamanho mínimo de 50px para logos
                                 if int(width_str) > 50 or int(height_str) > 50: 
                                     url_imagem_encontrada = url_teste
-                                    print(f"      [Caça] 🥈 Prata (Logo genérico '{seletor}')")
+                                    print(f"      [Caça] 🥈 Prata (Logo '{seletor}')")
                                     break
                             except ValueError: pass
 
@@ -451,7 +462,7 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
 
             # --- FASE 4: DOWNLOAD E RETORNO DO RESULTADO ---
             if url_imagem_encontrada:
-                url_imagem_completa = urllib.parse.urljoin(homepage_url, url_imagem_encontrada)
+                url_imagem_completa = urljoin(homepage_url, url_imagem_encontrada)
 
                 nome_base = "".join(c for c in keyword if c.isalnum() or c in ('_')).rstrip()
                 nome_prefixo = "".join(c for c in nome_do_lab if c.isalnum())[:3].lower()
@@ -467,15 +478,19 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
                  print("      [Caça] ❌ Nenhuma imagem encontrada na página após todas as tentativas.")
 
         # Erros da "Caça" (Fase 3)
-        except requests.exceptions.Timeout:
+        except requests.exceptions.Timeout: # <--- NÍVEL 2 (ALINHADO COM O TRY INTERNO)
              print(f"    [Busca Imagem] ❌ Timeout ao acessar homepage {homepage_url}.")
-        except requests.exceptions.RequestException as e:
+        except requests.exceptions.RequestException as e: # <--- NÍVEL 2 (ALINHADO COM O TRY INTERNO)
             print(f"    [Busca Imagem] ❌ Erro de conexão/HTTP ao acessar homepage {homepage_url}: {e}")
+        
+        # --- LINHA DO ERRO ---
+        # Esta linha deve estar no NÍVEL 1, (ALINHADA COM O TRY EXTERNO)
+        print("    [Busca Imagem] ❌ Falha geral ao encontrar/baixar imagem para este laboratório.")
+        return None 
 
-# Se chegou aqui, alguma etapa falhou (busca, filtro, caça ou download)
-    print("    [Busca Imagem] ❌ Falha geral ao encontrar/baixar imagem para este laboratório.")
-    return None # Retorna None para ativar o FALLBACK (placeholder)
-
+    except Exception as e: # <--- NÍVEL 1 (ALINHADO COM O TRY EXTERNO)
+        print(f"    [Busca Imagem] ❌ Erro inesperado durante o processo: {e}")
+        return None
 
 def limpar_texto(texto):
     """
