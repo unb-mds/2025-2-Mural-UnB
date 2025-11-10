@@ -1,32 +1,64 @@
-import { useState, useMemo } from "react"
-import { opportunities } from "../../data/opportunities"
+import { useState, useMemo, useEffect } from "react"
+import type { Opportunity } from "../../data/opportunities"
+import { opportunities as staticOpportunities } from "../../data/opportunities"
 import { getAllTagsFlat } from "../../data/tags"
+import type { Tag } from "../../data/tags"
 import FilterSidebar from "../../components/feed/FilterSidebar"
 import OpportunityCard from "../../components/feed/OpportunityCard"
+import { fetchOpportunitiesFromJSON } from "../../data/fetchOpportunities"
+import { fetchTagsFlat } from "../../data/fetchTags"
 import "./FeedPage.css"
 
 export default function FeedPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [selectedCategory, setSelectedCategory] = useState<string>("Todos")
-  const allTags = getAllTagsFlat()
+  const [fetchedOpportunities, setFetchedOpportunities] = useState<Opportunity[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [allTagsFetched, setAllTagsFetched] = useState<Tag[] | null>(null)
+
+  // Carregar oportunidades e tags do JSON público
+  useEffect(() => {
+    let mounted = true
+    Promise.all([fetchOpportunitiesFromJSON(), fetchTagsFlat()])
+      .then(([opps, tags]) => {
+        if (!mounted) return
+        setFetchedOpportunities(opps)
+        // Se tags.json falhar ou vier vazio
+        setAllTagsFetched(tags.length > 0 ? tags : null)
+        setIsLoading(false)
+      })
+      .catch(() => {
+        if (!mounted) return
+        setAllTagsFetched(null)
+        setIsLoading(false)
+      })
+    return () => { mounted = false }
+  }, [])
+
+  const allTags = useMemo(() => allTagsFetched ?? getAllTagsFlat(), [allTagsFetched])
+
+  // Combinar oportunidades do fetch com oportunidades estáticas
+  const allOpportunities = useMemo(() => {
+    const fetchedIds = new Set(fetchedOpportunities.map(opp => opp.id))
+    const staticOnly = staticOpportunities.filter(opp => !fetchedIds.has(opp.id))
+    return [...fetchedOpportunities, ...staticOnly]
+  }, [fetchedOpportunities])
 
   const filteredOpportunities = useMemo(() => {
-    return opportunities.filter((opp) => {
-      // Filtrar por termo de busca
+    return allOpportunities.filter((opp) => {
       const matchesSearch =
         searchTerm === "" ||
         opp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         opp.shortDescription.toLowerCase().includes(searchTerm.toLowerCase())
 
-      // Filtrar por tags
       const matchesTags =
         selectedTags.length === 0 ||
         (opp.tags && selectedTags.every((tagId) => opp.tags?.includes(tagId)))
 
       return matchesSearch && matchesTags
     })
-  }, [searchTerm, selectedTags])
+  }, [searchTerm, selectedTags, allOpportunities])
 
   const handleTagToggle = (tagId: string) => {
     setSelectedTags((prev) =>
@@ -53,7 +85,11 @@ export default function FeedPage() {
           </div>
 
           <div className="opportunities-list">
-            {filteredByCategory.length > 0 ? (
+            {isLoading ? (
+              <div className="no-results">
+                <p>Carregando oportunidades...</p>
+              </div>
+            ) : filteredByCategory.length > 0 ? (
               filteredByCategory.map((opportunity) => (
                 <OpportunityCard
                   key={opportunity.id}
