@@ -90,7 +90,7 @@ def encontrar_pdf_empresas_juniores(url_alvo):
             pasta_saida = os.path.join(os.path.dirname(__file__), "..", "data", "EJs")
             os.makedirs(pasta_saida, exist_ok=True)
             
-            nome_arquivo = "Portfolio_Empresas_Juniores_UnB.pdf"
+            nome_arquivo = "portfolio_empresas_juniores.pdf"
             caminho_completo = os.path.join(pasta_saida, nome_arquivo)
             
             # Baixa o PDF

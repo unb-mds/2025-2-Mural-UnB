@@ -8,7 +8,7 @@ on:
       - "scripts/pdf_processor_ejs.py"
       - "scripts/extrair_empresas_juniores.py"
       - "scripts/config_ej.py"
-      - "data/EJs/Portfolio_Empresas_Juniores_UnB.pdf"
+      - "data/EJs/portfolio_empresas_juniores.pdf"
 
 jobs:
   processar-ejs:
