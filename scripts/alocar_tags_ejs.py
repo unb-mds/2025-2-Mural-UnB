@@ -73,6 +73,58 @@ def similaridade_cosseno(embedding1: np.ndarray, embedding2: np.ndarray) -> floa
     return dot_product / (norm1 * norm2)
 
 
+def filtrar_tags_por_curso(tags_flat: List[Dict], cursos: str) -> List[Dict]:
+    """
+    Filtra tags relevantes baseado no curso da empresa júnior.
+    Remove tags técnicas muito específicas para EJs de áreas não-técnicas.
+    Remove tags de "Equipe de Competição" pois estamos processando apenas Empresas Juniores.
+    """
+    cursos_lower = cursos.lower()
+    
+    # Tags que NUNCA devem aparecer para Empresas Juniores
+    tags_excluidas = [
+        'equipe_competicao',
+        'startup_universitaria',
+        'laboratorio_pesquisa',
+        'iniciacao_cientifica'
+    ]
+    
+    # Categorias sempre permitidas (soft skills e tipo de oportunidade)
+    categorias_gerais = [
+        "Habilidades Interpessoais (Soft Skills)",
+        "Tipo de Oportunidade e Foco de Atuação"
+    ]
+    
+    # Se é curso técnico de engenharia/TI, permite todas as tags
+    cursos_tecnicos = [
+        'engenharia', 'software', 'eletrônica', 'elétrica', 'mecatrônica',
+        'computação', 'redes', 'automotiva', 'aeroespacial', 'energia',
+        'mecânica', 'civil', 'química', 'biotecnologia', 'física'
+    ]
+    
+    eh_tecnico = any(termo in cursos_lower for termo in cursos_tecnicos)
+    
+    # Remove tags excluídas para TODAS as empresas (técnicas ou não)
+    tags_permitidas = [
+        tag for tag in tags_flat
+        if tag.get('id') not in tags_excluidas
+    ]
+    
+    if eh_tecnico:
+        # Curso técnico: permite tags técnicas, mas sem as excluídas
+        print(f"  ℹ️  Curso técnico detectado. Removendo tags irrelevantes: {len(tags_flat)} → {len(tags_permitidas)} tags")
+        return tags_permitidas
+    
+    # Curso não-técnico: filtra apenas tags gerais (soft skills + tipo de oportunidade)
+    tags_filtradas = [
+        tag for tag in tags_permitidas
+        if tag.get('categoria') in categorias_gerais
+    ]
+    
+    print(f"  ℹ️  Curso não-técnico detectado. Filtrando: {len(tags_flat)} → {len(tags_filtradas)} tags")
+    return tags_filtradas
+
+
 def alocar_tags_por_similaridade(
     empresa: Dict,
     tags_flat: List[Dict],
@@ -88,15 +140,19 @@ def alocar_tags_por_similaridade(
     servicos = empresa.get('Servicos', '')
     missao = empresa.get('Missao', '')
     visao = empresa.get('Visao', '')
+    cursos = empresa.get('Cursos', '')
 
     texto = f"{nome}. {sobre} Serviços: {servicos} Missão: {missao} Visão: {visao}"
 
     print(f"  → Gerando embedding para: {nome[:60]}")
     emb = gerar_embedding(texto)
 
+    # Filtra tags relevantes baseado no curso
+    tags_relevantes = filtrar_tags_por_curso(tags_flat, cursos)
+
     similaridades = []
-    print(f"  → Calculando similaridade com {len(tags_flat)} tags...")
-    for tag in tags_flat:
+    print(f"  → Calculando similaridade com {len(tags_relevantes)} tags...")
+    for tag in tags_relevantes:
         score = similaridade_cosseno(emb, tag['embedding'])
         if score >= threshold:
             similaridades.append({
@@ -171,6 +227,11 @@ def main():
             'id': empresa.get('id', i),
             'Nome': nome,
             'Cursos': empresa.get('Cursos'),
+            'Sobre': empresa.get('Sobre'),
+            'Missao': empresa.get('Missao'),
+            'Visao': empresa.get('Visao'),
+            'Valores': empresa.get('Valores'),
+            'Servicos': empresa.get('Servicos'),
             'Site': empresa.get('Site'),
             'Instagram': empresa.get('Instagram'),
             'tags': tags_para_salvar,
