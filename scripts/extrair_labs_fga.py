@@ -82,7 +82,7 @@ def categorizar_lab(nome_do_lab):
             if any(keyword in nome_normalizado for keyword in keywords):
                 return categoria # Retorna o nome da categoria assim que encontrar a primeira correspondência
 
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-except
         print(f"    [Categorizar] Erro ao categorizar '{nome_do_lab}': {e}")
         # Em caso de erro, continua para retornar a categoria padrão
 
@@ -125,7 +125,7 @@ def extrair_palavra_chave(nome_do_lab):
              if len(palavra) > 4:
                 return palavra # Retorna a primeira palavra com mais de 4 letras
 
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-except
         # Em caso de erro inesperado durante o processamento do nome
         print(f"    [Palavra Chave] Erro ao extrair chave de '{nome_do_lab}': {e}")
         pass # Continua para retornar a chave genérica
@@ -189,7 +189,7 @@ def baixar_imagem(url_imagem, caminho_salvar):
         # Captura outros erros de conexão, URL inválida, etc.
         print(f"    [Download] ❌ Falha ao baixar {url_imagem}: {e}")
         return False
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-except
         # Captura erros inesperados ao criar pasta, salvar arquivo, etc.
         print(f"    [Download] ❌ Erro inesperado durante o download/salvamento de {url_imagem}: {e}")
         return False
@@ -493,7 +493,7 @@ def encontrar_imagem_para_lab(nome_do_lab, pasta_base_imagem):
         print("    [Busca Imagem] ❌ Falha geral ao encontrar/baixar imagem para este laboratório.")
         return None 
 
-    except Exception as e: # <--- NÍVEL 1 (ALINHADO COM O TRY EXTERNO)
+    except Exception as e:  # pylint: disable=broad-except
         print(f"    [Busca Imagem] ❌ Erro inesperado durante o processo: {e}")
         return None
 
@@ -814,7 +814,7 @@ def main():
     
     try:
         filtrar_labs_fga(pdf_path, csv_saida)
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-except
         print(f"\nERRO: {e}")
         import traceback
         traceback.print_exc()
