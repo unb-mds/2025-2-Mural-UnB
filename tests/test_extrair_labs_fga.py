@@ -87,3 +87,27 @@ def test_encontrar_imagem_para_lab_fluxo_sucesso(mocker):
     )
 
     assert caminho_retornado == CAMINHO_FINAL_ESPERADO
+
+
+def test_encontrar_imagem_para_lab_falha_na_busca_web(mocker):
+    """
+    Testa o fluxo de falha onde a busca DDGS não retorna nenhum resultado.
+    A função deve parar e retornar None.
+    """
+
+    mock_ddgs_instance = mocker.Mock()
+    mock_ddgs_instance.text.return_value = [] # <<-- A FALHA ACONTECE AQUI
+    mocker.patch('scripts.extrair_labs_fga.DDGS', return_value=mock_ddgs_instance)
+
+    mock_requests_get = mocker.spy(scripts.extrair_labs_fga.requests, 'get')
+    mock_baixar_imagem = mocker.spy(scripts.extrair_labs_fga, 'baixar_imagem')
+
+
+    caminho_retornado = encontrar_imagem_para_lab("Nome de Lab Falso", "/caminho/falso")
+
+
+    assert caminho_retornado is None
+
+    mock_requests_get.assert_not_called()
+
+    mock_baixar_imagem.assert_not_called()
