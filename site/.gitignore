@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+data/Labs/labs_fga.csv
+data/images/labs/
