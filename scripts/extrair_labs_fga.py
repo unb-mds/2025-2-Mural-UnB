@@ -120,11 +120,6 @@ def extrair_palavra_chave(nome_do_lab):
             if palavra not in STOP_WORDS and len(palavra) > 3:
                 return palavra # Encontrou a palavra-chave principal
 
-        # 4. Plano B: Primeira palavra longa (se o filtro não achar nada útil)
-        for palavra in palavras:
-             if len(palavra) > 4:
-                return palavra # Retorna a primeira palavra com mais de 4 letras
-
     except Exception as e:  # pylint: disable=broad-except
         # Em caso de erro inesperado durante o processamento do nome
         print(f"    [Palavra Chave] Erro ao extrair chave de '{nome_do_lab}': {e}")
