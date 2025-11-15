@@ -25,8 +25,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        # Garante que as dependências de dev (pytest, pylint) sejam instaladas
         if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
 
-    - name: 4. Rodar Testes Unitários (Pytest)
+    - name: 4. Rodar Linter (Pylint)
+      run: |
+        # Roda o pylint na pasta 'scripts', ignorando erros de Convenção (C) e Refatoração (R)
+        pylint --disable=C,R scripts
+
+    - name: 5. Rodar Testes Unitários (Pytest)
       run: |
         pytest
