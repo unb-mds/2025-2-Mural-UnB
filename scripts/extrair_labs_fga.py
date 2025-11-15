@@ -1,3 +1,7 @@
+"""
+Extrai e filtra informações de laboratórios da FGA a partir do PDF (parsing e heurísticas).
+Gera CSV com laboratórios da FGA e remove duplicatas/ruído.
+"""
 import fitz  # PyMuPDF
 import re
 import csv
@@ -735,62 +739,67 @@ def filtrar_labs_fga(pdf_path, csv_saida):
         nome_normalizado = lab['nome'].strip().upper()
         if nome_normalizado not in labs_unicos:
             labs_unicos[nome_normalizado] = lab
-    labs_fga_final = list(labs_unicos.values())
+    labs_fga_sem_id = list(labs_unicos.values())
     print()
-    print(f"RESULTADO: {len(labs_fga_final)} laboratorios da FGA ")
+    print(f"RESULTADO: {len(labs_fga_sem_id)} laboratorios da FGA ")
     print()
-# --- ENRIQUECIMENTO COM IMAGENS (NOVO LOCAL) ---
-    print(f"\n--- Iniciando busca de imagens para os {len(labs_fga_final)} laboratórios FGA encontrados ---")
+
+    # --- PASSO 1: ENRIQUECIMENTO COM IMAGENS (O SEU CÓDIGO) ---
+    # (Usa 'labs_fga_sem_id' como entrada)
+    print(f"\n--- Iniciando busca de imagens para os {len(labs_fga_sem_id)} laboratórios FGA encontrados ---")
     labs_enriquecidos = [] # Nova lista para guardar os labs com imagem
 
-    for lab in labs_fga_final:
+    for lab in labs_fga_sem_id: # <--- USA A VARIÁVEL DA 'main'
         print(f"\n---> Buscando imagem para: {lab['nome']}")
-        # Chama a função principal para encontrar/baixar a imagem
         caminho_imagem_local = encontrar_imagem_para_lab(lab['nome'], PASTA_IMAGENS_LABS)
 
         if caminho_imagem_local:
-            # Monta o caminho relativo para o CSV
             lab['caminho_imagem'] = os.path.join("..", "images", "labs", os.path.basename(caminho_imagem_local))
             print(f"---> Imagem associada: {lab['caminho_imagem']}")
         else:
-        # --- LÓGICA DE FALLBACK ---
-            # 1. Chama a função para obter a categoria do lab
-            categoria = categorizar_lab(lab['nome']) # Ex: "software", "eletronica", "mecanica_materiais", "default"
-
-            # 2. Verifica se é uma das categorias principais ou default
+            categoria = categorizar_lab(lab['nome']) 
             if categoria in ["software", "eletronica", "mecanica_materiais", "default"]:
                 numero_variacao = random.randint(1, 3)
-                # Monta o nome do arquivo placeholder (ex: software_2.jpg, default_1.jpg)
                 nome_placeholder = f"{categoria}_{numero_variacao}.jpg"
             else:
-                # Segurança extra: Se categorizar_lab retornar algo inesperado, usa o default_1
                 numero_variacao = 1
                 nome_placeholder = f"default_{numero_variacao}.jpg"
-                categoria = "default" # Força a categoria para o print
-
-            # 3. Monta o caminho relativo que será salvo no CSV
-            # Ex: "../data/images/placeholders/software_2.jpg"
+                categoria = "default"
             lab['caminho_imagem'] = os.path.join("..", "data", "images", "placeholders", nome_placeholder)
             print(f"---> Usando placeholder ({categoria} variação {numero_variacao}): {lab['caminho_imagem']}")
-            # --- FIM DA LÓGICA DE FALLBACK ---
-        # Adiciona o laboratório (agora com a chave 'caminho_imagem') à nova lista
-        labs_enriquecidos.append(lab)
 
-        time.sleep(1.5) # Pausa educada entre as buscas
+        labs_enriquecidos.append(lab) # Adiciona o lab (com imagem ou placeholder)
+        time.sleep(1.5) 
 
     print("\n--- Busca de imagens concluída ---")
-    # --- FIM DO ENRIQUECIMENTO ---
 
-    # Agora, a escrita do CSV usa a lista 'labs_enriquecidos'
-    if labs_enriquecidos: # Verifica a nova lista
+    # --- PASSO 2: GERAÇÃO DE IDS (O CÓDIGO DELES, DA MAIN) ---
+    # (Usa 'labs_enriquecidos' como entrada)
+    print("Gerando IDs únicos para os laboratórios...")
+    labs_final_com_id = [] # Esta será a nova lista final com IDs
+
+    for i, lab in enumerate(labs_enriquecidos): # <--- USA A LISTA ENRIQUECIDA
+        contador = i + 1
+        id_lab = f"2{contador:05d}" 
+
+        # Cria um novo dicionário com o ID como primeiro campo
+        lab_atualizado = {'id': id_lab, **lab}
+
+        # Adiciona à nova lista final
+        labs_final_com_id.append(lab_atualizado)
+
+    print(f"✓ IDs gerados para {len(labs_final_com_id)} laboratórios.")
+
+    # --- PASSO 3: SALVAR O CSV (A VERSÃO COMBINADA) ---
+    if labs_final_com_id: # Verifica a lista final com IDs e Imagens
         # Salva no CSV de saída
         with open(csv_saida, 'w', newline='', encoding='utf-8') as f:
-            # A lista de campos já está correta (inclui 'caminho_imagem')
-            campos = ['nome', 'coordenador', 'contato', 'descricao', 'caminho_imagem']
+            # A lista de campos COMPLETA (a sua + a deles)
+            campos = ['id', 'nome', 'coordenador', 'contato', 'descricao', 'caminho_imagem']
             writer = csv.DictWriter(f, fieldnames=campos)
             writer.writeheader()
-            # USA A NOVA LISTA AQUI!
-            writer.writerows(labs_enriquecidos)
+            # Escreve a lista FINAL
+            writer.writerows(labs_final_com_id)
 
 def main():
     # Caminhos

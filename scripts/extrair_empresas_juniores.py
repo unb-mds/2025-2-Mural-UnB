@@ -1,7 +1,12 @@
+"""
+Script que orquestra o download e processamento do PDF de Empresas Juniores (usa `pdf_processor_ejs`).
+Baixa o PDF, executa extração por página e consolida resultados em JSON.
+"""
+
 import os
 import json
-from datetime import datetime # mais para debug do que funcional
-from config_ej import GEMINI_API_KEY, PDF_URL_EJS, OUTPUT_DIR, OUTPUT_JSON, PROCESSAR_POR_PAGINA, MAX_PAGINAS_POR_REQUISICAO, PAGINA_INICIAL_EJS
+from datetime import datetime # para debug
+from config_ej import GEMINI_API_KEY, PDF_URL_EJS, OUTPUT_DIR, OUTPUT_JSON, PROCESSAR_POR_PAGINA, MAX_PAGINAS_POR_REQUISICAO, PAGINA_INICIAL_EJS, EXTRAIR_IMAGENS
 from pdf_processor_ejs import PDFProcessorEJs
 
 def configurar_ambiente():
@@ -9,6 +14,11 @@ def configurar_ambiente():
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
         print(f"✓ Diretório criado: {OUTPUT_DIR}")
+
+    images_dir = os.path.join(OUTPUT_DIR, "images")
+    if not os.path.exists(images_dir):
+        os.makedirs(images_dir)
+        print(f"✓ Diretório de imagens criado: {images_dir}")
     
     # Verifica API key
     if GEMINI_API_KEY == 'sua_chave_api_aqui':
@@ -47,6 +57,15 @@ def processar_pdf_empresas_juniores(processador: PDFProcessorEJs, url_pdf: str):
             print(f"✗ PDF não encontrado: {caminho_pdf_local}")
             return []
         
+        # Extrair imagens se ativo
+        if EXTRAIR_IMAGENS:
+            print("\n EXTRAINDO IMAGENS DO PDF...")
+            imagens_extraidas = processador.extrair_imagens_pdf(caminho_pdf_local, OUTPUT_DIR)
+            if imagens_extraidas:
+                print(f"✓ Total de imagens extraídas: {len(imagens_extraidas)}")
+            else:
+                print("ℹ Nenhuma imagem encontrada no PDF")
+
         # Processa o PDF
         if PROCESSAR_POR_PAGINA:
             print("Processamento página por página")
@@ -137,7 +156,7 @@ def mostrar_estatisticas_finais(dados_empresas: list):
     print(f"{'='*60}")
     print(f"Total de empresas juniores: {len(empresas_unicas)}")
     
-    # Top empresas (só pelo funny)
+    # Top empresas (consolidação de dados para análise)
     print(f"\n PRINCIPAIS EMPRESAS IDENTIFICADAS:")
     for i, empresa in enumerate(empresas_unicas[:10], 1):
         nome = empresa.get('Nome', 'Sem nome')
@@ -145,7 +164,7 @@ def mostrar_estatisticas_finais(dados_empresas: list):
         print(f"  {i:2d}. {nome}")
         print(f"      📚 {cursos}")
     
-    # Estatísticas por campo 
+    # Estatísticas por campo (consolidação de dados para análise)
     campos_preenchidos = {}
     for campo in ['Nome', 'Cursos', 'Sobre', 'Missao', 'Visao', 'Valores', 'Servicos', 'Site', 'Instagram']:
         preenchidos = sum(1 for ej in empresas_unicas if ej.get(campo) and ej.get(campo) not in ['', 'N/A'])
@@ -175,6 +194,7 @@ def main():
         consolidar_dados_empresas(dados_empresas, caminho_saida_consolidado)
         mostrar_estatisticas_finais(dados_empresas)
     else:
+        #debug messages
         print("\nNenhum dado foi extraído.")
         print("   Possíveis causas:")
         print("   - PDF não contém texto legível")
@@ -186,3 +206,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+

@@ -1,0 +1,72 @@
+name: 1. Extrair Laboratórios FGA do PDF
+
+on:
+  push:
+    paths:
+      - "data/Labs/Portfolio_Infraestrutura_UnB.pdf"
+      - "scripts/extrair_labs_fga.py"
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 3 1 * *" # Dia 1 de cada mês às 0h30 (Brasília) - 30min após o PDF
+
+jobs:
+  extrair-labs:
+    runs-on: ubuntu-latest
+    # Não roda em merges (detecta "Merge" no início da mensagem) nem com [skip ci]
+    if: ${{ !startsWith(github.event.head_commit.message, 'Merge') && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]') }}
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          pip install PyMuPDF
+
+      - name: Verificar se PDF existe
+        id: check_pdf
+        run: |
+          if [ -f "data/Labs/Portfolio_Infraestrutura_UnB.pdf" ]; then
+            echo "pdf_exists=true" >> $GITHUB_OUTPUT
+            echo "PDF encontrado!"
+          else
+            echo "pdf_exists=false" >> $GITHUB_OUTPUT
+            echo "PDF não encontrado. Execute o workflow de download primeiro."
+            exit 1
+          fi
+
+      - name: Extrair laboratórios da FGA
+        if: steps.check_pdf.outputs.pdf_exists == 'true'
+        run: |
+          cd scripts
+          python extrair_labs_fga.py
+
+      - name: Verificar mudanças
+        id: check_changes
+        run: |
+          if git diff --quiet data/Labs/labs_fga.csv; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "Nenhuma mudança nos laboratórios"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Laboratórios atualizados!"
+            echo ""
+            echo "Mudanças detectadas:"
+            git diff --stat data/Labs/labs_fga.csv
+          fi
+
+      - name: Commit e push das mudanças
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "lucaasft16@gmail.com"
+          git config --local user.name "Lucasft16"
+          git add data/Labs/labs_fga.csv
+          git commit -m "chore: atualizar lista de laboratórios FGA [skip ci]"
+          git push

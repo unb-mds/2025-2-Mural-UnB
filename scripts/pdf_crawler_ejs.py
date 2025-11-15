@@ -1,7 +1,15 @@
+"""
+Rastreia páginas para localizar e baixar o PDF das Empresas Juniores.
+Detecta links PDF relevantes e salva o Portfólio em `data/EJs`.
+"""
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
 import os
+import warnings
+
+# Suprimir avisos de SSL (necessário para alguns sites da UnB)
+warnings.filterwarnings('ignore', message='Unverified HTTPS request')
 
 def encontrar_pdf_empresas_juniores(url_alvo):
     """
@@ -10,8 +18,17 @@ def encontrar_pdf_empresas_juniores(url_alvo):
     print(f"Acessando a pagina: {url_alvo}...") 
 
     try:
+        # Headers para simular um navegador (alguns sites bloqueiam bots)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7',
+            'Connection': 'keep-alive',
+        }
+        
         # 1. Fazer a requisição HTTP para baixar o HTML
-        response = requests.get(url_alvo, timeout=20)
+        # Nota: verify=False desabilita verificação SSL (necessário para alguns sites da UnB)
+        response = requests.get(url_alvo, headers=headers, timeout=20, allow_redirects=True, verify=False)
         response.raise_for_status()
         
         # 2. Parsear o HTML usando BeautifulSoup
@@ -73,11 +90,11 @@ def encontrar_pdf_empresas_juniores(url_alvo):
             pasta_saida = os.path.join(os.path.dirname(__file__), "..", "data", "EJs")
             os.makedirs(pasta_saida, exist_ok=True)
             
-            nome_arquivo = "Portfolio_Empresas_Juniores_UnB.pdf"
+            nome_arquivo = "portfolio_empresas_juniores.pdf"
             caminho_completo = os.path.join(pasta_saida, nome_arquivo)
             
             # Baixa o PDF
-            response_pdf = requests.get(pdf_principal['url'], stream=True, timeout=30)
+            response_pdf = requests.get(pdf_principal['url'], headers=headers, stream=True, timeout=30, allow_redirects=True, verify=False)
             response_pdf.raise_for_status()
             
             # Salva o arquivo
@@ -85,7 +102,7 @@ def encontrar_pdf_empresas_juniores(url_alvo):
                 for pedaco in response_pdf.iter_content(chunk_size=8192):
                     arquivo.write(pedaco)
             
-            print(f"\n✓ PDF baixado com sucesso: {caminho_completo}")
+            print(f"\n PDF baixado com sucesso: {caminho_completo}")
             print("=" * 60)
             
             return caminho_completo
@@ -94,21 +111,30 @@ def encontrar_pdf_empresas_juniores(url_alvo):
             return None
         
     except requests.exceptions.Timeout:
-        print("\n✗ ERRO: A página demorou muito para responder (timeout).")
+        print("\n ERRO: A página demorou muito para responder (timeout).")
+        print(f"URL tentada: {url_alvo}")
         return None
-    except requests.exceptions.ConnectionError:
-        print("\n✗ ERRO: Não foi possível conectar ao servidor.")
+    except requests.exceptions.ConnectionError as e:
+        print("\n ERRO: Não foi possível conectar ao servidor.")
+        print(f"URL tentada: {url_alvo}")
+        print(f"Detalhes: {str(e)}")
+        print("\nPossíveis causas:")
+        print("  - URL incorreta ou site fora do ar")
+        print("  - Firewall ou proxy bloqueando a conexão")
+        print("  - Problema de DNS")
         return None
     except requests.exceptions.HTTPError as e:
-        print(f"\n✗ ERRO HTTP: {e}")
+        print(f"\n ERRO HTTP: {e}")
+        print(f"URL tentada: {url_alvo}")
         return None
     except requests.exceptions.RequestException as motivo:
-        print(f"\n✗ Erro ao acessar a página: {motivo}")
+        print(f"\n Erro ao acessar a página: {motivo}")
+        print(f"URL tentada: {url_alvo}")
         return None
 
 if __name__ == "__main__":
     # URL pra exemplo - substituir dps pela URL real do portfólio de EJ
-    url_ejs = "http://exemplo.com/ejuniores"
+    url_ejs = "https://www.unb.br/cultura-e-sociedade/empresa-junior"
     pdf_path = encontrar_pdf_empresas_juniores(url_ejs)
     
     if pdf_path:
@@ -116,6 +142,3 @@ if __name__ == "__main__":
     else:
 
         print("\nNão foi possível obter o PDF.")
-
-
-

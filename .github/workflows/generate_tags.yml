@@ -1,0 +1,59 @@
+name: Gerar Tags Embeddings gemini
+
+on:
+  push:
+    paths:
+      - "data/tags.json"
+      - "scripts/generate_embeddings_gemini.py"
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 3 1 * *" # dia 1 de cada mês às meia noite Brasília
+
+jobs:
+  gerar-embeddings:
+    runs-on: ubuntu-latest
+    # Não roda em merges (detecta "Merge" no início da mensagem) nem com [skip ci]
+    if: ${{ !startsWith(github.event.head_commit.message, 'Merge') && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]') }}
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          pip install packaging google-generativeai numpy python-dotenv
+
+      - name: Gerar embeddings com Gemini
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          cp data/tags.json scripts/tags.json  
+          cd scripts
+          python generate_embeddings_gemini.py
+
+      - name: Verificar mudanças
+        id: check_changes
+        run: |
+          if git diff --quiet scripts/tags_with_embeddings_gemini.json; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "Nenhuma mudança nos embeddings"
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Embeddings atualizados!"
+          fi
+
+      - name: Commit e push das mudanças
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "lucaasft16@gmail.com"
+          git config --local user.name "Lucasft16"
+          git add scripts/tags_with_embeddings_gemini.json
+          git commit -m "chore: atualizar embeddings das tags [skip ci]"
+          git push

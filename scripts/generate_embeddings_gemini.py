@@ -1,3 +1,8 @@
+"""
+Gera embeddings das tags usando a API Gemini e salva em JSON.
+Lê `tags.json`, solicita embeddings e grava `tags_with_embeddings_gemini.json`.
+"""
+
 import json
 import google.generativeai as genai
 import numpy as np
@@ -40,12 +45,12 @@ def process_tags(data):
     if not subcategorias:
         # Trata o caso de categorias sem subcategorias (como Soft Skills)
         for tag in categoria.get('tags', []):
-          
+
           input_text = f"{tag['label']}: {tag.get('description', '')}"
           print(f"Processando tag: {tag['label']}")
-          
+
           embedding_vector = get_embedding(input_text)
-          
+
           if embedding_vector:
             tag['embedding'] = embedding_vector
     else:
@@ -54,9 +59,9 @@ def process_tags(data):
 
                 input_text = f"{tag['label']}: {tag.get('description', '')}"
                 print(f"Processando tag: {tag['label']}")
-                
+
                 embedding_vector = get_embedding(input_text)
-                
+
                 if embedding_vector:
                     tag['embedding'] = embedding_vector
   return data
@@ -72,5 +77,5 @@ if __name__ == "__main__":
   print(f"\nSalvando os dados com embeddings em '{OUTPUT_JSON_FILE}'...")
   with open(OUTPUT_JSON_FILE, 'w', encoding='utf-8') as f:
     json.dump(tags_with_embeddings, f, indent=2, ensure_ascii=False)
-  
+
   print("Processo concluído com sucesso")

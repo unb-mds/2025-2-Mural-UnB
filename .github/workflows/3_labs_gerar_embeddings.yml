@@ -1,0 +1,73 @@
+name: Agregar Embeddings Laboratórios
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "15 8 * * 1,4" # 15 minutos após alocar tags
+
+  push:
+    paths:
+      - "scripts/oportunidade_embd.py"
+      - "data/Labs/labs_com_tags_embeddings.json"
+      - "data/tags.json"
+
+jobs:
+  agregar-embeddings:
+    runs-on: ubuntu-latest
+    # Não roda em merges (detecta "Merge" no início da mensagem) nem com [skip ci]
+    if: ${{ !startsWith(github.event.head_commit.message, 'Merge') && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]') }}
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependências
+        run: |
+          pip install numpy
+
+      - name: Agregar embeddings dos laboratórios
+        run: |
+          cd scripts
+          python oportunidade_embd.py
+        continue-on-error: true
+
+      - name: Verificar arquivo gerado
+        id: check_output
+        run: |
+          if [ -f "data/Labs/labs_com_embedding_agregado.json" ]; then
+            echo "json_generated=true" >> $GITHUB_OUTPUT
+            echo " Embeddings agregados gerados com sucesso!"
+            
+            # Conta quantos labs têm embedding agregado
+            num_labs=$(python -c "import json; data=json.load(open('data/Labs/labs_com_embedding_agregado.json')); labs_com_emb = [l for l in data.get('laboratorios', []) if l.get('embedding_agregado')]; print(len(labs_com_emb))")
+            echo " Total de laboratórios com embedding agregado: $num_labs"
+            echo "num_labs=$num_labs" >> $GITHUB_OUTPUT
+            
+            # Verifica se houve mudanças
+            if git diff --quiet data/Labs/labs_com_embedding_agregado.json; then
+              echo "changes=false" >> $GITHUB_OUTPUT
+              echo " Dados não sofreram alterações"
+            else
+              echo "changes=true" >> $GITHUB_OUTPUT
+              echo " Embeddings agregados foram atualizados!"
+            fi
+          else
+            echo "json_generated=false" >> $GITHUB_OUTPUT
+            echo " Arquivo de embeddings agregados não foi gerado. Verifique os logs."
+            exit 1
+          fi
+
+      - name: Commit e push dos embeddings agregados
+        if: steps.check_output.outputs.json_generated == 'true' && steps.check_output.outputs.changes == 'true'
+        run: |
+          git config --local user.email "lucaasft16@gmail.com"
+          git config --local user.name "Lucasft16"
+          git add data/Labs/labs_com_embedding_agregado.json
+          git commit -m "chore: atualizar embeddings agregados labs (${{ steps.check_output.outputs.num_labs }} labs) [skip ci] "
+          git push
