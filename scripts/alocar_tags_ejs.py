@@ -128,11 +128,20 @@ def filtrar_tags_por_curso(tags_flat: List[Dict], cursos: str) -> List[Dict]:
 def alocar_tags_por_similaridade(
     empresa: Dict,
     tags_flat: List[Dict],
-    min_tags: int = 5,
-    max_tags: int = 15,
-    threshold: float = 0.28
+    threshold: float = 0.28,
+    max_tags: int = None
 ) -> List[Dict]:
-    """Aloca tags a uma empresa baseada em similaridade de embeddings"""
+    """Aloca tags a uma empresa baseada em similaridade de embeddings
+    
+    Args:
+        empresa: Dicionário com dados da empresa júnior
+        tags_flat: Lista de tags com embeddings
+        threshold: Similaridade mínima (0-1)
+        max_tags: Número máximo de tags (None = sem limite)
+    
+    Returns:
+        Lista de tags selecionadas
+    """
 
     # Monta texto a partir dos campos mais relevantes (alguns podem estar ausentes)
     nome = empresa.get('Nome', '')
@@ -166,13 +175,16 @@ def alocar_tags_por_similaridade(
 
     similaridades.sort(key=lambda x: x['score'], reverse=True)
 
-    num_tags = min(max_tags, max(min_tags, len(similaridades)))
-    selecionadas = similaridades[:num_tags]
+    # Aplica limite máximo se especificado
+    if max_tags is not None:
+        selecionadas = similaridades[:max_tags]
+    else:
+        selecionadas = similaridades
 
     if selecionadas:
-        print(f"  ✓ Selecionadas {len(selecionadas)} tags (top score {selecionadas[0]['score']:.3f})")
+        print(f"  ✓ {len(selecionadas)} tags selecionadas (scores: {selecionadas[0]['score']:.3f} a {selecionadas[-1]['score']:.3f})")
     else:
-        print(f"  ⚠️  Nenhuma tag acima do threshold ({threshold}). Será retornado vazio.")
+        print(f"  ⚠️ Nenhuma tag encontrada com similaridade >= {threshold}")
 
     return selecionadas
 
@@ -208,9 +220,8 @@ def main():
         tags_sel = alocar_tags_por_similaridade(
             empresa,
             tags_flat,
-            min_tags=5,
-            max_tags=15,
-            threshold=0.45
+            threshold=0.45,  # Similaridade mínima de 45%
+            max_tags=12  # Limita às 12 tags mais relevantes
         )
 
         tags_para_salvar = [
@@ -251,7 +262,7 @@ def main():
             'data_geracao': '2025-11-09',
             'parametros': {
                 'min_tags': 5,
-                'max_tags': 15,
+                'max_tags': 12,
                 'threshold_similaridade': 0.45
             },
             'empresas_juniores': resultado
