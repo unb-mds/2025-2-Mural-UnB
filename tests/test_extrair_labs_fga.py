@@ -4,6 +4,10 @@ from scripts.extrair_labs_fga import (
     extrair_palavra_chave, categorizar_lab, limpar_texto, 
     juntar_palavras_hifenizadas, encontrar_imagem_para_lab
 )
+import random
+import csv
+
+
 # --- Testes para a Função categorizar_lab ---
 
 def test_categorizar_lab_software():
@@ -111,3 +115,47 @@ def test_encontrar_imagem_para_lab_falha_na_busca_web(mocker):
     mock_requests_get.assert_not_called()
 
     mock_baixar_imagem.assert_not_called()
+
+
+def test_filtrar_labs_fga_usa_placeholder_corretamente(mocker):
+    """
+    Testa o fluxo de integração principal:
+    1. Finge que a extração do PDF retornou 1 lab.
+    2. Finge que a busca de imagem falhou (retornou None).
+    3. Finge que a categorização retornou 'software'.
+    4. Finge que o randomizador escolheu '3'.
+    5. Verifica se o CSV final foi escrito com o caminho correto do placeholder.
+    """
+
+    mock_lab_do_pdf = {
+        'nome': 'Laboratório de Inteligência Artificial',
+        'coordenador': 'Prof. Teste',
+        'contato': 'teste@unb.br',
+        'descricao': 'Um lab de software da FGA.'
+    }
+    mocker.patch('scripts.extrair_labs_fga.extrair_laboratorios_fga_pdf', return_value=[mock_lab_do_pdf])
+
+    mocker.patch('scripts.extrair_labs_fga.encontrar_imagem_para_lab', return_value=None)
+
+    mocker.patch('scripts.extrair_labs_fga.random.randint', return_value=3)
+
+    mock_writer = mocker.Mock()
+    mocker.patch('csv.DictWriter', return_value=mock_writer)
+    mocker.patch('builtins.open', mocker.mock_open()) # Finge que abriu o arquivo CSV
+
+    from scripts.extrair_labs_fga import filtrar_labs_fga
+
+    filtrar_labs_fga("caminho/falso.pdf", "caminho/falso.csv")
+
+    caminho_placeholder_esperado = os.path.join("..", "data", "images", "placeholders", "software_3.jpg")
+
+    lab_final_esperado = {
+        'id': '200001', 
+        'nome': 'Laboratório de Inteligência Artificial',
+        'coordenador': 'Prof. Teste',
+        'contato': 'teste@unb.br',
+        'descricao': 'Um lab de software da FGA.',
+        'caminho_imagem': caminho_placeholder_esperado # A verificação principal!
+    }
+
+    mock_writer.writerows.assert_called_once_with([lab_final_esperado])
