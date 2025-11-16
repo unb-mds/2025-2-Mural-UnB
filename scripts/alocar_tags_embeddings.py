@@ -98,12 +98,33 @@ def similaridade_cosseno(embedding1: np.ndarray, embedding2: np.ndarray) -> floa
     
     return dot_product / (norm1 * norm2)
 
+def filtrar_tags_para_laboratorios(tags_flat: List[Dict]) -> List[Dict]:
+    """
+    Filtra tags removendo aquelas específicas para Empresas Juniores.
+    Laboratórios não devem receber tags de EJ, Startup, etc.
+    """
+    # Tags que NUNCA devem aparecer para Laboratórios
+    tags_excluidas = [
+        'empresa_junior',
+        'equipe_competicao',
+        'startup_universitaria',
+        'estagio'
+    ]
+    
+    tags_filtradas = [
+        tag for tag in tags_flat
+        if tag.get('id') not in tags_excluidas
+    ]
+    
+    print(f"  ℹ️  Filtro para laboratórios: {len(tags_flat)} → {len(tags_filtradas)} tags")
+    return tags_filtradas
+
+
 def alocar_tags_por_similaridade(
-    lab: Dict, 
+    lab: Dict,
     tags_flat: List[Dict],
-    min_tags: int = 5,
-    max_tags: int = 15,
-    threshold: float = 0.3
+    threshold: float = 0.35,
+    max_tags: int = None
 ) -> List[Dict]:
     """
     Aloca tags a um laboratório baseado em similaridade de embeddings
@@ -111,9 +132,8 @@ def alocar_tags_por_similaridade(
     Args:
         lab: Dicionário com informações do laboratório
         tags_flat: Lista de tags com embeddings
-        min_tags: Número mínimo de tags a alocar
-        max_tags: Número máximo de tags a alocar
         threshold: Similaridade mínima para considerar a tag (0-1)
+        max_tags: Número máximo de tags a alocar (None = sem limite)
     
     Returns:
         Lista de tags selecionadas com score de similaridade
@@ -124,10 +144,13 @@ def alocar_tags_por_similaridade(
     print(f"  → Gerando embedding da descrição...")
     lab_embedding = gerar_embedding(texto_lab)
     
-    print(f"  → Calculando similaridades com {len(tags_flat)} tags...")
+    # Filtra tags irrelevantes para laboratórios
+    tags_relevantes = filtrar_tags_para_laboratorios(tags_flat)
+    
+    print(f"  → Calculando similaridades com {len(tags_relevantes)} tags...")
     # Calcula similaridade com todas as tags
     similaridades = []
-    for tag in tags_flat:
+    for tag in tags_relevantes:
         score = similaridade_cosseno(lab_embedding, tag['embedding'])
         if score >= threshold:
             similaridades.append({
@@ -142,13 +165,19 @@ def alocar_tags_por_similaridade(
     # Ordena por similaridade (maior primeiro)
     similaridades.sort(key=lambda x: x['score'], reverse=True)
     
-    # Pega entre min_tags e max_tags
-    num_tags = min(max_tags, max(min_tags, len(similaridades)))
-    tags_selecionadas = similaridades[:num_tags]
+    # Aplica limite máximo se especificado
+    if max_tags is not None:
+        tags_selecionadas = similaridades[:max_tags]
+    else:
+        tags_selecionadas = similaridades
     
-    print(f"  ✓ {len(tags_selecionadas)} tags selecionadas (scores: {tags_selecionadas[0]['score']:.3f} a {tags_selecionadas[-1]['score']:.3f})")
+    if len(tags_selecionadas) > 0:
+        print(f"  ✓ {len(tags_selecionadas)} tags selecionadas (scores: {tags_selecionadas[0]['score']:.3f} a {tags_selecionadas[-1]['score']:.3f})")
+    else:
+        print(f"  ⚠ Nenhuma tag encontrada com similaridade >= {threshold}")
     
     return tags_selecionadas
+
 
 def main():
     """Função principal"""
@@ -187,14 +216,11 @@ def main():
         
         # Aloca tags por similaridade
         tags_selecionadas = alocar_tags_por_similaridade(
-            lab, 
+            lab,
             tags_flat,
-            min_tags=5,
-            max_tags=15,
-            threshold=0.3  # Similaridade mínima de 30%
-        )
-        
-        # Adiciona à lista (sem o score na saída final)
+            threshold=0.35,  # Similaridade mínima de 35%
+            max_tags=12  # Limita às 15 tags mais relevantes
+        )        # Adiciona à lista (sem o score na saída final)
         tags_para_salvar = [
             {
                 'id': tag['id'],
@@ -237,9 +263,9 @@ def main():
             'total_laboratorios': len(labs_com_tags),
             'data_geracao': '2025-10-20',
             'parametros': {
-                'min_tags': 5,
-                'max_tags': 15,
-                'threshold_similaridade': 0.3
+                'min_tags': 3,
+                'max_tags': 12,
+                'threshold_similaridade': 0.35
             },
             'laboratorios': labs_com_tags
         }, f, ensure_ascii=False, indent=2)

@@ -5,7 +5,7 @@
   "data_geracao": "2025-11-09",
   "parametros": {
     "min_tags": 5,
-    "max_tags": 15,
+    "max_tags": 12,
     "threshold_similaridade": 0.45
   },
   "empresas_juniores": [
@@ -92,15 +92,9 @@
           "label": "Oratória e Apresentação",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "lideranca",
-          "label": "Liderança",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 13,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -199,27 +193,9 @@
           "label": "Oratória e Apresentação",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "adaptabilidade",
-          "label": "Adaptabilidade",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "pensamento_critico",
-          "label": "Pensamento Crítico",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "mentoria",
-          "label": "Mentoria",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -318,27 +294,9 @@
           "label": "Resolução de Problemas",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "projeto_extensao",
-          "label": "Projeto de Extensão",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "mentoria",
-          "label": "Mentoria",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "adaptabilidade",
-          "label": "Adaptabilidade",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Estágio",
@@ -437,15 +395,9 @@
           "label": "Pensamento Crítico",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "gestao_tempo",
-          "label": "Gestão de Tempo",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 13,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Estágio",
@@ -544,21 +496,9 @@
           "label": "Oratória e Apresentação",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "lideranca",
-          "label": "Liderança",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "mentoria",
-          "label": "Mentoria",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 14,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -853,21 +793,9 @@
           "label": "Oratória e Apresentação",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "pensamento_critico",
-          "label": "Pensamento Crítico",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "resolucao_problemas",
-          "label": "Resolução de Problemas",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 14,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -966,21 +894,9 @@
           "label": "Liderança",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "oratória_apresentacao",
-          "label": "Oratória e Apresentação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "resolucao_problemas",
-          "label": "Resolução de Problemas",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 14,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -1079,27 +995,9 @@
           "label": "Materiais Compósitos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "criatividade_inovacao",
-          "label": "Criatividade e Inovação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "sistemas_propulsao",
-          "label": "Sistemas de Propulsão",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "proatividade",
-          "label": "Proatividade",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Estágio",
@@ -1376,27 +1274,9 @@
           "label": "Sistemas Automotivos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "powertrain",
-          "label": "Powertrain",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "armazenamento_energia",
-          "label": "Armazenamento de Energia",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "analise_dados",
-          "label": "Análise de Dados",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Estágio",
@@ -1596,15 +1476,9 @@
           "label": "Pensamento Crítico",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "lideranca",
-          "label": "Liderança",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 13,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -1703,27 +1577,9 @@
           "label": "Robótica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "design_automotivo_cad",
-          "label": "Design Automotivo e CAD",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "analise_dados",
-          "label": "Análise de Dados",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "sistemas_propulsao",
-          "label": "Sistemas de Propulsão",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -1923,27 +1779,9 @@
           "label": "Resolução de Problemas",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "energias_renovaveis",
-          "label": "Energias Renováveis",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "engenharia_dados",
-          "label": "Engenharia de Dados",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "powertrain",
-          "label": "Powertrain",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -2226,27 +2064,9 @@
           "label": "Engenharia de Dados",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "projeto_extensao",
-          "label": "Projeto de Extensão",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "sistemas_embarcados",
-          "label": "Sistemas Embarcados",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "circuitos_digitais_analogicos",
-          "label": "Circuitos Digitais e Analógicos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Energias Renováveis",
@@ -2345,27 +2165,9 @@
           "label": "Realidade Virtual/Aumentada (VR/AR)",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "iot",
-          "label": "Internet das Coisas (IoT)",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "qa_testes",
-          "label": "Qualidade de Software (QA) e Testes",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "robotica",
-          "label": "Robótica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Desenvolvimento Web",
@@ -2464,27 +2266,9 @@
           "label": "Estruturas Aeroespaciais",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "eletronica_automotiva_embarcada",
-          "label": "Eletrônica Embarcada Automotiva",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "trabalho_equipe",
-          "label": "Trabalho em Equipe",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "circuitos_digitais_analogicos",
-          "label": "Circuitos Digitais e Analógicos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Design Automotivo e CAD",
@@ -2672,15 +2456,9 @@
           "label": "Pensamento Crítico",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "lideranca",
-          "label": "Liderança",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 13,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Comunicação",
@@ -2779,27 +2557,9 @@
           "label": "Engenharia de Dados",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "negociacao",
-          "label": "Negociação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "materiais_compositos",
-          "label": "Materiais Compósitos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "robotica",
-          "label": "Robótica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -2898,27 +2658,9 @@
           "label": "Veículos Autônomos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "seguranca_informacao",
-          "label": "Segurança da Informação",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "negociacao",
-          "label": "Negociação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "sistemas_operacionais",
-          "label": "Sistemas Operacionais",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -3017,27 +2759,9 @@
           "label": "Robótica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "resolucao_problemas",
-          "label": "Resolução de Problemas",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "projeto_extensao",
-          "label": "Projeto de Extensão",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "proatividade",
-          "label": "Proatividade",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -3237,27 +2961,9 @@
           "label": "Negociação",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "robotica",
-          "label": "Robótica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "powertrain",
-          "label": "Powertrain",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "foguetes",
-          "label": "Foguetes",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Energias Renováveis",
@@ -3356,27 +3062,9 @@
           "label": "Qualidade de Software (QA) e Testes",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "negociacao",
-          "label": "Negociação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "engenharia_dados",
-          "label": "Engenharia de Dados",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "eletronica_automotiva_embarcada",
-          "label": "Eletrônica Embarcada Automotiva",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -3475,15 +3163,9 @@
           "label": "Mentoria",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "resolucao_problemas",
-          "label": "Resolução de Problemas",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 13,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -3772,27 +3454,9 @@
           "label": "Criatividade e Inovação",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "robotica",
-          "label": "Robótica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "comunicacao",
-          "label": "Comunicação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "sistemas_automotivos",
-          "label": "Sistemas Automotivos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -3891,27 +3555,9 @@
           "label": "Arquitetura de Software",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "negociacao",
-          "label": "Negociação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "criatividade_inovacao",
-          "label": "Criatividade e Inovação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "desenvolvimento_frontend",
-          "label": "Desenvolvimento Frontend",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -4010,27 +3656,9 @@
           "label": "Análise de Dados",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "mobilidade_eletrica",
-          "label": "Mobilidade Elétrica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "materiais_compositos",
-          "label": "Materiais Compósitos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "resolucao_problemas",
-          "label": "Resolução de Problemas",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Foguetes",
@@ -4218,15 +3846,9 @@
           "label": "Resolução de Problemas",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "mentoria",
-          "label": "Mentoria",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 13,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -4325,15 +3947,9 @@
           "label": "Gestão de Tempo",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "oratória_apresentacao",
-          "label": "Oratória e Apresentação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 13,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -4515,27 +4131,9 @@
           "label": "Satélites e CubeSats",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "sistemas_automotivos",
-          "label": "Sistemas Automotivos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "negociacao",
-          "label": "Negociação",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "desenvolvimento_web",
-          "label": "Desenvolvimento Web",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -4931,27 +4529,9 @@
           "label": "Foguetes",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "desenvolvimento_mobile",
-          "label": "Desenvolvimento Mobile",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "sistemas_propulsao",
-          "label": "Sistemas de Propulsão",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "qa_testes",
-          "label": "Qualidade de Software (QA) e Testes",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Desenvolvimento Web",
@@ -5050,27 +4630,9 @@
           "label": "Sistemas Embarcados",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "projeto_extensao",
-          "label": "Projeto de Extensão",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "circuitos_digitais_analogicos",
-          "label": "Circuitos Digitais e Analógicos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "powertrain",
-          "label": "Powertrain",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -5169,15 +4731,9 @@
           "label": "Gestão de Tempo",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "pensamento_critico",
-          "label": "Pensamento Crítico",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 13,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",
@@ -5276,27 +4832,9 @@
           "label": "Mecânica Orbital",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "gnc",
-          "label": "Guiagem, Navegação e Controle (GNC)",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "realidade_virtual_aumentada",
-          "label": "Realidade Virtual/Aumentada (VR/AR)",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "projeto_extensao",
-          "label": "Projeto de Extensão",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Empresa Júnior",

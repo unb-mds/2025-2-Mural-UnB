@@ -4,9 +4,9 @@
   "total_laboratorios": 34,
   "data_geracao": "2025-10-20",
   "parametros": {
-    "min_tags": 5,
-    "max_tags": 15,
-    "threshold_similaridade": 0.3
+    "min_tags": 3,
+    "max_tags": 12,
+    "threshold_similaridade": 0.35
   },
   "laboratorios": [
     {
@@ -59,12 +59,6 @@
           "subcategoria": "Engenharia Eletrônica e de Energia"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "motores_combustao",
           "label": "Motores a Combustão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -93,21 +87,9 @@
           "label": "Mobilidade Elétrica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "powertrain",
-          "label": "Powertrain",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "foguetes",
-          "label": "Foguetes",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -139,12 +121,6 @@
         {
           "id": "laboratorio_pesquisa",
           "label": "Laboratório de Pesquisa",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
           "subcategoria": ""
         },
@@ -207,21 +183,9 @@
           "label": "Visão Computacional",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "machine_learning",
-          "label": "Machine Learning",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "sistemas_embarcados",
-          "label": "Sistemas Embarcados",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Inteligência Artificial",
@@ -232,8 +196,8 @@
           "score": 0.639
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.609
+          "label": "Projeto de Extensão",
+          "score": 0.604
         }
       ]
     },
@@ -281,12 +245,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "armazenamento_energia",
           "label": "Armazenamento de Energia",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -317,25 +275,13 @@
           "subcategoria": ""
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "telecomunicacoes",
           "label": "Telecomunicações",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "trabalho_equipe",
-          "label": "Trabalho em Equipe",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -375,12 +321,6 @@
           "label": "Sistemas de Controle",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "veiculos_autonomos",
@@ -425,12 +365,6 @@
           "subcategoria": "Engenharia Eletrônica e de Energia"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "dinamica_veicular",
           "label": "Dinâmica Veicular",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -441,15 +375,9 @@
           "label": "Design Automotivo e CAD",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "estruturas_aeroespaciais",
-          "label": "Estruturas Aeroespaciais",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Sistemas Automotivos",
@@ -509,12 +437,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "veiculos_autonomos",
           "label": "Veículos Autônomos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -549,21 +471,9 @@
           "label": "Engenharia de Dados",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "sistemas_controle",
-          "label": "Sistemas de Controle",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "inteligencia_artificial",
-          "label": "Inteligência Artificial",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -629,18 +539,6 @@
           "subcategoria": "Engenharia Eletrônica e de Energia"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "projeto_extensao",
           "label": "Projeto de Extensão",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
@@ -669,15 +567,9 @@
           "label": "Telecomunicações",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "sistemas_automotivos",
-          "label": "Sistemas Automotivos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Sistemas Elétricos de Potência",
@@ -755,12 +647,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "motores_combustao",
           "label": "Motores a Combustão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -773,25 +659,13 @@
           "subcategoria": "Engenharia Eletrônica e de Energia"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "sistemas_automotivos",
           "label": "Sistemas Automotivos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "trabalho_equipe",
-          "label": "Trabalho em Equipe",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Sistemas Elétricos de Potência",
@@ -839,12 +713,6 @@
           "subcategoria": "Engenharia Eletrônica e de Energia"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "sistemas_propulsao",
           "label": "Sistemas de Propulsão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -869,12 +737,6 @@
           "subcategoria": "Engenharia Eletrônica e de Energia"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "foguetes",
           "label": "Foguetes",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -897,15 +759,9 @@
           "label": "Materiais Compósitos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "telecomunicacoes",
-          "label": "Telecomunicações",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -928,12 +784,6 @@
       "contato": "rejanemaria@gmail.com / itrac.unb.br",
       "descricao": "o ITRAC, vinculado à Faculdade do Gama (FGA/UnB), desenvolve pesquisas e desenvolvimentos tecnológicos envolvendo estudantes de graduação da FGA e estudantes de pós-graduação em parceria com a indústria e com órgãos federais.",
       "tags": [
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
         {
           "id": "laboratorio_pesquisa",
           "label": "Laboratório de Pesquisa",
@@ -961,12 +811,6 @@
         {
           "id": "projeto_extensao",
           "label": "Projeto de Extensão",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
           "subcategoria": ""
         },
@@ -1011,20 +855,10 @@
           "label": "Análise de Dados",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "robotica",
-          "label": "Robótica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
-        {
-          "label": "Startup Universitária",
-          "score": 0.629
-        },
         {
           "label": "Laboratório de Pesquisa",
           "score": 0.614
@@ -1032,6 +866,10 @@
         {
           "label": "Sistemas Operacionais",
           "score": 0.584
+        },
+        {
+          "label": "Segurança da Informação",
+          "score": 0.569
         }
       ]
     },
@@ -1053,12 +891,6 @@
           "label": "Energias Renováveis",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "foguetes",
@@ -1097,12 +929,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "robotica",
           "label": "Robótica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -1125,15 +951,9 @@
           "label": "Trabalho em Equipe",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "mobilidade_eletrica",
-          "label": "Mobilidade Elétrica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -1144,8 +964,8 @@
           "score": 0.603
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.592
+          "label": "Foguetes",
+          "score": 0.591
         }
       ]
     },
@@ -1167,18 +987,6 @@
           "label": "Foguetes",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "projeto_extensao",
@@ -1205,22 +1013,10 @@
           "subcategoria": ""
         },
         {
-          "id": "empresa_junior",
-          "label": "Empresa Júnior",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "circuitos_digitais_analogicos",
           "label": "Circuitos Digitais e Analógicos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "estagio",
-          "label": "Estágio",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "sistemas_automotivos",
@@ -1245,9 +1041,15 @@
           "label": "Sistemas de Controle",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
+        },
+        {
+          "id": "materiais_compositos",
+          "label": "Materiais Compósitos",
+          "categoria": "Domínios e Áreas de Conhecimento Técnico",
+          "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -1258,8 +1060,8 @@
           "score": 0.601
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.565
+          "label": "Projeto de Extensão",
+          "score": 0.56
         }
       ]
     },
@@ -1313,12 +1115,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "aerodinamica",
           "label": "Aerodinâmica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -1329,12 +1125,6 @@
           "label": "Motores a Combustão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "sistemas_propulsao",
@@ -1353,15 +1143,9 @@
           "label": "Mobilidade Elétrica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "robotica",
-          "label": "Robótica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -1395,18 +1179,6 @@
           "label": "Inteligência Artificial",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "motores_combustao",
@@ -1467,15 +1239,9 @@
           "label": "Sistemas de Propulsão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "trabalho_equipe",
-          "label": "Trabalho em Equipe",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -1486,8 +1252,8 @@
           "score": 0.597
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.593
+          "label": "Motores a Combustão",
+          "score": 0.577
         }
       ]
     },
@@ -1523,12 +1289,6 @@
           "subcategoria": "Engenharia Automotiva"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "powertrain",
           "label": "Powertrain",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -1559,22 +1319,10 @@
           "subcategoria": "Engenharia Automotiva"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "energias_renovaveis",
           "label": "Energias Renováveis",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "estagio",
-          "label": "Estágio",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "circuitos_digitais_analogicos",
@@ -1589,7 +1337,7 @@
           "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Motores a Combustão",
@@ -1643,12 +1391,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "armazenamento_energia",
           "label": "Armazenamento de Energia",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -1673,12 +1415,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "sistemas_automotivos",
           "label": "Sistemas Automotivos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -1695,15 +1431,9 @@
           "label": "Trabalho em Equipe",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
           "subcategoria": ""
-        },
-        {
-          "id": "materiais_compositos",
-          "label": "Materiais Compósitos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -1751,21 +1481,9 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "trabalho_equipe",
           "label": "Trabalho em Equipe",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
           "subcategoria": ""
         },
         {
@@ -1809,15 +1527,9 @@
           "label": "Armazenamento de Energia",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "estagio",
-          "label": "Estágio",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -1877,12 +1589,6 @@
           "subcategoria": "Engenharia Automotiva"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "sistemas_eletricos_potencia",
           "label": "Sistemas Elétricos de Potência",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -1917,21 +1623,9 @@
           "label": "Eletrônica de Potência",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "armazenamento_energia",
-          "label": "Armazenamento de Energia",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "trabalho_equipe",
-          "label": "Trabalho em Equipe",
-          "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Mobilidade Elétrica",
@@ -1963,12 +1657,6 @@
         {
           "id": "laboratorio_pesquisa",
           "label": "Laboratório de Pesquisa",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
           "subcategoria": ""
         },
@@ -2031,21 +1719,9 @@
           "label": "Circuitos Digitais e Analógicos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "qa_testes",
-          "label": "Qualidade de Software (QA) e Testes",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Inteligência Artificial",
@@ -2056,8 +1732,8 @@
           "score": 0.678
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.608
+          "label": "Machine Learning",
+          "score": 0.601
         }
       ]
     },
@@ -2079,12 +1755,6 @@
           "label": "Qualidade de Software (QA) e Testes",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "sistemas_operacionais",
@@ -2109,18 +1779,6 @@
           "label": "Desenvolvimento Mobile",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "estagio",
-          "label": "Estágio",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "projeto_extensao",
@@ -2159,7 +1817,7 @@
           "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -2170,8 +1828,8 @@
           "score": 0.628
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.615
+          "label": "Sistemas Operacionais",
+          "score": 0.61
         }
       ]
     },
@@ -2195,12 +1853,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "robotica",
           "label": "Robótica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -2216,12 +1868,6 @@
           "id": "negociacao",
           "label": "Negociação",
           "categoria": "Habilidades Interpessoais (Soft Skills)",
-          "subcategoria": ""
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
           "subcategoria": ""
         },
         {
@@ -2265,15 +1911,9 @@
           "label": "Internet das Coisas (IoT)",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "materiais_compositos",
-          "label": "Materiais Compósitos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -2284,8 +1924,8 @@
           "score": 0.609
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.592
+          "label": "Robótica",
+          "score": 0.559
         }
       ]
     },
@@ -2313,12 +1953,6 @@
           "label": "Processamento Digital de Sinais (DSP)",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "robotica",
@@ -2373,21 +2007,9 @@
           "label": "LabVIEW",
           "categoria": "Ferramentas, Softwares e Tecnologias",
           "subcategoria": "Plataformas e Softwares"
-        },
-        {
-          "id": "pln",
-          "label": "Processamento de Linguagem Natural (PLN)",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "projeto_extensao",
-          "label": "Projeto de Extensão",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -2423,12 +2045,6 @@
           "subcategoria": ""
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "foguetes",
           "label": "Foguetes",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -2439,12 +2055,6 @@
           "label": "Estruturas Aeroespaciais",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "criatividade_inovacao",
@@ -2493,15 +2103,9 @@
           "label": "Robótica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "circuitos_digitais_analogicos",
-          "label": "Circuitos Digitais e Analógicos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -2512,8 +2116,8 @@
           "score": 0.602
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.601
+          "label": "Foguetes",
+          "score": 0.599
         }
       ]
     },
@@ -2547,12 +2151,6 @@
           "label": "Inteligência Artificial",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "circuitos_digitais_analogicos",
@@ -2601,21 +2199,9 @@
           "label": "Impressão 3D",
           "categoria": "Ferramentas, Softwares e Tecnologias",
           "subcategoria": "Hardware"
-        },
-        {
-          "id": "analise_dados",
-          "label": "Análise de Dados",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "sistemas_operacionais",
-          "label": "Sistemas Operacionais",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia de Software"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -2651,22 +2237,10 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "robotica",
           "label": "Robótica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "projeto_extensao",
@@ -2691,12 +2265,6 @@
           "label": "Materiais Compósitos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "estagio",
-          "label": "Estágio",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "energias_renovaveis",
@@ -2729,7 +2297,7 @@
           "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -2740,8 +2308,8 @@
           "score": 0.615
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.601
+          "label": "Robótica",
+          "score": 0.573
         }
       ]
     },
@@ -2769,18 +2337,6 @@
           "label": "Materiais Compósitos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "robotica",
@@ -2835,15 +2391,9 @@
           "label": "Sistemas Automotivos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "sistemas_controle",
-          "label": "Sistemas de Controle",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -2879,12 +2429,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "motores_combustao",
           "label": "Motores a Combustão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -2915,12 +2459,6 @@
           "subcategoria": "Engenharia Automotiva"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "iniciacao_cientifica",
           "label": "Iniciação Científica (IC)",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
@@ -2949,15 +2487,9 @@
           "label": "Mecânica Orbital",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "sistemas_controle",
-          "label": "Sistemas de Controle",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -2968,8 +2500,8 @@
           "score": 0.621
         },
         {
-          "label": "Equipe de Competição",
-          "score": 0.612
+          "label": "Motores a Combustão",
+          "score": 0.599
         }
       ]
     },
@@ -3011,12 +2543,6 @@
           "subcategoria": "Engenharia Automotiva"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "projeto_extensao",
           "label": "Projeto de Extensão",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
@@ -3047,22 +2573,10 @@
           "subcategoria": ""
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "sistemas_propulsao",
           "label": "Sistemas de Propulsão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "estagio",
-          "label": "Estágio",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "negociacao",
@@ -3071,7 +2585,7 @@
           "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -3097,12 +2611,6 @@
         {
           "id": "laboratorio_pesquisa",
           "label": "Laboratório de Pesquisa",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
           "subcategoria": ""
         },
@@ -3171,33 +2679,21 @@
           "label": "Processamento de Linguagem Natural (PLN)",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "estagio",
-          "label": "Estágio",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
           "score": 0.679
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.622
-        },
-        {
           "label": "Foguetes",
           "score": 0.597
+        },
+        {
+          "label": "Projeto de Extensão",
+          "score": 0.582
         }
       ]
     },
@@ -3225,12 +2721,6 @@
           "label": "Foguetes",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "projeto_extensao",
@@ -3263,12 +2753,6 @@
           "subcategoria": "Engenharia Eletrônica e de Energia"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "satelites_cubesats",
           "label": "Satélites e CubeSats",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -3291,15 +2775,9 @@
           "label": "Iniciação Científica (IC)",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
           "subcategoria": ""
-        },
-        {
-          "id": "robotica",
-          "label": "Robótica",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Telecomunicações",
@@ -3377,12 +2855,6 @@
           "subcategoria": "Engenharia Aeroespacial"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "projeto_extensao",
           "label": "Projeto de Extensão",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
@@ -3399,21 +2871,9 @@
           "label": "Sistemas Automotivos",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Automotiva"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "modelagem_simulacao_aero",
-          "label": "Modelagem e Simulação Aeroespacial",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Aeroespacial"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -3473,18 +2933,6 @@
           "subcategoria": "Engenharia Automotiva"
         },
         {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "robotica",
           "label": "Robótica",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -3519,15 +2967,9 @@
           "label": "Sistemas Operacionais",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "eletronica_automotiva_embarcada",
-          "label": "Eletrônica Embarcada Automotiva",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -3593,18 +3035,6 @@
           "subcategoria": "Engenharia de Software"
         },
         {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "projeto_extensao",
           "label": "Projeto de Extensão",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
@@ -3633,15 +3063,9 @@
           "label": "Sistemas de Propulsão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "sistemas_embarcados",
-          "label": "Sistemas Embarcados",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
@@ -3667,12 +3091,6 @@
         {
           "id": "laboratorio_pesquisa",
           "label": "Laboratório de Pesquisa",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
           "categoria": "Tipo de Oportunidade e Foco de Atuação",
           "subcategoria": ""
         },
@@ -3741,33 +3159,21 @@
           "label": "Sistemas Operacionais",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia de Software"
-        },
-        {
-          "id": "circuitos_digitais_analogicos",
-          "label": "Circuitos Digitais e Analógicos",
-          "categoria": "Domínios e Áreas de Conhecimento Técnico",
-          "subcategoria": "Engenharia Eletrônica e de Energia"
-        },
-        {
-          "id": "iniciacao_cientifica",
-          "label": "Iniciação Científica (IC)",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Laboratório de Pesquisa",
           "score": 0.647
         },
         {
-          "label": "Startup Universitária",
-          "score": 0.614
-        },
-        {
           "label": "Segurança da Informação",
           "score": 0.605
+        },
+        {
+          "label": "Sistemas Embarcados",
+          "score": 0.599
         }
       ]
     },
@@ -3801,12 +3207,6 @@
           "label": "Estruturas Aeroespaciais",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
           "subcategoria": "Engenharia Aeroespacial"
-        },
-        {
-          "id": "startup_universitaria",
-          "label": "Startup Universitária",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
         },
         {
           "id": "foguetes",
@@ -3845,18 +3245,6 @@
           "subcategoria": "Engenharia Eletrônica e de Energia"
         },
         {
-          "id": "empresa_junior",
-          "label": "Empresa Júnior",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
-          "id": "equipe_competicao",
-          "label": "Equipe de Competição",
-          "categoria": "Tipo de Oportunidade e Foco de Atuação",
-          "subcategoria": ""
-        },
-        {
           "id": "motores_combustao",
           "label": "Motores a Combustão",
           "categoria": "Domínios e Áreas de Conhecimento Técnico",
@@ -3869,7 +3257,7 @@
           "subcategoria": "Engenharia Automotiva"
         }
       ],
-      "total_tags": 15,
+      "total_tags": 12,
       "top_tags_scores": [
         {
           "label": "Projeto de Extensão",
