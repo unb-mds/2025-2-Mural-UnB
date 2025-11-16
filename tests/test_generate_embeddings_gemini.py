@@ -61,3 +61,47 @@ def test_generate_embeddings_sucesso(mocker):
     tag_escrita = json_escrito["categorias"][0]["subcategorias"][0]["tags"][0]
     assert tag_escrita["embedding"] == VETOR_FALSO
     assert tag_escrita["id"] == "tag1"
+
+
+def test_generate_embeddings_falha_api_gemini(mocker):
+    # --- 1. ARRANGE ---
+
+    # JSON de entrada (necessário para a leitura)
+    JSON_ENTRADA_FALSO = {
+        "categorias": [{"subcategorias": [{"tags": [
+            {"id": "tag1", "label": "Teste de Software", "description": "Testando..."}
+        ]}]}]
+    }
+    mocker.patch(
+        'builtins.open', 
+        mocker.mock_open(read_data=json.dumps(JSON_ENTRADA_FALSO))
+    )
+
+    # Mock da função get_embedding PARA FALHAR
+    mocker.patch(
+        'scripts.generate_embeddings_gemini.get_embedding', 
+        side_effect=Exception("Erro simulado da API")
+    )
+
+    # Mock do os.makedirs
+    mocker.patch('scripts.generate_embeddings_gemini.os.makedirs')
+
+    mock_arquivo_saida = mocker.mock_open()
+    mocker.patch('builtins.open', mock_arquivo_saida)
+
+
+    # --- 2. ACT ---
+
+    main() 
+
+
+    # --- 3. ASSERT ---
+
+    chamadas_open = mock_arquivo_saida.call_args_list
+
+    chamada_saida_encontrada = False
+    for chamada in chamadas_open:
+        if chamada[0][0] == OUTPUT_JSON_FILE:
+            chamada_saida_encontrada = True
+
+    assert chamada_saida_encontrada == False
