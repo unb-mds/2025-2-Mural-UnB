@@ -12,13 +12,7 @@ import google.generativeai as genai
 from typing import List, Dict, Tuple
 
 # Configuração da API do Gemini
-GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
-if not GEMINI_API_KEY:
-    print("ERRO: Configure a variável de ambiente GEMINI_API_KEY")
-    print("Execute: $env:GEMINI_API_KEY='sua-chave-aqui'")
-    exit(1)
 
-genai.configure(api_key=GEMINI_API_KEY)
 
 def carregar_tags_com_embeddings(caminho_tags: str) -> Tuple[Dict, List[Dict]]:
     """
@@ -186,6 +180,14 @@ def main():
     print("="*70)
     print()
     
+    GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
+    if not GEMINI_API_KEY:
+        print("ERRO: Configure a variável de ambiente GEMINI_API_KEY")
+        print("Execute: $env:GEMINI_API_KEY='sua-chave-aqui'")
+        return
+
+    genai.configure(api_key=GEMINI_API_KEY)
+
     # Caminhos dos arquivos
     script_dir = os.path.dirname(__file__)
     caminho_tags = os.path.join(script_dir, "..", "data", "tags.json")  # COM embeddings!

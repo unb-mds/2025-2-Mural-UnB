@@ -8,28 +8,26 @@ import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 
-# --- Opcao usando dotenv
-# Caregando variáveis de ambiente do arquivo .env
+# --- Configuração ---
+# Carrega variáveis de ambiente do arquivo .env
 load_dotenv()
 
 # Chave Privada da API do Google Gemini (usando .env)
-GOOGLE_API_KEY = os.getenv(
-    "GOOGLE_API_KEY"
-)  # Substitua pela sua chave real ou use variáveis de ambiente
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
-# --- Opcao sem usar dotenv
-# Chave Privada da API do Google Gemini (hardcoded - não recomendado para produção)
-GOOGLE_API_KEY = "Sua_Chave_Aqui"  # Substitua pela sua chave real (solicitar para o TIAGO caso nn tenha)
+if not GOOGLE_API_KEY:
+    print("ERRO: GOOGLE_API_KEY não foi encontrada. Verifique seu arquivo .env")
+    # Em um script real, você poderia 'exit(1)' aqui
+else:
+    genai.configure(api_key=GOOGLE_API_KEY)
 
-
-genai.configure(api_key=GOOGLE_API_KEY)
-
-INPUT_JSON_FILE = "tags.json"
-OUTPUT_JSON_FILE = "tags_with_embeddings_gemini.json"
+# Define os caminhos dos arquivos
+INPUT_JSON_FILE = "data/mock/tags_no_embeddings.json" # Corrigindo o caminho
+OUTPUT_JSON_FILE = "data/mock/tags_with_embeddings_gemini.json" # Corrigindo o caminho
 
 
 def get_embedding(text, model="models/text-embedding-004"):
-    """Gera o embedding para um dado texto usando a API do Gemini."""
+    """Gera o embedding para um dado texto."""
     try:
         embedding = genai.embed_content(model=model, content=text)
         return embedding["embedding"]
@@ -41,44 +39,73 @@ def get_embedding(text, model="models/text-embedding-004"):
 
 def process_tags(data):
     """Itera sobre as tags, gera e adiciona os embeddings."""
-    for categoria in data["categorias"]:
-        # Algumas categorias podem não ter subcategorias
+    for categoria in data.get("categorias", []):
         subcategorias = categoria.get("subcategorias", [])
+        
+        tags_para_processar = []
         if not subcategorias:
-            # Trata o caso de categorias sem subcategorias (como Soft Skills)
-            for tag in categoria.get("tags", []):
-
-                input_text = f"{tag['label']}: {tag.get('description', '')}"
-                print(f"Processando tag: {tag['label']}")
-
-                embedding_vector = get_embedding(input_text)
-
-                if embedding_vector:
-                    tag["embedding"] = embedding_vector
+            # Caso 1: Tags direto na categoria (ex: Soft Skills)
+            tags_para_processar = categoria.get("tags", [])
         else:
+            # Caso 2: Tags dentro de subcategorias
             for subcategoria in subcategorias:
-                for tag in subcategoria["tags"]:
+                tags_para_processar.extend(subcategoria.get("tags", []))
+        
+        # Processa as tags encontradas
+        for tag in tags_para_processar:
+            # Pula se já tiver um embedding (ou se não for um dicionário válido)
+            if not isinstance(tag, dict) or tag.get("embedding"):
+                continue
+                
+            input_text = f"{tag.get('label', '')}: {tag.get('description', '')}"
+            print(f"Processando tag: {tag.get('label')}")
 
-                    input_text = f"{tag['label']}: {tag.get('description', '')}"
-                    print(f"Processando tag: {tag['label']}")
+            embedding_vector = get_embedding(input_text)
 
-                    embedding_vector = get_embedding(input_text)
-
-                    if embedding_vector:
-                        tag["embedding"] = embedding_vector
+            if embedding_vector:
+                tag["embedding"] = embedding_vector
+                
     return data
 
-
-if __name__ == "__main__":
+#
+# --- LÓGICA PRINCIPAL MOVIDA PARA UMA FUNÇÃO ---
+#
+def main():
+    """
+    Função principal que orquestra a leitura, processamento e escrita.
+    """
     print("Carregando o arquivo JSON de tags...")
-    with open(INPUT_JSON_FILE, "r", encoding="utf-8") as f:
-        tags_data = json.load(f)
+    
+    # Garante que a pasta de dados exista
+    os.makedirs(os.path.dirname(INPUT_JSON_FILE), exist_ok=True)
+    os.makedirs(os.path.dirname(OUTPUT_JSON_FILE), exist_ok=True)
+
+    try:
+        with open(INPUT_JSON_FILE, "r", encoding="utf-8") as f:
+            tags_data = json.load(f)
+    except FileNotFoundError:
+        print(f"ERRO: Arquivo de entrada não encontrado: {INPUT_JSON_FILE}")
+        return
+    except json.JSONDecodeError:
+        print(f"ERRO: Arquivo de entrada não é um JSON válido: {INPUT_JSON_FILE}")
+        return
 
     print("Iniciando a geração de embeddings com o modelo Gemini...")
     tags_with_embeddings = process_tags(tags_data)
 
     print(f"\nSalvando os dados com embeddings em '{OUTPUT_JSON_FILE}'...")
-    with open(OUTPUT_JSON_FILE, "w", encoding="utf-8") as f:
-        json.dump(tags_with_embeddings, f, indent=2, ensure_ascii=False)
+    try:
+        with open(OUTPUT_JSON_FILE, "w", encoding="utf-8") as f:
+            json.dump(tags_with_embeddings, f, indent=2, ensure_ascii=False)
+    except IOError as e:
+        print(f"ERRO: Não foi possível escrever no arquivo de saída: {e}")
+        return
 
     print("Processo concluído com sucesso")
+
+#
+# --- Bloco de Execução ---
+# (Só roda 'main()' quando o script é executado diretamente)
+#
+if __name__ == "__main__":
+    main()
