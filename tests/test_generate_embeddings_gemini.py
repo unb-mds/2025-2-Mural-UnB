@@ -79,8 +79,8 @@ def test_generate_embeddings_falha_api_gemini(mocker):
 
     # Mock da função get_embedding PARA FALHAR
     mocker.patch(
-        'scripts.generate_embeddings_gemini.get_embedding', 
-        side_effect=Exception("Erro simulado da API")
+    'scripts.generate_embeddings_gemini.get_embedding', 
+    side_effect=ValueError("Erro simulado da API") 
     )
 
     # Mock do os.makedirs

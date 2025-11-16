@@ -89,7 +89,7 @@ def test_labs_pdf_falha_http_404(mocker):
 
     # --- 1. ARRANGE (Preparar a "Mentira") ---
 
-    # Mock do requests.get: Finge que o site retornou um erro 404
+
     mock_requests_get = mocker.patch('scripts.labs_pdf.requests.get')
     mock_requests_get.side_effect = requests.exceptions.HTTPError("404 Client Error: Not Found")
 
