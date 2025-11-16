@@ -25,7 +25,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        # Garante que as dependências de dev (pytest, pylint) sejam instaladas
+        if [ -f requirements-EJ.txt ]; then pip install -r requirements-EJ.txt; fi
         if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
 
     - name: 4. Rodar Linter (Pylint)
