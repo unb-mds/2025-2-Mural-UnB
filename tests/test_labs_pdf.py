@@ -1,41 +1,81 @@
 import pytest
 import os
 import scripts.labs_pdf
+from scripts.labs_pdf import main
 from bs4 import BeautifulSoup
-
+from urllib.parse import urljoin
 
 def test_labs_pdf_baixa_o_arquivo_com_sucesso(mocker):
+    """
+    Testa o fluxo de sucesso:
+    1. Simula o download do HTML
+    2. Simula o BeautifulSoup encontrando o link
+    3. Simula o download do PDF
+    4. Simula o salvamento do arquivo
+    5. Verifica se tudo foi chamado corretamente.
+    """
 
+    # --- 1. ARRANGE (Preparar as "Mentiras"/Simulações) ---
+    
     HTML_FALSO = """
-    <html>
-      <body>
+    <html><body>
         <a href="http://site-errado.com/outro.pdf">Link irrelevante</a>
         <a href="/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf">Nosso PDF</a>
-      </body>
-    </html>
+    </body></html>
     """
-    DADOS_PDF_FALSOS = b"%PDF-1.4 fake pdf content" # b'' significa bytes
+    DADOS_PDF_FALSOS = b"%PDF-1.4 fake pdf content"
 
-    # 1.1: Mock do requests.get (1ª chamada: HTML)
+    # 1.1: Mock do requests.get (para HTML e PDF)
     mock_response_html = mocker.Mock()
     mock_response_html.content = HTML_FALSO.encode('utf-8')
     mock_response_html.raise_for_status = mocker.Mock()
-
-    # 1.2: Mock do requests.get (2ª chamada: PDF)
+    
     mock_response_pdf = mocker.Mock()
     mock_response_pdf.iter_content.return_value = [DADOS_PDF_FALSOS]
     mock_response_pdf.raise_for_status = mocker.Mock()
-
-    # 1.3: Configura o 'requests.get' para retornar as duas respostas em ordem
+    
     mock_requests_get = mocker.patch('scripts.labs_pdf.requests.get')
     mock_requests_get.side_effect = [mock_response_html, mock_response_pdf]
 
-    # 1.4: Mock do BeautifulSoup
-    mock_link_encontrado = {'href': '/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf'}
+    # 1.2: Mock do BeautifulSoup 
+    mock_link_tag = mocker.Mock()
+    mock_link_tag.get_text.return_value = "Portfolio Falso"
+    mock_link_tag['href'] = "/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf"
+    
     mock_soup_instance = mocker.Mock()
-    mock_soup_instance.find_all.return_value = [mock_link_encontrado]
+    mock_soup_instance.find_all.return_value = [mock_link_tag]
     mocker.patch('scripts.labs_pdf.BeautifulSoup', return_value=mock_soup_instance)
 
-    # 1.5: Mock do Sistema de Arquivos (para não criar pastas ou arquivos)
-    mocker.patch('scripts.labs_pdf.os.makedirs')
+    # 1.3: Mock do Sistema de Arquivos
+    mock_makedirs = mocker.patch('scripts.labs_pdf.os.makedirs')
     mock_open = mocker.patch('builtins.open', mocker.mock_open())
+
+    # 1.4: Mock do urljoin
+    mock_urljoin = mocker.patch('scripts.labs_pdf.urllib.parse.urljoin')
+    mock_urljoin.return_value = "http://pesquisa.unb.br/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf"
+    
+    main()
+
+    # --- 3. ASSERT (Verificar se tudo aconteceu) ---
+
+    # 3.1: O script tentou baixar o HTML E o PDF? (2 chamadas)
+    assert mock_requests_get.call_count == 2
+    # A segunda chamada foi com a URL completa do PDF?
+    mock_requests_get.assert_called_with(
+        "http://pesquisa.unb.br/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf", 
+        stream=True, 
+        timeout=30
+    )
+
+    # 3.2: O script tentou criar a pasta correta?
+    script_dir = os.path.dirname(scripts.labs_pdf.__file__)
+    caminho_pasta_esperado = os.path.join(script_dir, "..", "data", "Labs")
+    mock_makedirs.assert_called_with(caminho_pasta_esperado, exist_ok=True)
+
+    # 3.3: O script tentou salvar o arquivo no caminho correto?
+    caminho_salvar_esperado = os.path.join(caminho_pasta_esperado, "Portfolio_Infraestrutura_UnB.pdf")
+    mock_open.assert_called_with(caminho_salvar_esperado, 'wb')
+
+    # 3.4: O script tentou escrever os dados do PDF falso no arquivo?
+    handle = mock_open()
+    handle.write.assert_called_once_with(DADOS_PDF_FALSOS)
