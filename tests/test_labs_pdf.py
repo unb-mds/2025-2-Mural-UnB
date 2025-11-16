@@ -1,10 +1,12 @@
 import pytest
 import os
+import requests 
+
+# Importa o módulo (para mockar) e a função (para chamar)
 import scripts.labs_pdf
-from scripts.labs_pdf import main
+from scripts.labs_pdf import main # <-- CORREÇÃO: Garante que 'main' está importado
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-import requests
 
 def test_labs_pdf_baixa_o_arquivo_com_sucesso(mocker):
     """
@@ -41,7 +43,9 @@ def test_labs_pdf_baixa_o_arquivo_com_sucesso(mocker):
     # 1.2: Mock do BeautifulSoup 
     mock_link_tag = mocker.Mock()
     mock_link_tag.get_text.return_value = "Portfolio Falso"
-    mock_link_tag['href'] = "/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf"
+    
+    # CORREÇÃO: Configura o .get() para retornar o link
+    mock_link_tag.get.return_value = "/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf"
     
     mock_soup_instance = mocker.Mock()
     mock_soup_instance.find_all.return_value = [mock_link_tag]
@@ -49,36 +53,31 @@ def test_labs_pdf_baixa_o_arquivo_com_sucesso(mocker):
 
     # 1.3: Mock do Sistema de Arquivos
     mock_makedirs = mocker.patch('scripts.labs_pdf.os.makedirs')
-    mock_open = mocker.patch('builtins.open', mocker.mock_open())
-
+    mock_open_escrita = mocker.patch('builtins.open', mocker.mock_open()) 
+    
     # 1.4: Mock do urljoin
     mock_urljoin = mocker.patch('scripts.labs_pdf.urllib.parse.urljoin')
     mock_urljoin.return_value = "http://pesquisa.unb.br/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf"
     
-    main()
+    main() # <--- ACT
 
     # --- 3. ASSERT (Verificar se tudo aconteceu) ---
 
-    # 3.1: O script tentou baixar o HTML E o PDF? (2 chamadas)
     assert mock_requests_get.call_count == 2
-    # A segunda chamada foi com a URL completa do PDF?
     mock_requests_get.assert_called_with(
         "http://pesquisa.unb.br/caminho/relativo/Portfolio_Infraestrutura_UnB.pdf", 
         stream=True, 
         timeout=30
     )
 
-    # 3.2: O script tentou criar a pasta correta?
     script_dir = os.path.dirname(scripts.labs_pdf.__file__)
     caminho_pasta_esperado = os.path.join(script_dir, "..", "data", "Labs")
     mock_makedirs.assert_called_with(caminho_pasta_esperado, exist_ok=True)
 
-    # 3.3: O script tentou salvar o arquivo no caminho correto?
     caminho_salvar_esperado = os.path.join(caminho_pasta_esperado, "Portfolio_Infraestrutura_UnB.pdf")
-    mock_open.assert_called_with(caminho_salvar_esperado, 'wb')
+    mock_open_escrita.assert_called_with(caminho_salvar_esperado, 'wb')
 
-    # 3.4: O script tentou escrever os dados do PDF falso no arquivo?
-    handle = mock_open()
+    handle = mock_open_escrita()
     handle.write.assert_called_once_with(DADOS_PDF_FALSOS)
 
 def test_labs_pdf_falha_http_404(mocker):
@@ -86,25 +85,15 @@ def test_labs_pdf_falha_http_404(mocker):
     Testa o fluxo de falha onde a primeira chamada (baixar HTML) 
     retorna um erro HTTP 404.
     """
-
-    # --- 1. ARRANGE (Preparar a "Mentira") ---
-
-
+    # --- 1. ARRANGE ---
     mock_requests_get = mocker.patch('scripts.labs_pdf.requests.get')
     mock_requests_get.side_effect = requests.exceptions.HTTPError("404 Client Error: Not Found")
 
-    # Mock de 'exit': O script 'labs_pdf.py' chama exit(1) em caso de erro.
     mock_exit = mocker.patch('scripts.labs_pdf.exit')
 
-
-    # --- 2. ACT (Executar a Função) ---
-
+    # --- 2. ACT ---
     main() 
 
-    # --- 3. ASSERT (Verificar) ---
-
-    # 3.1: O script tentou acessar o site? (Sim, 1 vez)
+    # --- 3. ASSERT ---
     mock_requests_get.assert_called_once()
-
-    # 3.2: O script chamou 'exit(1)' como esperado?
     mock_exit.assert_called_once_with(1)

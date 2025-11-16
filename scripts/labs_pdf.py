@@ -36,7 +36,7 @@ def main():
         urls_ja_adicionadas = set()
 
         for link in todos_links:
-            href = link['href']
+            href = link.get('href')
             texto_link = link.get_text(strip=True)
 
             # Verifica se o link termina com .pdf E contém "InfraPesquisa" ou "Portfólio"
