@@ -4,6 +4,7 @@ import scripts.labs_pdf
 from scripts.labs_pdf import main
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
+import requests
 
 def test_labs_pdf_baixa_o_arquivo_com_sucesso(mocker):
     """
@@ -79,3 +80,31 @@ def test_labs_pdf_baixa_o_arquivo_com_sucesso(mocker):
     # 3.4: O script tentou escrever os dados do PDF falso no arquivo?
     handle = mock_open()
     handle.write.assert_called_once_with(DADOS_PDF_FALSOS)
+
+def test_labs_pdf_falha_http_404(mocker):
+    """
+    Testa o fluxo de falha onde a primeira chamada (baixar HTML) 
+    retorna um erro HTTP 404.
+    """
+
+    # --- 1. ARRANGE (Preparar a "Mentira") ---
+
+    # Mock do requests.get: Finge que o site retornou um erro 404
+    mock_requests_get = mocker.patch('scripts.labs_pdf.requests.get')
+    mock_requests_get.side_effect = requests.exceptions.HTTPError("404 Client Error: Not Found")
+
+    # Mock de 'exit': O script 'labs_pdf.py' chama exit(1) em caso de erro.
+    mock_exit = mocker.patch('scripts.labs_pdf.exit')
+
+
+    # --- 2. ACT (Executar a Função) ---
+
+    main() 
+
+    # --- 3. ASSERT (Verificar) ---
+
+    # 3.1: O script tentou acessar o site? (Sim, 1 vez)
+    mock_requests_get.assert_called_once()
+
+    # 3.2: O script chamou 'exit(1)' como esperado?
+    mock_exit.assert_called_once_with(1)
