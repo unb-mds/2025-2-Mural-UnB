@@ -26,6 +26,7 @@ def carregar_json(filepath):
 def juntar_oportunidades(dados_labs, dados_ejs):
     """
     Junta os dados de laboratórios e empresas juniores em uma única estrutura
+    mantendo listas separadas
     """
     print("\nJuntando dados...")
     
@@ -40,14 +41,15 @@ def juntar_oportunidades(dados_labs, dados_ejs):
     for ej in empresas_juniores:
         ej['tipo_oportunidade'] = 'empresa_junior'
     
-    # Cria a estrutura final
+    # Cria a estrutura final com duas listas separadas
     oportunidades = {
         'metodo': 'similaridade_embeddings',
         'modelo_embedding': 'text-embedding-004',
         'total_oportunidades': len(laboratorios) + len(empresas_juniores),
         'total_laboratorios': len(laboratorios),
         'total_empresas_juniores': len(empresas_juniores),
-        'oportunidades': laboratorios + empresas_juniores
+        'laboratorios': laboratorios,
+        'empresas_juniores': empresas_juniores
     }
     
     print(f"Total de {len(laboratorios)} laboratórios")

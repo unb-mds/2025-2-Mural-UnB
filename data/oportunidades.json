@@ -4,7 +4,7 @@
   "total_oportunidades": 83,
   "total_laboratorios": 34,
   "total_empresas_juniores": 49,
-  "oportunidades": [
+  "laboratorios": [
     {
       "id": "200001",
       "nome": "Centro Integrado de Pesquisa em Transição Energética - CIP TransEnerg",
@@ -30094,7 +30094,9 @@
         -0.0030758568826666664
       ],
       "tipo_oportunidade": "laboratorio"
-    },
+    }
+  ],
+  "empresas_juniores": [
     {
       "id": "100001",
       "Nome": "Ábaco",
