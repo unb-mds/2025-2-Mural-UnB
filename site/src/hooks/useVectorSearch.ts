@@ -10,8 +10,8 @@ type TagsLookupMap = Map<string, Embedding>;
 
 interface SearchData {
   allLabs: ILab[];
-  allTagsData: ITagsData | null; 
-  tagsLookup: TagsLookupMap; 
+  allTagsData: ITagsData | null;
+  tagsLookup: TagsLookupMap;
   isLoading: boolean;
   error: Error | null;
 }
@@ -27,7 +27,8 @@ export function useVectorSearch(): SearchData {
     async function loadData() {
       try {
         setIsLoading(true);
-        
+        setError(null);
+
         // 3. SUBSTITUI a lógica de fetch antiga
         // Carrega ambos os arquivos em paralelo usando o novo serviço
         const [labsData, tagsData] = await Promise.all([
@@ -35,15 +36,15 @@ export function useVectorSearch(): SearchData {
           fetchData<ITagsData>('tags.json')
         ]);
 
-        // 4. VERIFICA se os dados vieram (já que fetchData retorna null em erro)
+        // 4. VERIFICA se os dados vieram (fetchData retorna null em erro)
         if (!labsData || !tagsData) {
           throw new Error('Falha ao carregar um ou mais arquivos de dados');
         }
 
-        // 5. A LÓGICA DE PROCESSAMENTO (continua igual)
+        // 5. PROCESSAMENTO
         // Processa e armazena os laboratórios
         setAllLabs(labsData.laboratorios || []);
-        
+
         // Processa e armazena os dados brutos das tags (para a UI)
         setAllTagsData(tagsData);
 
@@ -59,7 +60,6 @@ export function useVectorSearch(): SearchData {
           });
         });
         setTagsLookup(lookup);
-
       } catch (err) {
         setError(err as Error);
       } finally {
@@ -68,7 +68,7 @@ export function useVectorSearch(): SearchData {
     }
 
     loadData();
-  }, []); 
+  }, []);
 
   return { allLabs, allTagsData, tagsLookup, isLoading, error };
 }

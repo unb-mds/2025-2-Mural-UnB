@@ -1,0 +1,46 @@
+import type { Tag } from "./tags"
+
+interface TagsJSON {
+  categorias: Array<{
+    nome_categoria: string
+    descricao: string
+    subcategorias: Array<{
+      nome_subcategoria: string
+      tags: Array<{
+        id: string
+        label: string
+        description?: string
+        embedding?: number[]
+      }>
+    }>
+  }>
+}
+
+export async function fetchTagsFlat(): Promise<Tag[]> {
+  try {
+    const res = await fetch("/tags.json")
+    if (!res.ok) throw new Error(`HTTP error ${res.status}`)
+    const data = (await res.json()) as TagsJSON
+    const flat: Tag[] = []
+    for (const cat of data.categorias || []) {
+      for (const sub of cat.subcategorias || []) {
+        for (const tag of sub.tags || []) {
+          flat.push({ id: tag.id, label: tag.label })
+        }
+      }
+    }
+    // Remover duplicadas por id
+    const seen = new Set<string>()
+    const unique: Tag[] = []
+    for (const t of flat) {
+      if (!seen.has(t.id)) {
+        seen.add(t.id)
+        unique.push(t)
+      }
+    }
+    return unique
+  } catch (e) {
+    console.error("Erro ao carregar tags.json:", e)
+    return []
+  }
+}

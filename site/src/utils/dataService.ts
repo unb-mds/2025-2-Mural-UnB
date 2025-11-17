@@ -17,7 +17,6 @@ export async function fetchData<T>(fileName: string): Promise<T | null> {
     // Parseia a resposta como JSON
     const data: T = await response.json();
     return data;
-
   } catch (error) {
     console.error(`[DataService] Erro ao carregar ${fileName}:`, error);
     return null; // Retorna nulo para o hook/componente saber que falhou
