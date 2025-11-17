@@ -12,9 +12,19 @@ interface TagsFilterModalProps {
   tags: Tag[]
   selectedTags: string[]
   onTagToggle: (tagId: string) => void
+  onSave?: (selectedTags: string[]) => void
 }
 
-export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, onTagToggle }: TagsFilterModalProps) {
+export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, onTagToggle, onSave }: TagsFilterModalProps) {
+  const handleSave = () => {
+    localStorage.setItem('selectedTags', JSON.stringify(selectedTags))
+    
+    if (onSave) {
+      onSave(selectedTags)
+    }
+    
+    onClose()
+  }
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden"
@@ -28,7 +38,6 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
 
   if (!isOpen) return null
 
-  // Agrupar tags por categoria usando a estrutura de allTags
   const tagsByCategory: { [key: string]: Tag[] } = {}
   
   Object.entries(tagsFromData).forEach(([category, categoryTags]) => {
@@ -40,7 +49,6 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
     }
   })
 
-  // Adicionar tags que não estão em nenhuma categoria
   const categorizedTagIds = new Set(Object.values(tagsByCategory).flat().map((t) => t.id))
   const uncategorizedTags = tags.filter((tag) => !categorizedTagIds.has(tag.id))
   
@@ -53,9 +61,6 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>Filtrar por Tags</h2>
-          <button className="modal-close" onClick={onClose}>
-            ×
-          </button>
         </div>
 
         <div className="modal-body">
@@ -82,9 +87,6 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
         </div>
 
         <div className="modal-footer">
-          <button onClick={onClose} className="modal-close-button">
-            Fechar
-          </button>
           <button
             onClick={() => {
               selectedTags.forEach(onTagToggle)
@@ -93,6 +95,9 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
             disabled={selectedTags.length === 0}
           >
             Limpar Seleção ({selectedTags.length})
+          </button>
+          <button className="modal-save" onClick={handleSave}>
+            Salvar
           </button>
         </div>
       </div>
