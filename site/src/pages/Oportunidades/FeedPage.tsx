@@ -10,8 +10,22 @@ import { fetchTagsFlat } from "../../data/fetchTags"
 import "./FeedPage.css"
 
 export default function FeedPage() {
+  // Carregar tags salvas do localStorage ao iniciar
+  const loadSavedTags = (): string[] => {
+    try {
+      const saved = localStorage.getItem('selectedTags')
+      if (saved) {
+        const parsed = JSON.parse(saved)
+        return Array.isArray(parsed) ? parsed : []
+      }
+    } catch (error) {
+      console.error('Erro ao carregar tags do localStorage:', error)
+    }
+    return []
+  }
+
   const [searchTerm, setSearchTerm] = useState("")
-  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [selectedTags, setSelectedTags] = useState<string[]>(loadSavedTags())
   const [selectedCategory, setSelectedCategory] = useState<string>("Todos")
   const [fetchedOpportunities, setFetchedOpportunities] = useState<Opportunity[]>([])
   const [isLoading, setIsLoading] = useState(true)

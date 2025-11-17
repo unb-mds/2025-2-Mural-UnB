@@ -1,0 +1,1625 @@
+[33mcommit cc8eb7a2534974445be2727e3c5da0c088d9d685[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mFetch_atualizado[m[33m)[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Tue Nov 11 11:03:48 2025 -0300
+
+    Atualiza o serviço genérico de fetch e um hook para carregar dados de lab
+
+[33mcommit 7de8c78b4338089f17e3cb92a156093608514b9e[m[33m ([m[1;31morigin/Fetch_atualizado[m[33m, [m[1;32mmain[m[33m)[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Mon Nov 10 11:45:53 2025 -0300
+
+    feat(fetch): oportunidades e tags via JSON
+
+[33mcommit a469e665f7a258084b359391f592c3c0c3a53873[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sun Nov 9 00:03:45 2025 -0300
+
+    Fix: Remove ITag to fix deploy
+
+[33mcommit a48e2e3db0a7d5dc5bbf4a5b525cd06bb85f710e[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sun Nov 9 00:02:51 2025 -0300
+
+    Fix: Update deploy-site.yml to fix deploy
+
+[33mcommit 276fbacf91967ab4d9de8652ee9452dee8bdc767[m
+Merge: 772665c 0398653
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sat Nov 8 22:23:39 2025 -0300
+
+    Merge pull request #95 from unb-mds/gh-search
+    
+    Feat: Barra de Pesquisa Adicionada #94
+
+[33mcommit 0398653530ddf3e22f73bcc0f02622c08c7901aa[m
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Sat Nov 8 21:35:23 2025 -0300
+
+    Feat: Barra de Pesquisa Adicionada #94
+
+[33mcommit 772665c381f1b76103910bd8d0de59c2fd50375d[m
+Merge: a115ac0 921da28
+Author: João Gonzaga <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Fri Nov 7 15:16:15 2025 -0300
+
+    Merge pull request #93 from unb-mds/feat-associacao-de-imagens-do-crawler-EJ-com-ID-das-EJs
+    
+    Conexão de imagens do crawler EJ com id das EJs
+
+[33mcommit 921da28ed3fd330444d77d499d8f8b5c807fa282[m[33m ([m[1;31morigin/feat-associacao-de-imagens-do-crawler-EJ-com-ID-das-EJs[m[33m)[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Fri Nov 7 03:14:52 2025 +0000
+
+    chore: atualizar dados empresas juniores (49 empresas) [skip ci]
+
+[33mcommit 2070789648a1ceb52ec4c052c8351393936b8b6b[m
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Fri Nov 7 00:13:20 2025 -0300
+
+    Update config_ej.py
+
+[33mcommit 53cd39477af15bf2f30c7d27e50441b4a3a9305d[m
+Merge: b897469 0f296f3
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Fri Nov 7 00:10:38 2025 -0300
+
+    Merge branch 'feat-associacao-de-imagens-do-crawler-EJ-com-ID-das-EJs' of https://github.com/unb-mds/2025-2-Mural-UnB into feat-associacao-de-imagens-do-crawler-EJ-com-ID-das-EJs
+
+[33mcommit b897469d82319ae4393b63f274c090b41a1dfb31[m
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Fri Nov 7 00:09:58 2025 -0300
+
+    Update config_ej.py
+
+[33mcommit 0f296f395a8b6f5efb416e553501421c0f65d6f3[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Fri Nov 7 03:09:05 2025 +0000
+
+    chore: atualizar dados empresas juniores (49 empresas) [skip ci]
+
+[33mcommit 0cf4bfb7628c338c46d138302c5deb9ab854ec2f[m
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Fri Nov 7 00:07:13 2025 -0300
+
+    Funcionalidade ID de imagens EJs
+    
+    Adicionada a funcionalidade de associar IDs de EJs à imagens das logos presentes no PDF minerado pelo Crawler de modo eficiente
+
+[33mcommit a115ac0bdbcc97a97327281c93ee3f2c690bc48a[m[33m ([m[1;32mfetch_atualizado[m[33m, [m[1;32mFetch[m[33m)[m
+Merge: bca3995 fd3c3b6
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Thu Nov 6 22:01:10 2025 -0300
+
+    Merge pull request #91 from unb-mds/feat/recomendacao
+    
+    Métodos para pesquisa vetorial e tipagem de elementos do banco. Branch: 'Feat/recomendacao' #90
+
+[33mcommit fd3c3b695fa68796808493c91167c72290d511d9[m[33m ([m[1;31morigin/feat/recomendacao[m[33m)[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Thu Nov 6 13:15:15 2025 -0300
+
+    chore: arquivo de dados renomeado para oportunidade.json
+
+[33mcommit bca39958885206231ffc9d64f47839691959c86e[m
+Merge: c1c0148 125f71f
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Nov 5 17:19:30 2025 -0300
+
+    Merge pull request #88 from unb-mds/feat/id-oportunidades
+    
+    Aplicação de sistema de ID único funcional e integrado. Sistema também contém funcionalidade de primeiro número do ID ser relativo a um tipo de oportunidade como: EJs (1) e LABs (2).
+    
+    - Feat/id oportunidades
+
+[33mcommit 125f71f471bd0a4b727b68bcc2bcb69364eeaaac[m
+Merge: 6325834 c1c0148
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Nov 5 17:18:00 2025 -0300
+
+    Merge branch 'main' into feat/id-oportunidades
+
+[33mcommit 6325834847fd871142b72834b269b100144d893e[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Nov 5 17:12:28 2025 -0300
+
+    fix: diretoria relativa despadronizada e rerun com 'id' correto
+
+[33mcommit fda609baad52520d943e1003137215bbade9d6e3[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Nov 5 17:08:58 2025 -0300
+
+    fix: regeracao de id em alocar_tags_embeddings.py
+
+[33mcommit ff71b7dc51700f276bb76a6a7ef28dfe496331b6[m
+Merge: d24d8e0 d3a765d
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Nov 5 14:07:11 2025 -0300
+
+    Merge branch 'feat/id-oportunidades' of https://github.com/unb-mds/2025-2-Mural-UnB into feat/id-oportunidades
+
+[33mcommit d24d8e00ab185265ec15f7c642981c30cb0bd63f[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Nov 5 14:06:20 2025 -0300
+
+    feat: id unicos para Labs seguindo arquitetura
+
+[33mcommit d3a765dcde827c95a080050f2a00e87aec375ab4[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Wed Nov 5 14:49:12 2025 +0000
+
+    chore: atualizar dados empresas juniores (44 empresas) [skip ci]
+
+[33mcommit 3638a619528071fa35e6d84d93b269288b71f7d7[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Nov 5 11:47:05 2025 -0300
+
+    feat: id unicos para EJs seguindo arquitetura
+
+[33mcommit c1c014858a8c82d08d673864ead506756822c635[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Wed Nov 5 13:46:22 2025 +0000
+
+    chore: atualizar dados empresas juniores (44 empresas) [skip ci]
+
+[33mcommit 5d817a5c3d9a266d2ad9ef7932e72647b863d968[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Nov 5 10:44:20 2025 -0300
+
+    chore: comentarios contextuais em cada script
+
+[33mcommit b4849889e0c15a768016e0ce4a04ae2bd4299bd1[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Nov 4 21:03:55 2025 -0300
+
+    chore: renomiacao e organizacao dos arquivos
+    
+    Co-authored-by: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+    Co-authored-by: João Gonzaga <gonzagajp17@gmail.com>
+
+[33mcommit 5347c4135f28776f2a73fa71e03f184fdbd5ead4[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 22:26:20 2025 -0300
+
+    fix: fix no workflow de ejs
+
+[33mcommit bb50e91811a21684efee272b02e620a09da6c268[m
+Merge: 5198a5a 8860c87
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Mon Nov 3 22:06:59 2025 -0300
+
+    Merge pull request #86 from unb-mds/workflows
+    
+    fix Workflows
+
+[33mcommit 8860c87003eff1f01b5dec8f1af4703c2f95e09e[m
+Merge: 47355ac 5198a5a
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Mon Nov 3 22:04:03 2025 -0300
+
+    Merge pull request #85 from unb-mds/main
+    
+    fix: fix no workflow
+
+[33mcommit 47355acca6755847fee34db57798e490bf1a6edf[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 22:01:38 2025 -0300
+
+    fix: fix para funcionar o pr
+
+[33mcommit 1602d63b93e799da6f1e3ae05f320aa98306ac92[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 21:42:52 2025 -0300
+
+    fix: fix para conseguir pr
+
+[33mcommit 320dcc013b9786e8bc3371a089c896d1c48efb67[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 21:37:17 2025 -0300
+
+    fix: fix no workflow gerar embedding
+
+[33mcommit d350f4c405e6b2508ff71909600a755ae3cbad0d[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Tue Nov 4 00:23:45 2025 +0000
+
+    chore: atualizar dados empresas juniores (44 empresas)
+
+[33mcommit b1143b01a6c9d0408d862beed59a20c8d299bc98[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Tue Nov 4 00:09:45 2025 +0000
+
+    chore: atualizar lista de laboratórios FGA
+
+[33mcommit 5198a5a491d344cf901c2e4751accb2305275bf1[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Tue Nov 4 00:05:40 2025 +0000
+
+    chore: atualizar dados empresas juniores (44 empresas)
+
+[33mcommit ec1e1b6925d35e7e22195dafe07f295338c48ac5[m
+Merge: 298c007 205f9cd
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Mon Nov 3 21:04:14 2025 -0300
+
+    Merge pull request #82 from unb-mds/workflows
+    
+    feat: teste do Workflows
+
+[33mcommit 205f9cd4a9e6ea5d0332fc9585f5c3e578ba6778[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 21:00:20 2025 -0300
+
+    fix: mudanca de conta no workflow
+
+[33mcommit 776140f7bbf9735088c4a5668085edddc5344b67[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 20:54:43 2025 -0300
+
+    feat: adição dos workflows restantes #81
+
+[33mcommit 16a6efbec4c1f2e6f2cbef534f51a255905d2b95[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 20:42:01 2025 -0300
+
+    Workflow pdf_processor_ejs.py
+
+[33mcommit d9490e5289e42e4243f8eaa9d8ee12a3e6b0b80a[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 20:35:00 2025 -0300
+
+    feat: Workflow do pdf_crawler_ejs.py
+
+[33mcommit 48f0831c05be65de620b413222393d4dad634258[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 20:33:35 2025 -0300
+
+    fix: fix do url do pdfcrawler ejs
+
+[33mcommit dd39654a2c7c40b6ce57ace137cd3cb4df005799[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 19:56:09 2025 -0300
+
+    feat: Workflow extrair_labs_fga.py #81
+
+[33mcommit 450c41beb4d1148a5aad522e454587559dc42985[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 19:49:40 2025 -0300
+
+    feat:Workflow generate_embeddings_gemini.py #81
+
+[33mcommit 3971d251c603de5571182eb5310650da63daf673[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Nov 3 19:19:22 2025 -0300
+
+    feat: workflow de pdf dos labs #81
+
+[33mcommit 298c0073767438e38e57e5051f9792a88da5081e[m
+Merge: 475dc76 2e29db2
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Sun Nov 2 20:30:15 2025 -0300
+
+    Merge pull request #80 from unb-mds/feature/feed-oportunidades
+    
+    Feature/feed oportunidades
+
+[33mcommit 2e29db231ee7e3096ac867f9f2e9da0f38cb042c[m[33m ([m[1;31morigin/feature/feed-oportunidades[m[33m, [m[1;32mfeature/feed-oportunidades[m[33m)[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Sun Nov 2 20:15:38 2025 -0300
+
+    feat: footer
+
+[33mcommit 2f3edfdcf256ea4a15141919ae5e0e9bfebed5ee[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Sun Nov 2 20:05:48 2025 -0300
+
+    feat: fotos
+
+[33mcommit 6a19cc3fa10f9d9935b675d28cf822f7d9aeba99[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Sun Nov 2 20:04:58 2025 -0300
+
+    feat: fotos
+
+[33mcommit 434f6917e734fccf0e61cca23ac3a3392c9ba05f[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Sun Nov 2 20:04:01 2025 -0300
+
+    feat: fotos
+
+[33mcommit 605f62f15f8fe39b2b3e2453cb835bedc31cfdd2[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Sun Nov 2 19:59:11 2025 -0300
+
+    fotos
+
+[33mcommit 057cae08ac3705c1b97316ca527c73e139995b21[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Sun Nov 2 19:24:35 2025 -0300
+
+    feat: feed sem erros
+
+[33mcommit c8b5dc24c2570e12f330fd0dc028e155f7bbaf80[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Nov 2 14:59:39 2025 -0300
+
+    feat: estrutura de hooks e utils para busca vetorial
+
+[33mcommit 6c22066677e56cb78e12e19e057b7d2cfc454386[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Nov 2 14:59:03 2025 -0300
+
+    chore: colocados os arquivos de dados no site
+
+[33mcommit 475dc76aaa1cd20e8fbd85809c1ae49afda49890[m
+Merge: e9c2cf6 d097293
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Nov 2 14:42:08 2025 -0300
+
+    Merge pull request #79 from unb-mds/scripts/static-oportunidade-emb
+    
+    feat: script agregador das tags dos embeddings (#78)
+
+[33mcommit d097293ef9c2d1b3d8b42dcc37bfc664d906b6ec[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Nov 2 14:35:43 2025 -0300
+
+    feat: script agregador das tags dos embeddings
+
+[33mcommit 345baeb39040df3ec27e7dfc3c405e47a30fc233[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Sun Nov 2 14:23:21 2025 -0300
+
+    Feat: Feed implementado (com erros)
+
+[33mcommit e9c2cf6576e5f46f3a33f7d2d1442c064374b989[m
+Merge: 4d11b1f e653e5f
+Author: Maria <232005352@aluno.unb.br>
+Date:   Thu Oct 30 22:01:24 2025 -0300
+
+    Merge pull request #77 from unb-mds/home
+
+[33mcommit e653e5fb576538f54d6856841b768930aae23c5e[m[33m ([m[1;31morigin/home[m[33m)[m
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Thu Oct 30 21:57:06 2025 -0300
+
+    Feat: Home finalizada #60
+
+[33mcommit 4d11b1f3239f2c35b6554b7accf62f34a8c036cd[m
+Merge: 54c9ecb a651ec0
+Author: João Gonzaga <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Tue Oct 28 17:48:49 2025 -0300
+
+    Merge pull request #75 from unb-mds/Update-Crawler-images-collector-EJs
+    
+    Update crawler EJs coletor de imagens finalizado e funcional
+
+[33mcommit a651ec09ffcc0b9e9cdc230aeb255a488fa89bf0[m[33m ([m[1;31morigin/Update-Crawler-images-collector-EJs[m[33m)[m
+Author: João Gonzaga <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Tue Oct 28 17:26:01 2025 -0300
+
+    Update extrair_empresas_juniores.py
+    
+    melhora e implementação de método para adquirir imagens do PDF target do Crawler, relacionado a issue #71
+
+[33mcommit 3d9f001e3116ee1a4d6d7b702c06a5aef0e0dc28[m
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Tue Oct 28 17:22:57 2025 -0300
+
+    Progresso de crawler EJs atualizado
+    
+    atualização do processo de adiquirir dados das EJs, assim com imagens do PDF em questão
+
+[33mcommit da681908d231d51ff501427292d59e0eb67fc60c[m
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Tue Oct 28 00:56:57 2025 -0300
+
+    teste funcionamento crawler de imagens
+
+[33mcommit 54c9ecb4d12374edbe78cfe7bfbb2a46085075e0[m
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Tue Oct 28 00:14:19 2025 -0300
+
+    fix: pequeno fix na mensagem do commit
+
+[33mcommit 4f037e2c92ebab6b2eae3ef83dbee15fba035cbf[m
+Author: GitHub Actions Bot <github-actions[bot]@users.noreply.github.com>
+Date:   Tue Oct 28 03:09:55 2025 +0000
+
+     Atualização automática das tags dos laboratórios [skip ci]
+
+[33mcommit 22deab00cdbe126da65f135843135d9c71ddb577[m
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Tue Oct 28 00:09:05 2025 -0300
+
+    fix: criação do labs_com_tags_embeddings.json
+
+[33mcommit 54697a56fbd3acc1cec3b60484d6b3f8da971e6e[m
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Tue Oct 28 00:06:01 2025 -0300
+
+    fix: teste do workflow
+
+[33mcommit 7d1f24d2ea978f197a1d89498978ff501f77a7b8[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Tue Oct 28 00:01:33 2025 -0300
+
+    fix: pequeno fix no workflow das tags do labs
+
+[33mcommit 435f4c11b235b94712ec1d67a4c4684a2487fab8[m
+Merge: 52025b2 30a2d03
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Mon Oct 27 23:56:43 2025 -0300
+
+    fix: alocação de tags
+    
+    fix: alocação de tags
+
+[33mcommit 30a2d03fa31dd9fd720284d88f5faf25337af946[m
+Author: GitHub Actions Bot <github-actions[bot]@users.noreply.github.com>
+Date:   Tue Oct 28 02:47:03 2025 +0000
+
+     Atualização automática das tags dos laboratórios [skip ci]
+
+[33mcommit 861ce3d1c29692d0e65bcd5372af41f856bed79a[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Oct 27 23:45:41 2025 -0300
+
+    fix: teste das tags
+
+[33mcommit ec55092a55d2edb60c1511d98a8a53e6d2020f05[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Oct 27 23:41:32 2025 -0300
+
+    fix: fix do generate embedding deletado na branch
+
+[33mcommit d6d94eab17a2aadb036236ec345dad14a0bff055[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Oct 27 23:37:56 2025 -0300
+
+    fix: adicionar dependencia #70
+
+[33mcommit 52025b24aa7abf907980ca9194eaffe4960ee419[m
+Merge: 9d84707 2176ff6
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Mon Oct 27 23:37:20 2025 -0300
+
+    Merge branch 'main' of https://github.com/unb-mds/2025-2-Mural-UnB
+
+[33mcommit 9d84707fe20b1b10c0747ea8dad4ca2169c9519d[m
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Mon Oct 27 23:37:07 2025 -0300
+
+    Update extrair_empresas_juniores.py
+
+[33mcommit 2176ff6785f9c05d721c451a57b7abd157704afa[m
+Merge: 67b9192 c509fb9
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Mon Oct 27 23:28:17 2025 -0300
+
+    Merge pull request #72 from unb-mds/alocar-tags
+    
+    Alocar tags
+
+[33mcommit c509fb9d8a5e2f8ab0cad0e661f7b223474d3122[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Oct 27 23:17:19 2025 -0300
+
+    feat: workflow das tags
+
+[33mcommit 67b91925e1478f3f35354f5628e67ba2c16b5e8d[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 27 17:12:55 2025 -0300
+
+    docs: arquitetura ia especifca atualizada devido a decisoes arquiteturais
+
+[33mcommit ac5d751e404047b5aed4b6938dcdae07ace66c28[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 27 17:04:48 2025 -0300
+
+    docs: arquitetura especifica de dados implmentada
+
+[33mcommit 61d0411b008fd1c6c7fd589af4566ca24cf0bd0a[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 27 16:59:35 2025 -0300
+
+    docs: arquitetura back removida e paginacao implmentada
+
+[33mcommit ae9c0ac802f1cc3096c60c5f3f1447aa9399ea17[m
+Merge: 1224bf1 de9044b
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Mon Oct 27 15:38:13 2025 -0300
+
+    Merge branch 'main' of https://github.com/unb-mds/2025-2-Mural-UnB
+
+[33mcommit 1224bf152e9573b385300c6defc0498da1407d4e[m
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Mon Oct 27 15:37:55 2025 -0300
+
+    Update extrair_empresas_juniores.py
+
+[33mcommit de9044b92eb4909156971bbdccd6b6c2fd067c39[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Oct 26 19:31:12 2025 -0300
+
+    docs: visao geral (arquitetura) com diagramas C4 atualizados
+
+[33mcommit 0d1f105fad2f752124fbedae202fb41eda317b2e[m
+Author: João Gonzaga <gonzagajp17@gmail.com>
+Date:   Sun Oct 26 19:21:59 2025 -0300
+
+    Update extrair_empresas_juniores.py
+
+[33mcommit 8b82798bde2b6c375d4bfa49d37dd43753990d33[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 22 22:18:01 2025 -0300
+
+    saída do crawler de EJs
+
+[33mcommit e82cdbcda9ab2fcb945d9368d9f79b6a6daddf90[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 22 22:15:23 2025 -0300
+
+    Update pdf_crawler_ejs.py
+    
+    caminho para resultado de informações foi corrigido para "data"
+
+[33mcommit 8c32e7d664c998156a2a11d9c2b69be480027dfc[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 22 22:14:37 2025 -0300
+
+    Update em pdf_crawler_ejs.py
+    
+    Caminho para informações adquiridas foi corrigido para "script"
+
+[33mcommit 147dc0bd9c5d3d02d8c61d865567fb67e31a7fc5[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 22 22:12:04 2025 -0300
+
+    Update para config_ej.py
+    
+    O caminho apresentado no arquivo agora consolida as informações adquiridas no diretório correto em "script"
+
+[33mcommit 91e16856998cdd3fc3af1d82a0df60203beb53ec[m
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Tue Oct 21 08:38:18 2025 -0300
+
+    Feat: Home 70% completa #60
+
+[33mcommit 4d903f7175abcff50eba472936d501220c09ea17[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:45:11 2025 -0300
+
+    Fix: Deplo fix attempt at main.tsx x3
+
+[33mcommit 3861590496f5bdca3ff5333551e7e3a65ca4a279[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:42:48 2025 -0300
+
+    Fix: Deploy fix attempt at app.tsx x2
+
+[33mcommit c56773289ac52612380ed4ffa2bf85135929d941[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:39:36 2025 -0300
+
+    Fix: Deploy fix attempt at vite.config.ts x2
+
+[33mcommit d27a674821daa5c9c5ebd1f11a09699e45b5b36a[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:37:54 2025 -0300
+
+    Fix: Deploy fix attempt at main.tsx
+
+[33mcommit 79fa15fa3f1cad240020a411eefedfb607db543a[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:35:23 2025 -0300
+
+    Update App.tsx
+
+[33mcommit 4ff969a76e608e4f000597dafe56b588de1f3ace[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:35:13 2025 -0300
+
+    Fix: Deploy fix attempt at app.tsx
+
+[33mcommit b343ba76e320754310ce243ff80315bc991942c0[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:34:16 2025 -0300
+
+    Fix: Deploy fix attempt at intex.html
+
+[33mcommit b3f90e6daf11ee82c89c573d913d878c3410c135[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:33:33 2025 -0300
+
+    Update vite.config.ts
+    
+    Esqueci de tirar uma linha
+
+[33mcommit 168d8897787e8b2a39bda0d872248350ad637f4c[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:33:11 2025 -0300
+
+    Fix: Deploy fix attempt at vite.config.ts
+
+[33mcommit 68b6cfa57ff0143ba8227c3d0053e634ab568acc[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:32:21 2025 -0300
+
+    Fix: Deploy fix attempt
+
+[33mcommit a368ee779cbdaaf7364aafc5ba9b67d31fc2fe6f[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:24:07 2025 -0300
+
+    Update deploy-site.yml
+    
+    change npm ci to npm install
+
+[33mcommit 199989de31e5e91f4f4c84899cb20826731627f5[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:22:28 2025 -0300
+
+    Fix: Deploy Fix attempt
+
+[33mcommit e9aef6d11831ec523416c83520bb49ef673a0d79[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:16:24 2025 -0300
+
+    Fix: Deploy fix attempt at package.json
+
+[33mcommit 4545dd0c7732fb1d2785341b3216e1e532916ff0[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Mon Oct 20 23:13:30 2025 -0300
+
+    Fix: Deploy at package.json
+
+[33mcommit 6e83fa271977db8db841958fdc40692066e9a8c6[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Oct 20 23:06:59 2025 -0300
+
+    feat:dados retirado com o script  #65
+
+[33mcommit e6d0294f8d81d7e3bca87b658eb5568626727c23[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Oct 20 23:04:27 2025 -0300
+
+    feat: script para alocar as tags nos laboratorios#65
+
+[33mcommit e44fdc855ccee5cd5e04739623905f1109efdab4[m
+Merge: 17e3111 5a8d1f3
+Author: Maria <232005352@aluno.unb.br>
+Date:   Fri Oct 17 10:47:57 2025 -0300
+
+    Merge pull request #61 from unb-mds/gh-arch
+    
+    fix: Reestruturar arquitetura #50
+
+[33mcommit 5a8d1f36b5c5869de5c0bcb729e1af8e574cd93d[m
+Merge: 1cc0dbb 17e3111
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Wed Oct 15 22:47:55 2025 -0300
+
+    Merge branch 'main' of github.com:unb-mds/2025-2-Mural-UnB into gh-arch
+
+[33mcommit 17e311137a9a8bc594ce68d30aa61eb31bdaee8b[m
+Merge: c44ac72 3120ffd
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:24:57 2025 -0300
+
+    Merge pull request #62 from unb-mds/Crawler-EJ
+    
+    Feature: Crawler para Empresas Juniores
+
+[33mcommit 3120ffdff6409008674172af9ae4fdeb89e8cd56[m[33m ([m[1;31morigin/Crawler-EJ[m[33m)[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:15:02 2025 -0300
+
+    Update extrair_empresas_juniores.py #56
+
+[33mcommit 815090d6ad8ca6ce0c6fe2d2a1110998887ecf18[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:13:43 2025 -0300
+
+    Update extrair_empresas_juniores.py
+
+[33mcommit a528412575372b14cfe25ec417a3e31f5d85a70c[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:09:57 2025 -0300
+
+    principal arquivo para ativação do Crawler EJ #56
+
+[33mcommit 80a2453394dca39361ff8cfb01f3cda56d03b230[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:08:32 2025 -0300
+
+    Crawler efetivo para PDF de EJs #56
+
+[33mcommit e540c7a3e9e1d7871f07b96e0ff26fec57a909a3[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:07:45 2025 -0300
+
+    Update pdf_crawler_ejs.py
+
+[33mcommit 9c10bea3b5a1aa01b86600a40badb26551ac97ba[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:05:48 2025 -0300
+
+    Atualização de formatação para clareza de conf das EJ #56
+
+[33mcommit 185621a837d90ea215bc1ec27df0e30ace75b8e7[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:04:08 2025 -0300
+
+    Crawler efetivo para PDF de EJs #56
+
+[33mcommit ff19ceb03b28c6c3d920d7372123c8461384efb2[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 19:01:44 2025 -0300
+
+    melhora da formatação, relacionada a issue #56
+
+[33mcommit 69f6da0426ce46167434dceb766f15ac62fa5b3e[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 18:57:42 2025 -0300
+
+    atualização de requerimentos, relacionado a issue #56
+
+[33mcommit c1be15158f32d5081c4a36fd944e89a7f682f511[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 18:51:52 2025 -0300
+
+    Crawler efetivo para EJ
+
+[33mcommit ae02d8e1dfd01fe868ac06fa917d7b400fbaa140[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 18:50:33 2025 -0300
+
+    processador de EJ para o PDF
+
+[33mcommit 24294f421814b25d2b94d16a0f36ff650816a7ad[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 18:49:32 2025 -0300
+
+    alteração e nome para clareza requirements.txt para requirements-EJ.txt
+
+[33mcommit 756b66a39f2695334772c980796fbd6b54c9d8b1[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 18:47:59 2025 -0300
+
+    requerimentos para uso local de crawler EJ
+
+[33mcommit 4f265c34fe428a6e97181ce6730d037e1da53ef1[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Wed Oct 15 18:45:38 2025 -0300
+
+    feat: adição de configuração da crawler para EJs
+
+[33mcommit 1cc0dbb85b8122573b8dd7bf507edc7450d7c288[m
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Tue Oct 14 23:25:35 2025 -0300
+
+    feat: Navbar básica
+
+[33mcommit 6f241badb66a88538d9843ca4d54a952b2aacf5b[m
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Tue Oct 14 14:08:19 2025 -0300
+
+    fix: Reestruturar arquitetura #50
+
+[33mcommit c44ac72ba27257f47f3ee4c9e3c860c73db13ce8[m
+Merge: cc9700b f8a8aa9
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Mon Oct 13 23:17:06 2025 -0300
+
+    Merge pull request #59 from unb-mds/crawler
+    
+    feat: Extração de dados do pdf
+
+[33mcommit f8a8aa9b33ebb777cbb9ed556b199b6791659d89[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Oct 13 23:05:00 2025 -0300
+
+    extracao dos dados dos laboratorios da fga #54
+
+[33mcommit cc9700bf61458d2257f948aeee8c7df2a7fa28a3[m
+Merge: abbfe61 57822fc
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 13 20:15:52 2025 -0300
+
+    Merge pull request #58 from unb-mds/feat/tags
+    
+    Listagem e Embedding das Tags (Feat/tags) (#53)
+
+[33mcommit 57822fcc6882810514c5e7631b75ef05cfd740ff[m[33m ([m[1;31morigin/feat/tags[m[33m)[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 13 20:10:13 2025 -0300
+
+    feat: adicionado tags com embedding a pasta data/
+
+[33mcommit 42e8a3d7bf60aff32ff43653b9e2146397f39425[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 13 20:09:39 2025 -0300
+
+    feat: embedding das tags concluido utilizando modelo do gemini
+
+[33mcommit 5bcd236cf915ebfbfd39df863eebea8deb29f809[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 13 18:16:55 2025 -0300
+
+    feat: listagem de categorias, tags e descricoes para representar os interesses
+
+[33mcommit abbfe61032b1d249d409c9e6585f7da620c0a4cc[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 13 18:07:15 2025 -0300
+
+    chore: criei uma pasta mock/ e adicionei as EJs e Labs mockados dentro
+
+[33mcommit c2cb2d717b9a278bae895b2b5e1f941f6cc6a758[m
+Merge: 907177a 394d618
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Oct 13 17:49:37 2025 -0300
+
+    Merge branch 'main' of https://github.com/unb-mds/2025-2-Squad-06
+
+[33mcommit 907177adaa6db2ecfc53c13d91b6cb0d567b4388[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Oct 10 17:49:59 2025 -0300
+
+    fix: base url do vite estava relativamente incorreta para o gh-pages
+
+[33mcommit 394d618ad0bf0d0a1cb3f57b0db00d43d7924600[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Oct 10 17:49:59 2025 -0300
+
+    fix: base url do vite estava relativamente incorreta para o gh-pages
+
+[33mcommit dedb073b51077e94362a3a1373e87cd99732d0f8[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Oct 10 17:19:09 2025 -0300
+
+    bug: faltando a url de homepage no package.json do site/
+
+[33mcommit c2229183f266189014b3b9e4267781d3464a6edd[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Oct 10 15:07:27 2025 -0300
+
+    chore: update deploy-site.yml
+
+[33mcommit a2a8e016ceae8693c44086828b1b78a5170ee315[m
+Merge: 83acd17 8e0e771
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Oct 10 15:05:55 2025 -0300
+
+    Merge pull request #55 from unb-mds/gh-front
+    
+    feat: Add Vite, TailwindCSS and DaisyUI #50
+
+[33mcommit 8e0e77169ab93eafff2d98c0e5adeaefe15431cb[m
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Fri Oct 10 14:58:09 2025 -0300
+
+    feat: Add Vite, TailwindCSS and DaisyUI #50
+    
+    Co-autoread-by: Tiago Santos <tiago.bittencourt.2005@gmail.com>
+
+[33mcommit 3deb0712aaa50a44bc0adc8b6a40fa0af156b3a1[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Thu Oct 9 21:55:09 2025 -0300
+
+    baixar o pdf do laboratorio #54
+
+[33mcommit d1867c5fbac13af8e04d298c2f83fdc30e41153f[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Thu Oct 9 18:54:31 2025 -0300
+
+    feat: filtrar os pdf e imprimir no terminal
+
+[33mcommit 97b6bf4c6e3ee1b16c01523f8742d8f2240a4610[m
+Author: apptrx <matheusscamargo13@gmail.com>
+Date:   Wed Oct 8 23:51:46 2025 -0300
+
+    feat: adicionando estrutura inicial do crawler(#52)
+
+[33mcommit 83acd174290bcfedd7ad67d0a784e80e0d86551d[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Oct 7 21:48:14 2025 -0300
+
+    fix: .gitigore(raiz) com arquivo incorreto
+
+[33mcommit 98fb58363094c630d8accf19c17a989eebd1fdfb[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Oct 7 21:36:44 2025 -0300
+
+    fix: adiciona package-lock.json e retira do .gitignore da raiz a restricao
+
+[33mcommit 471aa1a17ad5e1307b77042f00e27844817b7777[m
+Merge: b692530 23fe3c7
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Oct 7 21:28:54 2025 -0300
+
+    Merge pull request #51 from unb-mds/chore/pastas
+    
+    Criação de site/ na branch "Chore/pastas"
+
+[33mcommit 23fe3c750484e3b523cf0356efd2b41a7382889e[m[33m ([m[1;31morigin/chore/pastas[m[33m)[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Oct 7 21:25:41 2025 -0300
+
+    chore: workflows para duplo deploy de docs e site no gh-pages
+
+[33mcommit 0e71f1e7dfe4cb18032075cbcc70e40e5b216f16[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Oct 7 21:13:12 2025 -0300
+
+    feat: setup nova arquitetura site/
+
+[33mcommit b262e33402e3cbb0016998573a977069494979ce[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Oct 7 20:59:45 2025 -0300
+
+    chore!: todos arquivos e pastas deletados para reestruturacao visando nova arquitetura
+
+[33mcommit b6925307223cb53a51f7292502b072f39838bdda[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Oct 3 06:49:17 2025 -0300
+
+    docs: secao de coelhos adicionada ao gh-pages
+
+[33mcommit 816b8900a3e36b54efa5a251cad5e1b2bd7e0592[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Thu Oct 2 21:58:22 2025 -0300
+
+    style: cores da logo e logo adicionada no gh-pages
+
+[33mcommit 26f9a214be97ce63e122b20c4769e40139915d95[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Thu Oct 2 21:18:10 2025 -0300
+
+    docs: index na parte de arquitetura correto
+
+[33mcommit 96b2b3aeb99df796256c36357ce099f235d2f242[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Thu Oct 2 21:14:32 2025 -0300
+
+    docs: Adicionado ponteiro para nossa arquitetura de pastas
+
+[33mcommit ba3d13b73333638048cb6ae13e6544bbdb229446[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Thu Oct 2 21:05:53 2025 -0300
+
+    docs: documentacao completa do servidor de ia com graficos de componente e fluxos
+
+[33mcommit e18e86b4c4a9c327a636ad6c375884c038c5a45e[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Wed Oct 1 21:34:44 2025 -0300
+
+    docs: pasta de arquitetura reorganizadas
+
+[33mcommit 3da5384b28051cacccec00ded320e1bf28385f2e[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Wed Oct 1 21:21:28 2025 -0300
+
+    docs: adicionar rota
+
+[33mcommit 17fd3c3a6562b149c426f919d1c6bf953489248a[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Wed Oct 1 21:20:25 2025 -0300
+
+    docs: criacao do open source na navbar
+
+[33mcommit 76d9bfb1a57af95cdef3ba1a37745303ff349e5a[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Wed Oct 1 21:12:59 2025 -0300
+
+    docs: upload dos diagramas C4
+
+[33mcommit 368e5203165650a75e68b356bb979998dbf1087c[m[33m ([m[1;33mtag: [m[1;33mv0.1.0[m[33m)[m
+Author: Matheus <matheusscamargo13@gmail.com>
+Date:   Tue Sep 30 20:16:26 2025 -0300
+
+    docs: terminada a documentação com alterações, mais as imagens(#45)
+
+[33mcommit 781fdf88687b56277c4a66d25ba70b45b52880ce[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Sep 30 20:01:56 2025 -0300
+
+    fix: bug de texto de cusomizacao de tamanho de imagem corrijido
+
+[33mcommit ebaca7aab7366cfd09c1a9c158ccb427d49ae23b[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Sep 30 19:59:46 2025 -0300
+
+    docs: imagens dos portifolios da secao de dados (gh-pages)
+
+[33mcommit 9cc23f28e7a34b002684f32f6f6d417ca23f939f[m
+Author: Lucas Fujimoto Tokunaga <lucaasft16@gmail.com>
+Date:   Tue Sep 30 19:35:35 2025 -0300
+
+    fix: erro ortográfico na arquitetura.md
+
+[33mcommit 05ae8e1b4a1c4ac9683ff24067d34a78ebc0f306[m
+Author: Matheus <matheusscamargo13@gmail.com>
+Date:   Tue Sep 30 08:53:37 2025 -0300
+
+    docs: terminando documentação arquitetura e sprints, faltando só as duas imagens.(#45)
+
+[33mcommit 55ac2213776f615a910034f07ed9c8dc1b8b68b9[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Mon Sep 29 18:09:04 2025 -0300
+
+    Update index.md
+
+[33mcommit 12314c02610066d0426b8c7f83885c522d8ab7f5[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 29 01:56:08 2025 -0300
+
+    fix: bug, arquivos em .md estavam em html na pasta docs causando conflitos com mkdocs
+
+[33mcommit f65cc1f760317744a6602dc7281d74db2a105ebe[m
+Merge: 694ef2b d7fda73
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 29 01:07:19 2025 -0300
+
+    Merge pull request #43 from unb-mds/docs/dados
+    
+    Docs/dados
+
+[33mcommit d7fda733db5fdc3ea33530bfd48cf67136133662[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 29 01:04:29 2025 -0300
+
+    docs: adicionado imagens ilustrativas da fonte de dados usada
+
+[33mcommit 38e6456039e16bc3aeaa272eda067b93cdf6cb6f[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 29 00:55:26 2025 -0300
+
+    docs: documentação do processo de ETL (labs e EJs)
+
+[33mcommit 694ef2bcf276df804f685a1c859478b342ae97ee[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Sep 28 23:26:25 2025 -0300
+
+    chore: adicionei caminho para Requisitos (funcionais e nao-funcionais)
+
+[33mcommit 220eeac47e99f7c9bae5c940102c8a9ffdd33bb4[m
+Merge: 9d98617 b38e70d
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Sep 28 23:19:39 2025 -0300
+
+    Merge pull request #42 from unb-mds/docs/requisitos (#41)
+    
+    Docs/requisitos (gh-pages)
+
+[33mcommit b38e70de6a68d3ac7c97db3ce88a34694a52bf32[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Sep 28 23:10:28 2025 -0300
+
+    docs: pagina de requisitos nao funcionais com 6 pontos essenciais adicionada
+
+[33mcommit 3ac6593fe1483c47433ecff005744ea3dc377fab[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Sep 28 23:06:42 2025 -0300
+
+    docs: pagina de requisitos funcionais com Epicos e US adicionados
+
+[33mcommit 9d98617c16d3f2367e752878da3894ecfa0774fe[m
+Merge: 0db4d61 302b8e7
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Sat Sep 27 15:28:08 2025 -0300
+
+    Merge pull request #40 from unb-mds/chore/org_coelhos
+    
+    chore: reorganizacao da estrutura de pastas e atualização dos READMEs Gerais (#39)
+
+[33mcommit 302b8e727a920471a0deab73c8a609d6c8616f29[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Sat Sep 27 15:19:01 2025 -0300
+
+    chore: reorganizacao da estrutura de pastas e atualização dos READMEs gerais
+
+[33mcommit 0db4d61e327ab2ce77237f2cbeb2c5f147f3142c[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Sep 26 20:19:32 2025 -0300
+
+    fix: mudei a branch para main do github-pages
+
+[33mcommit 1f11860df9180305f449c4784dbb4cca5caf014b[m
+Merge: 152dc43 4180cb8
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Fri Sep 26 20:17:25 2025 -0300
+
+    Merge pull request #38 from unb-mds/docs/gitpages
+    
+    fix: merge Docs/gitpages transferencia de documentação para a main (#15)
+
+[33mcommit 4180cb871862ee914d8df606487fccced20b584c[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Sep 26 19:34:40 2025 -0300
+
+    docs: adiciona workflow para MkDocs
+    
+    Co-authored-by: Luan Ludry <lovedeskigames@gmail.com>
+
+[33mcommit 6625c539cdbc1d75d7b392a291639c3677816e3a[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Sep 26 19:34:11 2025 -0300
+
+    docs: adiciona uma pasta docs/ com documentacao inicial do projeto utilizando MkDocs e mkdocs.yml
+    
+    Co-authored-by: Luan Ludry <lovedeskigames@gmail.com>
+
+[33mcommit 152dc435a857fbc4a33da408edb7d08100ff682f[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Sep 24 21:08:20 2025 -0300
+
+    fix: arquivos incorretos na raiz deletados
+
+[33mcommit 4d6177a55e20dc88179b23fb921c7f2656adb362[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Wed Sep 24 10:29:26 2025 -0300
+
+    chore: create simple .gitignore
+
+[33mcommit b1d8825acbffc6bc78bc0b00a0f89dc79aed2f34[m
+Merge: b999fef e005796
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Sep 23 22:27:13 2025 -0300
+
+    Merge pull request #34 from unb-mds/feat/ETL-EJs (issue #26)
+    
+    Fiz a extração e formatação dos dados iniciais em um .csv buscando as melhores features para cada um. (#26)
+
+[33mcommit e005796200fdb230ea5e463bcac58c4703b22532[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Sep 23 22:17:18 2025 -0300
+
+    feat: dados dos labs da FCTE extraidos em .csv do portal oficial de cada curso da UnB/FCTE
+
+[33mcommit 62881013c880decbec01051c15e63dd60d85f72a[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Sep 23 22:14:52 2025 -0300
+
+    fix: EJs faltantes adicionadas
+
+[33mcommit b999fefd7c0b083249868158fc70fb78b91f74f5[m
+Merge: 81387fb c669f0b
+Author: Maria <232005352@aluno.unb.br>
+Date:   Tue Sep 23 22:06:46 2025 -0300
+
+    Merge pull request #33 from unb-mds/front-init#19
+    
+    Front init#19
+
+[33mcommit c669f0b47d10410a6a19e37fe061aa2f4e4c7c15[m
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Tue Sep 23 21:40:33 2025 -0300
+
+    feat: Substituir Vite por Next.JS
+
+[33mcommit 81387fba8a8feaad48fe4f36f69a1fa8e89cfe6b[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Sep 23 20:18:49 2025 -0300
+
+    docs: link do gh-pages correto
+
+[33mcommit 1f13d35a197c9f73207d7af6339b8800b70df827[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Tue Sep 23 19:38:55 2025 -0300
+
+    Update deploy.yml
+
+[33mcommit ef071887877b1fd8f070343782f995752fb0fb6c[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Tue Sep 23 19:21:57 2025 -0300
+
+    Create deploy.yml
+
+[33mcommit d5e243d2b0cd3b71b4b806777ede073bcb7f9f19[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Tue Sep 23 19:20:47 2025 -0300
+
+    Delete .github/workflows
+
+[33mcommit 6efbfdafdff231692913be51df91abbc3593ac8a[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Tue Sep 23 19:18:59 2025 -0300
+
+    Create workflows
+
+[33mcommit 61948a9c39df92c42c481580acd34e9f76febf61[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 22 19:38:38 2025 -0300
+
+    feat: dados extraidos e formatados em .csv do pdf publico de portifolios da EJs
+
+[33mcommit 35ab12b41e4cb8fdd8082d28e2f38afc027180ce[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sat Sep 20 01:43:58 2025 -0300
+
+    Delete Mural/frontend/README.md
+
+[33mcommit 49da94d6c52fb46864c654211f08663018950982[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sat Sep 20 01:36:41 2025 -0300
+
+    task: Verified application with simple css and tsx
+
+[33mcommit 40d9689c8fe88223360225e4365b4916e67c8c19[m
+Merge: 8cb1fa5 835f82a
+Author: Maria <232005352@aluno.unb.br>
+Date:   Fri Sep 19 11:12:39 2025 -0300
+
+    Merge pull request #29 from MariaClara-Canuto/main
+    
+    Base front init
+
+[33mcommit 835f82af4c78e20d1ad1b72d9636ebe21d133e9f[m
+Author: Maria Clara <232005352@aluno.unb.br>
+Date:   Fri Sep 19 05:42:18 2025 -0300
+
+    Base vite and tsc
+
+[33mcommit 01150dc1dcc42ce26f5304dd155c7b0b5f975782[m
+Merge: de0d0b0 8cb1fa5
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Sep 16 22:12:57 2025 -0300
+
+    Merge pull request #25 from feat/readme-projeto (#18)
+    
+    Feat: readme inicial do projeto (#18)
+
+[33mcommit 8cb1fa5fab8e526643be1620fddae7d5917924fc[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Tue Sep 16 22:06:14 2025 -0300
+
+    feat: v.2 estrutura completa e links (fimga e gh-pages) (#18)
+
+[33mcommit de0d0b09a30c447c90a15072ced38a47a7290967[m
+Merge: 56d55d1 7c94a11
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Tue Sep 16 21:42:14 2025 -0300
+
+    Merge pull request #24 from unb-mds/update-código-de-conduta
+    
+    Add files via upload
+
+[33mcommit 7c94a11946ba0c742d37992dd90534087b521abb[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Tue Sep 16 21:39:16 2025 -0300
+
+    Add files via upload
+    
+    atualização mais profissional do código de conduta do projeto
+
+[33mcommit 56d55d154345de6a24c84e09b64b192b2a7064a6[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 15 21:05:49 2025 -0300
+
+    chore: update issue templates (docs e feature)
+
+[33mcommit 571b79a4b24cdeb9566459bf0d366e964cba2f5f[m
+Merge: 4fd7a0f e4a469d
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Sep 15 20:36:41 2025 -0300
+
+    docs: v.1 do arquivo CODE_OF_CONDUCT.md #22
+
+[33mcommit 4fd7a0febe2c7e4ae910c1938c8b2ba253df1a37[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Mon Sep 15 20:25:37 2025 -0300
+
+    docs: v.1 do arquivo CODE_OF_CONDUCT.md
+
+[33mcommit e4a469de349b2b0cba7f2fa56313ed064a87505e[m
+Author: Matheus <matheusscamargo13@gmail.com>
+Date:   Mon Sep 15 20:06:24 2025 -0300
+
+    docs: Adicionando documentação da arquitetura de pacotes (#21)
+
+[33mcommit 694292653ea1dd37928f949e91e227293383c99e[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 15 09:49:38 2025 -0300
+
+    feat: v.1.2 adicionado EN e PT readme.md (#18)
+
+[33mcommit b05a5b46e4b3250422e345dd52088036fa399fcc[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 15 09:23:24 2025 -0300
+
+    feat: v.1.1 about, contributing, code of conduct (#18)
+
+[33mcommit 411b9252710401d456bc4bbb687738db4d17098a[m
+Author: LucasFT <lucaasft16@gmail.com>
+Date:   Sun Sep 14 23:24:13 2025 -0300
+
+    feat: setup inicial do backend #17
+
+[33mcommit c30f59084be8b045907a73ecdc4a4d21cfc9b9b8[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sun Sep 14 23:12:44 2025 -0300
+
+    Update TypeS.md
+
+[33mcommit 5fab640815f1f0216464e5762ed1f980054d9a75[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sun Sep 14 23:12:05 2025 -0300
+
+    Update TypeS.md
+
+[33mcommit c3eeb98655b11e93acda4c77c3789b313dca566a[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sun Sep 14 23:09:41 2025 -0300
+
+    Adicionar Estudo TypeScript (#16)
+
+[33mcommit b9c795dc57ee1c13737f2886e60c1f9a2ec6d7b9[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sun Sep 14 21:05:02 2025 -0300
+
+    Delete Coelhos/Typescript_TailwindCSS(#16) directory
+
+[33mcommit 528f3fc29ce91d760113bc77c5a3b782f91781e0[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Sep 14 17:15:41 2025 -0300
+
+    docs: v.1 do arquivo contributing.md (#12)
+
+[33mcommit 46dcf209d56935f3e46376b879fcb136fc782285[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Sep 14 16:55:52 2025 -0300
+
+    feat: v.1 readme.md do projeto & logo (#18)
+
+[33mcommit d90b3795295e4535b9504e045673e8c3dffc6f85[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sun Sep 14 13:02:31 2025 -0300
+
+    Update TypeS.md
+
+[33mcommit 06c2e8913d1620045596d300745baf0616435bb1[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sun Sep 14 12:55:27 2025 -0300
+
+    Add files via upload
+
+[33mcommit d689301c1f3a6ed12dec0124a65cbed4b0f43907[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Sun Sep 14 10:03:03 2025 -0300
+
+    feat: setup inicial do servidor (fast) de ia com end-points /docs e /health (#14)
+
+[33mcommit 58daefcd0ee886d184b5419f344ab7aa473c61fe[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Thu Sep 11 10:04:30 2025 -0300
+
+    Create React + Axios.md
+
+[33mcommit 7e78a97133d3c44e101926ca407611291c6369df[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Tue Sep 9 23:23:54 2025 -0300
+
+    Add files via upload
+
+[33mcommit f8def398b5f701e9c6b3344ce23198b50a17fd5d[m
+Author: Matheus <matheusscamargo13@gmail.com>
+Date:   Tue Sep 9 22:52:53 2025 -0300
+
+    docs: terminando django
+
+[33mcommit 1082d8c4b6f99fafd72ee7eaf96b3f2d80a6e440[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Tue Sep 9 22:12:14 2025 -0300
+
+    Update django introdução.md
+
+[33mcommit b0b3d54b386711d47130cdb05ea151758c47d6a4[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Tue Sep 9 22:11:48 2025 -0300
+
+    Update django introdução.md
+
+[33mcommit c75de638e5a9fcabfac6c0380286b20a4ce17967[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Mon Sep 8 23:06:01 2025 -0300
+
+    docs: introdução a django
+
+[33mcommit a18da2b6a033dd94a2e5e8166620ff9f78c2db12[m
+Merge: 615a2e9 68cd6a3
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 8 20:56:59 2025 -0300
+
+    Adição da documentação de Scikit-Learn (#8)
+    
+    Esta PR adiciona a documentação de Scikit-Learn, incluindo módulos de:
+    - Classificação
+    - Regressão
+    - Clustering
+    - Pré-processamento
+    - Validação de modelos
+    
+    Referência: issue #8
+
+[33mcommit 68cd6a36d97abc821f9085820c16816e2d436e07[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 8 20:45:09 2025 -0300
+
+    fix: retirei um dos links, documento realocado
+
+[33mcommit 67e76e4fa657febbe41c926a5e6ab253a5a61502[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 8 20:06:24 2025 -0300
+
+    docs: documento completo sobre testes e validacao de modelo no Scikit-Learn
+
+[33mcommit 6c6cca7a03ec79ff1fd795babe50ee3191b1bacf[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 8 19:49:59 2025 -0300
+
+    docs: documento sobre clustering (aprendizado nao supervisionado) no Scikit-Learn:
+
+[33mcommit 812995be4318a9e40fcf40017e3fc5534867b9ec[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 8 19:36:58 2025 -0300
+
+    docs: documento completo sobre modelos de ML (regressao) no Scikit-Learn
+
+[33mcommit 6756b485768198b91ec37fba5f15bed94bfe2239[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 8 19:01:51 2025 -0300
+
+    docs: documento completo sobre modelos de ML implementados no Scikit-Learn
+
+[33mcommit 0758d62b3202cf891c73a2f153df4860b159645e[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 8 18:36:15 2025 -0300
+
+    docs: docuemnto completo e explicativo de como realizar pre processamento de dados em Scikit-Learn
+
+[33mcommit 698f7b78ae98ce57c3b052189af8f11ebee2f734[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Sep 8 18:08:10 2025 -0300
+
+    docs: documentação estrutural sobre Scikit-Learn
+
+[33mcommit 615a2e93b6af9ea773f6bcc526ce87726f162942[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sat Aug 30 18:47:27 2025 -0300
+
+    Update README.md
+
+[33mcommit 1e07a05ce4a2e37034c82520adbd0577e85044d8[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sat Aug 30 18:44:10 2025 -0300
+
+    Add files via upload
+
+[33mcommit 17d05faf4231d6ff2bfbde724060f535c8dce1f9[m
+Author: Matheus <matheusscamargo13@gmail.com>
+Date:   Sat Aug 30 18:07:43 2025 -0300
+
+    docs: adicionado arquivo de estudo sobre git/github (#1)
+
+[33mcommit 9dbcc12d92f355ba7aa1f743c78a2a9cf1196d41[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sat Aug 30 15:27:52 2025 -0300
+
+    Update README.md
+
+[33mcommit 47e9ad5c20899eacce78320e8aa40c90d5550ef2[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Sat Aug 30 15:23:57 2025 -0300
+
+    Add files via upload
+
+[33mcommit b033556505a5e58418d410f4b98c7eff4779d4fa[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Aug 29 16:05:27 2025 -0300
+
+    chore: create PULL_REQUEST_TEMPLATE.md (#5)
+
+[33mcommit bd123a725c8b8940bf7706ae3da2c6668af1c526[m
+Merge: b5eac1e f518672
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Aug 29 15:44:12 2025 -0300
+
+    chore: add GitHub issue templates for project management (#5)
+
+[33mcommit f5186721678020302e86aa1b223255bb72e8b5b4[m
+Author: Tiago Bittencourt <tiago.bittencourt.2005@gmail.com>
+Date:   Fri Aug 29 15:43:12 2025 -0300
+
+    chore: add GitHub issue templates for project management (#5)
+    
+    Templates included:
+    - Feature: for new functionalities
+    - Task: for technical tasks and implementation steps
+    - Bug: for reporting bugs and issues
+    - Refactor: for code improvements without new features
+    - Coelhos (Rabbit): for individual study tasks to be shared with the team
+    - Docs: for documentation tasks
+
+[33mcommit b5eac1e06d91702759d45d1187d5fcab57f5669e[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Fri Aug 29 11:33:45 2025 -0300
+
+    Delete Coelhos/DiagramaDePacotes/img/Aninhamento.jpg
+
+[33mcommit 903299a3aeef0da3bc743d796a3e2d3ca567910b[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Fri Aug 29 11:33:28 2025 -0300
+
+    Delete some subsistema.jpg and aninhamento.jpg
+
+[33mcommit 48e3f5eb19bf0870b9958ab0d711e3007796e1c2[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Fri Aug 29 11:31:26 2025 -0300
+
+    Update and rename README to README.md
+
+[33mcommit 580d60c1493350a078c60bb9efaf37beab353d44[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Fri Aug 29 11:10:10 2025 -0300
+
+    Rename D_Pacotes.md to README
+
+[33mcommit 1faa42d5471be756d1640037dff30fd67d76e51f[m
+Author: Maria <232005352@aluno.unb.br>
+Date:   Fri Aug 29 11:08:17 2025 -0300
+
+    Adicinando Diagrama de Pacotes
+
+[33mcommit e3640254a5cf006729af3cfb9402abe76ff28de0[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Thu Aug 28 11:15:06 2025 -0300
+
+    Update GitHub pages e Hugoplate.md
+
+[33mcommit 6b5c1eb3798c2e2a520f77ffb53263226f8ba658[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Thu Aug 28 11:14:34 2025 -0300
+
+    Rename GitHub pages e Hugoplate to GitHub pages e Hugoplate.md
+
+[33mcommit c2658ce4ccde8a849b91a25cb3db165c82763feb[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Thu Aug 28 11:02:49 2025 -0300
+
+    Update GitHub pages e Hugoplate
+
+[33mcommit ed513304c200bf1dbdb2e58ecb2a58aba76e4869[m
+Author: Luan Ludry <lovedeskigames@gmail.com>
+Date:   Thu Aug 28 10:59:39 2025 -0300
+
+    Create GitHub pages e Hugoplate
+
+[33mcommit b42a9bbbb50e3ecedfffc9d1b6db3c209c49fa2a[m
+Author: Lucasft16 <lucaasft16@gmail.com>
+Date:   Wed Aug 27 00:12:20 2025 -0300
+
+    Add files via upload
+
+[33mcommit d6e0644ca984d330ff7c01aa18dd5213651650b3[m
+Author: Karmantinedev <165739233+Karmantinedev@users.noreply.github.com>
+Date:   Tue Aug 26 18:58:43 2025 -0300
+
+    Add files via upload
+
+[33mcommit 4abbdc05868acaeb737bbfdb2d2c5cf609b80fef[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Mon Aug 25 21:02:33 2025 -0300
+
+    coelhos(Requisitos de Software): Documento criado abordando principais tópicos relacionados
+
+[33mcommit 65af7790ba537a2e0632d9b5ea530876b83bbefd[m
+Author: Tiago <tiago.bittencourt.2005@gmail.com>
+Date:   Sat Aug 23 10:42:46 2025 -0300
+
+    docs(coelhos): Pasta destinada aos estudos dos Coelhos criada
+
+[33mcommit 5c79c3dc5b4241e3e990b9a8d02396082d24ea3b[m
+Author: Carla Rocha <rocha.carla@gmail.com>
+Date:   Fri Aug 22 09:52:24 2025 -0300
+
+    Initial commit
