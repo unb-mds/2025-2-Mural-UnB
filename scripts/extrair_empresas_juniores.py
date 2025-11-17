@@ -84,7 +84,7 @@ def processar_pdf_empresas_juniores(processador: PDFProcessorEJs, url_pdf: str):
         
         return dados
         
-    except Exception as e:
+    except Exception as e: # pylint: disable=broad-exception-caught
         print(f"✗ ERRO ao processar PDF: {e}")
         import traceback
         traceback.print_exc()

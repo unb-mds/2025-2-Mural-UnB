@@ -118,7 +118,7 @@ class PDFProcessorEJs:
             
             return imagens_extraidas
             
-        except Exception as e:
+        except Exception as e: # pylint: disable=broad-exception-caught
             print(f"✗ Erro ao extrair imagens do PDF: {e}")
             return []
     
@@ -141,7 +141,7 @@ class PDFProcessorEJs:
             print(f"✓ PDF baixado com sucesso: {caminho_saida}")
             return caminho_saida
             
-        except Exception as e:
+        except Exception as e: # pylint: disable=broad-exception-caught
             print(f"✗ Erro ao baixar PDF: {e}")
             raise
 
@@ -176,7 +176,7 @@ class PDFProcessorEJs:
             print(f"✓ Extraídas {len(paginas_texto)} páginas com conteúdo")
             return paginas_texto
             
-        except Exception as e:
+        except Exception as e: # pylint: disable=broad-exception-caught
             print(f"✗ Erro ao extrair texto do PDF: {e}")
             return []
     
@@ -311,7 +311,7 @@ class PDFProcessorEJs:
                 print(f"Resposta problemática: {texto_resposta[:500]}...")
                 return []
                 
-        except Exception as e:
+        except Exception as e: # pylint: disable=broad-exception-caught
             print(f"✗ Erro ao processar com Gemini: {e}")
             return []
     
@@ -486,5 +486,5 @@ class PDFProcessorEJs:
                 total_campos = sum(len(empresa) for empresa in dados)
                 print(f"📊 Estatísticas: {len(dados)} empresas, {total_campos} campos totais")
                 
-        except Exception as e:
+        except Exception as e: # pylint: disable=broad-exception-caught
             print(f"✗ Erro ao salvar JSON: {e}")

@@ -22,4 +22,3 @@ export async function fetchData<T>(fileName: string): Promise<T | null> {
     return null; // Retorna nulo para o hook/componente saber que falhou
   }
 }
-
