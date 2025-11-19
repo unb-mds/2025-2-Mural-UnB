@@ -8,7 +8,7 @@ import os
 # Caminhos dos arquivos
 ARQUIVO_LABS = '../data/Labs/labs_com_embedding_agregado.json'
 ARQUIVO_EJS = '../data/EJs/empresas_juniores_com_embedding_agregado.json'
-ARQUIVO_SAIDA = '../data/oportunidades.json'
+ARQUIVO_SAIDA = '../site/public/json/oportunidades.json'
 
 def carregar_json(filepath):
     """Carrega um arquivo JSON"""
