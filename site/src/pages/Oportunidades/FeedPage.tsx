@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect } from "react"
-import type { Opportunity } from "../../data/opportunities"
-import { opportunities as staticOpportunities } from "../../data/opportunities"
+import type { Opportunity } from "../../data/fetchOpportunities"
 import { getAllTagsFlat } from "../../data/tags"
 import type { Tag } from "../../data/tags"
 import FilterSidebar from "../../components/feed/FilterSidebar"
@@ -52,11 +51,9 @@ export default function FeedPage() {
 
   const allTags = useMemo(() => allTagsFetched ?? getAllTagsFlat(), [allTagsFetched])
 
-  // Combinar oportunidades do fetch com oportunidades estáticas
+  // Usar apenas oportunidades do fetch
   const allOpportunities = useMemo(() => {
-    const fetchedIds = new Set(fetchedOpportunities.map(opp => opp.id))
-    const staticOnly = staticOpportunities.filter(opp => !fetchedIds.has(opp.id))
-    return [...fetchedOpportunities, ...staticOnly]
+    return fetchedOpportunities
   }, [fetchedOpportunities])
 
   const filteredOpportunities = useMemo(() => {
@@ -114,7 +111,7 @@ export default function FeedPage() {
                     date: "",
                     location: "",
                     tags: opportunity.tags || [],
-                    link: `/Mural/${opportunity.id}`,
+                    link: `/Oportunidades/${opportunity.id}`,
                     logo: opportunity.logo
                   }}
                 />

@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { opportunities } from "data/opportunities"
+import React, { useState, useEffect } from "react"
+import { fetchOpportunitiesFromJSON, type Opportunity } from "data/fetchOpportunities"
 import Logo from "assets/images/MuralLogo_M.svg"
 import { Link, useLocation } from "react-router-dom"
 
@@ -7,6 +7,13 @@ const Navbar: React.FC = () => {
   const location = useLocation()
   const [input, setInput] = useState("")
   const [isSearchFocused, setIsSearchFocused] = useState(false)
+  const [opportunities, setOpportunities] = useState<Opportunity[]>([])
+
+  useEffect(() => {
+    fetchOpportunitiesFromJSON()
+      .then((opps) => setOpportunities(opps))
+      .catch((error) => console.error("Erro ao buscar oportunidades:", error))
+  }, [])
 
   const filteredOpportunities = opportunities.filter(opp =>
     opp.name.toLowerCase().includes(input.toLowerCase())

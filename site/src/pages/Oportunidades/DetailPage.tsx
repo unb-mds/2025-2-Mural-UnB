@@ -1,11 +1,43 @@
-
 import { useParams, Link } from "react-router-dom"
-import { opportunities } from "../../data/opportunities"
+import { useState, useEffect, useMemo } from "react"
+import type { Opportunity } from "../../data/fetchOpportunities"
+import { fetchOpportunitiesFromJSON } from "../../data/fetchOpportunities"
 import "./DetailPage.css"
 
 export default function DetailPage() {
   const { id } = useParams<{ id: string }>()
-  const opportunity = opportunities.find((opp) => opp.id === id)
+  const [allOpportunities, setAllOpportunities] = useState<Opportunity[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    let mounted = true
+    fetchOpportunitiesFromJSON()
+      .then((opps) => {
+        if (!mounted) return
+        setAllOpportunities(opps)
+        setIsLoading(false)
+      })
+      .catch((error) => {
+        if (!mounted) return
+        console.error("Erro ao buscar oportunidades:", error)
+        setIsLoading(false)
+      })
+    return () => { mounted = false }
+  }, [])
+
+  const opportunity = useMemo(() => {
+    return allOpportunities.find((opp) => opp.id === id)
+  }, [allOpportunities, id])
+
+  if (isLoading) {
+    return (
+      <div className="detail-container">
+        <div className="not-found">
+          <h1>Carregando...</h1>
+        </div>
+      </div>
+    )
+  }
 
   if (!opportunity) {
     return (
