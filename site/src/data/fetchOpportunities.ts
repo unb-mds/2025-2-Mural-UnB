@@ -1,4 +1,5 @@
 import ejLogoMap from "./ejLogos"
+import labLogoMap from "./labsLogos"
 
 export interface Opportunity {
   id: string
@@ -20,7 +21,7 @@ export interface Opportunity {
 }
 
 export interface LaboratorioRaw {
-  id: number
+  id: string
   nome: string
   coordenador: string
   contato: string
@@ -91,6 +92,10 @@ function resolveEjLogoById(id: string): string | "" {
   return ejLogoMap[id] ?? ""
 }
 
+function resolveLabLogoById(id: string): string | "" {
+  return labLogoMap[id] ?? ""
+}
+
 // Normalizar URL do Instagram para formato completo
 function normalizeInstagramUrl(instagram: string): string {
   if (!instagram) return ""
@@ -144,7 +149,7 @@ function convertLaboratorioToOpportunity(lab: LaboratorioRaw): Opportunity {
     name: lab.nome,
     shortDescription: shortDescription,
     category: category,
-    logo: resolveLogoByName(lab.nome),
+    logo: resolveLabLogoById(lab.id),
     tags: tagIds,
     about: lab.descricao,
     social: undefined,
@@ -187,46 +192,41 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
 
 export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
   try {
-    // Buscar laboratórios e empresas juniores em paralelo
-    const [labsResponse, ejsResponse] = await Promise.all([
-      fetch("/json/oportunidade.json"),
-      fetch("/json/empresas_juniores_consolidadas.json")
-    ])
+    const response = await fetch("/json/oportunidades.json")
+
+    if (!response.ok) {
+      console.warn("Não foi possível buscar oportunidades:", response.status)
+      return []
+    }
+
+    const data = await response.json() as {
+      laboratorios?: any[]
+      empresas_juniores?: any[]
+    }
 
     const opportunities: Opportunity[] = []
 
     // Processar laboratórios
-    if (labsResponse.ok) {
-      try {
-        const labsData = await labsResponse.json() as OportunidadesJSON
-        const laboratorios = labsData.laboratorios || []
-        const labOpportunities = laboratorios.map(convertLaboratorioToOpportunity)
-        opportunities.push(...labOpportunities)
-      } catch (error) {
-        console.error("Erro ao processar laboratórios:", error)
-      }
-    } else {
-      console.warn("Não foi possível buscar laboratórios:", labsResponse.status)
+    try {
+      const laboratorios = data.laboratorios || []
+      const labOpportunities = laboratorios.map(convertLaboratorioToOpportunity)
+      opportunities.push(...labOpportunities)
+    } catch (error) {
+      console.error("Erro ao processar laboratórios:", error)
     }
 
     // Processar empresas juniores
-    if (ejsResponse.ok) {
-      try {
-        const ejsData = await ejsResponse.json() as EmpresasJunioresJSON
-        const empresasJuniores = ejsData.empresas_juniores || []
-        const ejOpportunities = empresasJuniores.map(convertEmpresaJuniorToOpportunity)
-        opportunities.push(...ejOpportunities)
-      } catch (error) {
-        console.error("Erro ao processar empresas juniores:", error)
-      }
-    } else {
-      console.warn("Não foi possível buscar empresas juniores:", ejsResponse.status)
+    try {
+      const empresasJuniores = data.empresas_juniores || []
+      const ejOpportunities = empresasJuniores.map(convertEmpresaJuniorToOpportunity)
+      opportunities.push(...ejOpportunities)
+    } catch (error) {
+      console.error("Erro ao processar empresas juniores:", error)
     }
 
     return opportunities
   } catch (error) {
-    console.error("Erro ao buscar oportunidades do JSON:", error)
+    console.error("Erro ao buscar oportunidades do JSON unificado:", error)
     return []
   }
 }
-
