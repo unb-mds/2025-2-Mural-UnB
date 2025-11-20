@@ -39,18 +39,6 @@ export interface LaboratorioRaw {
   }>
 }
 
-export interface OportunidadesJSON {
-  metodo: string
-  modelo_embedding: string
-  total_laboratorios: number
-  data_geracao: string
-  parametros: {
-    min_tags: number
-    max_tags: number
-    threshold_similaridade: number
-  }
-  laboratorios: LaboratorioRaw[]
-}
 
 export interface EmpresaJuniorRaw {
   id: string
@@ -63,16 +51,21 @@ export interface EmpresaJuniorRaw {
   Servicos: string
   Site: string
   Instagram: string
+  tags: Array<{
+    id: string
+    label: string
+    categoria: string
+    subcategoria: string
+  }>
 }
 
-export interface EmpresasJunioresJSON {
-  metadados: {
-    data_processamento: string
-    total_empresas_unicas: number
-    total_empresas_bruto: number
-    processamento_pagina: boolean
-    pagina_inicial: number
-  }
+export interface OportunidadesCompletoJSON {
+  metodo: string
+  modelo_embedding: string
+  total_oportunidades: number
+  total_laboratorios: number
+  total_empresas_juniores: number
+  laboratorios: LaboratorioRaw[]
   empresas_juniores: EmpresaJuniorRaw[]
 }
 
@@ -162,8 +155,10 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
     ? ej.Sobre.substring(0, 100) + "..."
     : ej.Sobre
 
-  // Criar tags básicas baseadas na categoria (sempre será Empresa Júnior)
-  const tags = ["empresa_junior"]
+  // Extrair tags do array de tags (se existir) ou usar tag padrão
+  const tagIds = ej.tags && ej.tags.length > 0 
+    ? ej.tags.map(t => t.id)
+    : ["empresa_junior"]
 
   // Construir objeto social com Instagram e Site
   const social: { instagram?: string; website?: string } = {}
@@ -180,7 +175,7 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
     shortDescription: shortDescription,
     category: "Empresas Juniores",
     logo: resolveEjLogoById(ej.id) || resolveLogoByName(ej.Nome),
-    tags: tags,
+    tags: tagIds,
     about: ej.Sobre,
     mission: ej.Missao !== "N/A" ? ej.Missao : undefined,
     vision: ej.Visao !== "N/A" ? ej.Visao : undefined,
@@ -204,6 +199,7 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
       empresas_juniores?: any[]
     }
 
+    const data = await response.json() as OportunidadesCompletoJSON
     const opportunities: Opportunity[] = []
 
     // Processar laboratórios
