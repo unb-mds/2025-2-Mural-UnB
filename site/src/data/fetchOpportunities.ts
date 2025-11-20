@@ -199,7 +199,7 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
       empresas_juniores?: any[]
     }
 
-    const data = await response.json() as OportunidadesCompletoJSON
+    
     const opportunities: Opportunity[] = []
 
     // Processar laboratórios
