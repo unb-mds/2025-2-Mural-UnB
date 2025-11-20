@@ -1,6 +1,7 @@
 export interface Tag {
     id: string
     label: string
+    embedding?: number[] 
   }
   
   export interface TagCategories {
