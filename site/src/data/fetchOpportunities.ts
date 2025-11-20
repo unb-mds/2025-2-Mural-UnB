@@ -1,3 +1,5 @@
+import ejLogoMap from "./ejLogos"
+
 export interface Opportunity {
   id: string
   name: string
@@ -85,6 +87,10 @@ function resolveLogoByName(name: string): string | "" {
   return ""
 }
 
+function resolveEjLogoById(id: string): string | "" {
+  return ejLogoMap[id] ?? ""
+}
+
 // Normalizar URL do Instagram para formato completo
 function normalizeInstagramUrl(instagram: string): string {
   if (!instagram) return ""
@@ -168,7 +174,7 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
     name: ej.Nome,
     shortDescription: shortDescription,
     category: "Empresas Juniores",
-    logo: resolveLogoByName(ej.Nome),
+    logo: resolveEjLogoById(ej.id) || resolveLogoByName(ej.Nome),
     tags: tags,
     about: ej.Sobre,
     mission: ej.Missao !== "N/A" ? ej.Missao : undefined,

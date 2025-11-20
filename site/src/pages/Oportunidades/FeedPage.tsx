@@ -1,24 +1,23 @@
 import { useState, useMemo, useEffect } from "react"
 import type { Opportunity } from "../../data/fetchOpportunities"
+import { fetchOpportunitiesFromJSON } from "../../data/fetchOpportunities"
+import { fetchTagsFlat } from "../../data/fetchTags"
 import { getAllTagsFlat } from "../../data/tags"
 import type { Tag } from "../../data/tags"
 import FilterSidebar from "../../components/feed/FilterSidebar"
 import OpportunityCard from "../../components/feed/OpportunityCard"
-import { fetchOpportunitiesFromJSON } from "../../data/fetchOpportunities"
-import { fetchTagsFlat } from "../../data/fetchTags"
 import "./FeedPage.css"
 
 export default function FeedPage() {
-  // Carregar tags salvas do localStorage ao iniciar
   const loadSavedTags = (): string[] => {
     try {
-      const saved = localStorage.getItem('selectedTags')
+      const saved = localStorage.getItem("selectedTags")
       if (saved) {
         const parsed = JSON.parse(saved)
         return Array.isArray(parsed) ? parsed : []
       }
     } catch (error) {
-      console.error('Erro ao carregar tags do localStorage:', error)
+      console.error("Erro ao carregar tags do localStorage:", error)
     }
     return []
   }
@@ -30,34 +29,38 @@ export default function FeedPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [allTagsFetched, setAllTagsFetched] = useState<Tag[] | null>(null)
 
-  // Carregar oportunidades e tags do JSON público
   useEffect(() => {
     let mounted = true
     Promise.all([fetchOpportunitiesFromJSON(), fetchTagsFlat()])
       .then(([opps, tags]) => {
         if (!mounted) return
         setFetchedOpportunities(opps)
-        // Se tags.json falhar ou vier vazio
         setAllTagsFetched(tags.length > 0 ? tags : null)
         setIsLoading(false)
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error("Erro ao carregar oportunidades ou tags:", error)
         if (!mounted) return
         setAllTagsFetched(null)
         setIsLoading(false)
       })
-    return () => { mounted = false }
+    return () => {
+      mounted = false
+    }
   }, [])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("selectedTags", JSON.stringify(selectedTags))
+    } catch (error) {
+      console.error("Erro ao salvar tags selecionadas:", error)
+    }
+  }, [selectedTags])
 
   const allTags = useMemo(() => allTagsFetched ?? getAllTagsFlat(), [allTagsFetched])
 
-  // Usar apenas oportunidades do fetch
-  const allOpportunities = useMemo(() => {
-    return fetchedOpportunities
-  }, [fetchedOpportunities])
-
   const filteredOpportunities = useMemo(() => {
-    return allOpportunities.filter((opp) => {
+    return fetchedOpportunities.filter((opp) => {
       const matchesSearch =
         searchTerm === "" ||
         opp.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -67,22 +70,18 @@ export default function FeedPage() {
         selectedTags.length === 0 ||
         (opp.tags && selectedTags.every((tagId) => opp.tags?.includes(tagId)))
 
-      return matchesSearch && matchesTags
+      const matchesCategory =
+        selectedCategory === "Todos" || opp.category === selectedCategory
+
+      return matchesSearch && matchesTags && matchesCategory
     })
-  }, [searchTerm, selectedTags, allOpportunities])
+  }, [searchTerm, selectedTags, selectedCategory, fetchedOpportunities])
 
   const handleTagToggle = (tagId: string) => {
     setSelectedTags((prev) =>
       prev.includes(tagId) ? prev.filter((id) => id !== tagId) : [...prev, tagId]
     )
   }
-
-  const filteredByCategory = useMemo(() => {
-    if (selectedCategory === "Todos") {
-      return filteredOpportunities
-    }
-    return filteredOpportunities.filter((opp) => opp.category === selectedCategory)
-  }, [filteredOpportunities, selectedCategory])
 
   return (
     <div className="feed-page">
@@ -100,8 +99,8 @@ export default function FeedPage() {
               <div className="no-results">
                 <p>Carregando oportunidades...</p>
               </div>
-            ) : filteredByCategory.length > 0 ? (
-              filteredByCategory.map((opportunity) => (
+            ) : filteredOpportunities.length > 0 ? (
+              filteredOpportunities.map((opportunity) => (
                 <OpportunityCard
                   key={opportunity.id}
                   opportunity={{
@@ -145,4 +144,5 @@ export default function FeedPage() {
     </div>
   )
 }
+
 
