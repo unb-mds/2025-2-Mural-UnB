@@ -1,4 +1,5 @@
 import ejLogoMap from "./ejLogos"
+import labLogoMap from "./labsLogos"
 
 export interface Opportunity {
   id: string
@@ -20,7 +21,7 @@ export interface Opportunity {
 }
 
 export interface LaboratorioRaw {
-  id: number
+  id: string
   nome: string
   coordenador: string
   contato: string
@@ -84,6 +85,10 @@ function resolveEjLogoById(id: string): string | "" {
   return ejLogoMap[id] ?? ""
 }
 
+function resolveLabLogoById(id: string): string | "" {
+  return labLogoMap[id] ?? ""
+}
+
 // Normalizar URL do Instagram para formato completo
 function normalizeInstagramUrl(instagram: string): string {
   if (!instagram) return ""
@@ -137,7 +142,7 @@ function convertLaboratorioToOpportunity(lab: LaboratorioRaw): Opportunity {
     name: lab.nome,
     shortDescription: shortDescription,
     category: category,
-    logo: resolveLogoByName(lab.nome),
+    logo: resolveLabLogoById(lab.id),
     tags: tagIds,
     about: lab.descricao,
     social: undefined,
@@ -182,7 +187,6 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
 
 export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
   try {
-    // Buscar todas as oportunidades de um único arquivo
     const response = await fetch("/json/oportunidades.json")
 
     if (!response.ok) {
@@ -190,33 +194,35 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
       return []
     }
 
+    const data = await response.json() as {
+      laboratorios?: any[]
+      empresas_juniores?: any[]
+    }
+
     const data = await response.json() as OportunidadesCompletoJSON
     const opportunities: Opportunity[] = []
 
     // Processar laboratórios
-    if (data.laboratorios && Array.isArray(data.laboratorios)) {
-      try {
-        const labOpportunities = data.laboratorios.map(convertLaboratorioToOpportunity)
-        opportunities.push(...labOpportunities)
-      } catch (error) {
-        console.error("Erro ao processar laboratórios:", error)
-      }
+    try {
+      const laboratorios = data.laboratorios || []
+      const labOpportunities = laboratorios.map(convertLaboratorioToOpportunity)
+      opportunities.push(...labOpportunities)
+    } catch (error) {
+      console.error("Erro ao processar laboratórios:", error)
     }
 
     // Processar empresas juniores
-    if (data.empresas_juniores && Array.isArray(data.empresas_juniores)) {
-      try {
-        const ejOpportunities = data.empresas_juniores.map(convertEmpresaJuniorToOpportunity)
-        opportunities.push(...ejOpportunities)
-      } catch (error) {
-        console.error("Erro ao processar empresas juniores:", error)
-      }
+    try {
+      const empresasJuniores = data.empresas_juniores || []
+      const ejOpportunities = empresasJuniores.map(convertEmpresaJuniorToOpportunity)
+      opportunities.push(...ejOpportunities)
+    } catch (error) {
+      console.error("Erro ao processar empresas juniores:", error)
     }
 
     return opportunities
   } catch (error) {
-    console.error("Erro ao buscar oportunidades do JSON:", error)
+    console.error("Erro ao buscar oportunidades do JSON unificado:", error)
     return []
   }
 }
-
