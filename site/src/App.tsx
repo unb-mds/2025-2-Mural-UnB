@@ -4,7 +4,7 @@ import Footer from "./components/feed/Footer"
 import Home from "./pages/Home/Home"
 import FeedPage from "./pages/Oportunidades/FeedPage"
 import DetailPage from "./pages/Oportunidades/DetailPage"
-import './assets/styles/App.css'
+import "./assets/styles/App.css"
 
 export default function App() {
   return (
@@ -13,8 +13,8 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path='/Oportunidades' element={<FeedPage />} />
-          <Route path='/Oportunidades/:id' element={<DetailPage />} />s
+          <Route path="/Oportunidades" element={<FeedPage />} />
+          <Route path="/Oportunidades/:id" element={<DetailPage />} />
         </Routes>
       </main>
       <Footer />

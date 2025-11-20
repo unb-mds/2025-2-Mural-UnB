@@ -18,7 +18,7 @@ interface TagsJSON {
 
 export async function fetchTagsFlat(): Promise<Tag[]> {
   try {
-    const res = await fetch("/tags.json")
+    const res = await fetch("/json/tags.json")
     if (!res.ok) throw new Error(`HTTP error ${res.status}`)
     const data = (await res.json()) as TagsJSON
     const flat: Tag[] = []
@@ -29,7 +29,7 @@ export async function fetchTagsFlat(): Promise<Tag[]> {
         }
       }
     }
-    // Remover duplicadas por id
+    // Remove duplicadas por id
     const seen = new Set<string>()
     const unique: Tag[] = []
     for (const t of flat) {

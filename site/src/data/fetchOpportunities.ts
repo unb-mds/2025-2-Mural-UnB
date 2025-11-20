@@ -1,4 +1,23 @@
-import type { Opportunity } from "./opportunities"
+import ejLogoMap from "./ejLogos"
+
+export interface Opportunity {
+  id: string
+  name: string
+  shortDescription: string
+  category: string
+  logo: string
+  tags?: string[]
+  coverImage?: string
+  about?: string
+  mission?: string
+  vision?: string
+  values?: string
+  services?: string
+  social?: {
+    instagram?: string
+    website?: string
+  }
+}
 
 export interface LaboratorioRaw {
   id: number
@@ -32,16 +51,60 @@ export interface OportunidadesJSON {
   laboratorios: LaboratorioRaw[]
 }
 
+export interface EmpresaJuniorRaw {
+  id: string
+  Nome: string
+  Cursos: string
+  Sobre: string
+  Missao: string
+  Visao: string
+  Valores: string
+  Servicos: string
+  Site: string
+  Instagram: string
+}
+
+export interface EmpresasJunioresJSON {
+  metadados: {
+    data_processamento: string
+    total_empresas_unicas: number
+    total_empresas_bruto: number
+    processamento_pagina: boolean
+    pagina_inicial: number
+  }
+  empresas_juniores: EmpresaJuniorRaw[]
+}
+
 // Tentativa de resolução de logo baseada no nome, utilizando imagens em public/
 function resolveLogoByName(name: string): string | "" {
   const n = name.toLowerCase()
-  if (n.includes("orc")) return "/orc.png"
-  if (n.includes("eletronjun")) return "/eletronjun.png"
+  if (n.includes("orc") || n.includes("orc'estra") || n.includes("orcestra")) return "/orc.png"
+  if (n.includes("eletronjun") || n.includes("eletrojun")) return "/eletronjun.png"
   if (n.includes("zenit")) return "/zenit.png"
   if (n.includes("matriz")) return "/matriz.png"
   if (n.includes("engrena")) return "/engrena.png"
   if (n.includes("cjr")) return "/cjr.png"
   return ""
+}
+
+function resolveEjLogoById(id: string): string | "" {
+  return ejLogoMap[id] ?? ""
+}
+
+// Normalizar URL do Instagram para formato completo
+function normalizeInstagramUrl(instagram: string): string {
+  if (!instagram) return ""
+  const cleaned = instagram.replace("@", "").trim()
+  if (cleaned.startsWith("http")) return cleaned
+  return `https://www.instagram.com/${cleaned}/`
+}
+
+// Normalizar URL do site para formato completo
+function normalizeWebsiteUrl(site: string): string {
+  if (!site || site === "N/A") return ""
+  const cleaned = site.trim()
+  if (cleaned.startsWith("http")) return cleaned
+  return `https://${cleaned}`
 }
 
 function determineCategory(tags: LaboratorioRaw["tags"]): string {
@@ -81,29 +144,85 @@ function convertLaboratorioToOpportunity(lab: LaboratorioRaw): Opportunity {
     name: lab.nome,
     shortDescription: shortDescription,
     category: category,
-    // Tenta resolver logo por nome (caso seja uma EJ conhecida presente no JSON)
     logo: resolveLogoByName(lab.nome),
     tags: tagIds,
     about: lab.descricao,
-    // Contato geralmente é um email, então não adicionamos como website
-    // Se houver necessidade de adicionar website, pode ser feito via outro campo
     social: undefined,
+  }
+}
+
+function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
+  // Criar shortDescription baseado no campo Sobre (primeiras palavras)
+  const shortDescription = ej.Sobre.length > 100 
+    ? ej.Sobre.substring(0, 100) + "..."
+    : ej.Sobre
+
+  // Criar tags básicas baseadas na categoria (sempre será Empresa Júnior)
+  const tags = ["empresa_junior"]
+
+  // Construir objeto social com Instagram e Site
+  const social: { instagram?: string; website?: string } = {}
+  if (ej.Instagram && ej.Instagram !== "N/A") {
+    social.instagram = normalizeInstagramUrl(ej.Instagram)
+  }
+  if (ej.Site && ej.Site !== "N/A") {
+    social.website = normalizeWebsiteUrl(ej.Site)
+  }
+
+  return {
+    id: `ej-${ej.id}`,
+    name: ej.Nome,
+    shortDescription: shortDescription,
+    category: "Empresas Juniores",
+    logo: resolveEjLogoById(ej.id) || resolveLogoByName(ej.Nome),
+    tags: tags,
+    about: ej.Sobre,
+    mission: ej.Missao !== "N/A" ? ej.Missao : undefined,
+    vision: ej.Visao !== "N/A" ? ej.Visao : undefined,
+    values: ej.Valores !== "N/A" ? ej.Valores : undefined,
+    services: ej.Servicos !== "N/A" ? ej.Servicos : undefined,
+    social: Object.keys(social).length > 0 ? social : undefined,
   }
 }
 
 export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
   try {
-    const response = await fetch("/oportunidade.json")
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`)
+    // Buscar laboratórios e empresas juniores em paralelo
+    const [labsResponse, ejsResponse] = await Promise.all([
+      fetch("/json/oportunidade.json"),
+      fetch("/json/empresas_juniores_consolidadas.json")
+    ])
+
+    const opportunities: Opportunity[] = []
+
+    // Processar laboratórios
+    if (labsResponse.ok) {
+      try {
+        const labsData = await labsResponse.json() as OportunidadesJSON
+        const laboratorios = labsData.laboratorios || []
+        const labOpportunities = laboratorios.map(convertLaboratorioToOpportunity)
+        opportunities.push(...labOpportunities)
+      } catch (error) {
+        console.error("Erro ao processar laboratórios:", error)
+      }
+    } else {
+      console.warn("Não foi possível buscar laboratórios:", labsResponse.status)
     }
-    
-    const data = await response.json() as OportunidadesJSON
-    const laboratorios = data.laboratorios || []
-    
-    // Converter laboratórios para oportunidades
-    const opportunities = laboratorios.map(convertLaboratorioToOpportunity)
-    
+
+    // Processar empresas juniores
+    if (ejsResponse.ok) {
+      try {
+        const ejsData = await ejsResponse.json() as EmpresasJunioresJSON
+        const empresasJuniores = ejsData.empresas_juniores || []
+        const ejOpportunities = empresasJuniores.map(convertEmpresaJuniorToOpportunity)
+        opportunities.push(...ejOpportunities)
+      } catch (error) {
+        console.error("Erro ao processar empresas juniores:", error)
+      }
+    } else {
+      console.warn("Não foi possível buscar empresas juniores:", ejsResponse.status)
+    }
+
     return opportunities
   } catch (error) {
     console.error("Erro ao buscar oportunidades do JSON:", error)

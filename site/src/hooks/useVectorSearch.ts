@@ -32,8 +32,8 @@ export function useVectorSearch(): SearchData {
         // 3. SUBSTITUI a lógica de fetch antiga
         // Carrega ambos os arquivos em paralelo usando o novo serviço
         const [labsData, tagsData] = await Promise.all([
-          fetchData<ILabsData>('labs_com_embedding_agregado.json'),
-          fetchData<ITagsData>('tags.json')
+          fetchData<ILabsData>('json/labs_com_embedding_agregado.json'),
+          fetchData<ITagsData>('json/tags.json')
         ]);
 
         // 4. VERIFICA se os dados vieram (fetchData retorna null em erro)
