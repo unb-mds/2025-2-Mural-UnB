@@ -38,18 +38,6 @@ export interface LaboratorioRaw {
   }>
 }
 
-export interface OportunidadesJSON {
-  metodo: string
-  modelo_embedding: string
-  total_laboratorios: number
-  data_geracao: string
-  parametros: {
-    min_tags: number
-    max_tags: number
-    threshold_similaridade: number
-  }
-  laboratorios: LaboratorioRaw[]
-}
 
 export interface EmpresaJuniorRaw {
   id: string
@@ -62,16 +50,21 @@ export interface EmpresaJuniorRaw {
   Servicos: string
   Site: string
   Instagram: string
+  tags: Array<{
+    id: string
+    label: string
+    categoria: string
+    subcategoria: string
+  }>
 }
 
-export interface EmpresasJunioresJSON {
-  metadados: {
-    data_processamento: string
-    total_empresas_unicas: number
-    total_empresas_bruto: number
-    processamento_pagina: boolean
-    pagina_inicial: number
-  }
+export interface OportunidadesCompletoJSON {
+  metodo: string
+  modelo_embedding: string
+  total_oportunidades: number
+  total_laboratorios: number
+  total_empresas_juniores: number
+  laboratorios: LaboratorioRaw[]
   empresas_juniores: EmpresaJuniorRaw[]
 }
 
@@ -157,8 +150,10 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
     ? ej.Sobre.substring(0, 100) + "..."
     : ej.Sobre
 
-  // Criar tags básicas baseadas na categoria (sempre será Empresa Júnior)
-  const tags = ["empresa_junior"]
+  // Extrair tags do array de tags (se existir) ou usar tag padrão
+  const tagIds = ej.tags && ej.tags.length > 0 
+    ? ej.tags.map(t => t.id)
+    : ["empresa_junior"]
 
   // Construir objeto social com Instagram e Site
   const social: { instagram?: string; website?: string } = {}
@@ -175,7 +170,7 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
     shortDescription: shortDescription,
     category: "Empresas Juniores",
     logo: resolveEjLogoById(ej.id) || resolveLogoByName(ej.Nome),
-    tags: tags,
+    tags: tagIds,
     about: ej.Sobre,
     mission: ej.Missao !== "N/A" ? ej.Missao : undefined,
     vision: ej.Visao !== "N/A" ? ej.Visao : undefined,
@@ -187,40 +182,35 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
 
 export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
   try {
-    // Buscar laboratórios e empresas juniores em paralelo
-    const [labsResponse, ejsResponse] = await Promise.all([
-      fetch("/json/oportunidade.json"),
-      fetch("/json/empresas_juniores_consolidadas.json")
-    ])
+    // Buscar todas as oportunidades de um único arquivo
+    const response = await fetch("/json/oportunidades.json")
 
+    if (!response.ok) {
+      console.warn("Não foi possível buscar oportunidades:", response.status)
+      return []
+    }
+
+    const data = await response.json() as OportunidadesCompletoJSON
     const opportunities: Opportunity[] = []
 
     // Processar laboratórios
-    if (labsResponse.ok) {
+    if (data.laboratorios && Array.isArray(data.laboratorios)) {
       try {
-        const labsData = await labsResponse.json() as OportunidadesJSON
-        const laboratorios = labsData.laboratorios || []
-        const labOpportunities = laboratorios.map(convertLaboratorioToOpportunity)
+        const labOpportunities = data.laboratorios.map(convertLaboratorioToOpportunity)
         opportunities.push(...labOpportunities)
       } catch (error) {
         console.error("Erro ao processar laboratórios:", error)
       }
-    } else {
-      console.warn("Não foi possível buscar laboratórios:", labsResponse.status)
     }
 
     // Processar empresas juniores
-    if (ejsResponse.ok) {
+    if (data.empresas_juniores && Array.isArray(data.empresas_juniores)) {
       try {
-        const ejsData = await ejsResponse.json() as EmpresasJunioresJSON
-        const empresasJuniores = ejsData.empresas_juniores || []
-        const ejOpportunities = empresasJuniores.map(convertEmpresaJuniorToOpportunity)
+        const ejOpportunities = data.empresas_juniores.map(convertEmpresaJuniorToOpportunity)
         opportunities.push(...ejOpportunities)
       } catch (error) {
         console.error("Erro ao processar empresas juniores:", error)
       }
-    } else {
-      console.warn("Não foi possível buscar empresas juniores:", ejsResponse.status)
     }
 
     return opportunities
