@@ -15,9 +15,10 @@ GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
 if not GEMINI_API_KEY:
     print("ERRO: Configure a variável de ambiente GEMINI_API_KEY")
     print("Execute: $env:GEMINI_API_KEY='sua-chave-aqui'")
-    exit(1)
+    GEMINI_API_KEY = None
 
-genai.configure(api_key=GEMINI_API_KEY)
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
 
 
 def carregar_tags_com_embeddings(caminho_tags: str) -> Tuple[Dict, List[Dict]]:

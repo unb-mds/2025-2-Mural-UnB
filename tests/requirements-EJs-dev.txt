@@ -1,0 +1,6 @@
+pytest>=7.0.0
+pytest-mock>=3.10.0
+pylint>=2.15.0
+requests-mock>=1.10.0
+pytest-cov>=4.0.0
+coverage>=6.0.0
