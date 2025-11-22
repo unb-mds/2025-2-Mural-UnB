@@ -4,8 +4,6 @@ export async function fetchData<T>(fileName: string): Promise<T | null> {
   // O fetch padrão busca a partir da pasta 'public'
   const path = `/${fileName}`;
 
-  console.log(`[DataService] Fetching: ${path}`);
-
   try {
     const response = await fetch(path);
 
