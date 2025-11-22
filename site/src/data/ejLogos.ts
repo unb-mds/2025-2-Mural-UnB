@@ -48,6 +48,7 @@ const ejLogoMap: Record<string, string> = {
   '100047': '/images/ejs/100047.jpeg',
   '100048': '/images/ejs/100048.jpeg',
   '100049': '/images/ejs/100049.jpeg',
+  '100050': '/images/ejs/100050.png',
 }
 
 export default ejLogoMap

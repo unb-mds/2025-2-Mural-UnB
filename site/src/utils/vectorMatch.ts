@@ -25,6 +25,11 @@ export function calculateMeanEmbedding(embeddings: Embedding[]): Embedding | nul
 
   // Divide pela quantidade de vetores para obter a média
   const meanVector = sumVector.map(val => val / embeddings.length);
+
+  const userMeanEmbedding = JSON.parse(localStorage.getItem("userMeanEmbedding") || "[]")
+
+  console.log(JSON.stringify(userMeanEmbedding, null, 4))
+
   return meanVector;
 }
 
