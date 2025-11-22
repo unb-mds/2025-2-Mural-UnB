@@ -30,7 +30,7 @@ class TestPDFCrawlerEJs:
         </html>
         '''
         
-        # CORREÇÃO: Mock mais realista
+        
         mock_response = Mock()
         mock_response.content = html_content.encode('utf-8')  # Bytes reais
         mock_response.raise_for_status.return_value = None
@@ -41,11 +41,11 @@ class TestPDFCrawlerEJs:
         mock_pdf_response.raise_for_status.return_value = None
         mock_pdf_response.iter_content.return_value = [b"fake pdf content"]
         
-        # CORREÇÃO: Usar patch para o download do PDF
+         
         with patch('scripts.pdf_crawler_ejs.requests.get') as mock_pdf_get:
             mock_pdf_get.return_value = mock_pdf_response
             
-            # CORREÇÃO: Mock do caminho de saída sem usar tempfile real
+            
             with patch('scripts.pdf_crawler_ejs.os.path.join') as mock_join:
                 mock_join.return_value = "C:/temp/portfolio_empresas_juniores.pdf"
                 
@@ -76,11 +76,11 @@ class TestPDFCrawlerEJs:
         
         assert resultado is None
 
-    # CORREÇÃO: A função original NÃO trata exceções, então vamos testar isso
+    
     def test_encontrar_pdf_empresas_juniores_funcao_original(self):
         """Testa que a função original não trata exceções"""
         # A função original não tem try/except, então ela PROPAGA exceções
-        # Vamos verificar isso analisando o código
+        
         
         # Lendo o código fonte para verificar se há tratamento de exceções
         import inspect
@@ -91,7 +91,7 @@ class TestPDFCrawlerEJs:
         
         # Se não tem tratamento, então ela propaga exceções (comportamento esperado)
         if not has_try_except:
-            # CORREÇÃO: Vamos testar que a função PROPAGA exceções quando ocorrem
+            
             with patch('scripts.pdf_crawler_ejs.requests.get') as mock_requests:
                 mock_requests.side_effect = Exception("Test error")
                 
@@ -105,7 +105,7 @@ class TestPDFCrawlerEJs:
                 resultado = pdf_crawler_ejs.encontrar_pdf_empresas_juniores("http://example.com")
                 assert resultado is None
 
-    # CORREÇÃO: Teste para verificar a lógica de filtro de PDFs
+    # Teste para verificar a lógica de filtro de PDFs
     @patch('scripts.pdf_crawler_ejs.requests.get')
     def test_encontrar_pdf_criterios_filtro(self, mock_requests):
         """Testa os critérios de filtro para identificar PDFs de EJs"""
@@ -142,7 +142,7 @@ class TestPDFCrawlerEJs:
             # Deve encontrar PDFs que atendem aos critérios
             assert resultado is not None
 
-    # CORREÇÃO: Teste para múltiplos PDFs
+    # Teste para múltiplos PDFs
     @patch('scripts.pdf_crawler_ejs.requests.get')
     def test_encontrar_pdf_multiplos_encontrados(self, mock_requests):
         """Testa quando múltiplos PDFs são encontrados"""
