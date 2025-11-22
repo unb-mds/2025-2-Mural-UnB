@@ -108,6 +108,21 @@ export default function FilterSidebar({
         tags={tags}
         selectedTags={selectedTags}
         onTagToggle={onTagToggle}
+        onSave={(newSelectedTags) => {
+          // Zera todas as tags selecionadas
+          selectedTags.forEach(tag => {
+            if (!newSelectedTags.includes(tag)) {
+              onTagToggle(tag) // desmarca se não está mais
+            }
+          })
+        
+          // Marca as novas que não estavam antes
+          newSelectedTags.forEach(tag => {
+            if (!selectedTags.includes(tag)) {
+              onTagToggle(tag)
+            }
+          })
+        }}
       />
     </>
   )

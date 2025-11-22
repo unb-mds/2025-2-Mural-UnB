@@ -18,6 +18,7 @@ export interface Opportunity {
     instagram?: string
     website?: string
   }
+  embedding?: number[] 
 }
 
 export interface LaboratorioRaw {
@@ -37,6 +38,11 @@ export interface LaboratorioRaw {
     label: string
     score: number
   }>
+  // Campo correto identificado no JSON
+  embedding_agregado?: number[]
+  // Mantemos os outros como fallback caso o JSON mude no futuro
+  embedding?: number[]
+  Embedding?: number[]
 }
 
 
@@ -57,6 +63,10 @@ export interface EmpresaJuniorRaw {
     categoria: string
     subcategoria: string
   }>
+  // Campo correto identificado no JSON
+  embedding_agregado?: number[]
+  embedding?: number[]
+  Embedding?: number[]
 }
 
 export interface OportunidadesCompletoJSON {
@@ -69,7 +79,7 @@ export interface OportunidadesCompletoJSON {
   empresas_juniores: EmpresaJuniorRaw[]
 }
 
-// Tentativa de resolução de logo baseada no nome, utilizando imagens em public/
+// --- Funções Auxiliares de Logo ---
 function resolveLogoByName(name: string): string | "" {
   const n = name.toLowerCase()
   if (n.includes("orc") || n.includes("orc'estra") || n.includes("orcestra")) return "/orc.png"
@@ -89,7 +99,7 @@ function resolveLabLogoById(id: string): string | "" {
   return labLogoMap[id] ?? ""
 }
 
-// Normalizar URL do Instagram para formato completo
+// --- Normalizadores de URL ---
 function normalizeInstagramUrl(instagram: string): string {
   if (!instagram) return ""
   const cleaned = instagram.replace("@", "").trim()
@@ -97,7 +107,6 @@ function normalizeInstagramUrl(instagram: string): string {
   return `https://www.instagram.com/${cleaned}/`
 }
 
-// Normalizar URL do site para formato completo
 function normalizeWebsiteUrl(site: string): string {
   if (!site || site === "N/A") return ""
   const cleaned = site.trim()
@@ -105,26 +114,22 @@ function normalizeWebsiteUrl(site: string): string {
   return `https://${cleaned}`
 }
 
+// --- Helper Robusto para extrair Embedding ---
+function extractEmbedding(item: any): number[] {
+  // Tenta o nome correto primeiro
+  if (Array.isArray(item.embedding_agregado) && item.embedding_agregado.length > 0) return item.embedding_agregado;
+  
+  // Fallbacks para outros nomes comuns
+  if (Array.isArray(item.embedding) && item.embedding.length > 0) return item.embedding;
+  if (Array.isArray(item.Embedding) && item.Embedding.length > 0) return item.Embedding;
+  
+  return [];
+}
+
 function determineCategory(tags: LaboratorioRaw["tags"]): string {
-  // Verificar se é laboratório, equipe competitiva, ou empresa júnior baseado nas tags
   const tagIds = tags.map(t => t.id.toLowerCase())
-  
-  // Verificar se é equipe competitiva
-  if (tagIds.includes("equipe_competicao") || tagIds.some(id => id.includes("equipe"))) {
-    return "Equipes Competitivas"
-  }
-  
-  // Verificar se é empresa júnior
-  if (tagIds.some(id => id.includes("empresa_junior") || id.includes("ej") || id.includes("empresa junior"))) {
-    return "Empresas Juniores"
-  }
-  
-  // Por padrão, se tem laboratorio_pesquisa ou é do tipo laboratório, é um laboratório
-  if (tagIds.includes("laboratorio_pesquisa") || tagIds.some(id => id.includes("laboratorio"))) {
-    return "Laboratórios"
-  }
-  
-  // Fallback: se não tem nenhuma tag específica, assume que é laboratório
+  if (tagIds.includes("equipe_competicao") || tagIds.some(id => id.includes("equipe"))) return "Equipes Competitivas"
+  if (tagIds.some(id => id.includes("empresa_junior") || id.includes("ej") || id.includes("empresa junior"))) return "Empresas Juniores"
   return "Laboratórios"
 }
 
@@ -132,7 +137,6 @@ function convertLaboratorioToOpportunity(lab: LaboratorioRaw): Opportunity {
   const tagIds = lab.tags.map(t => t.id)
   const category = determineCategory(lab.tags)
   
-  // Criar shortDescription baseado na descrição (primeiras palavras)
   const shortDescription = lab.descricao.length > 100 
     ? lab.descricao.substring(0, 100) + "..."
     : lab.descricao
@@ -146,21 +150,19 @@ function convertLaboratorioToOpportunity(lab: LaboratorioRaw): Opportunity {
     tags: tagIds,
     about: lab.descricao,
     social: undefined,
+    embedding: extractEmbedding(lab) // Usa o helper atualizado
   }
 }
 
 function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
-  // Criar shortDescription baseado no campo Sobre (primeiras palavras)
   const shortDescription = ej.Sobre.length > 100 
     ? ej.Sobre.substring(0, 100) + "..."
     : ej.Sobre
 
-  // Extrair tags do array de tags (se existir) ou usar tag padrão
   const tagIds = ej.tags && ej.tags.length > 0 
     ? ej.tags.map(t => t.id)
     : ["empresa_junior"]
 
-  // Construir objeto social com Instagram e Site
   const social: { instagram?: string; website?: string } = {}
   if (ej.Instagram && ej.Instagram !== "N/A") {
     social.instagram = normalizeInstagramUrl(ej.Instagram)
@@ -182,6 +184,7 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
     values: ej.Valores !== "N/A" ? ej.Valores : undefined,
     services: ej.Servicos !== "N/A" ? ej.Servicos : undefined,
     social: Object.keys(social).length > 0 ? social : undefined,
+    embedding: extractEmbedding(ej) // Usa o helper atualizado
   }
 }
 
@@ -194,30 +197,27 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
       return []
     }
 
-    const data = await response.json() as {
-      laboratorios?: any[]
-      empresas_juniores?: any[]
-    }
-
-    
+    const data = await response.json() as OportunidadesCompletoJSON
     const opportunities: Opportunity[] = []
 
     // Processar laboratórios
-    try {
-      const laboratorios = data.laboratorios || []
-      const labOpportunities = laboratorios.map(convertLaboratorioToOpportunity)
-      opportunities.push(...labOpportunities)
-    } catch (error) {
-      console.error("Erro ao processar laboratórios:", error)
+    if (data.laboratorios) {
+      try {
+        const labOpportunities = data.laboratorios.map(convertLaboratorioToOpportunity)
+        opportunities.push(...labOpportunities)
+      } catch (error) {
+        console.error("Erro ao processar laboratórios:", error)
+      }
     }
 
     // Processar empresas juniores
-    try {
-      const empresasJuniores = data.empresas_juniores || []
-      const ejOpportunities = empresasJuniores.map(convertEmpresaJuniorToOpportunity)
-      opportunities.push(...ejOpportunities)
-    } catch (error) {
-      console.error("Erro ao processar empresas juniores:", error)
+    if (data.empresas_juniores) {
+      try {
+        const ejOpportunities = data.empresas_juniores.map(convertEmpresaJuniorToOpportunity)
+        opportunities.push(...ejOpportunities)
+      } catch (error) {
+        console.error("Erro ao processar empresas juniores:", error)
+      }
     }
 
     return opportunities
