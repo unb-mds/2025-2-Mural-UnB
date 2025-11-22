@@ -40,7 +40,7 @@ def processar_pdf_empresas_juniores(processador: PDFProcessorEJs, url_pdf: str):
     
     try:
         # Define caminhos de arquivo
-        nome_pdf_local = "portfolio_empresas_juniores.pdf"
+        nome_pdf_local = "Portfolio_Empresas_Juniores_UnB.pdf"
         caminho_pdf_local = os.path.join(OUTPUT_DIR, nome_pdf_local)
         caminho_json_saida = os.path.join(OUTPUT_DIR, OUTPUT_JSON)
         
