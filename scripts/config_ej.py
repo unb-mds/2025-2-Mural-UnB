@@ -21,7 +21,8 @@ else:
 PDF_URL_EJS = "https://unb.br/images/Noticias/2023/Documentos/PORTFLIO_EJS.pdf"
 
 # Configurações de saída
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "EJs")
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "EJs") #PDF e JSON
+IMAGES_OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "..", "site", "public", "images", "EJs") #imagens
 OUTPUT_JSON = "empresas_juniores_consolidadas.json"
 IMAGES_DIR = "images" 
 

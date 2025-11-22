@@ -26,10 +26,14 @@ class PDFProcessorEJs:
         imagens_extraidas = []
 
         try:
+
+            from config_ej import IMAGES_OUTPUT_DIR
+            images_dir = IMAGES_OUTPUT_DIR
+
             # Criar diretório de imagens se não existir
-            images_dir = os.path.join(output_dir, "images")
             os.makedirs(images_dir, exist_ok=True)
-            
+            print(f"📁 Diretório de imagens: {images_dir}")
+
             # Abrir pdf com PyMuPDF
             pdf_document = fitz.open(pdf_path)
             
@@ -57,6 +61,11 @@ class PDFProcessorEJs:
                     
                     # Verificar se esta página tem uma EJ associada
                     id_ej_pagina = pagina_para_id.get(pagina_atual)
+
+                    # PULAR IMAGENS DE PÁGINAS SEM EJ (null)
+                    if not id_ej_pagina:
+                        print(f"    ⏭️  Pulando {len(image_list)} imagem(ns) da página {pagina_atual} (sem EJ associada)")
+                        continue
                     
                     for img_index, img in enumerate(image_list):
                         # Pegar o XREF da imagem
@@ -68,18 +77,13 @@ class PDFProcessorEJs:
                         image_ext = base_image["ext"]
                         
                         # SISTEMA DE NOMENCLATURA
-                        if id_ej_pagina:
-                            # Página com EJ - usar ID da EJ
-                            if img_index == 0:
-                                # Primeira imagem da página da EJ
-                                image_filename = f"{id_ej_pagina}.{image_ext}"
-                            else:
-                                # Imagens subsequentes na mesma página da EJ
-                                image_filename = f"{id_ej_pagina}-{img_index + 1}.{image_ext}"
+                        if img_index == 0:
+                            # Primeira imagem da página da EJ
+                            image_filename = f"{id_ej_pagina}.{image_ext}"
                         else:
-                            # Página sem EJ - usar sistema antigo
-                            image_filename = f"null-{pagina_atual}-{img_index + 1}.{image_ext}"
-                        
+                            # Imagens subsequentes na mesma página da EJ
+                            image_filename = f"{id_ej_pagina}-{img_index + 1}.{image_ext}"
+                    
                         image_path = os.path.join(images_dir, image_filename)
                         
                         # Save the image
@@ -106,12 +110,11 @@ class PDFProcessorEJs:
             
             # Estatísticas do novo sistema
             imagens_com_ej = [img for img in imagens_extraidas if img['id_ej_associado']]
-            imagens_sem_ej = [img for img in imagens_extraidas if not img['id_ej_associado']]
             
             print(f"\n✓ Extração de imagens concluída: {total_images} imagens salvas em '{images_dir}'")
+            
             print(f"📊 Estatísticas do novo sistema:")
             print(f"   • Imagens associadas a EJs: {len(imagens_com_ej)}")
-            print(f"   • Imagens de páginas sem EJ: {len(imagens_sem_ej)}")
             
             if imagens_com_ej:
                 print(f"   • IDs de EJs com imagens: {list(set(img['id_ej_associado'] for img in imagens_com_ej))}")
