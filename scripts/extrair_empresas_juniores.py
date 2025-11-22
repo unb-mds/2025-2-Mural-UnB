@@ -11,14 +11,17 @@ from pdf_processor_ejs import PDFProcessorEJs
 
 def configurar_ambiente():
     """Configura diretórios e configurações"""
+    from config_ej import OUTPUT_DIR, IMAGES_OUTPUT_DIR
+    
+    # Criar diretório principal para PDF e JSON
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
-        print(f"✓ Diretório criado: {OUTPUT_DIR}")
+        print(f"✓ Diretório de dados criado: {OUTPUT_DIR}")
 
-    images_dir = os.path.join(OUTPUT_DIR, "images")
-    if not os.path.exists(images_dir):
-        os.makedirs(images_dir)
-        print(f"✓ Diretório de imagens criado: {images_dir}")
+    # Criar diretório separado para imagens
+    if not os.path.exists(IMAGES_OUTPUT_DIR):
+        os.makedirs(IMAGES_OUTPUT_DIR)
+        print(f"✓ Diretório de imagens criado: {IMAGES_OUTPUT_DIR}")
     
     # Verifica API key
     if GEMINI_API_KEY == 'sua_chave_api_aqui':
