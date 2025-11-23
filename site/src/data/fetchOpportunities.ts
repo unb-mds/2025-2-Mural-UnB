@@ -4,6 +4,7 @@ import labLogoMap from "./labsLogos"
 export interface Opportunity {
   id: string
   name: string
+  campus: string // Campo já existente na sua interface
   shortDescription: string
   category: string
   logo: string
@@ -24,6 +25,7 @@ export interface Opportunity {
 export interface LaboratorioRaw {
   id: string
   nome: string
+  campus: string 
   coordenador: string
   contato: string
   descricao: string
@@ -47,6 +49,7 @@ export interface LaboratorioRaw {
 export interface EmpresaJuniorRaw {
   id: string
   Nome: string
+  Campus?: string 
   Cursos: string
   Sobre: string
   Missao: string
@@ -148,6 +151,7 @@ function convertLaboratorioToOpportunity(lab: LaboratorioRaw): Opportunity {
   return {
     id: `lab-${lab.id}`,
     name: lab.nome,
+    campus: lab.campus || "N/A", 
     shortDescription: shortDescription,
     category: category,
     logo: resolveLabLogoById(lab.id),
@@ -178,6 +182,7 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
   return {
     id: `ej-${ej.id}`,
     name: ej.Nome,
+    campus: ej.Campus || "N/A", 
     shortDescription: shortDescription,
     category: "Empresas Juniores",
     logo: resolveEjLogoById(ej.id) || resolveLogoByName(ej.Nome),

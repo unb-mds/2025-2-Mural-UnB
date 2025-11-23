@@ -8,6 +8,7 @@
     {
       "id": "200001",
       "nome": "Centro Integrado de Pesquisa em Transição Energética - CIP TransEnerg",
+      "campus": "UnB/FCTE",
       "coordenador": "Edson Paulo da Silva",
       "contato": "dasilva@unb.br",
       "descricao": "O CIP-TransEnerg, vinculado ao Instituto de Física (IF), Instituto de Geologia (IG), Instituto de Química (IQ), à Faculdade de Administração, Contabilidade, Economia e Gestão de Políticas Públicas (FACE), Faculdade de Arquitetura e Urbanismo (FAU), Faculdade de Tecnologia (FT) e Faculdade do Gama (FGA), tem como objetivo desenvolver atividades de caráter científico, tecnológico, de inovação e de prestação de serviços na temática transição energética. As linhas de atuação compreendem as pesquisas em transição energética",
@@ -894,6 +895,7 @@
     {
       "id": "200002",
       "nome": "Centro Integrado de Pesquisa em Inteligência Artificial - CenIA",
+      "campus": "UnB/Darcy Ribeiro",
       "coordenador": "Ricardo Ruviaro",
       "contato": "ruviaro@unb.br",
       "descricao": "O CenIA, vinculado ao Instituto de Ciências Exatas (IE), Faculdade de Tecnologia (FT), Faculdade do Gama (FGA) e Faculdade de Administração, Contabilidade, Economia e Gestão de Políticas Públicas (FACE), tem como objetivo desenvolver pesquisa científica e tecnológica, prestar serviços técnicos especializados e promover educação continuada relacionadas a Inteligência Artificial e áreas/temáticas afins e correlatas.",
@@ -1780,6 +1782,7 @@
     {
       "id": "200003",
       "nome": "Laboratório de Termofluidos - LabTermo",
+      "campus": "UnB/FCTE",
       "coordenador": "Luciano Noleto",
       "contato": "lucianonoleto@gmail.com",
       "descricao": "O LabTermo, vinculado à Faculdade do Gama (FGA/UnB), é um laboratório de ensino e pesquisa nas áreas de Fenômenos de Transporte, Dinâmica dos Fluidos, Transferência de Calor, Máquinas de Fluxo e Sistemas de Conversão de Energia. Realiza atividades em caráter interdisciplinar na área de Gestão energética, Combustíveis e Sistemas de Conversão Eletromecânica de Energia. Destina-se ao suporte experimental ao estudo de aspectos térmicos e fluido-mecânicos das diversas fontes e meios de conversão de energia.",
@@ -2666,6 +2669,7 @@
     {
       "id": "200004",
       "nome": "Laboratório de Sistemas e Controle - SISCO",
+      "campus": "UnB/FGA",
       "coordenador": "Suzana Moreira Ávila",
       "contato": "avilas@unb.br",
       "descricao": "O SISCO, vinculado à Faculdade do Gama (FGA/UnB), é um laboratório multidisciplinar, atendendo as engenharias: automotiva, eletrônica, mecatrônica, de energia, mecânica, civil e áreas afins. No ambiente são desenvolvidos trabalhos de alunos de graduação, dissertações de mestrado e teses de doutorado (Programa de Pós-graduação em Sistemas Mecatrônicos, Programa de Pós-graduação em Integridade de Materiais da Engenharia, Programa de Estruturas e Construção Civil) e projetos aprovados em órgãos de fomento (CNPQ, CAPES, FAPDF).",
@@ -3552,6 +3556,7 @@
     {
       "id": "200005",
       "nome": "Laboratório de Dependabilidade e Segurança - LADES",
+      "campus": "UnB/FCTE",
       "coordenador": "Luiz Augusto Fontes Laranjeira",
       "contato": "luiz.laranjeira@gmail.com",
       "descricao": "O LADES, vinculado à Faculdade do Gama (FGA/UnB), tem como missão a realização das seguintes atividades de pesquisa e desenvolvimento de: sistemas de certificação digital e algoritmos de criptografia. Soluções para segurança de computadores. Soluções de software para processamento paralelo ou distribuído, incluindo sistemas tolerantes a faltas, que incluam as funcionalidades de monitoramento, detecção, diagnóstico e recuperação de faltas. Soluções de software envolvendo modelos de aprendizado de máquina.",
@@ -4437,6 +4442,7 @@
     {
       "id": "200007",
       "nome": "Laboratório de Sistemas de Energia Elétrica - LASEE",
+      "campus": "UnB/FCTE",
       "coordenador": "Jorge Cormane",
       "contato": "jcormane@unb.br",
       "descricao": "O LASEE, vinculado à Faculdade do Gama (FGA/UnB), é um ambiente desenvolvimento de pesquisas relacionadas aos sistemas de energia elétrica, com enfoque em fontes renováveis de energia, sistemas de armazenamento de energia, eficiência energética, Veículos Elétricos e Qualidade da Energia Elétrica. Linhas ENGENHARIAS Laboratórios de Pesquisa",
@@ -5323,6 +5329,7 @@
     {
       "id": "200008",
       "nome": "Laboratório de Recursos Renováveis e Energéticos - LaPRREn",
+      "campus": "UnB/FCTE",
       "coordenador": "Roseany de Vasconcelos Vieira Lopes",
       "contato": "roseany@unb.br",
       "descricao": "O LaPRREn, vinculado à Faculdade do Gama (FGA/UnB), tem por objetivo desenvolver pesquisa na área de recursos renováveis, combustíveis e biocombustíveis, formando recursos humanos na área de engenharia de energia, graduação e pós-graduação. Pesquisas no âmbito da preparação e caracterização de materiais utilizados em catálise, nanotecnologia e energia, de acordo com as seguintes linhas de pesquisa: tecnologia para combustíveis e biocombustíveis, catálise homogênea e heterogênea, nanobiotecnologia e síntese de novos materiais.",
@@ -6209,6 +6216,7 @@
     {
       "id": "200009",
       "nome": "Information Technology - Research and Application Center - ITRAC",
+      "campus": "UnB/FCTE",
       "coordenador": "Rejane Maria da Costa Figueiredo",
       "contato": "rejanemaria@gmail.com / itrac.unb.br",
       "descricao": "o ITRAC, vinculado à Faculdade do Gama (FGA/UnB), desenvolve pesquisas e desenvolvimentos tecnológicos envolvendo estudantes de graduação da FGA e estudantes de pós-graduação em parceria com a indústria e com órgãos federais.",
@@ -7096,6 +7104,7 @@
     {
       "id": "200010",
       "nome": "Laboratório de Tecnologias em Biomassa - LTB",
+      "campus": "UnB/FCTE",
       "coordenador": "Sandra Maria da Luz",
       "contato": "sandra.unb@gmail.com",
       "descricao": "O LTB, vinculado à Faculdade do Gama (FGA/UnB), tem por objetivo oferecer suporte a pesquisadores, alunos de graduação e pós-graduação a fim de efetuarem pesquisas relacionadas à transformação, caracterização, tratamento e aplicações de biomassa vegetal para o desenvolvimento de novos materiais e combustíveis. Os materiais provenientes de fontes renováveis podem dar origem a polímeros biodegradáveis, compósitos reforçados com fibras naturais e combustíveis renováveis.",
@@ -7982,6 +7991,7 @@
     {
       "id": "200012",
       "nome": "Laboratório de Acústica e Vibrações - LabNVH",
+      "campus": "UnB/FCTE",
       "coordenador": "Maria Alzira de Araújo Nunes",
       "contato": "maanunes@unb.br",
       "descricao": "O LabNVH, vinculado à Faculdade do Gama (FGA/UnB), Destina-se a atividades de ensino (graduação e pós-graduação em engenharia), pesquisa e extensão, sendo a sua principal atividade a pesquisa científica. A infraestrutura do laboratório permite o desenvolvimento de pesquisas nas áreas de dinâmica, vibrações e acústica de sistemas mecânicos, e atende a demanda dos cursos de engenharia automotiva, engenharia eletrônica, engenharia aeroespacial e engenharia de energia. Dentre as linhas de pesquisa se destacam: análise e controle de vibrações mecânicas, controle de ruído industrial e ambiental, vibrações e ruído ocupacional, dinâmica e controle de sistemas mecânicos aplicados à indústria da mobilidade, materiais acústicos.",
@@ -8869,6 +8879,7 @@
     {
       "id": "200013",
       "nome": "Grupo de Pesquisa em Aprendizado de Máquina",
+      "campus": "UnB/FCTE",
       "coordenador": "Fabrício Braz",
       "contato": "fabricio.braz@gmail.com",
       "descricao": "O Laboratório do Grupo de Pesquisa em Aprendizado de Máquina, vinculado à Faculdade doGama (FGA/UnB), tem foco na formação de equipes em desenvolvimento de projetos de IA, modelagem de problemas com solução por meio de IA e aprendizado de máquina (AM), provas de conceito com resolução de problemas usando IA e AM, workshops e palestras para difundir o tema a empresas interessadas e estágio de alunos de graduação e pós-graduação como apoio na execução das atividades previamente relacionadas.",
@@ -9754,6 +9765,7 @@
     {
       "id": "200015",
       "nome": "Laboratório de Propulsão Química - CPL",
+      "campus": "UnB/FCTE",
       "coordenador": "Olexiy Shynkarenko",
       "contato": "olexiy@aerospace.unb.br",
       "descricao": "O CPL, vinculado à Faculdade do Gama (FGA/UnB), tem como objetivo consolidar as atividades de desenho, fabricação e teste dos sistemas nas áreas de propulsão aeroespacial, aerodinâmica e transferência de calor. O grupo é composto por professores de Engenharia Aeroespacial da UnB e colaboradores estrangeiros da Universidade Sapienza. O Laboratório tem projetos financiados da Agência Espacial Brasileira, CNPq, FAPDF, FAPRS, possui várias colaborações nacionais e acordos internacionais.",
@@ -10640,6 +10652,7 @@
     {
       "id": "200018",
       "nome": "AI Laboratório (Laboratório de Inteligência Artificial) - AI Lab",
+      "campus": "UnB/FCTE",
       "coordenador": "Nilton Correia da Silva",
       "contato": "nilton.correia.silva@gmail.com",
       "descricao": "O AI Lab, vinculado à Faculdade do Gama (FGA/UnB), realiza modelagem de problemas por meio de aprendizado de máquina e pesquisa e desenvolvimento de modelos de inteligência artificial para aplicação em diversas áreas.",
@@ -11527,6 +11540,7 @@
     {
       "id": "200019",
       "nome": "Laboratório Fábrica de Software - LFSw",
+      "campus": "UnB/FCTE",
       "coordenador": "André Luiz Peron Martins Lanna e Técnico Cristóvão de Lima",
       "contato": "andrelanna@unb.br",
       "descricao": "O LFSw, vinculado à Faculdade do Gama (FGA/UnB), é um laboratório de pesquisa empírica em métodos e técnicas em ambientes de desenvolvimento de software, além do desenvolvimento de ferramentas de produtividade em Engenharia de Software. Projetos de pesquisa e desenvolvimento junto ao CDT em métodos de análise de requisitos. Projeto, desenvolvimento e testes de software no contexto de aplicativos mobile.",
@@ -12412,6 +12426,7 @@
     {
       "id": "200020",
       "nome": "Laboratório de Nanotecnologia - NANOTEC",
+      "campus": "UnB/FCTE",
       "coordenador": "Marilia Miranda Forte Gomes",
       "contato": "mariliamfg@gmail.com",
       "descricao": "O NANOTEC, vinculado à Faculdade do Gama (FGA/UnB), trabalha com projetos aplicados em síntese de nanopartículas e nanomateriais, caracterização, avaliação das propriedades inerente ao material, montagem de dispositivos (nanosensores), nanorobótica, nanopartículas biomarcadoras e transportadora de ativos para diagnóstico e tratamento de doenças (câncer, dengue, etc.). Visa a melhoraria da qualidade em saúde de um paciente, e desenvolvimento de nanomateriais que possam auxiliar a população nas mais diversas aplicações.",
@@ -13298,6 +13313,7 @@
     {
       "id": "200026",
       "nome": "Laboratório de Mecânica Computacional e Experimental - GMEC",
+      "campus": "UnB/FCTE",
       "coordenador": "Carla Tatiana Mota Anflor",
       "contato": "(61) 3107-8916 / (61) 3107-8917 / anflor@unb.br",
       "descricao": "O GMEC, vinculada à Faculdade do Gama (FGA/UnB), tem a missão de oferecer suporte a pesquisa em ENGENHARIAS | Laboratórios de Pesquisa Multiusuário",
@@ -14184,6 +14200,7 @@
     {
       "id": "200027",
       "nome": "Laboratório BIOGAMA - BIOGAMA",
+      "campus": "UnB/FCTE",
       "coordenador": "Andréia Alves Costa",
       "contato": "andreiaacosta@gmail.com",
       "descricao": "No BIOGAMA, vinculado à Faculdade do Gama (FGA/UnB), são realizadas atividades diversas de pesquisa relacionadas à área de Engenharia de Energia com foco na área de Química. Além disso, são realizadas atividades diversas de ensino e extensão, principalmente ligadas ao Programa Biogama.",
@@ -15070,6 +15087,7 @@
     {
       "id": "200028",
       "nome": "Laboratório de Tecnologias Educacionais - LaTEd",
+      "campus": "UnB/FCTE",
       "coordenador": "Vandor Roberto Vilardi Rissoli",
       "contato": "vandor@unb.br / lated.unb@gmail.com",
       "descricao": "O LaTEd, vinculado à Faculdade do Gama (FGA/UnB), promove a reflexão humana, o estudo e o desenvolvimento de tecnologias e metodologias adequadas ao âmbito educacional para os diferentes perfis humanos que atuam em atividades educacionais e de formação, além de realizar treinamentos e oficinas condizentes com as demandas específicas desses perfis, em seus variados níveis educacionais e modalidades de ensino, bem como em análises e inferências sobre dados e informações para descoberta de conhecimentos relevantes as estratégias de diferentes organizações estabelecidas na sociedade e seus interesses.",
@@ -15956,6 +15974,7 @@
     {
       "id": "200029",
       "nome": "Laboratório Compartilhado de Ensino e Pesquisa em Telecomunicações - LabTelecom/LCEPT",
+      "campus": "UnB/FCTE",
       "coordenador": "Sébastien Rondineau",
       "contato": "sebastien@unb.br",
       "descricao": "O LabTelecom/LCEPT, vinculado à Faculdade do Gama (FGA/UnB), é um laboratório de excelência dedicado à integração entre a academia e a indústria, com foco na transferência de tecnologia e na capacitação profissional. O LCEPT concentra seus esforços na pesquisa, desenvolvimento e inovação em sistemas de comunicações. O LCEPT é credenciado para oferecer educação, realizar pesquisas avançadas e prestar serviços especializados. Suas áreas de atuação abrangem uma ampla gama de tópicos, incluindo sistemas de comunicação, eletrônica de alta velocidade, microeletrônica de rádio frequência, antenas, propagação, radar, guerra eletrônica, tecnologia RFID e IoT, eletromagnetismo computacional, fotônica, optrônica, processamento de sinais e análise de componentes principais. Além disso, o laboratório está envolvido em pesquisas de ponta em aprendizado de máquina, abrangendo tanto o aprendizado supervisionado quanto o não supervisionado, bem como na caracterização eletromagnética de materiais.",
@@ -16842,6 +16861,7 @@
     {
       "id": "200030",
       "nome": "Laboratório de Sistemas Espaciais - LaSE",
+      "campus": "UnB/FCTE",
       "coordenador": "Paolo Gessini",
       "contato": "paolo.gessini@aerospace.unb.br",
       "descricao": "O LaSE está vinculado à Faculdade do Gama (FGA/UnB)",
@@ -17728,6 +17748,7 @@
     {
       "id": "200031",
       "nome": "Laboratório de Microeletrônica e Sistemas Embarcados - LabMicro",
+      "campus": "UnB/FCTE",
       "coordenador": "Daniel Muñoz",
       "contato": "damuz@unb.br",
       "descricao": "O LabMicro, vinculado à Faculdade do Gama (FGA/UnB), dá suporte aos projetos de pesquisa na área de microeletrônica e sistemas embarcados na FGA e FT. Conta com licenças de software da Cadence para desenvolvimento de CIs a nível industrial. E ainda licenças de software para prototipagem de CIs em plataformas FPGAs da Altera e da Xilinx. Projetos: Laboratório de Microeletrônica da Faculdade UnB Gama, Projeto AutoBac e Projeto Toledo.",
@@ -18614,6 +18635,7 @@
     {
       "id": "200035",
       "nome": "Laboratório Avançado de Produção Pesquisa e Inovação em Software - LAPPIS",
+      "campus": "UnB/FCTE",
       "coordenador": "Carla Rocha",
       "contato": "caguiar@unb.br",
       "descricao": "O LAPPIS, localizado na Faculdade UnB Gama (FCTE) foi criado em 2012 e foi concebido para atuar em áreas tecnológicas associadas à produção de software livre, objetivando oportunidades de pesquisas teóricas e aplicadas. Em que pese sua recente criação, o laboratório possui cooperações em andamento e concluídas com segmentos da Administração Pública e Iniciativa Privada. Cabe ressaltar projetos já realizados com a Presidência República em parceria com o Serpro, Positivo Informática S/A, Toledo do Brasil S/A, além da colaboração na evolução de diversas ferramentas de software livre, no contexto do desenvolvimento da plataforma do novo Portal do Software Público Brasileira com o Ministério do Planejamento. \nO LAPPIS adota como estratégia pedagógica a integração dos alunos em projetos de software livre de forma que o desenvolvimento de software seja associado a atividades de formação de futuros Engenheiros de Software. O laboratório segue uma metodologia baseada no uso de Software Livre, Métodos Ágeis e DevOps com o foco em entrega contínua de funcionalidades e trabalho colaborativo centrado nas pessoas. Este processo é essencial para a filosofia pedagógica adotada no laboratório de aproximar os alunos a ambientes de produção de software reais com tecnologias inovadoras, sob orientação de professores e especialistas.",
@@ -19495,6 +19517,7 @@
     {
       "id": "200036",
       "nome": "Centro de Estudos, Desenvolvimento e Inovação em Software - CEDIS",
+      "campus": "UnB/FCTE",
       "coordenador": "André Luiz Lanna",
       "contato": "cedis@unb.br",
       "descricao": "Na vanguarda da inovação desde 2013, o CEDIS da Universidade de Brasília é dedicado a moldar o futuro da Engenharia de Software, Aprendizado e Inteligência Artificial. Reunimos estudantes, pesquisadores e profissionais em uma jornada colaborativa de descoberta, desenvolvimento e aplicação de tecnologias transformadoras. Nosso compromisso é liderar pelo exemplo, promovendo soluções sustentáveis e capacitando as próximas gerações de inovadores.",
@@ -20377,6 +20400,7 @@
     {
       "id": "100018",
       "Nome": "EletronJun",
+      "campus": "UnB/FCTE",
       "Cursos": "Engenharia Eletrônica",
       "Sobre": "A EletronJun começou o ano de 2019 com grandes problemas financeiros. Apesar da empresa ter alcançado o alto crescimento em 2018, não foi o suficiente para quitar as dívidas daquele ano, envolvendo impostos e contador. Se juntasse essa dívida com os gastos que teríamos durante o ano, precisaríamos alcançar em torno de 18 mil reais para quitar tudo e abrir o ano de 2020 zerados no caixa, faturamento que seria equivalente a mais do que o dobro do ano anterior, que foi o maior que já tivemos em 5 anos de existência. Com base nisso foi decidido que a meta para a EletronJun para bater o Alto Crescimento seria exatamente a meta necessária para quitar tudo, incluindo os centavos, e caso não conseguíssemos, os diretores estavam considerando fechar a empresa. Naquele ano todos os membros estavam bem engajados e decididos a não deixar que a EletronJun fechasse, então mês após mês a equipe foi se reinventando para que fosse possível bater a meta, e então chegou o mês de outubro de 2019. Em menos de 7 dias foram fechados os 2 maiores contratos da história da empresa, até então, e batemos o Alto Crescimento, ou seja, tínhamos o suficiente para sair do vermelho e mais o suficiente para garantir as despesas do ano seguinte. Mas aquela equipe queria mais, ainda faltava uma meta a ser batida no portal, a meta de ações compartilhadas. Então como um último esforço em conjunto antes da premiação, e várias estratégias traçadas, conseguimos o número necessário de ações compartilhadas, chegamos no Alto Impacto e aquele que poderia ser o pior ano da história da EletronJun, se tornou o melhor da história.",
       "Missao": "Qualificar os membros através do empreendedorismo por meio de soluções em engenharia eletrônica com o objetivo de gerar valor e impacto na sociedade.",
@@ -21249,6 +21273,7 @@
     {
       "id": "100019",
       "Nome": "Embragea",
+      "campus": "UnB/Darcy Ribeiro",
       "Cursos": "Gestão Ambiental",
       "Sobre": "Fundada em 2009, a EMBRAGEA, Empresa Brasileira de Gestão Ambiental Jr, é uma empresa júnior, composta exclusivamente por alunos graduandos do curso de Gestão Ambiental, vinculada à Universidade de Brasília, Planaltina, atualmente sendo a única EJ ativa do Campus, nosso objetivo é oferecer serviços de consultoria e soluções ambientais aos clientes, proporcionando oportunidade de crescimento pessoal e profissional para cada um de seus associados. Trabalhamos todos os dias para formar pessoas comprometidas e capazes de transformar o Brasil por meio da realização de mais e melhores projetos. Dentre as maiores conquistas e motivo de orgulho, vale lembrar do legado do time de 2019 o desafio Caixa seguradora, do mesmo ano.",
       "Missao": "Capacitar os membros a fornecer serviços de alta qualidade em consultoria e soluções ambientais, bem como em práticas de gestão eficientes, visando a satisfação dos clientes, parceiros, associados, e o cumprimento das metas de alto crescimento.",
@@ -22121,6 +22146,7 @@
     {
       "id": "100021",
       "Nome": "Enetec",
+      "campus": "UnB/Darcy Ribeiro",
       "Cursos": "Engenharia Elétrica",
       "Sobre": "Fundada em 2006, a ENETEC é uma empresa Júnior de consultoria, elaboração e execução de projetos na área de Engenharia Elétrica formada por alunos da UnB. É uma empresa sem fins lucrativos, que busca desenvolvimento pessoal e profissionalmente seus membros por meio de vivência empresarial, elaborando projetos de consultoria.",
       "Missao": "Transformar pessoas e organizações por meio de soluções em engenharia, ser reconhecida no mercado por soluções diferenciais entre gues por times de alta performance.",
@@ -22993,6 +23019,7 @@
     {
       "id": "100022",
       "Nome": "EngNet Consultoria",
+      "campus": "UnB/Darcy Ribeiro",
       "Cursos": "Engenharia de Redes de Comunicação, Eng. Elétrica, Eng. de Software, Eng. Mecatrônica e Eng. Ciência da Computação",
       "Sobre": "Fundada em 06 de outubro de 2007, a EngNet Consultoria, antes chamada de EngNet Consultoria e Implementação, é a empresa júnior de Engenharia de Redes de Comunicação da Universidade de Brasília. Hoje também aberta aos cursos de Eng. Elétrica, Eng. de Software, Eng. Mecatrônica e Eng. Ciência da Computação. A EngNet apresenta uma proposta de fomentar a prática empreendedora de seus integrantes ao oferecer-lhes um ambiente propício ao crescimento pessoal e profissional explorando as diferentes áreas do conhecimento dos diversos cursos para oferecer soluções cada vez mais completas e inovadoras para os clientes. A área da tecnologia da informação está em constante crescimento e estamos formando aqui os engenheiros que irão liderar essa frente no futuro. Estamos nesse ambiente de constante evolução e aprendizado para transformar a vida de todos que passam pela EJ, sejam clientes, membros ou até mesmo parceiros. Somos transformação, despertamos propósito e concretizamos sonhos.",
       "Missao": "Ser transformação. Despertar propósito. Concretizar sonhos. CONFIA!",
@@ -23865,6 +23892,7 @@
     {
       "id": "100023",
       "Nome": "Engrena",
+      "campus": "UnB/FCTE",
       "Cursos": "Engenharia Automotiva",
       "Sobre": "Somos uma Empresa Júnior de Engenharia Automotiva da Universidade de Brasília focada em ser um sistema replicável e sustentável em engenharia automotiva no Brasil, entregando inovação e exclusividade aos nossos clientes. Estudamos, desenvolvemos e geramos soluções para problemas atrelados ao setor automotivo alavancando jovens talentos empreendedores.",
       "Missao": "Estudar, desenvolver e gerar soluções para problemas atrelados ao setor automotivo alavancando jovens talentos empreendedores.",
@@ -24737,6 +24765,7 @@
     {
       "id": "100030",
       "Nome": "Matriz",
+      "campus": "UnB/FCTE",
       "Cursos": "Engenharia de Energia",
       "Sobre": "A Matriz foi fundada no dia 27 de janeiro de 2015, atuando desde então para diminuir a necessidade do uso de fontes de energia não renováveis, já impactados várias escolas com palestras e workshops e fomos responsáveis pela economia de energia de vários clientes ao longo de nossa história, economia essa que se reflete em mais renda para ele e menos impacto ao meio ambiente.",
       "Missao": "Capacitar membros através da vivência empresarial para impactar a sociedade.",
@@ -25609,6 +25638,7 @@
     {
       "id": "100031",
       "Nome": "MecaJun",
+      "campus": "UnB/Darcy Ribeiro",
       "Cursos": "Engenharia Mecatrônica",
       "Sobre": "Nossa EJ foi fundada 20 anos atrás, porem não trabalhava como uma EJ, e sim como uma gestora de equipes de competição como a droid, em 2008 começamos a consolidar nossa empresa. Temos muito orgulho da nossa cultura onde todos que entram se tornam parte da família Mecajun.",
       "Missao": "Formar engenheiros capazes de impactar a sociedade por meio da tecnologia e proporcionar a melhor experiencia para o aluno da UnB.",
@@ -26481,6 +26511,7 @@
     {
       "id": "100034",
       "Nome": "O2",
+      "campus": "UnB/Darcy Ribeiro",
       "Cursos": "Ciências Ambientais",
       "Sobre": "A O2 Consultoria Ambiental Jr. foi fundada por estudantes de graduação em Ciências Ambientais da Universidade de Brasília e vem atuando no mercado desde 2012. As Ciências Ambientais oferecem um vasto campo de atuação devido a sua interdisciplinaridade e propostas diferenciadas, nos permitindo ser referência no mercado de trabalho. Nos colocamos a serviço dessa diversidade com muito orgulho, propondo intervenções inteligentes, levando em consideração a preservação do meio ambiente e o equilíbrio ecossistêmico. Um projeto de grande destaque da O2 foi o Monitoramento e Educação Ambiental no evento Brasília Capital Moto Week (BCMW), o maior encontro motociclístico da América Latina e o terceiro maior do Mundo, no ano de 2018, em sua 15º edição. Em trabalho conjunto com a EPM Consultoria e em parceria com ACOBRAZ - Associação de Catadores e Recicladores de Resíduos Sólidos de Brazlândia -DF, Green Ambiental, Engaia Compostagem, entre outros, foram realizadas ações visando a redução de 50% dos resíduos sólidos gerados no período de evento, os quais foram submetidos a uma triagem e direcionados para a reciclagem ou compostagem, dependendo de sua composição. Além disso, a O2 orientou a comunidade geral e, principalmente, os motociclistas e comerciantes locais acerca da importância da separação correta dos resíduos, assim como averiguar se a coleta seletiva estava, de fato, sendo realizada. O resultado do evento foi positivo e a meta de redução dos resíduos foi alcançada com excelência!",
       "Missao": "Proporcionar aos membros a oportunidade de aplicar seus conhecimentos em situações reais, aplicando os conceitos de sustentabilidade na administração estratégica aos negócios de nossos clientes.",
@@ -27353,6 +27384,7 @@
     {
       "id": "100036",
       "Nome": "Orc'estra",
+      "campus": "UnB/FCTE",
       "Cursos": "Gamificação e Software, Engenharia de Software",
       "Sobre": "Fundada em 2017, a Empresa Júnior de Engenharia de Software da UnB tem o propósito de ressignificar a vida das pessoas através da gamificação, tornando a vida mais produtiva e prazerosa. O fato curioso é que temos a sede compartilhada com 4 EJs da FGA - UnB. As maiores conquistas foi a empresa, por três anos consecutivos, atingir suas metas e ser considerada uma EJ impacto na sociedade pela Brasil Júnior. O maior orgulho é pelas conquistas alcançadas até hoje, menos que com pouco tempo de existência. Já realizamos inúmeros projetos destaques, como para a Caixa Seguradora, Vale S.A, PMO, Gino Terentim, entre outras.",
       "Missao": "Mudar o comportamento das pessoas, através da gamificação, para motivar e engajar nossos parceiros.",
@@ -28225,6 +28257,7 @@
     {
       "id": "100046",
       "Nome": "Struct",
+      "campus": "UnB/Darcy Ribero",
       "Cursos": "Engenharia da Computação",
       "Sobre": "A Struct foi fundada em 2014 por alunos de Engenharia da Computação com o objetivo de trazer maior protagonismo para o curso no Mercado de Trabalho. Trabalham melhor nos anos de pandemia pois todo trabalho é no computador. Cresceram exponencialmente desde a federação na concentro, sendo tri alto crescimento e EJ impacto. Obcecados por foguetes, mascote é um foguetinho. Curiosidade: independente do horário, costumam falar bom dia. Orgulho em ver a evolução de cada membro. Exemplos de sistemas: site do conselho de psicologia do DF, site do Vai de Férias.",
       "Missao": "Formar estudantes mais profissionais e mais capacitados por meio da vivência empresarial.",
@@ -29097,6 +29130,7 @@
     {
       "id": "100047",
       "Nome": "Tecmec",
+      "campus": "UnB/Darcy Ribeiro",
       "Cursos": "Engenharia Mecânica",
       "Sobre": "A TECMEC foi fundada em 2004 por estudantes que buscavam iniciar práticas empreendedoras durante o curso superior. Aproveitaram a lacuna de poucas Empresas Juniores na UnB para criar um ambiente de vivência empresarial para a graduação de Engenharia Mecânica. Realizou diversos projetos de prototipagem. Orgulho de ser uma EJ de destaque, sendo uma das poucas de Engenharia Mecânica no Brasil a oferecer serviços personalizados e fabricação de protótipos robustos. Maior EJ de Engenharia Mecânica do Centro-Oeste e 2ª maior do Brasil.",
       "Missao": "Impactar a sociedade promovendo empreendedorismo e desenvolvendo soluções inovadoras por meio da Engenharia Mecânica.",
@@ -29969,6 +30003,7 @@
     {
       "id": "100050",
       "Nome": "CJR",
+      "campus": "UnB/Darcy Ribeiro",
       "Cursos": "Ciência da Computação",
       "Sobre": "A CJR é uma empresa sem fins lucrativos fundada em 1999 por alunos da UnB com o objetivo de proporcionar um ambiente inclusivo de aprendizado, empreendedorismo e colaborativismo para universitários de cursos de computação. Valorizamos a diversidade e a inclusão, de forma que o respeito e a igualdade são pilares fundamentais para a nossa empresa e contribuem para a evolução e crescimento constante dos membros. Competindo de igual para igual com grandes empresas, nós conquistamos clientes por meio de atendimentos de qualidade e soluções inovadoras, com custos que somente uma EJ pode oferecer.",
       "Missao": "Proporcionar aos universitários um ambiente inclusivo de aprendizado, empreendedorismo e colaboração, desenvolvendo soluções tecnológicas de qualidade que gerem impacto real para nossos clientes e crescimento contínuo para nossos membros.",
