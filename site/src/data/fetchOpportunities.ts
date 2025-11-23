@@ -1,6 +1,8 @@
 import ejLogoMap from "./ejLogos"
 import labLogoMap from "./labsLogos"
 import { EQUIPES_COMPETICAO_FIXAS } from "./equipesCompeticao"
+import { calcularEmbeddingsEquipes } from "./calcularEmbeddingsEquipes"
+import { fetchTagsFlat } from "./fetchTags"
 
 export interface Opportunity {
   id: string
@@ -230,8 +232,16 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
       }
     }
 
-    // Adicionar equipes de competição fixas (não vêm do JSON)
-    opportunities.push(...EQUIPES_COMPETICAO_FIXAS)
+
+    try {
+      const tags = await fetchTagsFlat()
+      const equipesComEmbeddings = calcularEmbeddingsEquipes(tags)
+      opportunities.push(...equipesComEmbeddings)
+    } catch (error) {
+      console.error("Erro ao calcular embeddings das equipes:", error)
+      // Fallback: adiciona equipes sem embeddings
+      opportunities.push(...EQUIPES_COMPETICAO_FIXAS)
+    }
 
     return opportunities
   } catch (error) {
