@@ -23,6 +23,15 @@ const labLogoMap: Record<string, string> = {
   '200031': '/images/labs/200031.png',
   '200035': '/images/labs/200035.jpeg',
   '200036': '/images/labs/200036.png',
+  '200037': '/images/labs/200037.png',
+  '200038': '/images/labs/200038.png',
+  '200039': '/images/labs/200039.jpg',
+  '200040': '/images/labs/200040.png',
+  '200041': '/images/labs/200041.png',
+  '200042': '/images/labs/200042.jpg',
+  '200043': '/images/labs/200043.png',
+  '200044': '/images/labs/200044.png',
+  '200045': '/images/labs/200045.png',
 }
 
 export default labLogoMap
