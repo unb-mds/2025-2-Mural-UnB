@@ -1,5 +1,6 @@
 import ejLogoMap from "./ejLogos"
 import labLogoMap from "./labsLogos"
+import { EQUIPES_COMPETICAO_FIXAS } from "./equipesCompeticao"
 
 export interface Opportunity {
   id: string
@@ -69,12 +70,12 @@ export interface EmpresaJuniorRaw {
 
 export interface OportunidadesCompletoJSON {
   metodo: string
-  modelo_embedding: string
-  total_oportunidades: number
-  total_laboratorios: number
-  total_empresas_juniores: number
-  laboratorios: LaboratorioRaw[]
-  empresas_juniores: EmpresaJuniorRaw[]
+  modelo_embedding?: string
+  total_oportunidades?: number
+  total_laboratorios?: number
+  total_empresas_juniores?: number
+  laboratorios?: LaboratorioRaw[]
+  empresas_juniores?: EmpresaJuniorRaw[]
 }
 
 // --- Funções Auxiliares de Logo ---
@@ -126,7 +127,7 @@ function extractEmbedding(item: any): number[] {
 
 function determineCategory(tags: LaboratorioRaw["tags"]): string {
   const tagIds = tags.map(t => t.id.toLowerCase())
-  if (tagIds.includes("equipe_competicao") || tagIds.some(id => id.includes("equipe"))) return "Equipes Competitivas"
+  // Não verifica equipes aqui, pois elas são fixas e não vêm do JSON
   if (tagIds.some(id => id.includes("empresa_junior") || id.includes("ej") || id.includes("empresa junior"))) return "Empresas Juniores"
   return "Laboratórios"
 }
@@ -228,6 +229,9 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
         console.error("Erro ao processar empresas juniores:", error)
       }
     }
+
+    // Adicionar equipes de competição fixas (não vêm do JSON)
+    opportunities.push(...EQUIPES_COMPETICAO_FIXAS)
 
     return opportunities
   } catch (error) {
