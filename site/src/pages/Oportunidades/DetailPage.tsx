@@ -69,7 +69,17 @@ export default function DetailPage() {
             </div>
           )}
           <h1>{opportunity.name}</h1>
-          <p className="detail-category">{opportunity.category}</p>
+          
+          
+          <p className="detail-category">
+            {opportunity.category}
+            {opportunity.campus && opportunity.campus !== "N/A" && (
+              <span style={{ opacity: 0.9, fontWeight: 'normal' }}>
+                {' • '}{opportunity.campus}
+              </span>
+            )}
+          </p>
+
           <p className="detail-short-description">{opportunity.shortDescription}</p>
         </header>
 
@@ -160,5 +170,3 @@ export default function DetailPage() {
     </div>
   )
 }
-
-

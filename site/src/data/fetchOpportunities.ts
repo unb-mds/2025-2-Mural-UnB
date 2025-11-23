@@ -4,6 +4,7 @@ import labLogoMap from "./labsLogos"
 export interface Opportunity {
   id: string
   name: string
+  campus: string // Campo já existente na sua interface
   shortDescription: string
   category: string
   logo: string
@@ -24,9 +25,12 @@ export interface Opportunity {
 export interface LaboratorioRaw {
   id: string
   nome: string
+  campus: string 
   coordenador: string
   contato: string
   descricao: string
+  Site?: string
+  Instagram?: string
   tags: Array<{
     id: string
     label: string
@@ -38,17 +42,14 @@ export interface LaboratorioRaw {
     label: string
     score: number
   }>
-  // Campo correto identificado no JSON
   embedding_agregado?: number[]
-  // Mantemos os outros como fallback caso o JSON mude no futuro
-  embedding?: number[]
-  Embedding?: number[]
 }
 
 
 export interface EmpresaJuniorRaw {
   id: string
   Nome: string
+  Campus?: string 
   Cursos: string
   Sobre: string
   Missao: string
@@ -63,10 +64,7 @@ export interface EmpresaJuniorRaw {
     categoria: string
     subcategoria: string
   }>
-  // Campo correto identificado no JSON
   embedding_agregado?: number[]
-  embedding?: number[]
-  Embedding?: number[]
 }
 
 export interface OportunidadesCompletoJSON {
@@ -141,16 +139,26 @@ function convertLaboratorioToOpportunity(lab: LaboratorioRaw): Opportunity {
     ? lab.descricao.substring(0, 100) + "..."
     : lab.descricao
 
+  const social: { instagram?: string; website?: string } = {}
+  
+  if (lab.Instagram && lab.Instagram !== "N/A") {
+    social.instagram = normalizeInstagramUrl(lab.Instagram)
+  }
+  if (lab.Site && lab.Site !== "N/A") {
+    social.website = normalizeWebsiteUrl(lab.Site)
+  }
+
   return {
     id: `lab-${lab.id}`,
     name: lab.nome,
+    campus: lab.campus || "N/A", 
     shortDescription: shortDescription,
     category: category,
     logo: resolveLabLogoById(lab.id),
     tags: tagIds,
     about: lab.descricao,
-    social: undefined,
-    embedding: extractEmbedding(lab) // Usa o helper atualizado
+    social: Object.keys(social).length > 0 ? social : undefined,
+    embedding: extractEmbedding(lab)
   }
 }
 
@@ -174,6 +182,7 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
   return {
     id: `ej-${ej.id}`,
     name: ej.Nome,
+    campus: ej.Campus || "N/A", 
     shortDescription: shortDescription,
     category: "Empresas Juniores",
     logo: resolveEjLogoById(ej.id) || resolveLogoByName(ej.Nome),
@@ -184,7 +193,7 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
     values: ej.Valores !== "N/A" ? ej.Valores : undefined,
     services: ej.Servicos !== "N/A" ? ej.Servicos : undefined,
     social: Object.keys(social).length > 0 ? social : undefined,
-    embedding: extractEmbedding(ej) // Usa o helper atualizado
+    embedding: extractEmbedding(ej)
   }
 }
 
