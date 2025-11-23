@@ -27,7 +27,6 @@ jobs:
         pip install -r requirements.txt
         if [ -f requirements-EJ.txt ]; then pip install -r requirements-EJ.txt; fi
         if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
-        if [ -f requirements-EJs-dev.txt ]; then pip install -r requirements-EJs-dev.txt; fi
 
     - name: 4. Rodar Linter (Pylint)
       run: |
@@ -35,7 +34,5 @@ jobs:
         pylint --disable=C,R scripts
 
     - name: 5. Rodar Testes Unitários (Pytest)
-      env:
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY || 'test-key-for-ci' }}
       run: |
-          pytest --cov=scripts --cov-report=xml
+        pytest
