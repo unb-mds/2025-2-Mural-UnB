@@ -96,7 +96,11 @@ export default function Feed() {
       const matchesCategory =
         selectedCategory === "Todos" || opp.category === selectedCategory
 
-      return matchesSearch && matchesCategory
+      const matchesTags =
+        selectedTags.length === 0 ||
+        (opp.tags && opp.tags.some(tag => selectedTags.includes(tag)))
+
+      return matchesSearch && matchesCategory && matchesTags
     })
 
     const sorted = [...filtered];
@@ -108,7 +112,7 @@ export default function Feed() {
     }
 
     return sorted;
-  }, [searchTerm, selectedCategory, fetchedOpportunities, userEmbedding])
+  }, [searchTerm, selectedCategory, selectedTags, fetchedOpportunities, userEmbedding])
 
   const handleTagToggle = (tagId: string) => {
     setSelectedTags((prev) => {

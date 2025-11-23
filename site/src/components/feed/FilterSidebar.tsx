@@ -27,7 +27,7 @@ export default function FilterSidebar({
   const categories = [
     { id: "Todos", label: "Todos" },
     { id: "Laboratórios", label: "Laboratórios" },
-    { id: "Equipes Competitivas", label: "Equipes Competitivas" },
+    { id: "Equipe de Competição", label: "Equipe de Competição" },
     { id: "Empresas Juniores", label: "Empresas Juniores" },
   ]
 
