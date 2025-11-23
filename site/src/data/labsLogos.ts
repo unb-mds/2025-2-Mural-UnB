@@ -15,7 +15,7 @@ const labLogoMap: Record<string, string> = {
   '200018': '/images/labs/200018.jpeg',
   '200019': '/images/default/1.png',
   '200020': '/images/labs/200020.png',
-  '200026': '/images/default/1.png',
+  '200026': '/images/labs/200026.jpeg',
   '200027': '/images/labs/200027.png',
   '200028': '/images/labs/200028.png',
   '200029': '/images/labs/200029.png',
