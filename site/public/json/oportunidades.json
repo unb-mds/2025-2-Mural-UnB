@@ -11,6 +11,7 @@
       "coordenador": "Edson Paulo da Silva",
       "contato": "dasilva@unb.br",
       "descricao": "O CIP-TransEnerg, vinculado ao Instituto de Física (IF), Instituto de Geologia (IG), Instituto de Química (IQ), à Faculdade de Administração, Contabilidade, Economia e Gestão de Políticas Públicas (FACE), Faculdade de Arquitetura e Urbanismo (FAU), Faculdade de Tecnologia (FT) e Faculdade do Gama (FGA), tem como objetivo desenvolver atividades de caráter científico, tecnológico, de inovação e de prestação de serviços na temática transição energética. As linhas de atuação compreendem as pesquisas em transição energética",
+      "Site": "transenerg.unb.br",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -896,6 +897,7 @@
       "coordenador": "Ricardo Ruviaro",
       "contato": "ruviaro@unb.br",
       "descricao": "O CenIA, vinculado ao Instituto de Ciências Exatas (IE), Faculdade de Tecnologia (FT), Faculdade do Gama (FGA) e Faculdade de Administração, Contabilidade, Economia e Gestão de Políticas Públicas (FACE), tem como objetivo desenvolver pesquisa científica e tecnológica, prestar serviços técnicos especializados e promover educação continuada relacionadas a Inteligência Artificial e áreas/temáticas afins e correlatas.",
+      "Site": "cenia.unb.br",
       "tags": [
         {
           "id": "inteligencia_artificial",
@@ -1781,6 +1783,7 @@
       "coordenador": "Luciano Noleto",
       "contato": "lucianonoleto@gmail.com",
       "descricao": "O LabTermo, vinculado à Faculdade do Gama (FGA/UnB), é um laboratório de ensino e pesquisa nas áreas de Fenômenos de Transporte, Dinâmica dos Fluidos, Transferência de Calor, Máquinas de Fluxo e Sistemas de Conversão de Energia. Realiza atividades em caráter interdisciplinar na área de Gestão energética, Combustíveis e Sistemas de Conversão Eletromecânica de Energia. Destina-se ao suporte experimental ao estudo de aspectos térmicos e fluido-mecânicos das diversas fontes e meios de conversão de energia.",
+      "Site": "pctec.unb.br/inovacao-unb/analise-trl/199-laboratorio-de-termofluido",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -2666,6 +2669,7 @@
       "coordenador": "Suzana Moreira Ávila",
       "contato": "avilas@unb.br",
       "descricao": "O SISCO, vinculado à Faculdade do Gama (FGA/UnB), é um laboratório multidisciplinar, atendendo as engenharias: automotiva, eletrônica, mecatrônica, de energia, mecânica, civil e áreas afins. No ambiente são desenvolvidos trabalhos de alunos de graduação, dissertações de mestrado e teses de doutorado (Programa de Pós-graduação em Sistemas Mecatrônicos, Programa de Pós-graduação em Integridade de Materiais da Engenharia, Programa de Estruturas e Construção Civil) e projetos aprovados em órgãos de fomento (CNPQ, CAPES, FAPDF).",
+      "Site": "labsisco.unb.br",
       "tags": [
         {
           "id": "sistemas_automotivos",
@@ -4436,6 +4440,7 @@
       "coordenador": "Jorge Cormane",
       "contato": "jcormane@unb.br",
       "descricao": "O LASEE, vinculado à Faculdade do Gama (FGA/UnB), é um ambiente desenvolvimento de pesquisas relacionadas aos sistemas de energia elétrica, com enfoque em fontes renováveis de energia, sistemas de armazenamento de energia, eficiência energética, Veículos Elétricos e Qualidade da Energia Elétrica. Linhas ENGENHARIAS Laboratórios de Pesquisa",
+      "Site": "pctec.unb.br/inovacao-unb/analise-trl/192-laboratorio-de-sistemas-de-energia-eletrica",
       "tags": [
         {
           "id": "sistemas_eletricos_potencia",
@@ -5321,6 +5326,7 @@
       "coordenador": "Roseany de Vasconcelos Vieira Lopes",
       "contato": "roseany@unb.br",
       "descricao": "O LaPRREn, vinculado à Faculdade do Gama (FGA/UnB), tem por objetivo desenvolver pesquisa na área de recursos renováveis, combustíveis e biocombustíveis, formando recursos humanos na área de engenharia de energia, graduação e pós-graduação. Pesquisas no âmbito da preparação e caracterização de materiais utilizados em catálise, nanotecnologia e energia, de acordo com as seguintes linhas de pesquisa: tecnologia para combustíveis e biocombustíveis, catálise homogênea e heterogênea, nanobiotecnologia e síntese de novos materiais.",
+      "Site": "lite.unb.br/2024/11/15/laboratorio-de-pesquisa-em-recursos-renovaveis-e-energeticos/",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -6206,6 +6212,8 @@
       "coordenador": "Rejane Maria da Costa Figueiredo",
       "contato": "rejanemaria@gmail.com / itrac.unb.br",
       "descricao": "o ITRAC, vinculado à Faculdade do Gama (FGA/UnB), desenvolve pesquisas e desenvolvimentos tecnológicos envolvendo estudantes de graduação da FGA e estudantes de pós-graduação em parceria com a indústria e com órgãos federais.",
+      "Site": "itrac.unb.br",
+      "Instagram": "@itrac_unb",
       "tags": [
         {
           "id": "startup_universitaria",
@@ -7091,6 +7099,7 @@
       "coordenador": "Sandra Maria da Luz",
       "contato": "sandra.unb@gmail.com",
       "descricao": "O LTB, vinculado à Faculdade do Gama (FGA/UnB), tem por objetivo oferecer suporte a pesquisadores, alunos de graduação e pós-graduação a fim de efetuarem pesquisas relacionadas à transformação, caracterização, tratamento e aplicações de biomassa vegetal para o desenvolvimento de novos materiais e combustíveis. Os materiais provenientes de fontes renováveis podem dar origem a polímeros biodegradáveis, compósitos reforçados com fibras naturais e combustíveis renováveis.",
+      "Site": "automotiva.unb.br/laboratorios/laboratorio-de-tecnologia-da-biomassa",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -7976,6 +7985,8 @@
       "coordenador": "Maria Alzira de Araújo Nunes",
       "contato": "maanunes@unb.br",
       "descricao": "O LabNVH, vinculado à Faculdade do Gama (FGA/UnB), Destina-se a atividades de ensino (graduação e pós-graduação em engenharia), pesquisa e extensão, sendo a sua principal atividade a pesquisa científica. A infraestrutura do laboratório permite o desenvolvimento de pesquisas nas áreas de dinâmica, vibrações e acústica de sistemas mecânicos, e atende a demanda dos cursos de engenharia automotiva, engenharia eletrônica, engenharia aeroespacial e engenharia de energia. Dentre as linhas de pesquisa se destacam: análise e controle de vibrações mecânicas, controle de ruído industrial e ambiental, vibrações e ruído ocupacional, dinâmica e controle de sistemas mecânicos aplicados à indústria da mobilidade, materiais acústicos.",
+      "Site": "labnvh.unb.br",
+      "Instagram": "labnvh.unb",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -9746,6 +9757,7 @@
       "coordenador": "Olexiy Shynkarenko",
       "contato": "olexiy@aerospace.unb.br",
       "descricao": "O CPL, vinculado à Faculdade do Gama (FGA/UnB), tem como objetivo consolidar as atividades de desenho, fabricação e teste dos sistemas nas áreas de propulsão aeroespacial, aerodinâmica e transferência de calor. O grupo é composto por professores de Engenharia Aeroespacial da UnB e colaboradores estrangeiros da Universidade Sapienza. O Laboratório tem projetos financiados da Agência Espacial Brasileira, CNPq, FAPDF, FAPRS, possui várias colaborações nacionais e acordos internacionais.",
+      "Site": "cpl.unb.br/#:~:text=O%20Laboratório%20de%20Propulsão%20Química%20%28CPL%29%2C%20vinculado%20à,de%20propulsão%20de%20foguetes%20e%20motores%20a%20jato.",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -10631,6 +10643,8 @@
       "coordenador": "Nilton Correia da Silva",
       "contato": "nilton.correia.silva@gmail.com",
       "descricao": "O AI Lab, vinculado à Faculdade do Gama (FGA/UnB), realiza modelagem de problemas por meio de aprendizado de máquina e pesquisa e desenvolvimento de modelos de inteligência artificial para aplicação em diversas áreas.",
+      "site": "ailab.unb.br",
+      "Instagram": "@ailab_unb",
       "tags": [
         {
           "id": "inteligencia_artificial",
@@ -12401,6 +12415,7 @@
       "coordenador": "Marilia Miranda Forte Gomes",
       "contato": "mariliamfg@gmail.com",
       "descricao": "O NANOTEC, vinculado à Faculdade do Gama (FGA/UnB), trabalha com projetos aplicados em síntese de nanopartículas e nanomateriais, caracterização, avaliação das propriedades inerente ao material, montagem de dispositivos (nanosensores), nanorobótica, nanopartículas biomarcadoras e transportadora de ativos para diagnóstico e tratamento de doenças (câncer, dengue, etc.). Visa a melhoraria da qualidade em saúde de um paciente, e desenvolvimento de nanomateriais que possam auxiliar a população nas mais diversas aplicações.",
+      "Site": "nanotecnologia.unb.br/quem-somos/",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -13286,6 +13301,7 @@
       "coordenador": "Carla Tatiana Mota Anflor",
       "contato": "(61) 3107-8916 / (61) 3107-8917 / anflor@unb.br",
       "descricao": "O GMEC, vinculada à Faculdade do Gama (FGA/UnB), tem a missão de oferecer suporte a pesquisa em ENGENHARIAS | Laboratórios de Pesquisa Multiusuário",
+      "Site": "gmec.unb.br/",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -14171,6 +14187,7 @@
       "coordenador": "Andréia Alves Costa",
       "contato": "andreiaacosta@gmail.com",
       "descricao": "No BIOGAMA, vinculado à Faculdade do Gama (FGA/UnB), são realizadas atividades diversas de pesquisa relacionadas à área de Engenharia de Energia com foco na área de Química. Além disso, são realizadas atividades diversas de ensino e extensão, principalmente ligadas ao Programa Biogama.",
+      "Site": "lite.unb.br/laboratorio-biogama/",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -15054,8 +15071,9 @@
       "id": "200028",
       "nome": "Laboratório de Tecnologias Educacionais - LaTEd",
       "coordenador": "Vandor Roberto Vilardi Rissoli",
-      "contato": "vandor@unb.br / http://lated.unb.br/lated",
+      "contato": "vandor@unb.br / lated.unb@gmail.com",
       "descricao": "O LaTEd, vinculado à Faculdade do Gama (FGA/UnB), promove a reflexão humana, o estudo e o desenvolvimento de tecnologias e metodologias adequadas ao âmbito educacional para os diferentes perfis humanos que atuam em atividades educacionais e de formação, além de realizar treinamentos e oficinas condizentes com as demandas específicas desses perfis, em seus variados níveis educacionais e modalidades de ensino, bem como em análises e inferências sobre dados e informações para descoberta de conhecimentos relevantes as estratégias de diferentes organizações estabelecidas na sociedade e seus interesses.",
+      "Site": "sae.unb.br/lated/",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -15939,8 +15957,9 @@
       "id": "200029",
       "nome": "Laboratório Compartilhado de Ensino e Pesquisa em Telecomunicações - LabTelecom/LCEPT",
       "coordenador": "Sébastien Rondineau",
-      "contato": "sebastien@unb.br / https://lab-telecom.unb.br/",
+      "contato": "sebastien@unb.br",
       "descricao": "O LabTelecom/LCEPT, vinculado à Faculdade do Gama (FGA/UnB), é um laboratório de excelência dedicado à integração entre a academia e a indústria, com foco na transferência de tecnologia e na capacitação profissional. O LCEPT concentra seus esforços na pesquisa, desenvolvimento e inovação em sistemas de comunicações. O LCEPT é credenciado para oferecer educação, realizar pesquisas avançadas e prestar serviços especializados. Suas áreas de atuação abrangem uma ampla gama de tópicos, incluindo sistemas de comunicação, eletrônica de alta velocidade, microeletrônica de rádio frequência, antenas, propagação, radar, guerra eletrônica, tecnologia RFID e IoT, eletromagnetismo computacional, fotônica, optrônica, processamento de sinais e análise de componentes principais. Além disso, o laboratório está envolvido em pesquisas de ponta em aprendizado de máquina, abrangendo tanto o aprendizado supervisionado quanto o não supervisionado, bem como na caracterização eletromagnética de materiais.",
+      "Site": "lab-telecom.unb.br",
       "tags": [
         {
           "id": "telecomunicacoes",
@@ -16826,6 +16845,7 @@
       "coordenador": "Paolo Gessini",
       "contato": "paolo.gessini@aerospace.unb.br",
       "descricao": "O LaSE está vinculado à Faculdade do Gama (FGA/UnB)",
+      "Site": "lase.unb.br",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -17711,6 +17731,7 @@
       "coordenador": "Daniel Muñoz",
       "contato": "damuz@unb.br",
       "descricao": "O LabMicro, vinculado à Faculdade do Gama (FGA/UnB), dá suporte aos projetos de pesquisa na área de microeletrônica e sistemas embarcados na FGA e FT. Conta com licenças de software da Cadence para desenvolvimento de CIs a nível industrial. E ainda licenças de software para prototipagem de CIs em plataformas FPGAs da Altera e da Xilinx. Projetos: Laboratório de Microeletrônica da Faculdade UnB Gama, Projeto AutoBac e Projeto Toledo.",
+      "Site": "labmicro.igd.unb.br",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -18596,6 +18617,8 @@
       "coordenador": "Carla Rocha",
       "contato": "caguiar@unb.br",
       "descricao": "O LAPPIS, localizado na Faculdade UnB Gama (FCTE) foi criado em 2012 e foi concebido para atuar em áreas tecnológicas associadas à produção de software livre, objetivando oportunidades de pesquisas teóricas e aplicadas. Em que pese sua recente criação, o laboratório possui cooperações em andamento e concluídas com segmentos da Administração Pública e Iniciativa Privada. Cabe ressaltar projetos já realizados com a Presidência República em parceria com o Serpro, Positivo Informática S/A, Toledo do Brasil S/A, além da colaboração na evolução de diversas ferramentas de software livre, no contexto do desenvolvimento da plataforma do novo Portal do Software Público Brasileira com o Ministério do Planejamento. \nO LAPPIS adota como estratégia pedagógica a integração dos alunos em projetos de software livre de forma que o desenvolvimento de software seja associado a atividades de formação de futuros Engenheiros de Software. O laboratório segue uma metodologia baseada no uso de Software Livre, Métodos Ágeis e DevOps com o foco em entrega contínua de funcionalidades e trabalho colaborativo centrado nas pessoas. Este processo é essencial para a filosofia pedagógica adotada no laboratório de aproximar os alunos a ambientes de produção de software reais com tecnologias inovadoras, sob orientação de professores e especialistas.",
+      "Site": "lappis.rocks",
+      "Instagram": "@lab.livre",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
@@ -19475,6 +19498,7 @@
       "coordenador": "André Luiz Lanna",
       "contato": "cedis@unb.br",
       "descricao": "Na vanguarda da inovação desde 2013, o CEDIS da Universidade de Brasília é dedicado a moldar o futuro da Engenharia de Software, Aprendizado e Inteligência Artificial. Reunimos estudantes, pesquisadores e profissionais em uma jornada colaborativa de descoberta, desenvolvimento e aplicação de tecnologias transformadoras. Nosso compromisso é liderar pelo exemplo, promovendo soluções sustentáveis e capacitando as próximas gerações de inovadores.",
+      "Site": "cedis.unb.br",
       "tags": [
         {
           "id": "laboratorio_pesquisa",
