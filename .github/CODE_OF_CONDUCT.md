@@ -1,59 +1,72 @@
-# 📜 Código de Conduta do Mural UnB
+# 📜 Código de Conduta — Mural UnB
 
 ## 🤝 Nosso Compromisso
 
-Nós, como membros, contribuidores e líderes do projeto Mural UnB, comprometemo-nos a fazer da participação em nossa comunidade uma experiência livre de assédio para todos, independentemente de idade, tamanho corporal, deficiência visible ou invisível, etnia, características sexuais, identidade e expressão de gênero, nível de experiência, educação, status socioeconômico, nacionalidade, aparência pessoal, raça, religião ou identidade e orientação sexual.
+Nós, como membros, contribuidores e líderes do projeto **Mural UnB**, comprometemo-nos a tornar a participação em nossa comunidade uma experiência segura e acolhedora para todos. Valorizamos diversidade, respeito e colaboração.
 
-Comprometemo-nos a agir e interagir de maneiras que contribuam para uma comunidade aberta, acolhedora, diversificada, inclusiva e saudável.
+Comprometemo-nos a agir de forma a promover uma comunidade aberta, inclusiva e profissional.
 
-## Nossos Padrões
-
-Exemplos de comportamentos que contribuem para um ambiente positivo em nossa comunidade incluem:
-
-*   Demonstrar empatia e gentileza para com outras pessoas
-*   Respeitar opiniões, pontos de vista e experiências diferentes
-*   Oferecer e aceitar críticas construtivas de forma educada
-*   Assumir responsabilidade com erros
-*   Focar no que é melhor não apenas para nós como indivíduos, mas para a comunidade como um todo
-
-🚫 Exemplos de comportamentos inaceitáveis incluem:
-
-*   O uso de linguagem ou imagens sexualizadas, bem como avanços sexuais de qualquer tipo
-*   Comentários insultuosos ou depreciativos, ataques pessoais ou políticos
-*   Assédio público ou privado
-*   Divulgar informações privadas de outras pessoas, como um endereço físico ou de e-mail, sem sua permissão explícita
-*   Qualquer outra conduta que possa ser razoavelmente considerada inadequada em um ambiente profissional
-
-## 📢 Responsabilidades de Execução
-
-Os líderes da comunidade são responsáveis por esclarecer e fazer cumprir nossos padrões de comportamento aceitável e tomarão ações corretivas apropriadas e justas em resposta a qualquer comportamento que considerem inadequado, ameaçador, ofensivo ou prejudicial.
-
-Os líderes da comunidade têm o direito e a responsabilidade de remover, editar ou rejeitar comentários, edições e outras contribuições que não estejam alinhadas com este Código de Conduta e irão comunicar as razões por trás das decisões de moderação quando for apropriado.
-
-## Escopo
-
-Este Código de Conduta aplica-se em todos os espaços da comunidade, tanto online quanto presencialmente. Isso inclui, mas não se limita a: repositórios do GitHub, canais de Discord, e-mails, eventos e meetups oficialmente relacionados ao projeto.
-
-## Enforcement
-
-Instâncias de comportamento abusivo, de assédio ou de outra forma inaceitável podem ser reportadas para os líderes da comunidade responsáveis pela enforcement em [INSERIR ENDEREÇO DE E-MAIL OU LINK DE CONTATO AQUI]. Todas as queixas serão revisadas e investigadas de maneira rápida e justa.
-
-Todos os líderes da comunidade são obrigados a respeitar a privacidade e a segurança de quem reportar um incidente.
 ---
-## Diretrizes de Enforcement
 
-Os líderes da comunidade seguirão estas Diretrizes de Impacto na Comunidade para determinar as consequências para qualquer ação que viole este Código de Conduta:
+## ✅ Nossos Padrões
 
-### 1. Ação Corretiva
-**Impacto na Comunidade**: Uso de linguagem inadequada ou outro comportamento considerado não profissional ou indesejado.
+Comportamentos que fomentam um ambiente positivo:
 
-**Consequência**: Um aviso escrito e privado dos líderes da comunidade, oferecendo clareza sobre a natureza da violação e uma explicação de por que o comportamento foi inadequado.
+- ✨ Demonstrar empatia e gentileza
+- 🤝 Respeitar opiniões e experiências diversas
+- 🗣️ Oferecer e receber críticas construtivas com educação
+- 🙋 Assumir responsabilidade por erros
+- 🎯 Priorizar o bem da comunidade como um todo
 
-### 2. Banimento Temporário
-**Impacto na Comunidade**: Uma violação por meio de um incidente único ou série de ações.
+### 🚫 Comportamentos inaceitáveis
 
-**Consequência**: Um banimento temporário de qualquer tipo de interação ou comunicação pública com a comunidade por um período determinado. Durante este período, não é permitida qualquer interação pública ou privada com as pessoas envolvidas, incluindo interações não solicitadas com aqueles que estão aplicando o Código de Conduta.
+- 🔞 Uso de linguagem ou imagens sexualizadas ou avanços sexuais
+- 🗯️ Comentários insultuosos, ataques pessoais ou políticos
+- ⚠️ Assédio público ou privado
+- 🔐 Divulgação de informações privadas sem consentimento (ex.: e-mail, endereço)
+- ❗ Qualquer conduta considerada inadequada num ambiente profissional
 
-### 3. Banimento Permanente
-**Impacto na Comunidade**: Demonstrar um padrão de violação dos padrões da comunidade, incluindo comportamentos de abuso sustentados, assédio a indivíduos ou agressão ou depreciação de classes de indivíduos.
-**Consequência**: Um banimento permanente de qualquer tipo de interação pública dentro da comunidade.
+---
+
+## 📢 Responsabilidades de Moderação
+
+Os líderes da comunidade são responsáveis por aplicar este Código de Conduta de forma justa e transparente. Eles podem remover, editar ou rejeitar contribuições que violem este código e comunicar as razões quando apropriado.
+
+Todos os relatos serão tratados com confidencialidade e respeito.
+
+---
+
+## 🌐 Escopo
+
+Este Código aplica-se a todos os espaços oficiais do projeto, online ou presenciais: repositórios GitHub, canais de comunicação, eventos, e-mails e meetups.
+
+---
+
+## 🛎️ Como reportar
+
+Reportar casos de violação para os responsáveis por enforcement em: **`[INSERIR-ENDERECO-DE-E-MAIL@exemplo.com]`**
+
+Por favor inclua no relato: contexto, links/prints e o comportamento observado.
+
+---
+
+## 🧭 Diretrizes de Enforcement
+
+Os líderes usarão critérios de impacto para determinar as consequências. Exemplos de medidas:
+
+### 1) Aviso (Corretivo)
+
+- **Impacto**: comportamento inapropriado ou não profissional.
+- **Ação**: aviso privado e orientação para correção.
+
+### 2) Banimento Temporário
+
+- **Impacto**: reincidência ou incidentes moderados.
+- **Ação**: restrição temporária de participação pública.
+
+### 3) Banimento Permanente
+
+- **Impacto**: comportamentos abusivos persistentes ou perigosos.
+- **Ação**: remoção permanente da comunidade.
+
+---
