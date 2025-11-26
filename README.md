@@ -100,6 +100,31 @@ Em resumo, o Mural UnB funciona como um **mural virtual**, que vai além de apen
 - [Figma - Hub do Projeto](https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0)  
 - [Repositório GitHub](https://github.com/unb-mds/Mural-UnB) 
 
+## 📚 Documentação Técnica
+
+Para desenvolvedores e contribuidores, criamos guias detalhados sobre o funcionamento interno do projeto:
+
+* 🐍 **[Manual dos Scripts (Backend)](scripts/README.md):** Aprenda a rodar os crawlers, pipelines de IA e testes automatizados.
+* 💾 **[Estrutura de Dados](data/README.md):** Entenda o esquema dos arquivos CSV, JSON e a organização das imagens.
+* 🔒 **[Política de Segurança](SECURITY.md):** Como reportar vulnerabilidades.
+
+### 🛠️ Instalação Rápida para Desenvolvedores
+
+```bash
+# 1. Clone o repositório
+git clone [https://github.com/unb-mds/2025-2-Mural-UnB.git](https://github.com/unb-mds/2025-2-Mural-UnB.git)
+
+# 2. Configuração do Backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# 3. Configuração do Frontend
+cd site
+npm install
+npm run dev
+```
+
 ## 🙋‍♂️ Equipe
 
 <table>
