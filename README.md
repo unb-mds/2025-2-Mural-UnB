@@ -112,7 +112,7 @@ Para desenvolvedores e contribuidores, criamos guias detalhados sobre o funciona
 
 ```bash
 # 1. Clone o repositório
-git clone [https://github.com/unb-mds/2025-2-Mural-UnB.git](https://github.com/unb-mds/2025-2-Mural-UnB.git)
+git clone https://github.com/unb-mds/2025-2-Mural-UnB.git
 
 # 2. Configuração do Backend
 python3 -m venv venv
