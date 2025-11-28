@@ -45,14 +45,13 @@ Para acessar o protótipo do FIGMA, clique neste **[LINK](www.figma.com/design/o
 
 A estrutura do front-end segue o padrão modular, organizada da seguinte forma:
 
-´´´ bash
-
+```bash
 ├── src/
 │   ├── assets/
 │   │   ├── fonts/
 │   │   ├── icons/
 │   │   ├── images/
-|   |   |   ├── fotos/
+|   |   |   └── fotos/
 │   │   └── styles/
 │   ├── components/
 │   │   ├── feed/
@@ -73,9 +72,8 @@ A estrutura do front-end segue o padrão modular, organizada da seguinte forma:
 │   ├── App.css
 │   ├── App.tsx
 │   └── main.tsx
-├── index.html
-
-´´´
+└── index.html
+```
 
 ### **Resumo das pastas**
 
