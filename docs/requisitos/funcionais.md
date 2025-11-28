@@ -42,7 +42,7 @@ O propósito dos requisitos funcionais é **definir o que a plataforma Mural UnB
 
 **Descrição**: Usuários vizualizam as tags relacionadas as oportunidades
 
-**Prioridade**: P0 🔴
+**Prioridade**: P1 🟠
 
 ## Epic: Navbar & Navegação
 
@@ -50,11 +50,27 @@ O propósito dos requisitos funcionais é **definir o que a plataforma Mural UnB
 
 **Descrição**: Navbar fixa com acessos: Home, Oportunidades, Favoritos, Sobre.
 
-**Prioridade**: P0 🔴
+**Prioridade**: P1 🟠
 
 ## Epic: ETL Dados
 
-### US-6 — ETL das EJs (FCTE)
+## Epic: Home
+
+### US-6 — Página inicial
+
+**Descrição**: Página inicial possuindo informações sobre o Mural-UnB que apresenta o projeto e as funcionalidades do site
+
+**Prioridade**: P1 🟠
+
+### US-7 — Sobre
+
+**Descrição**: Página de sobre, que apresenta os integrantes do projeto e mostra a participação de cada um nele.
+
+**Prioridade**: P2 🟢
+
+## Epic: ETL Dados
+
+### US-8 — ETL das EJs (FCTE)
 
 **Descrição**: Coletar, transformar e carregar o banco de dados com as empresas juniores da FCTE (scopo inicial).
 
@@ -78,7 +94,7 @@ EJs {
 }
 ```
 
-### US-7 — ETL das Laboratórios (FCTE)
+### US-9 — ETL das Laboratórios (FCTE)
 
 **Descrição**: Coletar, transformar e carregar o banco de dados com os laboratórios de pesquisa da FCTE (scopo inicial).
 
@@ -100,7 +116,7 @@ EJs {
 }
 ```
 
-### US-8 — ETL das Equipes de Competição (FCTE)
+### US-10 — ETL das Equipes de Competição (FCTE)
 
 **Descrição**: Coletar, transformar e carregar o banco de dados com as equipes de competição da FCTE (scopo inicial).
 
@@ -124,15 +140,11 @@ EJs {
 
 ## Epic: Recomendação com IA (Banco Vetorizado)
 
-### US-9 — Microsserviço de Vetorização
+### US-11 — Similaridade no frontend
 
-**Descrição**: O sistema deve possuir um microsserviço dedicado para armazenar embeddings vetoriais de oportunidades e perfis de usuários.
+**Descrição**: O sistema deve fazer uma busca por similaridade para entregar uma recomendação para o usuario a partir das tags das oportunidades.
 
 **Prioridade**: P0 🔴
-
-## Conctags: FK,lusão
-
-Este documento estabelece a **base funcional** da plataforma Mural UnB, detalhando epics, user stories, critérios de aceitação e exemplos técnicos para orientar tanto o desenvolvimento quanto a validação do produto. A priorização (P0, P1, P2) auxilia na definição do MVP, garantindo **foco nas funcionalidades essenciais** para entrega inicial de valor.
 
 ## Observação
 
