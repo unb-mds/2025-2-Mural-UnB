@@ -14,7 +14,7 @@ jobs:
       id-token: write
 
     runs-on: ubuntu-latest # O ambiente onde o job será executado
-    
+
     defaults:
       run:
         working-directory: ./site # Define a pasta 'site' como diretório de trabalho padrão
@@ -26,23 +26,24 @@ jobs:
       - name: ⚙️ Configurar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # Use a versão do Node.js que seu projeto utiliza
-          cache: 'npm' # Habilita o cache de dependências do npm
+          node-version: "20" # Use a versão do Node.js que seu projeto utiliza
+          cache: "npm" # Habilita o cache de dependências do npm
           cache-dependency-path: ./site/package-lock.json
 
       - name: ⬇️ Instalar Dependências
         run: npm ci
 
       - name: 🏗️ Fazer Build do Projeto
-        # Este comando irá compilar seu projeto React/TypeScript. 
+        # Este comando irá compilar seu projeto React/TypeScript.
         # Certifique-se de que seu 'package.json' na pasta 'site' tenha um script 'build'.
-        run: npm run build 
+        run: npm run build
 
       - name: 🚀 Deploy para GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }} # Token fornecido automaticamente pelo GitHub
-          publish_dir: ./site/build # O diretório onde a build de produção (os arquivos estáticos) está. 
-                                    # Ajuste para a sua configuração (ex: ./build, ./dist, etc.)
+          publish_dir:
+            ./site/dist # O diretório onde a build de produção (os arquivos estáticos) está.
+            # Ajuste para a sua configuração (ex: ./build, ./dist, etc.)
           publish_branch: gh-pages # A branch que o GitHub Pages usará para servir o site
           force_orphan: true # Cria um novo histórico para o branch de deploy
