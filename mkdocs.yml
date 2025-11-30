@@ -6,6 +6,7 @@ nav:
   - "Open Source":
     - "Contribuir": open-source/contribuir.md
     - "Code of Conduct": open-source/code-of-conduct.md
+    - "Security": open-source/security.md
   - "Requisitos":
     - "Funcionais": requisitos/funcionais.md
     - "Não Funcionais": requisitos/nao-funcionais.md
