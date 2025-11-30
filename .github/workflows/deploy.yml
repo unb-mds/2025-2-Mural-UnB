@@ -1,0 +1,47 @@
+name: Deploy Projeto para GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # O workflow roda quando há um push para o branch 'main'
+
+jobs:
+  build-and-deploy:
+    # Permissões necessárias para que a action de deploy funcione
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    runs-on: ubuntu-latest # O ambiente onde o job será executado
+    
+    defaults:
+      run:
+        working-directory: ./site # Define a pasta 'site' como diretório de trabalho padrão
+
+    steps:
+      - name: 📦 Checkout do Repositório
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a versão do Node.js que seu projeto utiliza
+          cache: 'npm' # Habilita o cache de dependências do npm
+
+      - name: ⬇️ Instalar Dependências
+        run: npm ci
+
+      - name: 🏗️ Fazer Build do Projeto
+        # Este comando irá compilar seu projeto React/TypeScript. 
+        # Certifique-se de que seu 'package.json' na pasta 'site' tenha um script 'build'.
+        run: npm run build 
+
+      - name: 🚀 Deploy para GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Token fornecido automaticamente pelo GitHub
+          publish_dir: ./site/build # O diretório onde a build de produção (os arquivos estáticos) está. 
+                                    # Ajuste para a sua configuração (ex: ./build, ./dist, etc.)
+          publish_branch: gh-pages # A branch que o GitHub Pages usará para servir o site
+          force_orphan: true # Cria um novo histórico para o branch de deploy
