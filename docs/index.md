@@ -90,19 +90,20 @@ O **Mural UnB** surge como resposta a esse problema, oferecendo **eficiência, t
 
 ### Frontend
 - **React**
-- **Next Js**
 - **TypeScript**  
 - **Tailwind CSS**
 
-### Backend
-- **Django**  
+### Dados
 - **Python**  
-- **SQLite**  
+- **API - Gemini**  
+- **JSON**  
+- **Pandas**
+- **GH Actions**
 
 ### Outros
-- Git & GitHub  
-- Docker (para containerização)  
-- GitHub Actions (para CI/CD)  
+- **Git**
+- **GitHub** & **Gitpages**
+- **MKdocs** 
 
 ---
 
