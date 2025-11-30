@@ -13,7 +13,7 @@ Inclui oportunidades como:
 
     Empresas juniores
     Laboratórios de pesquisa
-    Iniciação científica (PIBICs)
+    Equipes de Competição
 
 Em resumo, o Mural UnB funciona como um mural virtual, que vai além de apenas listar oportunidades — ele ajuda os estudantes a se conectarem com as oportunidades certas, no momento certo.
 
@@ -71,9 +71,9 @@ Em resumo, o Mural UnB funciona como um mural virtual, que vai além de apenas l
 
 ## Como Funciona
 
-1. **Cadastro do estudante** → O usuário cria seu perfil acadêmico.  
-2. **Análise de perfil** → O sistema identifica interesses e habilidades relevantes.  
-3. **Recomendações personalizadas** → O estudante recebe oportunidades alinhadas ao seu perfil.
+1. **Listagem de Oportunidades (Feed)** → O usuário tem acesso a uma página com grande parte das oportunidades na UnB.  
+2. **Análise de perfil** → O sistema identifica interesses e habilidades que o usuário quer ser recomendado por meio de Tags.  
+3. **Recomendações personalizadas** → O estudante recebe oportunidades alinhadas ao seu perfil (tags).
 
 ---
 
