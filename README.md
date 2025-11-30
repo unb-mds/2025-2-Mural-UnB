@@ -61,7 +61,7 @@
 <p align="center">
   <a href="#sobre">Sobre</a> •
   <a href="#principais-funcionalidades">Funcionalidades</a> •
-  <a href="#como-usar">Como Usar</a> •
+  <a href="#como-funcionar">Como Funciona</a> •
   <a href="#🔗-links">Links</a> •
   <a href="#🙋‍♂️-equipe">Equipe</a> •
   <a href="#🧾-licença">Licença</a> •
@@ -83,13 +83,15 @@ Ao analisar o perfil do usuário, a plataforma recomenda as opções mais releva
 Inclui oportunidades como:  
 - **Empresas juniores**  
 - **Laboratórios de pesquisa**  
-- **Iniciação científica (PIBICs)**  
+- **Equipes de Competição**  
 
 Em resumo, o Mural UnB funciona como um **mural virtual**, que vai além de apenas listar oportunidades — ele **ajuda os estudantes a se conectarem com as oportunidades certas, no momento certo**.  
 
-## Principais Funcionalidades
+## Como Funciona
 
-#### 🚧 Em desenvolvimento
+1. **Listagem de Oportunidades (Feed)** → O usuário tem acesso a uma página com grande parte das oportunidades na UnB.  
+2. **Análise de perfil** → O sistema identifica interesses e habilidades que o usuário quer ser recomendado por meio de Tags.  
+3. **Recomendações personalizadas** → O estudante recebe oportunidades alinhadas ao seu perfil (tags).
 
 ## Como Usar
 
