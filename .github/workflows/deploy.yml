@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: '20' # Use a versão do Node.js que seu projeto utiliza
           cache: 'npm' # Habilita o cache de dependências do npm
+          cache-dependency-path: ./site/package-lock.json
 
       - name: ⬇️ Instalar Dependências
         run: npm ci
