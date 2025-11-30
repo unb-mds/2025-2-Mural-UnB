@@ -27,6 +27,8 @@ export default function Feed() {
   const [isLoading, setIsLoading] = useState(true)
   
   const [userEmbedding, setUserEmbedding] = useState<number[] | null>(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 8
 
   useEffect(() => {
     let mounted = true
@@ -107,8 +109,17 @@ export default function Feed() {
       sorted.sort((a, b) => a.name.localeCompare(b.name));
     }
 
-    return sorted;
-  }, [searchTerm, selectedCategory, fetchedOpportunities, userEmbedding])
+    const startIndex = (currentPage - 1) * itemsPerPage
+    const endIndex = startIndex + itemsPerPage
+    const paginatedItems = sorted.slice(startIndex, endIndex)
+    const totalPages = Math.ceil(sorted.length / itemsPerPage)
+
+    return {
+      items: paginatedItems,
+      totalItems: sorted.length,
+      totalPages
+    };
+  }, [searchTerm, selectedCategory, fetchedOpportunities, userEmbedding, currentPage])
 
   const handleTagToggle = (tagId: string) => {
     setSelectedTags((prev) => {
@@ -123,7 +134,12 @@ export default function Feed() {
       
       return newTags;
     })
+    setCurrentPage(1)
   }
+
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [searchTerm, selectedCategory])
 
   return (
     <div className="feed-page">
@@ -141,8 +157,8 @@ export default function Feed() {
           <div className="opportunities-list">
             {isLoading ? (
               <div className="no-results"><p>A carregar oportunidades...</p></div>
-            ) : displayedOpportunities.length > 0 ? (
-              displayedOpportunities.map((opportunity) => (
+            ) : displayedOpportunities.items.length > 0 ? (
+              displayedOpportunities.items.map((opportunity) => (
                 <OpportunityCard
                   key={opportunity.id}
                   opportunity={{
@@ -169,6 +185,65 @@ export default function Feed() {
               </div>
             )}
           </div>
+
+          {!isLoading && displayedOpportunities.totalPages > 1 && (
+            <div className="pagination">
+              <button
+                className="pagination-btn"
+                disabled={currentPage === 1}
+                onClick={() => {
+                  setCurrentPage(currentPage - 1)
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }}
+              >
+                ← Anterior
+              </button>
+
+              <div className="pagination-numbers">
+                {Array.from({ length: displayedOpportunities.totalPages }, (_, i) => i + 1).map((page) => {
+                  const showPage = 
+                    page === 1 ||
+                    page === displayedOpportunities.totalPages ||
+                    Math.abs(page - currentPage) <= 1
+
+                  if (!showPage && page === currentPage - 2) {
+                    return <span key={`ellipsis-${page}`} className="pagination-ellipsis">...</span>
+                  }
+                  
+                  if (!showPage && page === currentPage + 2) {
+                    return <span key={`ellipsis-${page}`} className="pagination-ellipsis">...</span>
+                  }
+
+                  if (!showPage) return null
+
+                  return (
+                    <button
+                      key={page}
+                      className={`pagination-number ${currentPage === page ? "active" : ""}`}
+                      onClick={() => {
+                        setCurrentPage(page)
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      }}
+                    >
+                      {page}
+                    </button>
+                  )
+                })}
+              </div>
+
+              <button
+                className="pagination-btn"
+                disabled={currentPage === displayedOpportunities.totalPages}
+                onClick={() => {
+                  setCurrentPage(currentPage + 1)
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }}
+              >
+                Próxima →
+              </button>
+            </div>
+          )}
+
         </main>
 
         <FilterSidebar
