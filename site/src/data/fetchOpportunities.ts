@@ -202,7 +202,9 @@ function convertEmpresaJuniorToOpportunity(ej: EmpresaJuniorRaw): Opportunity {
 
 export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
   try {
-    const response = await fetch("/json/oportunidades.json")
+    const basePath = import.meta.env.BASE_URL || '/'
+    const url = `${basePath}json/oportunidades.json`.replace(/\/+/g, '/')
+    const response = await fetch(url)
 
     if (!response.ok) {
       console.warn("Não foi possível buscar oportunidades:", response.status)

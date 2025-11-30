@@ -18,7 +18,9 @@ interface TagsJSON {
 
 export async function fetchTagsFlat(): Promise<Tag[]> {
   try {
-    const res = await fetch("/json/tags.json")
+    const basePath = import.meta.env.BASE_URL || '/'
+    const url = `${basePath}json/tags.json`.replace(/\/+/g, '/')
+    const res = await fetch(url)
     if (!res.ok) throw new Error(`HTTP error ${res.status}`)
     const data = (await res.json()) as TagsJSON
     const flat: Tag[] = []
