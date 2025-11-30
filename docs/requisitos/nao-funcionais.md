@@ -7,20 +7,18 @@ Os requisitos não funcionais do **Mural UnB** descrevem as características de 
 ## 1. Usabilidade
 - A interface deve ser responsiva, funcionando em **desktop e mobile**.
 - O design deve seguir os protótipos de **alta fidelidade no Figma** para manter consistência visual.
-- Deve oferecer **fluxo de onboarding simples**, com no máximo 3–4 passos no primeiro acesso.
+- Deve oferecer **espaço de seleção de Tags**, com no facilidade de busca.
 - Textos, labels e mensagens de erro devem ser **claros e acessíveis**.
 
 ---
 
 ## 2. Desempenho
-- Tempo de resposta da API: **≤ 500ms** em requisições simples.
-- Tempo de carregamento da página inicial: **≤ 2s** em caso geral.
+- Tempo de resposta para recomendação: **≤ 2s** em recomendações pesadas.
+- Tempo de carregamento da página inicial: **≤ 3s** em caso geral.
 
 ---
 
 ## 3. Segurança
-- Autenticação via **JWT** (Access e Refresh tokens).
-- Senhas devem ser armazenadas usando **hash seguro (bcrypt)**.
 - Conexões devem ser feitas exclusivamente em **HTTPS**.
 - Logs de acesso e erros críticos devem ser armazenados de forma segura.
 
@@ -28,22 +26,20 @@ Os requisitos não funcionais do **Mural UnB** descrevem as características de 
 
 ## 4. Manutenibilidade
 - O código deve seguir boas práticas de **PEP8 (Python)** e **ESLint/Prettier (JavaScript/TypeScript)**.
-- O projeto deve utilizar **Docker** para padronizar ambientes de desenvolvimento e produção.
 - A documentação deve estar disponível em **GitHub Pages (MkDocs)** e atualizada a cada release.
-- Testes unitários devem cobrir ao menos o **código crítico** no MVP.
+- Testes unitários devem cobrir ao menos o **código crítico** no MVP (ideal *+90%*).
 
 ---
 
 ## 5. Confiabilidade
 - O sistema deve garantir **99% de uptime** em produção no MVP.
-- Em caso de falha de microsserviços, o sistema deve **falhar graciosamente** (ex: fallback do feed).
-- Backups automáticos da base de dados devem ser realizados **semanlmente**.
+- Em caso de falha, o sistema deve **falhar graciosamente** (ex: fallback do feed).
 
 ---
 
 ## 6. Escalabilidade
-- Arquitetura baseada em **microsserviços**, permitindo expansão modular.
-- Banco vetorizado para IA deve ser implementado como **serviço separado**.
+- Arquitetura baseada em **GitHuB Pages**, permitindo hostiamento *gratuito* (carregamento *user-side*).
+- Carregamento do banco vetorizado para IA deve ser implementado como **serviço separado** (*ETL*).
 
 ---
 

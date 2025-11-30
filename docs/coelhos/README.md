@@ -51,12 +51,6 @@ Fundamentos do Figma para **Sistemas Escaláveis**.
 
 ---
 
-### 🎨 [Frontend](./Frontend/README.md)  
-📌 Contribuído por **Luan Ludry** ([@luanludry](https://github.com/luanludry)) e **Maria Clara** ([@MariaClara-Canuto](https://github.com/MariaClara-Canuto))  
-Este diretório reúne conteúdos sobre o **desenvolvimento frontend** do projeto, abordando tanto o uso de **React com Axios** para consumo de APIs quanto o **TypeScript** para maior tipagem e segurança no código.
-
----
-
 ### 🤖 [Machine Learn](./Machine-Learn/README.md)  
 📌 Contribuído por **Tiago Bittencourt** ([@TiagoSBittencourt](https://github.com/TiagoSBittencourt))  
 - [Scikit-Learn](./Machine-Learn/Scikit-Learn/README.md)  

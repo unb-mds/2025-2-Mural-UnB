@@ -13,7 +13,7 @@ Inclui oportunidades como:
 
     Empresas juniores
     Laboratórios de pesquisa
-    Iniciação científica (PIBICs)
+    Equipes de Competição
 
 Em resumo, o Mural UnB funciona como um mural virtual, que vai além de apenas listar oportunidades — ele ajuda os estudantes a se conectarem com as oportunidades certas, no momento certo.
 
@@ -71,9 +71,9 @@ Em resumo, o Mural UnB funciona como um mural virtual, que vai além de apenas l
 
 ## Como Funciona
 
-1. **Cadastro do estudante** → O usuário cria seu perfil acadêmico.  
-2. **Análise de perfil** → O sistema identifica interesses e habilidades relevantes.  
-3. **Recomendações personalizadas** → O estudante recebe oportunidades alinhadas ao seu perfil.
+1. **Listagem de Oportunidades (Feed)** → O usuário tem acesso a uma página com grande parte das oportunidades na UnB.  
+2. **Análise de perfil** → O sistema identifica interesses e habilidades que o usuário quer ser recomendado por meio de Tags.  
+3. **Recomendações personalizadas** → O estudante recebe oportunidades alinhadas ao seu perfil (tags).
 
 ---
 
@@ -89,20 +89,22 @@ O **Mural UnB** surge como resposta a esse problema, oferecendo **eficiência, t
 ## Tecnologias Utilizadas
 
 ### Frontend
-- **React**
-- **Next Js**
-- **TypeScript**  
-- **Tailwind CSS**
+- **React** – [https://reactjs.org/](https://reactjs.org/)  
+- **TypeScript** – [https://www.typescriptlang.org/](https://www.typescriptlang.org/)  
+- **Tailwind CSS** – [https://tailwindcss.com/](https://tailwindcss.com/)  
 
-### Backend
-- **Django**  
-- **Python**  
-- **SQLite**  
+### Dados
+- **Python** – [https://www.python.org/](https://www.python.org/)  
+- **API - Gemini** – [https://docs.gemini.com/rest-api/](https://docs.gemini.com/rest-api/)  
+- **JSON** – [https://www.json.org/json-en.html](https://www.json.org/json-en.html)  
+- **Pandas** – [https://pandas.pydata.org/](https://pandas.pydata.org/)  
+- **GitHub Actions** – [https://docs.github.com/en/actions](https://docs.github.com/en/actions)  
 
 ### Outros
-- Git & GitHub  
-- Docker (para containerização)  
-- GitHub Actions (para CI/CD)  
+- **Git** – [https://git-scm.com/](https://git-scm.com/)  
+- **GitHub** – [https://github.com/](https://github.com/)  
+- **GitHub Pages** – [https://pages.github.com/](https://pages.github.com/)  
+- **MkDocs** – [https://www.mkdocs.org/](https://www.mkdocs.org/)
 
 ---
 
