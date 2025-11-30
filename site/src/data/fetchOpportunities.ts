@@ -82,13 +82,16 @@ export interface OportunidadesCompletoJSON {
 
 // --- Funções Auxiliares de Logo ---
 function resolveLogoByName(name: string): string | "" {
+  const base = import.meta.env.BASE_URL || '/'
+  const resolvePath = (path: string) => base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
+  
   const n = name.toLowerCase()
-  if (n.includes("orc") || n.includes("orc'estra") || n.includes("orcestra")) return "/orc.png"
-  if (n.includes("eletronjun") || n.includes("eletrojun")) return "/eletronjun.png"
-  if (n.includes("zenit")) return "/zenit.png"
-  if (n.includes("matriz")) return "/matriz.png"
-  if (n.includes("engrena")) return "/engrena.png"
-  if (n.includes("cjr")) return "/cjr.png"
+  if (n.includes("orc") || n.includes("orc'estra") || n.includes("orcestra")) return resolvePath("/orc.png")
+  if (n.includes("eletronjun") || n.includes("eletrojun")) return resolvePath("/eletronjun.png")
+  if (n.includes("zenit")) return resolvePath("/zenit.png")
+  if (n.includes("matriz")) return resolvePath("/matriz.png")
+  if (n.includes("engrena")) return resolvePath("/engrena.png")
+  if (n.includes("cjr")) return resolvePath("/cjr.png")
   return ""
 }
 

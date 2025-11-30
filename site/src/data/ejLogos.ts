@@ -1,4 +1,10 @@
-const ejLogoMap: Record<string, string> = {
+// Helper para resolver caminhos de imagem com base path do Vite
+function resolveImagePath(path: string): string {
+  const base = import.meta.env.BASE_URL || '/'
+  return base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
+}
+
+const ejLogoMapRaw: Record<string, string> = {
   '100001': '/images/ejs/100001.png',
   '100002': '/images/ejs/100002.jpeg',
   '100003': '/images/ejs/100003.jpeg',
@@ -50,5 +56,14 @@ const ejLogoMap: Record<string, string> = {
   '100049': '/images/ejs/100049.jpeg',
   '100050': '/images/ejs/100050.png',
 }
+
+// Processa os caminhos com o base path correto
+const ejLogoMap: Record<string, string> = Object.entries(ejLogoMapRaw).reduce(
+  (acc, [key, value]) => {
+    acc[key] = resolveImagePath(value)
+    return acc
+  },
+  {} as Record<string, string>
+)
 
 export default ejLogoMap

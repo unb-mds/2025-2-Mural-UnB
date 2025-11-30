@@ -1,4 +1,10 @@
-const labLogoMap: Record<string, string> = {
+// Helper para resolver caminhos de imagem com base path do Vite
+function resolveImagePath(path: string): string {
+  const base = import.meta.env.BASE_URL || '/'
+  return base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
+}
+
+const labLogoMapRaw: Record<string, string> = {
   '200001': '/images/labs/200001.png',
   '200002': '/images/labs/200002.png',
   '200003': '/images/labs/200003.png',
@@ -33,5 +39,14 @@ const labLogoMap: Record<string, string> = {
   '200044': '/images/labs/200044.png',
   '200045': '/images/labs/200045.png',
 }
+
+// Processa os caminhos com o base path correto
+const labLogoMap: Record<string, string> = Object.entries(labLogoMapRaw).reduce(
+  (acc, [key, value]) => {
+    acc[key] = resolveImagePath(value)
+    return acc
+  },
+  {} as Record<string, string>
+)
 
 export default labLogoMap
