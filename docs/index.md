@@ -89,21 +89,22 @@ O **Mural UnB** surge como resposta a esse problema, oferecendo **eficiência, t
 ## Tecnologias Utilizadas
 
 ### Frontend
-- **React**
-- **TypeScript**  
-- **Tailwind CSS**
+- **React** – [https://reactjs.org/](https://reactjs.org/)  
+- **TypeScript** – [https://www.typescriptlang.org/](https://www.typescriptlang.org/)  
+- **Tailwind CSS** – [https://tailwindcss.com/](https://tailwindcss.com/)  
 
 ### Dados
-- **Python**  
-- **API - Gemini**  
-- **JSON**  
-- **Pandas**
-- **GH Actions**
+- **Python** – [https://www.python.org/](https://www.python.org/)  
+- **API - Gemini** – [https://docs.gemini.com/rest-api/](https://docs.gemini.com/rest-api/)  
+- **JSON** – [https://www.json.org/json-en.html](https://www.json.org/json-en.html)  
+- **Pandas** – [https://pandas.pydata.org/](https://pandas.pydata.org/)  
+- **GitHub Actions** – [https://docs.github.com/en/actions](https://docs.github.com/en/actions)  
 
 ### Outros
-- **Git**
-- **GitHub** & **Gitpages**
-- **MKdocs** 
+- **Git** – [https://git-scm.com/](https://git-scm.com/)  
+- **GitHub** – [https://github.com/](https://github.com/)  
+- **GitHub Pages** – [https://pages.github.com/](https://pages.github.com/)  
+- **MkDocs** – [https://www.mkdocs.org/](https://www.mkdocs.org/)
 
 ---
 
