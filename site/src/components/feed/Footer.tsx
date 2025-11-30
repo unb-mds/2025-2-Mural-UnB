@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-left">
           <div className="footer-logo-container">
-            <img src="/favicon.svg" alt="Mural UnB" className="footer-logo-img" />
+            <img src="/2025-2-Mural-UnB/MuralLogo_S.svg" alt="Mural UnB" className="footer-logo-img" />
             <span className="footer-logo-name">Mural UnB</span>
           </div>
           
@@ -60,7 +60,7 @@ function Footer() {
           <h3 className="footer-pages-title">Páginas</h3>
           <nav className="footer-nav">
             <Link to="/2025-2-Mural-UnB/" className="footer-nav-link">Home</Link>
-            <Link to="/2025-2-Mural-UnB/Oportunidades" className="footer-nav-link">Mural</Link>
+            <Link to="/2025-2-Mural-UnB/feed" className="footer-nav-link">Mural</Link>
           </nav>
         </div>
       </div>

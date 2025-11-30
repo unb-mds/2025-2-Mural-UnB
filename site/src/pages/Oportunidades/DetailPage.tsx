@@ -57,7 +57,7 @@ export default function DetailPage() {
 
   return (
     <div className="detail-container">
-      <Link to="/2025-2-Mural-UnB/Oportunidades" className="back-link">
+      <Link to="/2025-2-Mural-UnB/feed" className="back-link">
         ← Voltar
       </Link>
 
