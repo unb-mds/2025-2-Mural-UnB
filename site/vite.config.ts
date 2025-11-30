@@ -3,9 +3,6 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
-// O nome do repositório. O GH Pages serve o site neste subdiretório.
-const REPO_NAME = '2025-2-Mural-UnB'; 
-
 export default defineConfig({
   plugins: [
     react(),
@@ -14,7 +11,7 @@ export default defineConfig({
   server: {
     open: false,
   },
-  base: `/${REPO_NAME}/`, 
+  base: "/2025-2-Mural-UnB", 
   resolve: {
     alias: {
       components: path.resolve(__dirname, "src/components"),
