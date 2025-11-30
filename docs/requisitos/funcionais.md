@@ -34,7 +34,7 @@ O propósito dos requisitos funcionais é **definir o que a plataforma Mural UnB
 
 ### US-03 — Vizualizar detalhes
 
-**Descrição**: Usuários vizualizam os detalhes das oportunidades
+**Descrição**: Usuários vizualizam os detalhes das oportunidades, como: Instagram, site, etc...
 
 **Prioridade**: P0 🔴
 
@@ -138,9 +138,15 @@ EJs {
 }
 ```
 
+### US-11 — Captação e Relacionamento das Tags
+
+**Descrição**: O sistema deve ser capaz de gerar automaticamente os embeddings para a lista de tags em `tags.json` e relacionar as Oportunidades.
+
+**Prioridade**: P0 🔴
+
 ## Epic: Recomendação com IA (Banco Vetorizado)
 
-### US-11 — Similaridade no frontend
+### US-12 — Similaridade no frontend
 
 **Descrição**: O sistema deve fazer uma busca por similaridade para entregar uma recomendação para o usuario a partir das tags das oportunidades.
 
