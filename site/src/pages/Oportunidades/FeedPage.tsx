@@ -168,7 +168,7 @@ export default function Feed() {
                     date: "", 
                     location: "",
                     tags: opportunity.tags || [],
-                    link: `/Oportunidades/${opportunity.id}`,
+                    link: `/2025-2-Mural-UnB/Oportunidades/${opportunity.id}`,
                     logo: opportunity.logo,
                   }}
                 />

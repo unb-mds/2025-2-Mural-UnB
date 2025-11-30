@@ -51,15 +51,15 @@ const Navbar: React.FC = () => {
         />
 
         <Link
-          to="/"
-          className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/" ? "btn-active" : ""}`}
+          to="/2025-2-Mural-UnB/"
+          className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/" ? "btn-active" : ""}`}
         >
           Home
         </Link>
 
         <Link
-          to="/Oportunidades"
-          className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/Oportunidades" ? "btn-active" : ""}`}
+          to="/2025-2-Mural-UnB/Oportunidades"
+          className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/Oportunidades" ? "btn-active" : ""}`}
         >
           Mural
         </Link>
@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
                   {filteredOpportunities.map((opportunity) => (
                     <li key={opportunity.id}>
                       <Link 
-                        to={`/Oportunidades/${opportunity.id}`}
+                        to={`/2025-2-Mural-UnB/Oportunidades/${opportunity.id}`}
                         className="flex items-center p-2 hover:bg-gray-100 rounded-md no-underline text-inherit transition-colors"
                         onClick={() => setInput("")}
                       >

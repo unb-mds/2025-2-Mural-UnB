@@ -59,8 +59,8 @@ function Footer() {
         <div className="footer-right">
           <h3 className="footer-pages-title">Páginas</h3>
           <nav className="footer-nav">
-            <Link to="/" className="footer-nav-link">Home</Link>
-            <Link to="/Oportunidades" className="footer-nav-link">Mural</Link>
+            <Link to="/2025-2-Mural-UnB/" className="footer-nav-link">Home</Link>
+            <Link to="/2025-2-Mural-UnB/Oportunidades" className="footer-nav-link">Mural</Link>
           </nav>
         </div>
       </div>

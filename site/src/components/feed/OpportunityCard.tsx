@@ -19,7 +19,7 @@ interface OpportunityCardProps {
 
 export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
   return (
-    <Link to={`/Oportunidades/${opportunity.id}`} className="opportunity-card">
+    <Link to={`/2025-2-Mural-UnB/Oportunidades/${opportunity.id}`} className="opportunity-card">
       {opportunity.logo && (
         <div className="card-logo">
           <img 

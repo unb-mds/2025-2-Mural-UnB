@@ -1,6 +1,7 @@
 import Carousel from "components/Carousel"
 import Logo from "assets/images/MuralLogo_M.svg"
 import CampusFGA from "assets/images/fotos/CampusFGA.jpeg"
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -54,10 +55,12 @@ export default function Home() {
       </div>
 
       <div>
+      <Link to="/2025-2-Mural-UnB/Oportunidades">
         <button className="btn btn-soft btn-primary p-10 rounded-full mb-10 w-210">
           <h1 className="text-4xl">Acesse o Mural</h1>
         </button>
-      </div>
+      </Link>
+    </div>
 
     </div>
   )
