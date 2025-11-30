@@ -209,7 +209,6 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
     const url = basePath.endsWith('/') 
       ? `${basePath}json/oportunidades.json` 
       : `${basePath}/json/oportunidades.json`
-    console.log('Tentando buscar oportunidades de:', url)
     const response = await fetch(url)
 
     if (!response.ok) {

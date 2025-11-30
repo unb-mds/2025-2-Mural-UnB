@@ -22,7 +22,6 @@ export async function fetchTagsFlat(): Promise<Tag[]> {
     const url = basePath.endsWith('/') 
       ? `${basePath}json/tags.json` 
       : `${basePath}/json/tags.json`
-    console.log('Tentando buscar tags de:', url)
     const res = await fetch(url)
     if (!res.ok) throw new Error(`HTTP error ${res.status}`)
     const data = (await res.json()) as TagsJSON
