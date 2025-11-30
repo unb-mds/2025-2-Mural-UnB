@@ -12,9 +12,9 @@ export default function App() {
       <Navbar />
       <main className="flex-1">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Oportunidades" element={<FeedPage />} />
-          <Route path="/Oportunidades/:id" element={<DetailPage />} />
+          <Route path="/2025-2-Mural-UnB" element={<Home />} />
+          <Route path="/2025-2-Mural-UnB/Oportunidades" element={<FeedPage />} />
+          <Route path="/2025-2-Mural-UnB/Oportunidades/:id" element={<DetailPage />} />
         </Routes>
       </main>
       <Footer />
