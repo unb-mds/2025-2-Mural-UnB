@@ -1,6 +1,5 @@
 <a id="readme-top"></a>
 
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -32,7 +31,7 @@
 
 <p align="center">
   <a href="https://unb-mds.github.io/Mural-UnB/">
-    <img src="https://img.shields.io/badge/GitHub%20Pages-Docs-blue?style=for-the-badge&logo=github" alt="Docs"/>
+    <img src="https://img.shields.io/badge/GitHub%20Pages-Site-blue?style=for-the-badge&logo=github" alt="Site"/>
   </a>
   <a href="https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0">
     <img src="https://img.shields.io/badge/Figma-Hub-purple?style=for-the-badge&logo=figma" alt="Figma"/>
@@ -41,12 +40,12 @@
 
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="./main_logo.png" alt="Markdownify" width="300"></a>
+  <a href="https://unb-mds.github.io/2025-2-Mural-UnB/"><img src="./main_logo.png" alt="Markdownify" width="300"></a>
 </h1>
 
 <p align="center"> 
   🌎 Languages: <a href="./README.en.md">English</a> | <a href="../README.md">Português</a>
-</p> 
+</p>
 
 <h3 align="center">Digital bulletin board platform for the University of Brasília (UnB)</h3>
 <!--
@@ -62,7 +61,6 @@
   </a>
 </p>
 -->
-
 
 <p align="center">
   <a href="#about">About</a> •
@@ -82,17 +80,17 @@
 
 ## About
 
-**Mural UnB** is a digital platform designed to centralize and recommend academic and professional opportunities within the University of Brasília (UnB).  
+**Mural UnB** is a digital platform designed to centralize and recommend academic and professional opportunities within the University of Brasília (UnB).
 
-The goal is to create a **personalized experience** where students can easily discover opportunities aligned with their interests and academic background. By analyzing user profiles, the platform recommends the most relevant options and sends notifications about new openings.  
+The goal is to create a **personalized experience** where students can easily discover opportunities aligned with their interests and academic background. By analyzing user profiles, the platform recommends the most relevant options and sends notifications about new openings.
 
-This includes opportunities in:  
-- **Junior Enterprises**  
-- **Research Laboratory**  
-- **Scientific initiation (PIBICs)**    
+This includes opportunities in:
+
+- **Junior Enterprises**
+- **Research Laboratory**
+- **Scientific initiation (PIBICs)**
 
 In short, Mural UnB acts as a **virtual bulletin board** that goes beyond simply listing opportunities, it **helps students connect with the right ones at the right time**.
-
 
 ## Key Features
 
@@ -103,9 +101,10 @@ In short, Mural UnB acts as a **virtual bulletin board** that goes beyond simply
 #### 🚧 In development
 
 ## 🔗 Links
-- [Demo (GitHub Pages)](https://unb-mds.github.io/Mural-UnB/)  
-- [Figma - Hub do Projeto](https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0)  
-- [Repositório GitHub](https://github.com/unb-mds/Mural-UnB) 
+
+- [Demo (GitHub Pages)](https://unb-mds.github.io/Mural-UnB/)
+- [Figma - Hub do Projeto](https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0)
+- [Repositório GitHub](https://github.com/unb-mds/Mural-UnB)
 
 ## 🙋‍♂️ Team
 
@@ -172,7 +171,7 @@ Once available, you can read it here: [CODE_OF_CONDUCT.md](./.github/CODE_OF_CON
 
 ---
 
-> Site [______.com]() &nbsp;&middot;&nbsp;
+> Site [unb-mds.github.io/2025-2-Mural-UnB/](https://unb-mds.github.io/2025-2-Mural-UnB/) &nbsp;&middot;&nbsp;
 > GitHub [Mural-UnB](https://github.com/unb-mds/Mural-UnB) &nbsp;&middot;&nbsp;
-> Instagram [@______]() &nbsp;&middot;&nbsp;
-> email [___@gmail.com]()
+> Instagram [@**\_\_**]() &nbsp;&middot;&nbsp;
+> email [unb.mural@gmail.com]()

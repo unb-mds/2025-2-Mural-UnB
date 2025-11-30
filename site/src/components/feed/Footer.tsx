@@ -20,7 +20,7 @@ function Footer() {
 
           <div className="footer-contact-section">
             <h3 className="footer-contact-title">Contate-nos</h3>
-            <p className="footer-contact-info">contato@gmail.com</p>
+            <p className="footer-contact-info">unb.mural@gmail.com</p>
             <p className="footer-contact-info">+55 61 9 91231231</p>
           </div>
 

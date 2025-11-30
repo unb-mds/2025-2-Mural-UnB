@@ -1,4 +1,4 @@
-<a id="readme-top"></a> 
+<a id="readme-top"></a>
 
 <!-- ESCUDOS DO PROJETO -->
 <p align="center">
@@ -17,25 +17,23 @@
   <a href="https://github.com/unb-mds/Mural-UnB/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/unb-mds/Mural-UnB.svg?style=for-the-badge" alt="Licença" />
   </a>
-  <a href="mailto:____@gmail.com">
+  <a href="mailto:unb.mural@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://unb-mds.github.io/2025-2-Mural-UnB">
-    <img src="https://img.shields.io/badge/GitHub%20Pages-Docs-blue?style=for-the-badge&logo=github" alt="Docs"/>
+    <img src="https://img.shields.io/badge/GitHub%20Pages-Site-blue?style=for-the-badge&logo=github" alt="Site"/>
   </a>
   <a href="https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0">
     <img src="https://img.shields.io/badge/Figma-Hub-purple?style=for-the-badge&logo=figma" alt="Figma"/>
   </a>
 </p>
 
-
-
 <h1 align="center">
   <br>
-  <a href="#"><img src="./readme/main_logo.png" alt="Mural UnB" width="300"></a>
+  <a href="https://unb-mds.github.io/2025-2-Mural-UnB/"><img src="./readme/main_logo.png" alt="Mural UnB" width="300"></a>
 </h1>
 
 <p align="center"> 
@@ -44,7 +42,7 @@
 
 <h3 align="center">Plataforma de mural digital da Universidade de Brasília (UnB)</h3>
 
-<!-- 
+<!--
 <p align="center">
   <a>
     <img src="https://badge.fury.io/js/mural-unb.svg" alt="Versão npm">
@@ -75,22 +73,23 @@
 
 ## Sobre
 
-O **Mural UnB** é uma plataforma digital projetada para centralizar e recomendar oportunidades acadêmicas e profissionais dentro da Universidade de Brasília (UnB).  
+O **Mural UnB** é uma plataforma digital projetada para centralizar e recomendar oportunidades acadêmicas e profissionais dentro da Universidade de Brasília (UnB).
 
 O objetivo é criar uma **experiência personalizada**, onde os estudantes possam facilmente descobrir oportunidades alinhadas aos seus interesses e histórico acadêmico.  
-Ao analisar o perfil do usuário, a plataforma recomenda as opções mais relevantes e envia notificações sobre novas vagas.  
+Ao analisar o perfil do usuário, a plataforma recomenda as opções mais relevantes e envia notificações sobre novas vagas.
 
-Inclui oportunidades como:  
-- **Empresas juniores**  
-- **Laboratórios de pesquisa**  
-- **Equipes de Competição**  
+Inclui oportunidades como:
 
-Em resumo, o Mural UnB funciona como um **mural virtual**, que vai além de apenas listar oportunidades — ele **ajuda os estudantes a se conectarem com as oportunidades certas, no momento certo**.  
+- **Empresas juniores**
+- **Laboratórios de pesquisa**
+- **Equipes de Competição**
+
+Em resumo, o Mural UnB funciona como um **mural virtual**, que vai além de apenas listar oportunidades — ele **ajuda os estudantes a se conectarem com as oportunidades certas, no momento certo**.
 
 ## Como Funciona
 
-1. **Listagem de Oportunidades (Feed)** → O usuário tem acesso a uma página com grande parte das oportunidades na UnB.  
-2. **Análise de perfil** → O sistema identifica interesses e habilidades que o usuário quer ser recomendado por meio de Tags.  
+1. **Listagem de Oportunidades (Feed)** → O usuário tem acesso a uma página com grande parte das oportunidades na UnB.
+2. **Análise de perfil** → O sistema identifica interesses e habilidades que o usuário quer ser recomendado por meio de Tags.
 3. **Recomendações personalizadas** → O estudante recebe oportunidades alinhadas ao seu perfil (tags).
 
 ## Como Usar
@@ -98,17 +97,18 @@ Em resumo, o Mural UnB funciona como um **mural virtual**, que vai além de apen
 #### 🚧 Em desenvolvimento
 
 ## 🔗 Links
-- [Demo (GitHub Pages)](https://unb-mds.github.io/Mural-UnB/)  
-- [Figma - Hub do Projeto](https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0)  
-- [Repositório GitHub](https://github.com/unb-mds/Mural-UnB) 
+
+- [Demo (GitHub Pages)](https://unb-mds.github.io/Mural-UnB/)
+- [Figma - Hub do Projeto](https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0)
+- [Repositório GitHub](https://github.com/unb-mds/Mural-UnB)
 
 ## 📚 Documentação Técnica
 
 Para desenvolvedores e contribuidores, criamos guias detalhados sobre o funcionamento interno do projeto:
 
-* 🐍 **[Manual dos Scripts (Backend)](scripts/README.md):** Aprenda a rodar os crawlers, pipelines de IA e testes automatizados.
-* 💾 **[Estrutura de Dados](data/README.md):** Entenda o esquema dos arquivos CSV, JSON e a organização das imagens.
-* 🔒 **[Política de Segurança](SECURITY.md):** Como reportar vulnerabilidades.
+- 🐍 **[Manual dos Scripts (Backend)](scripts/README.md):** Aprenda a rodar os crawlers, pipelines de IA e testes automatizados.
+- 💾 **[Estrutura de Dados](data/README.md):** Entenda o esquema dos arquivos CSV, JSON e a organização das imagens.
+- 🔒 **[Política de Segurança](SECURITY.md):** Como reportar vulnerabilidades.
 
 ### 🛠️ Instalação Rápida para Desenvolvedores
 
@@ -192,7 +192,7 @@ Assim que disponível, você pode acessá-lo aqui: [CODE_OF_CONDUCT.md](./.githu
 
 ---
 
-> Site [______.com]() &nbsp;&middot;&nbsp;
+> Site [unb-mds.github.io/2025-2-Mural-UnB/](https://unb-mds.github.io/2025-2-Mural-UnB/) &nbsp;&middot;&nbsp;
 > GitHub [Mural-UnB](https://github.com/unb-mds/Mural-UnB) &nbsp;&middot;&nbsp;
-> Instagram [@______]() &nbsp;&middot;&nbsp;
-> email [___@gmail.com]()
+> Instagram [@**\_\_**]() &nbsp;&middot;&nbsp;
+> email [unb.mural@gmail.com]()

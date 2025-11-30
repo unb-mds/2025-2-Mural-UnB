@@ -10,7 +10,7 @@ A equipe do **Mural UnB** leva a segurança muito a sério. Se você acredita te
 
 ## 📬 Canal de contato (divulgação responsável)
 
-Se você encontrou uma vulnerabilidade, envie um e-mail para **[INSERIR E-MAIL DE CONTATO]**.
+Se você encontrou uma vulnerabilidade, envie um e-mail para **unb.mural@gmail.com**.
 
 Por favor, inclua os seguintes detalhes no seu relatório:
 

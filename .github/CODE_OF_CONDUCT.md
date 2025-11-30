@@ -44,7 +44,7 @@ Este Código aplica-se a todos os espaços oficiais do projeto, online ou presen
 
 ## 🛎️ Como reportar
 
-Reportar casos de violação para os responsáveis por enforcement em: **`[INSERIR-ENDERECO-DE-E-MAIL@exemplo.com]`**
+Reportar casos de violação para os responsáveis por enforcement em: **`unb.mural@gmail.com`**
 
 Por favor inclua no relato: contexto, links/prints e o comportamento observado.
 
