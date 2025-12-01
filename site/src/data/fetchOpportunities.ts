@@ -103,6 +103,17 @@ function resolveLabLogoById(id: string): string | "" {
   return labLogoMap[id] ?? ""
 }
 
+// --- Função para determinar ordem de prioridade das empresas ---
+function getCompanyPriority(name: string): number {
+  const n = name.toLowerCase()
+  if (n.includes("engnet") || n.includes("engn")) return 1
+  if (n.includes("enetec") || n.includes("enete")) return 2
+  if (n.includes("embragea")) return 3
+  if (n.includes("eletronjun") || n.includes("eletrojun")) return 4
+  if (n.includes("cjr")) return 5
+  return 999 // Outras empresas vêm depois
+}
+
 // --- Normalizadores de URL ---
 function normalizeInstagramUrl(instagram: string): string {
   if (!instagram) return ""
@@ -233,6 +244,13 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
     if (data.empresas_juniores) {
       try {
         const ejOpportunities = data.empresas_juniores.map(convertEmpresaJuniorToOpportunity)
+        // Ordenar empresas juniores por prioridade (engn, enete, embragea, eletrojun, cjr)
+        ejOpportunities.sort((a, b) => {
+          const priorityA = getCompanyPriority(a.name)
+          const priorityB = getCompanyPriority(b.name)
+          if (priorityA !== priorityB) return priorityA - priorityB
+          return a.name.localeCompare(b.name)
+        })
         opportunities.push(...ejOpportunities)
       } catch (error) {
         console.error("Erro ao processar empresas juniores:", error)
