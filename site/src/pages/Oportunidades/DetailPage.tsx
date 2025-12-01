@@ -27,27 +27,44 @@ function resolveHeaderImage(id: string, name: string): string | null {
     return resolvePath(`/images/headers/${headerName}.png`)
   }
   
-  // Fallback: verificação por nome
+  // Fallback: verificação por nome (case-insensitive)
   const n = name?.toLowerCase().trim() || ""
   
-  if (n.includes("engnet")) {
-    return resolvePath("/images/headers/engnet.png")
+  // Lista de mapeamentos nome -> arquivo
+  const nameMap: { [key: string]: string } = {
+    "engnet": "engnet.png",
+    "enetec": "enetec.png",
+    "embragea": "embragea.png",
+    "eletronjun": "eletrojun.png",
+    "eletrojun": "eletrojun.png",
+    "cjr": "cjr.png",
+    "apuama": "apuama.png",
+    "unbaja": "UnBaja.png",
+    "unball": "unball.png",
+    "unbeatles": "unbeattles.jpg",
+    "unbeattles": "unbeattles.jpg",
+    "draco": "draco.png",
+    "piratas": "piratas.png",
+    "aess": "aess.png",
+    "ailab": "ailab.png",
+    "cs": "cs.png",
+    "gmec": "GMEC.png",
+    "lappis": "lappis.png",
+    "mamutes": "MAMUTES.png",
+    "mecajun": "mecajun.png",
+    "nanotec": "NANOTEC.png",
+    "o2": "o2.png",
+    "orc": "orc.png",
+    "orc'estra": "orc.png",
+    "orcestra": "orc.png",
+    "tecmec": "TECMEC.png",
   }
   
-  if (n.includes("enetec")) {
-    return resolvePath("/images/headers/enetec.png")
-  }
-  
-  if (n.includes("embragea")) {
-    return resolvePath("/images/headers/embragea.png")
-  }
-  
-  if (n.includes("eletronjun") || n.includes("eletrojun")) {
-    return resolvePath("/images/headers/eletrojun.png")
-  }
-  
-  if (n.includes("cjr")) {
-    return resolvePath("/images/headers/cjr.png")
+  // Procura por correspondência no nome
+  for (const [key, filename] of Object.entries(nameMap)) {
+    if (n.includes(key)) {
+      return resolvePath(`/images/headers/${filename}`)
+    }
   }
   
   return null
