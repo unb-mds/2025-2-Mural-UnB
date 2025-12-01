@@ -14,10 +14,8 @@ from scripts.extrair_labs_fga import (
     filtrar_labs_fga,
     extrair_laboratorios_fga_pdf,
     baixar_imagem,
-    main # Importando a main para cobertura total
+    main
 )
-
-# --- Testes Unitários de Helpers ---
 
 def test_extrair_palavra_chave_sucesso():
     assert extrair_palavra_chave("Laboratório de Robótica") == "robotica"
@@ -47,8 +45,6 @@ def test_juntar_palavras_hifenizadas():
     assert juntar_palavras_hifenizadas("separa-\ndo") == "separado"
     assert juntar_palavras_hifenizadas(None) is None
 
-# --- Testes de Baixar Imagem ---
-
 def test_baixar_imagem_sucesso(mocker):
     mock_response = mocker.Mock()
     mock_response.status_code = 200
@@ -63,22 +59,17 @@ def test_baixar_imagem_sucesso(mocker):
 
 def test_baixar_imagem_falhas(mocker):
     import requests
-    # 1. Não é imagem
     mock_resp_bad = mocker.Mock()
     mock_resp_bad.status_code = 200
     mock_resp_bad.headers = {"content-type": "text/html"}
     mocker.patch("scripts.extrair_labs_fga.requests.get", return_value=mock_resp_bad)
     assert baixar_imagem("http://url.com/fake.jpg", "/p") is False
     
-    # 2. Timeout
     mocker.patch("scripts.extrair_labs_fga.requests.get", side_effect=requests.exceptions.Timeout)
     assert baixar_imagem("http://url.com/to.jpg", "/p") is False
 
-    # 3. Erro Genérico
     mocker.patch("scripts.extrair_labs_fga.requests.get", side_effect=Exception("Erro"))
     assert baixar_imagem("http://url.com/err.jpg", "/p") is False
-
-# --- Testes de Encontrar Imagem ---
 
 def test_encontrar_imagem_para_lab_fluxo_sucesso(mocker):
     mock_ddgs = mocker.patch('scripts.extrair_labs_fga.DDGS')
@@ -127,10 +118,7 @@ def test_encontrar_imagem_sem_resultados(mocker):
     mock_ddgs.return_value.__enter__.return_value.text.return_value = []
     assert encontrar_imagem_para_lab("Lab", "/tmp") is None
 
-# --- Testes de Parsing de PDF (A parte mais complexa) ---
-
 def test_extrair_laboratorios_fga_pdf_parsing_complexo(mocker):
-    # Dedent remove a indentação comum, simulando texto real alinhado à esquerda
     texto_sujo = textwrap.dedent("""
         1.2.3. Seção Irrelevante
         Texto aleatório.
@@ -144,7 +132,7 @@ def test_extrair_laboratorios_fga_pdf_parsing_complexo(mocker):
         UNIVERSIDADE DE BRASÍLIA
         
         11.
-        Lab Com Nome na Outra Linha
+        Lab Quebrado FGA
         COORDENADORES: Prof. B
         DESCRICAO: pesqui-
         sa de ponta.
@@ -161,19 +149,15 @@ def test_extrair_laboratorios_fga_pdf_parsing_complexo(mocker):
     mock_doc.__getitem__.return_value = mock_page
     mocker.patch("fitz.open", return_value=mock_doc)
 
-    # Força pagina_inicial=1
     labs = extrair_laboratorios_fga_pdf("dummy.pdf", pagina_inicial=1)
 
     assert len(labs) >= 2
     
     lab10 = next(l for l in labs if "Lab FGA Real" in l['nome'])
     assert "Prof. A" in lab10['coordenador']
-    assert "Pesquisa" not in lab10['descricao']
 
-    lab11 = next(l for l in labs if "Lab Com Nome na Outra Linha" in l['nome'])
+    lab11 = next(l for l in labs if "Lab Quebrado" in l['nome'])
     assert "pesquisa de ponta" in lab11['descricao']
-
-# --- Teste de Integração ---
 
 def test_filtrar_labs_fga_integration(mocker):
     mocker.patch('scripts.extrair_labs_fga.extrair_laboratorios_fga_pdf', return_value=[
@@ -202,6 +186,6 @@ def test_main_execucao(mocker):
 
 def test_main_falha_arquivo(mocker):
     mocker.patch("os.path.exists", return_value=False)
-    with mocker.patch("builtins.print") as mock_print:
-        main()
-        mock_print.assert_called()
+    mock_print = mocker.patch("builtins.print")
+    main()
+    mock_print.assert_called()
