@@ -4,33 +4,26 @@ import type { Opportunity } from "../../data/fetchOpportunities"
 import { fetchOpportunitiesFromJSON } from "../../data/fetchOpportunities"
 import "./DetailPage.css"
 
-// Função para resolver header image baseado no ID e nome
 function resolveHeaderImage(id: string, name: string): string | null {
   if (!id && !name) return null
   
   const base = import.meta.env.BASE_URL || '/'
   const resolvePath = (path: string) => base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
   
-  // Mapeamento por ID (mais confiável)
-  // IDs das empresas: EngNet=100022, Enetec=100021, Embragea=100019, EletronJun=100018
   const idMap: { [key: string]: { headerName: string, ejId: string } } = {
-    "ej-100022": { headerName: "engnet", ejId: "100022" }, // EngNet
-    "ej-100021": { headerName: "enetec", ejId: "100021" }, // Enetec
-    "ej-100019": { headerName: "embragea", ejId: "100019" }, // Embragea
-    "ej-100018": { headerName: "eletrojun", ejId: "100018" }, // EletronJun (arquivo: eletrojun.png)
+    "ej-100022": { headerName: "engnet", ejId: "100022" },
+    "ej-100021": { headerName: "enetec", ejId: "100021" },
+    "ej-100019": { headerName: "embragea", ejId: "100019" },
+    "ej-100018": { headerName: "eletrojun", ejId: "100018" },
   }
   
-  // Primeiro tenta encontrar no diretório headers (prioridade)
   if (id && idMap[id]) {
     const { headerName, ejId } = idMap[id]
-    // Prioridade: headers, depois ejs
     return resolvePath(`/images/headers/${headerName}.png`)
   }
   
-  // Fallback: verificação por nome (case-insensitive)
   const n = name?.toLowerCase().trim() || ""
   
-  // Lista de mapeamentos nome -> arquivo
   const nameMap: { [key: string]: string } = {
     "engnet": "engnet.png",
     "enetec": "enetec.png",
@@ -60,7 +53,6 @@ function resolveHeaderImage(id: string, name: string): string | null {
     "tecmec": "TECMEC.png",
   }
   
-  // Procura por correspondência no nome
   for (const [key, filename] of Object.entries(nameMap)) {
     if (n.includes(key)) {
       return resolvePath(`/images/headers/${filename}`)
@@ -135,11 +127,9 @@ export default function DetailPage() {
             src={headerImage} 
             alt={`${opportunity.name} header`}
             onError={(e) => {
-              // Se a imagem não carregar do headers, tenta do diretório ejs
               const img = e.currentTarget
               const src = img.getAttribute('src') || ''
               
-              // Se já tentou do ejs ou não é do headers, mostra azul
               if (src.includes('/images/ejs/') || !src.includes('/images/headers/')) {
                 const parent = img.parentElement
                 if (parent) {
@@ -149,7 +139,6 @@ export default function DetailPage() {
                 return
               }
               
-              // Tenta fallback para diretório ejs
               const ejId = opportunity.id.replace('ej-', '')
               if (ejId) {
                 const base = import.meta.env.BASE_URL || '/'
@@ -157,7 +146,6 @@ export default function DetailPage() {
                 const ejPath = resolvePath(`/images/ejs/${ejId}.jpeg`)
                 img.src = ejPath
               } else {
-                // Se não tiver ID, mostra azul
                 const parent = img.parentElement
                 if (parent) {
                   parent.className = 'detail-page-header-default'
