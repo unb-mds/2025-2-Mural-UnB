@@ -18,7 +18,7 @@ function resolveHeaderImage(id: string, name: string): string | null {
   }
   
   if (id && idMap[id]) {
-    const { headerName, ejId } = idMap[id]
+    const { headerName } = idMap[id]
     return resolvePath(`/images/headers/${headerName}.png`)
   }
   
