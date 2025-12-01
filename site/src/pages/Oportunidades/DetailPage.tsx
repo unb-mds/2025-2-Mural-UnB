@@ -4,6 +4,64 @@ import type { Opportunity } from "../../data/fetchOpportunities"
 import { fetchOpportunitiesFromJSON } from "../../data/fetchOpportunities"
 import "./DetailPage.css"
 
+function resolveHeaderImage(id: string, name: string): string | null {
+  if (!id && !name) return null
+  
+  const base = import.meta.env.BASE_URL || '/'
+  const resolvePath = (path: string) => base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
+  
+  const idMap: { [key: string]: { headerName: string, ejId: string } } = {
+    "ej-100022": { headerName: "engnet", ejId: "100022" },
+    "ej-100021": { headerName: "enetec", ejId: "100021" },
+    "ej-100019": { headerName: "embragea", ejId: "100019" },
+    "ej-100018": { headerName: "eletrojun", ejId: "100018" },
+  }
+  
+  if (id && idMap[id]) {
+    const { headerName, ejId } = idMap[id]
+    return resolvePath(`/images/headers/${headerName}.png`)
+  }
+  
+  const n = name?.toLowerCase().trim() || ""
+  
+  const nameMap: { [key: string]: string } = {
+    "engnet": "engnet.png",
+    "enetec": "enetec.png",
+    "embragea": "embragea.png",
+    "eletronjun": "eletrojun.png",
+    "eletrojun": "eletrojun.png",
+    "cjr": "cjr.png",
+    "apuama": "apuama.png",
+    "unbaja": "UnBaja.png",
+    "unball": "unball.png",
+    "unbeatles": "unbeattles.jpg",
+    "unbeattles": "unbeattles.jpg",
+    "draco": "draco.png",
+    "piratas": "piratas.png",
+    "aess": "aess.png",
+    "ailab": "ailab.png",
+    "cs": "cs.png",
+    "gmec": "GMEC.png",
+    "lappis": "lappis.png",
+    "mamutes": "MAMUTES.png",
+    "mecajun": "mecajun.png",
+    "nanotec": "NANOTEC.png",
+    "o2": "o2.png",
+    "orc": "orc.png",
+    "orc'estra": "orc.png",
+    "orcestra": "orc.png",
+    "tecmec": "TECMEC.png",
+  }
+  
+  for (const [key, filename] of Object.entries(nameMap)) {
+    if (n.includes(key)) {
+      return resolvePath(`/images/headers/${filename}`)
+    }
+  }
+  
+  return null
+}
+
 export default function DetailPage() {
   const { id } = useParams<{ id: string }>()
   const [allOpportunities, setAllOpportunities] = useState<Opportunity[]>([])
@@ -55,11 +113,51 @@ export default function DetailPage() {
     )
   }
 
+  const headerImage = resolveHeaderImage(opportunity.id, opportunity.name)
+
   return (
     <div className="detail-container">
       <Link to="/2025-2-Mural-UnB/feed" className="back-link">
         ← Voltar
       </Link>
+
+      {headerImage ? (
+        <div className="detail-page-header-image">
+          <img 
+            src={headerImage} 
+            alt={`${opportunity.name} header`}
+            onError={(e) => {
+              const img = e.currentTarget
+              const src = img.getAttribute('src') || ''
+              
+              if (src.includes('/images/ejs/') || !src.includes('/images/headers/')) {
+                const parent = img.parentElement
+                if (parent) {
+                  parent.className = 'detail-page-header-default'
+                  img.style.display = 'none'
+                }
+                return
+              }
+              
+              const ejId = opportunity.id.replace('ej-', '')
+              if (ejId) {
+                const base = import.meta.env.BASE_URL || '/'
+                const resolvePath = (path: string) => base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
+                const ejPath = resolvePath(`/images/ejs/${ejId}.jpeg`)
+                img.src = ejPath
+              } else {
+                const parent = img.parentElement
+                if (parent) {
+                  parent.className = 'detail-page-header-default'
+                  img.style.display = 'none'
+                }
+              }
+            }}
+          />
+        </div>
+      ) : (
+        <div className="detail-page-header-default"></div>
+      )}
 
       <article className="detail-content">
         <header className="detail-header">
