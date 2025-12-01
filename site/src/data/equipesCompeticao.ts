@@ -17,7 +17,8 @@ export const EQUIPES_COMPETICAO_FIXAS: Opportunity[] = [
     tags: ["equipe_competicao", "robotica", "inteligencia_artificial", "visao_computacional", "trabalho_equipe"],
     about: "A DROID – Divisão de Robótica Inteligente – é a Equipe de Competição de Robôs da UnB. Compete desde o segundo semestre de 2009 em torneios nacionais e internacionais de Desafio de Robô. A Equipe conta com integrantes das diversas áreas da engenharia. A DROID participa de competições de robótica autônoma que simulam problemas reais e visam o desenvolvimento das tecnologias atuais. O trabalho da equipe consiste em construir robôs, desde sua parte mecânica até a elétrica, e programá-los para resolver o desafio proposto nas competições.\n\nA IEEE-SEK, a IEEE-Open, a RoboCup Festo Logistics da Latin America Robotics Competition (LARC), a Firefighting, a Balancer Race da Robogames, e a RoboCup Work da RoboCup Geman Open são exemplos de categorias que a DROID participa. Também atuam na Semana de Ciência e Tecnologia e outros eventos relacionados. Os robôs são autônomos, ou seja, ninguém os controla diretamente na hora da competição, eles são programados e no desafio apenas executam o que está na sua programação.",
     social: {
-      website: "https://www.facebook.com/droidunb"
+      website: "https://www.facebook.com/droidunb",
+      instagram: "https://www.instagram.com/droidunb"
     },
     embedding: [] 
   },
@@ -59,7 +60,10 @@ export const EQUIPES_COMPETICAO_FIXAS: Opportunity[] = [
     logo: resolveImagePath("/images/eqc/300004.jpg"),
     tags: ["equipe_competicao", "robotica", "inteligencia_artificial", "visao_computacional", "futebol_robos"],
     about: "A UnBall - Futebol de Robôs foi fundada em 2009. Seu objetivo é participar de competições nacionais e internacionais de robótica, utilizando robôs autônomos para jogar partidas de futebol.\n\nAtualmente, a UnBall participa da LARC/CBR (Latin American Robotics Competition/Competição Brasileira de Robótica) e da IronCup. Competem na categoria IEEE Very Small Size Soccer.\n\nA equipe projeta e constrói seus próprios robôs, enfrentando desafios em mecânica, eletrônica, visão computacional e desenvolvimento de inteligência artificial para os robôs. O projeto é totalmente composto por estudantes voluntários da Universidade de Brasília (UnB). Os estudantes estão envolvidos em todos os aspectos, desde o trabalho técnico até a gestão e seleção da equipe. A UnBall visa complementar a formação acadêmica de seus membros através da aplicação prática da robótica, promovendo troca de experiências em um ambiente de inovação e aprendizado.\n\nNa categoria IEEE Very Small Soccer, cada equipe é composta por 3 robôs autônomos. Os robôs devem ser cúbicos com dimensões máximas de 75 mm por lado. A localização dos robôs no campo é feita via câmera. Cada equipe deve desenvolver seu próprio sistema de visão computacional. Os robôs se comunicam sem fio com um computador central. A UnBall desenvolve tanto o projeto da placa eletrônica quanto a modelagem mecânica para seus robôs. Seus robôs são impressos em 3D.",
-    social: {},
+    social: {
+      website: "https://www.facebook.com/unballunb",
+      instagram: "https://www.instagram.com/unballunb"
+    },
     embedding: []
   },
   {
@@ -100,7 +104,10 @@ export const EQUIPES_COMPETICAO_FIXAS: Opportunity[] = [
     logo: resolveImagePath("/images/eqc/300007.jpg"),
     tags: ["equipe_competicao", "robotica", "inteligencia_artificial", "eletronica", "trabalho_equipe"],
     about: "A Titans é a equipe de robótica móvel e inteligência artificial da FGA. Eles constroem robôs para competições de combate, robôs seguidores de linha, robôs autônomos e desafios de IA e eletrônica.\n\nA Titans integra estudantes de engenharia eletrônica, mecatrônica, software e mecânica, e é conhecida por sua forte comunidade interna e participação em eventos de robótica no Brasil.",
-    social: {},
+    social: {
+      website: "https://www.facebook.com/TitansFGA",
+      instagram: "https://www.instagram.com/titansfga"
+    },
     embedding: []
   },
   {
@@ -112,7 +119,10 @@ export const EQUIPES_COMPETICAO_FIXAS: Opportunity[] = [
     logo: resolveImagePath("/images/eqc/300008.jpg"),
     tags: ["equipe_competicao", "engenharia_automotiva", "mecanica_solidos", "sistemas_controle", "trabalho_equipe"],
     about: "A UnBaja é a equipe que representa a UnB na competição Baja SAE, desenvolvendo um carro off-road robusto para terrenos extremos.\n\nOs estudantes projetam o sistema de suspensão, direção, transmissão, freios, chassi e ergonomia, além de realizar testes de impacto e performance.\n\nA equipe tem forte cultura de engenharia aplicada e participa todos os anos da competição nacional, frequentemente com bom desempenho.",
-    social: {},
+    social: {
+      website: "https://www.facebook.com/UnBaja",
+      instagram: "https://www.instagram.com/unbaja"
+    },
     embedding: []
   },
   {
@@ -124,7 +134,10 @@ export const EQUIPES_COMPETICAO_FIXAS: Opportunity[] = [
     logo: resolveImagePath("/images/eqc/300009.jpg"),
     tags: ["equipe_competicao", "drones", "sistemas_autonomos", "engenharia_aeroespacial", "visao_computacional"],
     about: "A EDRA é uma equipe focada em drones, sistemas aéreos autônomos e veículos aéreos não tripulados (VANTs).\n\nA equipe participa de competições de drones autônomos, realizando tarefas como mapeamento, navegação, busca de alvos, pouso automático e processamento de imagens.\n\nA EDRA combina conhecimentos de engenharia aeroespacial, computação, eletrônica e controle, sendo uma equipe de referência em inteligência embarcada na UnB.",
-    social: {},
+    social: {
+      website: "https://www.facebook.com/EDRAUnB",
+      instagram: "https://www.instagram.com/edraunb"
+    },
     embedding: []
   },
   {
@@ -136,7 +149,10 @@ export const EQUIPES_COMPETICAO_FIXAS: Opportunity[] = [
     logo: resolveImagePath("/images/eqc/300010.jpg"),
     tags: ["equipe_competicao", "engenharia_aeroespacial", "aerodinamica", "estruturas_aeroespaciais", "propulsao"],
     about: "Os Mamutes do Cerrado são a equipe de AeroDesign da FGA. Eles projetam e constroem aeronaves rádio controladas com alta eficiência estrutural e aerodinâmica para a competição SAE AeroDesign.\n\nO trabalho da equipe inclui dimensionamento de asas, fuselagens, sistemas de propulsão, análise de cargas e otimizações para transportar o máximo de peso possível.\n\nA equipe tem tradição e já participou de várias edições da SAE Brasil.",
-    social: {},
+    social: {
+      website: "https://www.facebook.com/MamutesdoCerrado",
+      instagram: "https://www.instagram.com/mamutesdocerrado"
+    },
     embedding: []
   },
   {
@@ -148,7 +164,10 @@ export const EQUIPES_COMPETICAO_FIXAS: Opportunity[] = [
     logo: resolveImagePath("/images/eqc/300011.jpg"),
     tags: ["equipe_competicao", "foguetes", "engenharia_aeroespacial", "propulsao", "estruturas_aeroespaciais"],
     about: "A Capital Rocket Team é a equipe de foguetes da UnB, formada principalmente por estudantes da FGA. O grupo projeta, desenvolve e lança foguetes experimentais, competindo em eventos nacionais e internacionais de foguetes de alta potência.\n\nEles trabalham com aerodinâmica, propulsão, eletrônica embarcada, estrutura, recuperação e simulações. O CRT já conquistou prêmios importantes e é uma das equipes de foguetes mais reconhecidas do Brasil.",
-    social: {},
+    social: {
+      website: "https://www.facebook.com/CapitalRocketTeam",
+      instagram: "https://www.instagram.com/capitalrocketteam"
+    },
     embedding: []
   }
 ]
