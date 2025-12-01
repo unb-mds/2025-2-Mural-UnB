@@ -4,6 +4,55 @@ import type { Opportunity } from "../../data/fetchOpportunities"
 import { fetchOpportunitiesFromJSON } from "../../data/fetchOpportunities"
 import "./DetailPage.css"
 
+// Função para resolver header image baseado no ID e nome
+function resolveHeaderImage(id: string, name: string): string | null {
+  if (!id && !name) return null
+  
+  const base = import.meta.env.BASE_URL || '/'
+  const resolvePath = (path: string) => base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
+  
+  // Mapeamento por ID (mais confiável)
+  // IDs das empresas: EngNet=100022, Enetec=100021, Embragea=100019, EletronJun=100018
+  const idMap: { [key: string]: { headerName: string, ejId: string } } = {
+    "ej-100022": { headerName: "engnet", ejId: "100022" }, // EngNet
+    "ej-100021": { headerName: "enetec", ejId: "100021" }, // Enetec
+    "ej-100019": { headerName: "embragea", ejId: "100019" }, // Embragea
+    "ej-100018": { headerName: "eletrojun", ejId: "100018" }, // EletronJun (arquivo: eletrojun.png)
+  }
+  
+  // Primeiro tenta encontrar no diretório headers (prioridade)
+  if (id && idMap[id]) {
+    const { headerName, ejId } = idMap[id]
+    // Prioridade: headers, depois ejs
+    return resolvePath(`/images/headers/${headerName}.png`)
+  }
+  
+  // Fallback: verificação por nome
+  const n = name?.toLowerCase().trim() || ""
+  
+  if (n.includes("engnet")) {
+    return resolvePath("/images/headers/engnet.png")
+  }
+  
+  if (n.includes("enetec")) {
+    return resolvePath("/images/headers/enetec.png")
+  }
+  
+  if (n.includes("embragea")) {
+    return resolvePath("/images/headers/embragea.png")
+  }
+  
+  if (n.includes("eletronjun") || n.includes("eletrojun")) {
+    return resolvePath("/images/headers/eletrojun.png")
+  }
+  
+  if (n.includes("cjr")) {
+    return resolvePath("/images/headers/cjr.png")
+  }
+  
+  return null
+}
+
 export default function DetailPage() {
   const { id } = useParams<{ id: string }>()
   const [allOpportunities, setAllOpportunities] = useState<Opportunity[]>([])
@@ -55,11 +104,55 @@ export default function DetailPage() {
     )
   }
 
+  const headerImage = resolveHeaderImage(opportunity.id, opportunity.name)
+
   return (
     <div className="detail-container">
       <Link to="/2025-2-Mural-UnB/feed" className="back-link">
         ← Voltar
       </Link>
+
+      {headerImage ? (
+        <div className="detail-page-header-image">
+          <img 
+            src={headerImage} 
+            alt={`${opportunity.name} header`}
+            onError={(e) => {
+              // Se a imagem não carregar do headers, tenta do diretório ejs
+              const img = e.currentTarget
+              const src = img.getAttribute('src') || ''
+              
+              // Se já tentou do ejs ou não é do headers, mostra azul
+              if (src.includes('/images/ejs/') || !src.includes('/images/headers/')) {
+                const parent = img.parentElement
+                if (parent) {
+                  parent.className = 'detail-page-header-default'
+                  img.style.display = 'none'
+                }
+                return
+              }
+              
+              // Tenta fallback para diretório ejs
+              const ejId = opportunity.id.replace('ej-', '')
+              if (ejId) {
+                const base = import.meta.env.BASE_URL || '/'
+                const resolvePath = (path: string) => base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
+                const ejPath = resolvePath(`/images/ejs/${ejId}.jpeg`)
+                img.src = ejPath
+              } else {
+                // Se não tiver ID, mostra azul
+                const parent = img.parentElement
+                if (parent) {
+                  parent.className = 'detail-page-header-default'
+                  img.style.display = 'none'
+                }
+              }
+            }}
+          />
+        </div>
+      ) : (
+        <div className="detail-page-header-default"></div>
+      )}
 
       <article className="detail-content">
         <header className="detail-header">
