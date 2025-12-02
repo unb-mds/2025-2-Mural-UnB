@@ -1,4 +1,3 @@
-// Helper para resolver caminhos de imagem com base path do Vite
 function resolveImagePath(path: string): string {
   const base = import.meta.env.BASE_URL || '/'
   return base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
@@ -57,7 +56,6 @@ const ejLogoMapRaw: Record<string, string> = {
   '100050': '/images/ejs/100050.png',
 }
 
-// Processa os caminhos com o base path correto
 const ejLogoMap: Record<string, string> = Object.entries(ejLogoMapRaw).reduce(
   (acc, [key, value]) => {
     acc[key] = resolveImagePath(value)

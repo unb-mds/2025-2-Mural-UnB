@@ -7,7 +7,7 @@ import { fetchTagsFlat } from "./fetchTags"
 export interface Opportunity {
   id: string
   name: string
-  campus: string // Campo já existente na sua interface
+  campus: string 
   shortDescription: string
   category: string
   logo: string
@@ -80,7 +80,6 @@ export interface OportunidadesCompletoJSON {
   empresas_juniores?: EmpresaJuniorRaw[]
 }
 
-// --- Funções Auxiliares de Logo ---
 function resolveLogoByName(name: string): string | "" {
   const base = import.meta.env.BASE_URL || '/'
   const resolvePath = (path: string) => base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
@@ -103,7 +102,6 @@ function resolveLabLogoById(id: string): string | "" {
   return labLogoMap[id] ?? ""
 }
 
-// --- Normalizadores de URL ---
 function normalizeInstagramUrl(instagram: string): string {
   if (!instagram) return ""
   const cleaned = instagram.replace("@", "").trim()
@@ -118,12 +116,9 @@ function normalizeWebsiteUrl(site: string): string {
   return `https://${cleaned}`
 }
 
-// --- Helper Robusto para extrair Embedding ---
 function extractEmbedding(item: any): number[] {
-  // Tenta o nome correto primeiro
   if (Array.isArray(item.embedding_agregado) && item.embedding_agregado.length > 0) return item.embedding_agregado;
   
-  // Fallbacks para outros nomes comuns
   if (Array.isArray(item.embedding) && item.embedding.length > 0) return item.embedding;
   if (Array.isArray(item.Embedding) && item.Embedding.length > 0) return item.Embedding;
   
@@ -132,7 +127,6 @@ function extractEmbedding(item: any): number[] {
 
 function determineCategory(tags: LaboratorioRaw["tags"]): string {
   const tagIds = tags.map(t => t.id.toLowerCase())
-  // Não verifica equipes aqui, pois elas são fixas e não vêm do JSON
   if (tagIds.some(id => id.includes("empresa_junior") || id.includes("ej") || id.includes("empresa junior"))) return "Empresas Juniores"
   return "Laboratórios"
 }
@@ -219,7 +213,6 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
     const data = await response.json() as OportunidadesCompletoJSON
     const opportunities: Opportunity[] = []
 
-    // Processar laboratórios
     if (data.laboratorios) {
       try {
         const labOpportunities = data.laboratorios.map(convertLaboratorioToOpportunity)
@@ -229,7 +222,6 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
       }
     }
 
-    // Processar empresas juniores
     if (data.empresas_juniores) {
       try {
         const ejOpportunities = data.empresas_juniores.map(convertEmpresaJuniorToOpportunity)
@@ -246,7 +238,6 @@ export async function fetchOpportunitiesFromJSON(): Promise<Opportunity[]> {
       opportunities.push(...equipesComEmbeddings)
     } catch (error) {
       console.error("Erro ao calcular embeddings das equipes:", error)
-      // Fallback: adiciona equipes sem embeddings
       opportunities.push(...EQUIPES_COMPETICAO_FIXAS)
     }
 
