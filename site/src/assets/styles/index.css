@@ -60,3 +60,8 @@ body {
 .font-gowunBold {
   font-family: "Gowun Batang Bold", serif;
 }
+
+#root {
+  overflow-x: hidden;
+  position: relative;
+}

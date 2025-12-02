@@ -1,5 +1,6 @@
 import Carousel from "components/Carousel"
 import Logo from "assets/images/MuralLogo_M.svg"
+import NotePad from "assets/images/NotePad.png"
 import CampusFGA from "assets/images/fotos/CampusFGA.jpeg"
 import { Link } from "react-router-dom";
 
@@ -23,7 +24,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-2">Sobre Nós</h1>
 
         <div className="rounded-xl p-6 bg-base-100 flex flex-col items-center text-center w-234 drop-shadow-md">
-          <h1 className="text-2xl font-bold mb-2">Quem somos?</h1>
+          <h1 className="text-2xl font-gowunBold mb-2">Quem somos?</h1>
           <h2 className="whitespace-normal wrap-break-words text-base">
             O Mural UnB é uma plataforma digital projetada para centralizar e recomendar oportunidades acadêmicas e profissionais dentro da Universidade de Brasília (UnB).
           </h2>
@@ -31,14 +32,14 @@ export default function Home() {
 
         <div className="flex flex-row gap-10">
           <div className="rounded-xl p-6 bg-base-100 flex flex-col items-center text-center max-w-md drop-shadow-md">
-            <h1 className="text-2xl font-bold mb-2">Objetivo?</h1>
+            <h1 className="text-2xl font-gowunBold mb-2">Objetivo?</h1>
             <h2 className="whitespace-normal wrap-break-words text-base">
               O objetivo é criar uma experiência personalizada, onde os estudantes possam facilmente descobrir oportunidades alinhadas aos seus interesses e histórico acadêmico.
             </h2>
           </div>
 
           <div className="rounded-xl p-6 bg-base-100 flex flex-col items-center text-center max-w-md drop-shadow-md">
-            <h1 className="text-2xl font-bold mb-2">Como?</h1>
+            <h1 className="text-2xl font-gowunBold mb-2">Como?</h1>
             <h2 className="whitespace-normal wrap-break-words text-base">
               Analisamos os interesses e preferências do usuário utilizando machine learning para recomendar as opções mais relevantes e enviar notificações sobre novas oportunidades.
             </h2>
@@ -52,6 +53,19 @@ export default function Home() {
             <Carousel />
           </div>
         </section>
+      </div>
+
+      <div className="flex flex-row pb-15">
+        <div className="pr-10">
+          <h1 className="text-4xl/13 font-gowunBold wrap-break-words max-w-md">
+            Aqui você encontra os detalhes sobre laboratórios, empresas júniores e equipes de competição da UnB-FGA de maneira simplificada e rápida!
+          </h1>
+        </div>
+        <div>
+          <img
+            src={NotePad}
+          />
+        </div>
       </div>
 
       <div>

@@ -42,24 +42,31 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <div className="navbar bg-base-100 shadow-sm relative">
+    <div className="navbar bg-base-100 shadow-sm relative pr-10">
       <div className="navbar-start">
         <img 
           src={Logo || "/placeholder.svg"} 
-          className="w-25 h-13 m-3.5" 
+          className="w-30 h-15 m-3.5" 
           alt="Logo"
         />
 
         <Link
           to="/2025-2-Mural-UnB/"
-          className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/" ? "btn-active" : ""}`}
+          className={`btn-lg btn-link font-gowunBold mr-5 ml-10 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/" ? "btn-active" : ""}`}
         >
           Home
         </Link>
 
         <Link
+          to="/2025-2-Mural-UnB/Sobre"
+          className={`btn-lg btn-link font-gowunBold mr-5 ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/Sobre" ? "btn-active" : ""}`}
+        >
+          Sobre
+        </Link>
+
+        <Link
           to="/2025-2-Mural-UnB/feed"
-          className={`btn btn-link no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/feed" ? "btn-active" : ""}`}
+          className={`btn-lg btn-link font-gowunBold ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/feed" ? "btn-active" : ""}`}
         >
           Mural
         </Link>
