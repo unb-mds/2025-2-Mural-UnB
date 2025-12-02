@@ -30,18 +30,16 @@ export async function fetchTagsFlat(): Promise<Tag[]> {
     for (const cat of data.categorias || []) {
       for (const sub of cat.subcategorias || []) {
         for (const tag of sub.tags || []) {
-          // CORREÇÃO: Agora incluímos o embedding e description no objeto final
           flat.push({ 
             id: tag.id, 
             label: tag.label,
-            description: tag.description, // Útil ter a descrição também
-            embedding: tag.embedding      // <--- O CAMPO CRUCIAL QUE FALTAVA
+            description: tag.description,
+            embedding: tag.embedding
           } as Tag)
         }
       }
     }
     
-    // Remove duplicadas por id
     const seen = new Set<string>()
     const unique: Tag[] = []
     for (const t of flat) {

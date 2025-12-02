@@ -3,12 +3,7 @@ import { calculateMeanVector } from "../utils/vectorMatch"
 import { EQUIPES_COMPETICAO_FIXAS } from "./equipesCompeticao"
 import type { Opportunity } from "./fetchOpportunities"
 
-/**
- * Calcula embeddings para as equipes de competição baseado nas tags.
- * Retorna as equipes com embeddings calculados.
- */
 export function calcularEmbeddingsEquipes(tags: Tag[]): Opportunity[] {
-  // Cria lookup de embeddings das tags
   const tagEmbeddingMap = new Map<string, number[]>()
   tags.forEach(tag => {
     if (tag.embedding) {

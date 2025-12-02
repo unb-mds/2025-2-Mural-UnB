@@ -1,10 +1,24 @@
-import { useEffect } from "react"
-// Certifique-se que este caminho aponta para onde você define seus dados estáticos ou tipos
-import { allTags as tagsFromData } from "../../data/tags"
+import { useEffect, useState } from "react"
 // Importa a função matemática criada acima
 import { calculateMeanEmbedding } from "../../utils/vectorMatch"
 
 import { type Tag } from "../../data/tags"
+
+interface TagsJSON {
+  categorias: Array<{
+    nome_categoria: string
+    descricao: string
+    subcategorias: Array<{
+      nome_subcategoria: string
+      tags: Array<{
+        id: string
+        label: string
+        description?: string
+        embedding?: number[]
+      }>
+    }>
+  }>
+}
 
 interface TagsFilterModalProps {
   isOpen: boolean
@@ -16,14 +30,35 @@ interface TagsFilterModalProps {
 }
 
 export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, onTagToggle, onSave }: TagsFilterModalProps) {
-  
+  const [tagsData, setTagsData] = useState<TagsJSON | null>(null)
+
+  // Carrega o JSON completo de tags
+  useEffect(() => {
+    if (!isOpen) return
+    
+    const loadTagsData = async () => {
+      try {
+        const basePath = import.meta.env.BASE_URL || '/'
+        const url = basePath.endsWith('/') 
+          ? `${basePath}json/tags.json` 
+          : `${basePath}/json/tags.json`
+        const res = await fetch(url)
+        if (!res.ok) throw new Error(`HTTP error ${res.status}`)
+        const data = await res.json() as TagsJSON
+        setTagsData(data)
+      } catch (error) {
+        console.error("Erro ao carregar tags.json:", error)
+      }
+    }
+    
+    loadTagsData()
+  }, [isOpen])
+
   // Função auxiliar de segurança: busca o embedding no JSON bruto caso a prop 'tags' venha incompleta
   const findEmbeddingInRawData = (tagId: string): number[] | undefined => {
-    const raw = tagsFromData as any;
-    // Tenta acessar categorias direto ou dentro de uma propriedade 'categorias'
-    const categorias = Array.isArray(raw) ? raw : (raw.categorias || []);
+    if (!tagsData) return undefined;
 
-    for (const categoria of categorias) {
+    for (const categoria of tagsData.categorias || []) {
       if (!categoria.subcategorias) continue;
       for (const sub of categoria.subcategorias) {
         if (!sub.tags) continue;
@@ -88,44 +123,49 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
 
   if (!isOpen) return null
 
-  // Lógica para organizar as tags por categoria para exibição
-  const tagsByCategory: { [key: string]: Tag[] } = {}
-  const raw = tagsFromData as any;
-  const categoriasArray = Array.isArray(raw) ? raw : (raw.categorias || []);
-
-  categoriasArray.forEach((category: any) => {
-    const catName = category.nome_categoria || "Outros";
-    const tagsDestaCategoria: Tag[] = [];
-    
-    if (category.subcategorias) {
-      category.subcategorias.forEach((sub: any) => {
-        if (sub.tags) {
+  // Lógica para organizar as tags por subcategoria para exibição
+  const tagsBySubcategory: { [key: string]: Tag[] } = {}
+  
+  if (tagsData) {
+    tagsData.categorias.forEach((category) => {
+      if (category.subcategorias) {
+        category.subcategorias.forEach((sub) => {
+          const subName = sub.nome_subcategoria?.trim();
+          
+          // Ignora subcategorias sem nome (serão tratadas como "Outros" depois)
+          if (!subName || !sub.tags) return;
+          
           // Filtra apenas as tags que existem na prop 'tags' passada para o modal
-          const matchingTags = sub.tags.filter((jsonTag: any) => 
+          const matchingTags = sub.tags.filter((jsonTag) => 
             tags.some(t => t.id === jsonTag.id)
           );
           
-          // Mapeia para o formato Tag
-          tagsDestaCategoria.push(...matchingTags.map((t: any) => ({ 
-            id: t.id, 
-            label: t.label, 
-            embedding: t.embedding 
-          })));
-        }
-      });
-    }
+          if (matchingTags.length > 0) {
+            // Mapeia para o formato Tag
+            const tagsDestaSubcategoria = matchingTags.map((t) => ({ 
+              id: t.id, 
+              label: t.label, 
+              embedding: t.embedding 
+            }));
+            
+            // Se a subcategoria já existe, adiciona as tags a ela
+            if (tagsBySubcategory[subName]) {
+              tagsBySubcategory[subName].push(...tagsDestaSubcategoria);
+            } else {
+              tagsBySubcategory[subName] = tagsDestaSubcategoria;
+            }
+          }
+        });
+      }
+    });
+  }
 
-    if (tagsDestaCategoria.length > 0) {
-      tagsByCategory[catName] = tagsDestaCategoria;
-    }
-  });
-
-  // Adiciona tags que não foram encontradas nas categorias (Outros)
-  const categorizedTagIds = new Set(Object.values(tagsByCategory).flat().map((t) => t.id))
+  // Adiciona tags que não foram encontradas nas subcategorias (Outros)
+  const categorizedTagIds = new Set(Object.values(tagsBySubcategory).flat().map((t) => t.id))
   const uncategorizedTags = tags.filter((tag) => !categorizedTagIds.has(tag.id))
   
   if (uncategorizedTags.length > 0) {
-    tagsByCategory["Outros"] = uncategorizedTags
+    tagsBySubcategory["Outros"] = uncategorizedTags
   }
 
   return (
@@ -136,26 +176,36 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
         </div>
 
         <div className="modal-body">
-          {Object.entries(tagsByCategory).map(([category, categoryTags]) => (
-            <div key={category} className="tag-category">
-              <h3>{category}</h3>
-              <div className="tags-list">
-                {categoryTags.map((tag) => {
-                  const isSelected = selectedTags.includes(tag.id)
-                  return (
-                    <button
-                      key={tag.id}
-                      onClick={() => onTagToggle(tag.id)}
-                      className={`tag-button ${isSelected ? "selected" : ""}`}
-                    >
-                      {tag.label}
-                      {isSelected && <span className="tag-check">✓</span>}
-                    </button>
-                  )
-                })}
-              </div>
+          {!tagsData ? (
+            <div style={{ textAlign: 'center', padding: '2rem' }}>
+              Carregando tags...
             </div>
-          ))}
+          ) : Object.keys(tagsBySubcategory).length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '2rem' }}>
+              Nenhuma tag encontrada
+            </div>
+          ) : (
+            Object.entries(tagsBySubcategory).map(([subcategory, subcategoryTags]) => (
+              <div key={subcategory} className="tag-category">
+                <h3>{subcategory}</h3>
+                <div className="tags-list">
+                  {subcategoryTags.map((tag) => {
+                    const isSelected = selectedTags.includes(tag.id)
+                    return (
+                      <button
+                        key={tag.id}
+                        onClick={() => onTagToggle(tag.id)}
+                        className={`tag-button ${isSelected ? "selected" : ""}`}
+                      >
+                        {tag.label}
+                        {isSelected && <span className="tag-check">✓</span>}
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
         <div className="modal-footer">

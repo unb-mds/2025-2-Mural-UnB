@@ -1,4 +1,3 @@
-// Helper para resolver caminhos de imagem com base path do Vite
 function resolveImagePath(path: string): string {
   const base = import.meta.env.BASE_URL || '/'
   return base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
@@ -40,7 +39,6 @@ const labLogoMapRaw: Record<string, string> = {
   '200045': '/images/labs/200045.png',
 }
 
-// Processa os caminhos com o base path correto
 const labLogoMap: Record<string, string> = Object.entries(labLogoMapRaw).reduce(
   (acc, [key, value]) => {
     acc[key] = resolveImagePath(value)
