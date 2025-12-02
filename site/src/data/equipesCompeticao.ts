@@ -1,6 +1,5 @@
 import type { Opportunity } from "./fetchOpportunities"
 
-// Helper para resolver caminhos de imagem com base path do Vite
 function resolveImagePath(path: string): string {
   const base = import.meta.env.BASE_URL || '/'
   return base.endsWith('/') ? `${base}${path.slice(1)}` : `${base}${path}`
