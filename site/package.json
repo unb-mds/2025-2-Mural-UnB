@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://unb-mds.github.io/2025-2-Mural-UnB/",
+  "homepage": "https://muralunb.com.br/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

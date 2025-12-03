@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-left">
           <div className="footer-logo-container">
-            <img src="/2025-2-Mural-UnB/MuralLogo_S.svg" alt="Mural UnB" className="footer-logo-img" />
+            <img src="/MuralLogo_S.svg" alt="Mural UnB" className="footer-logo-img" />
             <span className="footer-logo-name">Mural UnB</span>
           </div>
           
@@ -59,9 +59,10 @@ function Footer() {
         <div className="footer-right">
           <h3 className="footer-pages-title">Páginas</h3>
           <nav className="footer-nav">
-            <Link to="/2025-2-Mural-UnB/" className="footer-nav-link">Home</Link>
-            <Link to="/2025-2-Mural-UnB/Sobre" className="footer-nav-link">Sobre</Link>
-            <Link to="/2025-2-Mural-UnB/feed" className="footer-nav-link">Mural</Link>
+            <Link to="/" className="footer-nav-link">Home</Link>
+            <Link to="/about" className="footer-nav-link">Sobre</Link>
+            <Link to="/feed" className="footer-nav-link">Mural</Link>
+            <Link to="https://tiagosbittencourt.github.io/Mural-UnB/" className="footer-nav-link">Docs</Link>
           </nav>
         </div>
       </div>
