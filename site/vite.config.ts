@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     open: false,
   },
-  base: "/2025-2-Mural-UnB", 
+  base: "/", 
   resolve: {
     alias: {
       components: path.resolve(__dirname, "src/components"),

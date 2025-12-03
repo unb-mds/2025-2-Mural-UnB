@@ -51,24 +51,31 @@ const Navbar: React.FC = () => {
         />
 
         <Link
-          to="/2025-2-Mural-UnB/"
-          className={`btn-lg btn-link font-gowunBold mr-5 ml-10 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/" ? "btn-active" : ""}`}
+          to="/"
+          className={`btn-lg btn-link font-gowunBold mr-5 ml-10 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/" ? "btn-active" : ""}`}
         >
           Home
         </Link>
 
         <Link
-          to="/2025-2-Mural-UnB/Sobre"
-          className={`btn-lg btn-link font-gowunBold mr-5 ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/Sobre" ? "btn-active" : ""}`}
+          to="/feed"
+          className={`btn-lg btn-link font-gowunBold ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/feed" ? "btn-active" : ""}`}
+        >
+          Mural
+        </Link>
+
+        <Link
+          to="/about"
+          className={`btn-lg btn-link font-gowunBold mr-5 ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/about" ? "btn-active" : ""}`}
         >
           Sobre
         </Link>
 
         <Link
-          to="/2025-2-Mural-UnB/feed"
-          className={`btn-lg btn-link font-gowunBold ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/2025-2-Mural-UnB/feed" ? "btn-active" : ""}`}
+          to="https://tiagosbittencourt.github.io/Mural-UnB/"
+          className={`btn-lg btn-link font-gowunBold ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/feed" ? "btn-active" : ""}`}
         >
-          Mural
+          Docs
         </Link>
       </div>
 
@@ -112,7 +119,7 @@ const Navbar: React.FC = () => {
                   {filteredOpportunities.map((opportunity) => (
                     <li key={opportunity.id}>
                       <Link 
-                        to={`/2025-2-Mural-UnB/feed/${opportunity.id}`}
+                        to={`/feed/${opportunity.id}`}
                         className="flex items-center p-2 hover:bg-gray-100 rounded-md no-underline text-inherit transition-colors"
                         onClick={() => setInput("")}
                       >

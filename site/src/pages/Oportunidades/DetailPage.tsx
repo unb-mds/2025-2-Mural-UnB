@@ -126,7 +126,7 @@ export default function DetailPage() {
       <div className="detail-container">
         <div className="not-found">
           <h1>Oportunidade não encontrada</h1>
-          <Link to="/2025-2-Mural-UnB/" className="back-link">
+          <Link to="/" className="back-link">
             Voltar para oportunidades
           </Link>
         </div>
@@ -138,7 +138,7 @@ export default function DetailPage() {
 
   return (
     <div className="detail-container">
-      <Link to="/2025-2-Mural-UnB/feed" className="back-link">
+      <Link to="/feed" className="back-link">
         ← Voltar
       </Link>
 
