@@ -74,10 +74,6 @@
   <a href="#📜-code-of-conduct">Code of Conduct</a>
 </p>
 
-## Demo
-
-#### 🚧 In development
-
 ## About
 
 **Mural UnB** is a digital platform designed to centralize and recommend academic and professional opportunities within the University of Brasília (UnB).
@@ -91,14 +87,6 @@ This includes opportunities in:
 - **Scientific initiation (PIBICs)**
 
 In short, Mural UnB acts as a **virtual bulletin board** that goes beyond simply listing opportunities, it **helps students connect with the right ones at the right time**.
-
-## Key Features
-
-#### 🚧 In development
-
-## How To Use
-
-#### 🚧 In development
 
 ## 🔗 Links
 

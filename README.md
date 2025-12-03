@@ -70,10 +70,6 @@
   <a href="#📜-código-de-conduta">Código de Conduta</a>
 </p>
 
-## Demo
-
-#### 🚧 Em desenvolvimento
-
 ## Sobre
 
 O **Mural UnB** é uma plataforma digital projetada para centralizar e recomendar oportunidades acadêmicas e profissionais dentro da Universidade de Brasília (UnB).
@@ -94,10 +90,6 @@ Em resumo, o Mural UnB funciona como um **mural virtual**, que vai além de apen
 1. **Listagem de Oportunidades (Feed)** → O usuário tem acesso a uma página com grande parte das oportunidades na UnB.
 2. **Análise de perfil** → O sistema identifica interesses e habilidades que o usuário quer ser recomendado por meio de Tags.
 3. **Recomendações personalizadas** → O estudante recebe oportunidades alinhadas ao seu perfil (tags).
-
-## Como Usar
-
-#### 🚧 Em desenvolvimento
 
 ## 🔗 Links
 

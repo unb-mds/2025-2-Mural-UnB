@@ -47,6 +47,12 @@ export default function Home() {
         </div>
       </div>
 
+      <Link to="/feed">
+        <button className="btn btn-soft btn-primary p-10 rounded-full mt-10 mb-5 w-210">
+          <h1 className="text-4xl">Acesse o Mural</h1>
+        </button>
+      </Link>
+
       <div className="w-full px-6">
         <section className="w-full py-8 bg-base-200 mt-10">
           <div className="container mx-auto px-4">
@@ -55,29 +61,23 @@ export default function Home() {
         </section>
       </div>
 
-      <div className="flex flex-row pb-15">
-        <div className="pr-10">
-          <h1 className="text-4xl/13 font-gowunBold wrap-break-words max-w-md">
-            Aqui você encontra os detalhes sobre laboratórios, empresas júniores e equipes de competição da UnB-FGA de maneira simplificada e rápida!
+      <div className="flex flex-row items-center justify-center gap-12 py-16 px-8 bg-base-100 rounded-2xl shadow-lg mx-6 mb-12 mt-8">
+        <div className="flex-1 max-w-lg">
+          <h1 className="text-2xl md:text-2xl leading-relaxed font-gowunBold text-primary">
+            Aqui você encontra os detalhes sobre laboratórios, empresas juniores e equipes de competição da UnB-FGA de maneira simplificada e rápida!
           </h1>
         </div>
-        <div>
-          <img
-            src={NotePad}
-          />
-        </div>
+        <Link to="/feed">
+          <div className="flex-shrink-0">
+            <img
+              src={NotePad}
+              alt="Notepad illustration"
+              className="w-64 h-auto        drop-shadow-xl"
+            />
+          </div>
+        </Link>
       </div>
-
-      <div>
-      <Link to="/feed">
-        <button className="btn btn-soft btn-primary p-10 rounded-full mb-10 w-210">
-          <h1 className="text-4xl">Acesse o Mural</h1>
-        </button>
-      </Link>
-    </div>
 
     </div>
   )
 }
-
-
