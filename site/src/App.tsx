@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom"
 import Navbar from "./components/NavBar"
 import Footer from "./components/feed/Footer"
 import Home from "./pages/Home/Home"
+import Sobre from "./pages/Sobre/Sobre"
 import FeedPage from "./pages/Oportunidades/FeedPage"
 import DetailPage from "./pages/Oportunidades/DetailPage"
 import "./assets/styles/App.css"
@@ -13,6 +14,7 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/2025-2-Mural-UnB" element={<Home />} />
+          <Route path="/2025-2-Mural-UnB/Sobre" element={<Sobre />} />
           <Route path="/2025-2-Mural-UnB/feed" element={<FeedPage />} />
           <Route path="/2025-2-Mural-UnB/feed/:id" element={<DetailPage />} />
         </Routes>
