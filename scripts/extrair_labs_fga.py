@@ -180,7 +180,6 @@ def extrair_palavra_chave(nome_do_lab):
     except Exception as e:  # pylint: disable=broad-except
         # Em caso de erro inesperado durante o processamento do nome
         print(f"    [Palavra Chave] Erro ao extrair chave de '{nome_do_lab}': {e}")
-        pass  # Continua para retornar a chave genérica
 
     # 5. Plano C: Chave genérica (último recurso)
     print(
@@ -711,7 +710,7 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
 
         # CASO ESPECIAL: Número sozinho em uma linha (labs 1-9)
         if re.match(r"^(\d+)\.$", linha):
-            numero_lab = re.match(r"^(\d+)\.$", linha).group(1)
+            # numero_lab = re.match(r"^(\d+)\.$", linha).group(1)
             if i + 1 < len(linhas):
                 proxima_linha = linhas[i + 1].strip()
                 if (
@@ -742,7 +741,7 @@ def extrair_laboratorios_fga_pdf(pdf_path, pagina_inicial=13):
         # CASO NORMAL: Número e nome na mesma linha (labs 10+)
         padrao_numero_simples = re.match(r"^(\d+)\.\s+(.+)", linha)
         if padrao_numero_simples:
-            numero_lab = padrao_numero_simples.group(1)
+            # numero_lab = padrao_numero_simples.group(1)
             nome_sem_numero = padrao_numero_simples.group(2).strip()
             # FILTRO 1: Rejeita sub-numeração
             if re.match(r"^\d+\.\d+", linha):
@@ -927,18 +926,18 @@ def filtrar_labs_fga(pdf_path, csv_saida):
         # Se a descrição menciona FGA, OK
         if "FGA" in lab["descricao"].upper():
             # Verifica se a descrição fala de um lab diferente
-            nome_curto = (
-                lab["nome"].split("-")[0].strip().split()[0:3]
-            )  # Primeiras palavras do nome
+            # nome_curto = (
+            #     lab["nome"].split("-")[0].strip().split()[0:3]
+            # )  # Primeiras palavras do nome
             primeira_frase_desc = (
                 lab["descricao"].split(".")[0] if lab["descricao"] else ""
             )
-            nome_keywords = [
-                palavra.lower() for palavra in nome_curto if len(palavra) > 3
-            ]
-            desc_lower = primeira_frase_desc.lower()
+            # nome_keywords = [
+            #     palavra.lower() for palavra in nome_curto if len(palavra) > 3
+            # ]
+            # desc_lower = primeira_frase_desc.lower()
             # Verifica se pelo menos uma palavra do nome aparece na descrição
-            tem_match = any(keyword in desc_lower for keyword in nome_keywords)
+            # tem_match = any(keyword in desc_lower for keyword in nome_keywords)
             sigla_match = re.match(r"^O\s+([A-Z]+),", primeira_frase_desc)
             if sigla_match:
                 sigla_desc = sigla_match.group(1)

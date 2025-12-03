@@ -1,0 +1,7 @@
+[MASTER]
+# Add current directory to path to resolve local imports
+init-hook='import sys; sys.path.append("scripts")'
+
+[MESSAGES CONTROL]
+# Disable convention and refactoring messages as per pipeline config
+disable=C,R

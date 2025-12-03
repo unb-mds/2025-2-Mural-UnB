@@ -19,9 +19,9 @@ class PDFProcessorEJs:
         genai.configure(api_key=gemini_api_key)
         self.model = genai.GenerativeModel('gemini-2.5-flash-lite')
 
-    def extrair_imagens_pdf(self, pdf_path: str, output_dir: str, empresas_com_id: List[Dict] = None) -> List[str]:
+    def extrair_imagens_pdf(self, pdf_path: str, output_dir: str, empresas_com_id: List[Dict] = None) -> List[str]:  # pylint: disable=unused-argument
         """Extração de todas as imagens do PDF com novo sistema de nomenclatura"""
-        print(f"\n📸 Extraindo imagens do PDF...")
+        print("\n📸 Extraindo imagens do PDF...")
 
         imagens_extraidas = []
 
@@ -113,7 +113,7 @@ class PDFProcessorEJs:
             
             print(f"\n✓ Extração de imagens concluída: {total_images} imagens salvas em '{images_dir}'")
             
-            print(f"📊 Estatísticas do novo sistema:")
+            print("📊 Estatísticas do novo sistema:")
             print(f"   • Imagens associadas a EJs: {len(imagens_com_ej)}")
             
             if imagens_com_ej:
@@ -212,7 +212,7 @@ class PDFProcessorEJs:
         texto = re.sub(r'(\w)-\s+(\w)', r'\1\2', texto)
         return texto
     
-    def criar_prompt_gemini(self, texto: str, info_pagina: str = "") -> str:
+    def criar_prompt_gemini(self, texto: str) -> str:
         """Criando prompt mais específico"""
         prompt = f"""
         ANALISE O TEXTO E EXTRAIA INFORMAÇÕES SOBRE EMPRESAS JUNIORES.
@@ -265,10 +265,10 @@ class PDFProcessorEJs:
         
         return prompt
     
-    def extrair_informacoes_gemini(self, texto: str, info_pagina: str = "") -> List[Dict]:
+    def extrair_informacoes_gemini(self, texto: str, info_pagina: str = "") -> List[Dict]:  # pylint: disable=unused-argument
         """Usa Gemini API com tratamento robusto de erros JSON"""
         
-        prompt = self.criar_prompt_gemini(texto, info_pagina)
+        prompt = self.criar_prompt_gemini(texto)
         
         try:
             print("Enviando requisição para Gemini API...")
@@ -290,7 +290,7 @@ class PDFProcessorEJs:
             
             # Log das empresas encontradas
             if dados:
-                print(f"✓ Empresas identificadas neste lote:")
+                print("✓ Empresas identificadas neste lote:")
                 for i, empresa in enumerate(dados, 1):
                     nome = empresa.get('Nome', 'Sem nome')
                     print(f"  {i}. {nome}")
@@ -309,8 +309,9 @@ class PDFProcessorEJs:
                 dados = json.loads(texto_corrigido)
                 print("✓ JSON corrigido com sucesso!")
                 return dados if isinstance(dados, list) else [dados]
-            except:
+            except (json.JSONDecodeError, ValueError) as json_err:
                 print("✗ Não foi possível corrigir o JSON")
+                print(f"Erro: {json_err}")
                 print(f"Resposta problemática: {texto_resposta[:500]}...")
                 return []
                 
@@ -448,14 +449,14 @@ class PDFProcessorEJs:
         # Salvar resultados
         self.salvar_json(todas_empresas, saida_json)
         
-        print(f"\n=== PROCESSAMENTO CONCLUÍDO ===")
+        print("\n=== PROCESSAMENTO CONCLUÍDO ===")
         print(f"📄 Páginas processadas: {paginas_processadas}")
         print(f"🏢 Empresas juniores extraídas: {len(todas_empresas)}")
         print(f"💾 Arquivo salvo: {saida_json}")
         
         # Lista final de empresas
         if todas_empresas:
-            print(f"\n📋 LISTA DE EMPRESAS IDENTIFICADAS:")
+            print("\n📋 LISTA DE EMPRESAS IDENTIFICADAS:")
             for i, empresa in enumerate(todas_empresas, 1):
                 nome = empresa.get('Nome', 'Sem nome')
                 cursos = empresa.get('Cursos', 'N/A')

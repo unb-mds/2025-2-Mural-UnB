@@ -89,7 +89,7 @@ def main():
                         arquivo.write(pedaco)
                 
                 # Mostra informações
-                print(f"\n   PDF baixado com sucesso!")
+                print("\n   PDF baixado com sucesso!")
                 print("=" * 60)
         else:
             print("Nenhum PDF encontrado nesta página.")
