@@ -11,7 +11,7 @@ from pdf_processor_ejs import PDFProcessorEJs
 
 def configurar_ambiente():
     """Configura diretórios e configurações"""
-    from config_ej import OUTPUT_DIR, IMAGES_OUTPUT_DIR
+    from config_ej import IMAGES_OUTPUT_DIR
     
     # Criar diretório principal para PDF e JSON
     if not os.path.exists(OUTPUT_DIR):
@@ -143,7 +143,7 @@ def consolidar_dados_empresas(todos_dados: list, caminho_saida: str):
                                    if ej.get('Nome') and ej.get('Cursos') and ej.get('Servicos'))
             print(f"Empresas com informações completas: {empresas_completas}/{len(empresas_unicas)}")
             
-    except Exception as e:
+    except (OSError, IOError, json.JSONDecodeError) as e:
         print(f"✗ Erro ao salvar dados consolidados: {e}")
 
 def mostrar_estatisticas_finais(dados_empresas: list):
@@ -160,7 +160,7 @@ def mostrar_estatisticas_finais(dados_empresas: list):
     print(f"Total de empresas juniores: {len(empresas_unicas)}")
     
     # Top empresas (consolidação de dados para análise)
-    print(f"\n PRINCIPAIS EMPRESAS IDENTIFICADAS:")
+    print("\n PRINCIPAIS EMPRESAS IDENTIFICADAS:")
     for i, empresa in enumerate(empresas_unicas[:10], 1):
         nome = empresa.get('Nome', 'Sem nome')
         cursos = empresa.get('Cursos', 'N/A')[:30] + "..." if len(empresa.get('Cursos', '')) > 30 else empresa.get('Cursos', 'N/A')
@@ -173,7 +173,7 @@ def mostrar_estatisticas_finais(dados_empresas: list):
         preenchidos = sum(1 for ej in empresas_unicas if ej.get(campo) and ej.get(campo) not in ['', 'N/A'])
         campos_preenchidos[campo] = preenchidos
     
-    print(f"\nESTATÍSTICAS POR CAMPO:")
+    print("\nESTATÍSTICAS POR CAMPO:")
     for campo, quantidade in campos_preenchidos.items():
         percentual = (quantidade / len(empresas_unicas)) * 100
         print(f"  {campo:10}: {quantidade:2d}/{len(empresas_unicas)} ({percentual:5.1f}%)")

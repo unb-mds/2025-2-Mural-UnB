@@ -135,7 +135,7 @@ def alocar_tags_por_similaridade(
     # Cria texto completo do laboratório para embedding
     texto_lab = f"{lab['nome']}. {lab['descricao']}"
     
-    print(f"  → Gerando embedding da descrição...")
+    print("  → Gerando embedding da descrição...")
     lab_embedding = gerar_embedding(texto_lab)
     
     # Filtra tags irrelevantes para laboratórios
@@ -203,7 +203,7 @@ def main():
         return
     
     # Carrega dados
-    tags_data, tags_flat = carregar_tags_com_embeddings(caminho_tags)
+    _, tags_flat = carregar_tags_com_embeddings(caminho_tags)
     laboratorios = carregar_laboratorios(caminho_csv)
     
     print(f"   • {len(laboratorios)} laboratórios carregados")
@@ -249,7 +249,7 @@ def main():
         
         # Mostra preview das tags
         if tags_selecionadas:
-            print(f"  Top 5 tags:")
+            print("  Top 5 tags:")
             for tag in tags_selecionadas[:5]:
                 print(f"    • {tag['label']} (score: {tag['score']:.3f})")
     

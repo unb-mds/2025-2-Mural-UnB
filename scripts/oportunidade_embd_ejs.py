@@ -5,7 +5,6 @@ Lê lookup de tags, calcula embedding médio e salva resultado em JSON.
 
 import json
 import numpy as np
-import os
 
 # Nomes dos arquivos
 ARQUIVO_TAGS_MESTRE = '../data/tags.json'

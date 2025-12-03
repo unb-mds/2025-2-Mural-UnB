@@ -23,7 +23,7 @@ def carregar_json(filepath):
         print(f"Erro: Falha ao decodificar JSON em '{filepath}'.")
         return None
 
-def juntar_oportunidades(dados_labs, dados_ejs):
+def juntar_oportunidades(labs_data, ejs_data):
     """
     Junta os dados de laboratórios e empresas juniores em uma única estrutura
     mantendo listas separadas
@@ -31,8 +31,8 @@ def juntar_oportunidades(dados_labs, dados_ejs):
     print("\nJuntando dados...")
     
     # Extrai as listas
-    laboratorios = dados_labs.get('laboratorios', [])
-    empresas_juniores = dados_ejs.get('empresas_juniores', [])
+    laboratorios = labs_data.get('laboratorios', [])
+    empresas_juniores = ejs_data.get('empresas_juniores', [])
     
     # Adiciona tipo de oportunidade a cada item
     for lab in laboratorios:
@@ -42,7 +42,7 @@ def juntar_oportunidades(dados_labs, dados_ejs):
         ej['tipo_oportunidade'] = 'empresa_junior'
     
     # Cria a estrutura final com duas listas separadas
-    oportunidades = {
+    resultado_oportunidades = {
         'metodo': 'similaridade_embeddings',
         'modelo_embedding': 'text-embedding-004',
         'total_oportunidades': len(laboratorios) + len(empresas_juniores),
@@ -54,9 +54,9 @@ def juntar_oportunidades(dados_labs, dados_ejs):
     
     print(f"Total de {len(laboratorios)} laboratórios")
     print(f"Total de {len(empresas_juniores)} empresas juniores")
-    print(f"Total de {oportunidades['total_oportunidades']} oportunidades")
+    print(f"Total de {resultado_oportunidades['total_oportunidades']} oportunidades")
     
-    return oportunidades
+    return resultado_oportunidades
 
 def salvar_json(data, filepath):
     """Salva os dados em um arquivo JSON"""
