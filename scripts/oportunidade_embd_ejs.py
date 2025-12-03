@@ -4,6 +4,7 @@ Lê lookup de tags, calcula embedding médio e salva resultado em JSON.
 """
 
 import json
+import os
 import numpy as np
 
 # Nomes dos arquivos (Usando caminhos absolutos baseados no script)
