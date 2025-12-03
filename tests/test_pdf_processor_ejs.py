@@ -49,7 +49,7 @@ def test_juntar_palavras_hifenizadas():
 
 def test_criar_prompt_gemini():
     processor = PDFProcessorEJs("k")
-    prompt = processor.criar_prompt_gemini("texto", "pag1")
+    prompt = processor.criar_prompt_gemini("texto")
     assert "ANALISE O TEXTO" in prompt
     assert "texto" in prompt
 
