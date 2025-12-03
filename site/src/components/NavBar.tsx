@@ -44,36 +44,38 @@ const Navbar: React.FC = () => {
   return (
     <div className="navbar bg-base-100 shadow-sm relative pr-10">
       <div className="navbar-start">
-        <img 
-          src={Logo || "/placeholder.svg"} 
-          className="w-30 h-15 m-3.5" 
-          alt="Logo"
-        />
+        <Link to="/feed">
+          <img 
+            src={Logo || "/placeholder.svg"} 
+            className="w-30 h-15 m-3.5 cursor-pointer" 
+            alt="Logo"
+          />
+        </Link>
 
         <Link
           to="/"
-          className={`btn-lg btn-link font-gowunBold mr-5 ml-10 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/" ? "btn-active" : ""}`}
+          className={`btn-lg btn-link font-gowunBold ml-8 mr-4 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/" ? "btn-active" : ""}`}
         >
           Home
         </Link>
 
         <Link
           to="/feed"
-          className={`btn-lg btn-link font-gowunBold ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/feed" ? "btn-active" : ""}`}
+          className={`btn-lg btn-link font-gowunBold mx-4 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/feed" ? "btn-active" : ""}`}
         >
           Mural
         </Link>
 
         <Link
           to="/about"
-          className={`btn-lg btn-link font-gowunBold mr-5 ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/about" ? "btn-active" : ""}`}
+          className={`btn-lg btn-link font-gowunBold mx-4 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/about" ? "btn-active" : ""}`}
         >
           Sobre
         </Link>
 
         <Link
           to="https://tiagosbittencourt.github.io/Mural-UnB/"
-          className={`btn-lg btn-link font-gowunBold ml-5 no-underline text-inherit hover:no-underline hover:text-inherit ${location.pathname === "/feed" ? "btn-active" : ""}`}
+          className={`btn-lg btn-link font-gowunBold mx-4 no-underline text-inherit hover:no-underline hover:text-inherit`}
         >
           Docs
         </Link>

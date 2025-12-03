@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <a href="https://unb-mds.github.io/2025-2-Mural-UnB">
+  <a href="https://muralunb.com.br">
     <img src="https://img.shields.io/badge/GH%20Pages-Site-blue?style=for-the-badge&logo=github" alt="Site"/>
   </a>
   <a href="https://tiagosbittencourt.github.io/Mural-UnB/">
@@ -36,7 +36,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://unb-mds.github.io/2025-2-Mural-UnB/"><img src="./readme/main_logo.png" alt="Mural UnB" width="300"></a>
+  <a href="https://muralunb.com.br/"><img src="./readme/main_logo.png" alt="Mural UnB" width="300"></a>
 </h1>
 
 <p align="center"> 
@@ -101,7 +101,7 @@ Em resumo, o Mural UnB funciona como um **mural virtual**, que vai além de apen
 
 ## 🔗 Links
 
-- [Demo (GitHub Pages)](https://unb-mds.github.io/Mural-UnB/)
+- [Demo (Site)](https://muralunb.com.br/)
 - [Figma - Hub do Projeto](https://www.figma.com/board/S9uS0BvdNKOcX2gYhVtMDY/Mural-UnB-MDS?node-id=0-1&p=f&t=3mDHHLQPSOljbISN-0)
 - [Repositório GitHub](https://github.com/unb-mds/Mural-UnB)
 
@@ -195,7 +195,7 @@ Assim que disponível, você pode acessá-lo aqui: [CODE_OF_CONDUCT.md](./.githu
 
 ---
 
-> Site [unb-mds.github.io/2025-2-Mural-UnB/](https://unb-mds.github.io/2025-2-Mural-UnB/) &nbsp;&middot;&nbsp;
+> Site [muralunb.com.br](https://muralunb.com.br/) &nbsp;&middot;&nbsp;
 > GitHub [Mural-UnB](https://github.com/unb-mds/Mural-UnB) &nbsp;&middot;&nbsp;
 > Instagram [@**\_\_**]() &nbsp;&middot;&nbsp;
 > email [unb.mural@gmail.com]()
