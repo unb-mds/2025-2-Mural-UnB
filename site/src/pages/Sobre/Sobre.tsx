@@ -11,7 +11,7 @@ export default function Sobre() {
             <h1 className="text-2xl font-gowunBold mt-10">Desenvolvedores</h1>
 
             <div className="flex flex-row -m-5">
-                <div className="card bg-base-100 w-65 shadow-sm max-h-100 scale-75">
+                <div className="card bg-base-100 w-65 shadow-xl max-h-100 scale-75">
                     <figure>
                         <img
                         src={TB}
@@ -29,7 +29,7 @@ export default function Sobre() {
                     </div>
                 </div>
 
-                <div className="card bg-base-100 w-65 shadow-sm max-h-100 scale-75">
+                <div className="card bg-base-100 w-65 shadow-xl max-h-100 scale-75">
                     <figure>
                         <img
                         src={JG}
@@ -47,7 +47,7 @@ export default function Sobre() {
                     </div>
                 </div>
 
-                <div className="card bg-base-100 w-65 shadow-sm max-h-100 scale-75">
+                <div className="card bg-base-100 w-65 shadow-xl max-h-100 scale-75">
                     <figure>
                         <img
                         src={LF}
@@ -65,7 +65,7 @@ export default function Sobre() {
                     </div>
                 </div>
 
-                <div className="card bg-base-100 w-65 shadow-sm max-h-100 scale-75">
+                <div className="card bg-base-100 w-65 shadow-xl max-h-100 scale-75">
                     <figure>
                         <img
                         src={MG}
@@ -83,7 +83,7 @@ export default function Sobre() {
                     </div>
                 </div>
                 
-                <div className="card bg-base-100 w-65 shadow-sm max-h-100 scale-75">
+                <div className="card bg-base-100 w-65 shadow-xl max-h-100 scale-75">
                     <figure>
                         <img
                         src={MS}
@@ -101,7 +101,7 @@ export default function Sobre() {
                     </div>
                 </div>
 
-                <div className="card bg-base-100 w-65 shadow-sm max-h-100 scale-75">
+                <div className="card bg-base-100 w-65 shadow-xl max-h-100 scale-75">
                     <figure>
                         <img
                         src={LL}
@@ -120,9 +120,9 @@ export default function Sobre() {
                 </div>
             </div>
         
-                <div className="max-w-3xl mx-auto flex flex-row gap-10 pb-5">
+                <div className="max-w-3xl mx-auto flex flex-row gap-10 p-5 bg-base-100 rounded-xl drop-shadow-xl mb-10">
                     <div>
-                        <p className="font-gowunBold text-lg md:text-xl wrap-break-words leading-relaxed md:leading-loose mb-6">
+                        <p className="font-gowunBold text-lg md:text-xl wrap-break-words leading-relaxed md:leading-loose mb-2">
                         Como alunos da UnB no campus da FGA, percebemos que não existia um ambiente 
                         que centralizasse informações sobre atividades extras. A busca por diferentes 
                         tipos de eventos ou detalhes era complicada, com materiais dispersos em 
