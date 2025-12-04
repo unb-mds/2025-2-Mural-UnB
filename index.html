@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/MuralLogo_S.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mural UnB</title>
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+
+    <!-- Google JSON-LD: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Mural UnB",
+      "url": "https://muralunb.com.br",
+      "logo": "https://muralunb.com.br/MuralLogo_S.svg"
+    }
+    </script>
+
+    <!-- Google JSON-LD: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Mural UnB",
+      "url": "https://muralunb.com.br"
+    }
+    </script>
+
+    <script type="module" crossorigin src="/assets/index-ZuBkPZ5t.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-EY9Awxv7.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
