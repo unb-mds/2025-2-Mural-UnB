@@ -3,7 +3,7 @@ import Navbar from "./components/NavBar"
 import Footer from "./components/feed/Footer"
 import Home from "./pages/Home"
 import Sobre from "./pages/Sobre/Sobre"
-import FeedPage from "./pages/Feed/FeedPage"
+import FeedPage from "./pages/Feed"
 import DetailPage from "./pages/Oportunity"
 import "./assets/styles/App.css"
 
