@@ -1,5 +1,5 @@
 import { useState } from "react"
-import TagsFilterModal from "../../components/feed/TagsFilterModal"
+import TagsFilterModal from "./TagsFilterModal"
 
 interface Tag {
   id: string

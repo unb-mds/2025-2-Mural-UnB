@@ -1,4 +1,4 @@
-import OpportunityCard from "../../../components/feed/OpportunityCard"
+import OpportunityCard from "./OpportunityCard"
 import type { Opportunity } from "../../../data/fetchOpportunities"
 
 interface OpportunityWithScore extends Opportunity {

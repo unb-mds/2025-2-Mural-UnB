@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 // Importa a função matemática criada acima
-import { calculateMeanEmbedding } from "../../utils/vectorMatch"
+import { calculateMeanEmbedding } from "../../../utils/vectorMatch"
 
-import { type Tag } from "../../data/tags"
+import { type Tag } from "../../../data/tags"
 
 interface TagsJSON {
   categorias: Array<{

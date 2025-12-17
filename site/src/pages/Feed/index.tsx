@@ -1,10 +1,10 @@
-import FilterSidebar from "../../components/feed/FilterSidebar"
 import {
   FeedHeader,
   LoadingState,
   EmptyState,
   Pagination,
   OpportunitiesList,
+  FilterSidebar
 } from "./components"
 import { useFeedData } from "./hooks/useFeedData"
 
