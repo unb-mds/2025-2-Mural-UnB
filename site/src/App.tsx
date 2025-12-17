@@ -4,7 +4,7 @@ import Footer from "./components/feed/Footer"
 import Home from "./pages/Home"
 import Sobre from "./pages/Sobre/Sobre"
 import FeedPage from "./pages/Feed/FeedPage"
-import DetailPage from "./pages/Feed/DetailPage"
+import DetailPage from "./pages/Oportunity"
 import "./assets/styles/App.css"
 
 export default function App() {
