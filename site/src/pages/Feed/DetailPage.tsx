@@ -2,7 +2,6 @@ import { useParams, Link } from "react-router-dom"
 import { useState, useEffect, useMemo } from "react"
 import type { Opportunity } from "../../data/fetchOpportunities"
 import { fetchOpportunitiesFromJSON } from "../../data/fetchOpportunities"
-import "./DetailPage.css"
 
 function resolveHeaderImage(id: string, name: string): string | null {
   if (!id && !name) return null
@@ -113,9 +112,9 @@ export default function DetailPage() {
 
   if (isLoading) {
     return (
-      <div className="detail-container">
-        <div className="not-found">
-          <h1>Carregando...</h1>
+      <div className="max-w-[1200px] mx-auto p-8 min-h-[calc(100vh-80px)] max-md:p-4">
+        <div className="text-center py-16 px-8">
+          <h1 className="text-[2rem] text-[#1a1a1a] mb-4">Carregando...</h1>
         </div>
       </div>
     )
@@ -123,10 +122,10 @@ export default function DetailPage() {
 
   if (!opportunity) {
     return (
-      <div className="detail-container">
-        <div className="not-found">
-          <h1>Oportunidade não encontrada</h1>
-          <Link to="/" className="back-link">
+      <div className="max-w-[1200px] mx-auto p-8 min-h-[calc(100vh-80px)] max-md:p-4">
+        <div className="text-center py-16 px-8">
+          <h1 className="text-[2rem] text-[#1a1a1a] mb-4">Oportunidade não encontrada</h1>
+          <Link to="/" className="inline-flex items-center gap-2 text-[#1a7f4e] no-underline font-semibold mb-8 transition-colors hover:text-[#15663e]">
             Voltar para oportunidades
           </Link>
         </div>
@@ -137,16 +136,17 @@ export default function DetailPage() {
   const headerImage = resolveHeaderImage(opportunity.id, opportunity.name)
 
   return (
-    <div className="detail-container">
-      <Link to="/feed" className="back-link">
+    <div className="max-w-[1200px] mx-auto p-8 min-h-[calc(100vh-80px)] max-md:p-4">
+      <Link to="/feed" className="inline-flex items-center gap-2 text-[#1a7f4e] no-underline font-semibold mb-8 transition-colors hover:text-[#15663e]">
         ← Voltar
       </Link>
 
       {headerImage ? (
-        <div className="detail-page-header-image">
+        <div className="w-full h-[400px] overflow-hidden rounded-t-xl mb-0 bg-[#003366] relative max-md:h-[250px] max-md:rounded-t-lg">
           <img 
             src={headerImage} 
             alt={`${opportunity.name} header`}
+            className="w-full h-full object-cover block"
             onError={(e) => {
               const img = e.currentTarget
               const src = img.getAttribute('src') || ''
@@ -154,7 +154,7 @@ export default function DetailPage() {
               if (src.includes('/images/ejs/') || !src.includes('/images/headers/')) {
                 const parent = img.parentElement
                 if (parent) {
-                  parent.className = 'detail-page-header-default'
+                  parent.className = 'w-full h-[400px] bg-[#003366] rounded-t-xl mb-0 max-md:h-[250px] max-md:rounded-t-lg'
                   img.style.display = 'none'
                 }
                 return
@@ -169,7 +169,7 @@ export default function DetailPage() {
               } else {
                 const parent = img.parentElement
                 if (parent) {
-                  parent.className = 'detail-page-header-default'
+                  parent.className = 'w-full h-[400px] bg-[#003366] rounded-t-xl mb-0 max-md:h-[250px] max-md:rounded-t-lg'
                   img.style.display = 'none'
                 }
               }
@@ -177,86 +177,86 @@ export default function DetailPage() {
           />
         </div>
       ) : (
-        <div className="detail-page-header-default"></div>
+        <div className="w-full h-[400px] bg-[#003366] rounded-t-xl mb-0 max-md:h-[250px] max-md:rounded-t-lg"></div>
       )}
 
-      <article className="detail-content">
-        <header className="detail-header">
+      <article className="bg-white rounded-b-xl p-8 border border-[#e5e5e5] border-t-0 shadow-md mt-0 max-md:p-6 max-md:rounded-b-lg">
+        <header className="text-center mb-8 pb-8 border-b border-[#e5e5e5]">
           {opportunity.logo && (
-            <div className="detail-logo">
-              <img src={opportunity.logo} alt={opportunity.name} />
+            <div className="w-[120px] h-[120px] mx-auto mb-6 rounded-xl overflow-hidden bg-[#f5f5f5] flex items-center justify-center">
+              <img src={opportunity.logo} alt={opportunity.name} className="w-full h-full object-cover" />
             </div>
           )}
-          <h1>{opportunity.name}</h1>
+          <h1 className="text-[2.5rem] font-bold text-[#1a1a1a] m-0 mb-2 max-md:text-[2rem]">{opportunity.name}</h1>
           
           
-          <p className="detail-category">
+          <p className="text-base text-[#1a7f4e] font-semibold uppercase tracking-wide mb-4">
             {opportunity.category}
             {opportunity.campus && opportunity.campus !== "N/A" && (
-              <span style={{ opacity: 0.9, fontWeight: 'normal' }}>
+              <span className="opacity-90 font-normal">
                 {' • '}{opportunity.campus}
               </span>
             )}
           </p>
 
-          <p className="detail-short-description">{opportunity.shortDescription}</p>
+          <p className="text-lg text-[#666] leading-relaxed m-0">{opportunity.shortDescription}</p>
         </header>
 
         {opportunity.tags && opportunity.tags.length > 0 && (
-          <div className="detail-tags">
+          <div className="flex flex-wrap gap-3 mb-8 pb-8 border-b border-[#e5e5e5]">
             {opportunity.tags.map((tag) => (
-              <span key={tag} className="tag">
+              <span key={tag} className="inline-block py-2 px-4 bg-[#f0f9f4] border border-[#b8e6d0] rounded-[20px] text-sm text-[#15663e] font-medium">
                 {tag.replace(/_/g, " ")}
               </span>
             ))}
           </div>
         )}
 
-        <div className="detail-description">
+        <div className="leading-[1.8] text-[#333]">
           {opportunity.about && (
-            <section>
-              <h2>Sobre</h2>
-              <p>{opportunity.about}</p>
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4 pb-2 border-b-2 border-[#e5e5e5]">Sobre</h2>
+              <p className="text-lg text-[#666] leading-[1.8] m-0">{opportunity.about}</p>
             </section>
           )}
 
           {opportunity.mission && (
-            <section>
-              <h2>Missão</h2>
-              <p>{opportunity.mission}</p>
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4 pb-2 border-b-2 border-[#e5e5e5]">Missão</h2>
+              <p className="text-lg text-[#666] leading-[1.8] m-0">{opportunity.mission}</p>
             </section>
           )}
 
           {opportunity.vision && (
-            <section>
-              <h2>Visão</h2>
-              <p>{opportunity.vision}</p>
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4 pb-2 border-b-2 border-[#e5e5e5]">Visão</h2>
+              <p className="text-lg text-[#666] leading-[1.8] m-0">{opportunity.vision}</p>
             </section>
           )}
 
           {opportunity.values && (
-            <section>
-              <h2>Valores</h2>
-              <p>{opportunity.values}</p>
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4 pb-2 border-b-2 border-[#e5e5e5]">Valores</h2>
+              <p className="text-lg text-[#666] leading-[1.8] m-0">{opportunity.values}</p>
             </section>
           )}
 
           {opportunity.services && (
-            <section>
-              <h2>Serviços</h2>
-              <p>{opportunity.services}</p>
+            <section className="mb-8">
+              <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4 pb-2 border-b-2 border-[#e5e5e5]">Serviços</h2>
+              <p className="text-lg text-[#666] leading-[1.8] m-0">{opportunity.services}</p>
             </section>
           )}
         </div>
 
         {opportunity.social && (
-          <footer className="detail-footer">
+          <footer className="flex gap-4 mt-8 pt-8 border-t border-[#e5e5e5] justify-center max-md:flex-col">
             {opportunity.social.website && (
               <a
                 href={opportunity.social.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="apply-button"
+                className="inline-flex items-center justify-center py-3 px-8 bg-[#1a7f4e] text-white no-underline rounded-lg font-semibold transition-all border-none cursor-pointer text-base min-w-[44px] min-h-[44px] hover:bg-[#15663e] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(26,127,78,0.3)] max-md:w-full"
               >
                 Visitar Site
               </a>
@@ -266,7 +266,7 @@ export default function DetailPage() {
                 href={opportunity.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="apply-button secondary"
+                className="inline-flex items-center justify-center py-3 px-8 bg-white text-[#1a7f4e] no-underline rounded-lg font-semibold transition-all border-2 border-[#1a7f4e] cursor-pointer text-base min-w-[44px] min-h-[44px] hover:bg-[#f0f9f4] max-md:w-full [&:has(svg:only-child)]:p-3 [&:has(svg:only-child)]:w-[44px]"
                 aria-label="Instagram"
               >
                 <svg

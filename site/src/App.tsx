@@ -3,8 +3,8 @@ import Navbar from "./components/NavBar"
 import Footer from "./components/feed/Footer"
 import Home from "./pages/Home"
 import Sobre from "./pages/Sobre/Sobre"
-import FeedPage from "./pages/Oportunidades/FeedPage"
-import DetailPage from "./pages/Oportunidades/DetailPage"
+import FeedPage from "./pages/Feed/FeedPage"
+import DetailPage from "./pages/Feed/DetailPage"
 import "./assets/styles/App.css"
 
 export default function App() {

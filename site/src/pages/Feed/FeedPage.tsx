@@ -11,8 +11,6 @@ import OpportunityCard from "../../components/feed/OpportunityCard"
 
 import { cosineSimilarity, calculateMeanVector } from "../../utils/vectorMatch"
 
-import "./FeedPage.css"
-
 interface OpportunityWithScore extends Opportunity {
   score?: number; 
 }
@@ -142,21 +140,23 @@ export default function Feed() {
   }, [searchTerm, selectedCategory])
 
   return (
-    <div className="feed-page">
-      <div className="feed-container">
-        <main className="feed-main">
-          <div className="feed-header">
-            <h1>Oportunidades na UnB</h1>
-            <p className="feed-subtitle">
+    <div className="min-h-[calc(100vh-80px)] p-8 bg-[#f6f6ed] max-md:p-4">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-[1fr_300px] gap-8 max-lg:grid-cols-1">
+        <main className="flex flex-col gap-8 min-w-0">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-[2rem] font-bold text-[#1a1a1a] m-0">Oportunidades na UnB</h1>
+            <p className="text-[#666] text-base">
               {userEmbedding 
                 ? "Recomendadas para você com base nos seus interesses." 
                 : "Explorar todas as oportunidades (A-Z)"}
             </p>
           </div>
 
-          <div className="opportunities-list">
+          <div className="flex flex-col gap-6">
             {isLoading ? (
-              <div className="no-results"><p>A carregar oportunidades...</p></div>
+              <div className="col-span-full text-center py-16 px-8 bg-white rounded-xl border border-[#e5e5e5]">
+                <p className="text-lg text-[#666] mb-6">A carregar oportunidades...</p>
+              </div>
             ) : displayedOpportunities.items.length > 0 ? (
               displayedOpportunities.items.map((opportunity) => (
                 <OpportunityCard
@@ -174,11 +174,11 @@ export default function Feed() {
                 />
               ))
             ) : (
-              <div className="no-results">
-                <p>Nenhuma oportunidade encontrada.</p>
+              <div className="col-span-full text-center py-16 px-8 bg-white rounded-xl border border-[#e5e5e5]">
+                <p className="text-lg text-[#666] mb-6">Nenhuma oportunidade encontrada.</p>
                 <button 
                   onClick={() => { setSearchTerm(""); setSelectedCategory("Todos"); }}
-                  className="clear-filters-button"
+                  className="py-3 px-6 bg-[#1a7f4e] text-white border-none rounded-lg text-base font-semibold cursor-pointer transition-colors hover:bg-[#15663e]"
                 >
                   Limpar Busca
                 </button>
@@ -187,9 +187,9 @@ export default function Feed() {
           </div>
 
           {!isLoading && displayedOpportunities.totalPages > 1 && (
-            <div className="pagination">
+            <div className="flex justify-center items-center gap-2 mt-8 p-6 bg-white rounded-xl border border-[#e5e5e5] max-sm:flex-wrap max-sm:gap-1.5">
               <button
-                className="pagination-btn"
+                className="py-2.5 px-5 border border-[#e5e5e5] bg-white text-[#1a1a1a] cursor-pointer rounded-lg text-[0.9375rem] font-medium transition-all hover:bg-[#f6f6ed] hover:border-[#1a7f4e] hover:text-[#1a7f4e] disabled:opacity-40 disabled:cursor-not-allowed disabled:text-[#999] max-sm:py-2 max-sm:px-3.5 max-sm:text-sm"
                 disabled={currentPage === 1}
                 onClick={() => {
                   setCurrentPage(currentPage - 1)
@@ -199,7 +199,7 @@ export default function Feed() {
                 ← Anterior
               </button>
 
-              <div className="pagination-numbers">
+              <div className="flex gap-1.5 items-center">
                 {Array.from({ length: displayedOpportunities.totalPages }, (_, i) => i + 1).map((page) => {
                   const showPage = 
                     page === 1 ||
@@ -207,19 +207,25 @@ export default function Feed() {
                     Math.abs(page - currentPage) <= 1
 
                   if (!showPage && page === currentPage - 2) {
-                    return <span key={`ellipsis-${page}`} className="pagination-ellipsis">...</span>
+                    return <span key={`ellipsis-${page}`} className="p-2 text-[#999] font-medium">...</span>
                   }
                   
                   if (!showPage && page === currentPage + 2) {
-                    return <span key={`ellipsis-${page}`} className="pagination-ellipsis">...</span>
+                    return <span key={`ellipsis-${page}`} className="p-2 text-[#999] font-medium">...</span>
                   }
 
                   if (!showPage) return null
 
+                  const isActive = currentPage === page
+
                   return (
                     <button
                       key={page}
-                      className={`pagination-number ${currentPage === page ? "active" : ""}`}
+                      className={`min-w-10 h-10 p-2 border cursor-pointer rounded-lg text-[0.9375rem] font-medium transition-all flex items-center justify-center max-sm:min-w-9 max-sm:h-9 max-sm:text-sm ${
+                        isActive 
+                          ? "bg-[#1a7f4e] text-white border-[#1a7f4e] font-semibold" 
+                          : "bg-white text-[#1a1a1a] border-[#e5e5e5] hover:bg-[#f6f6ed] hover:border-[#1a7f4e] hover:text-[#1a7f4e]"
+                      }`}
                       onClick={() => {
                         setCurrentPage(page)
                         window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -232,7 +238,7 @@ export default function Feed() {
               </div>
 
               <button
-                className="pagination-btn"
+                className="py-2.5 px-5 border border-[#e5e5e5] bg-white text-[#1a1a1a] cursor-pointer rounded-lg text-[0.9375rem] font-medium transition-all hover:bg-[#f6f6ed] hover:border-[#1a7f4e] hover:text-[#1a7f4e] disabled:opacity-40 disabled:cursor-not-allowed disabled:text-[#999] max-sm:py-2 max-sm:px-3.5 max-sm:text-sm"
                 disabled={currentPage === displayedOpportunities.totalPages}
                 onClick={() => {
                   setCurrentPage(currentPage + 1)
