@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom"
 import Navbar from "./components/NavBar"
-import Footer from "./components/feed/Footer"
-import Home from "./pages/Home/Home"
-import Sobre from "./pages/Sobre/Sobre"
-import FeedPage from "./pages/Oportunidades/FeedPage"
-import DetailPage from "./pages/Oportunidades/DetailPage"
+import Footer from "./components/Footer"
+import Home from "./pages/Home"
+import Sobre from "./pages/About"
+import FeedPage from "./pages/Feed"
+import DetailPage from "./pages/Oportunity"
 import "./assets/styles/App.css"
 
 export default function App() {

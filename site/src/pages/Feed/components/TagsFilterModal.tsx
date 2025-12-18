@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 // Importa a função matemática criada acima
-import { calculateMeanEmbedding } from "../../utils/vectorMatch"
+import { calculateMeanEmbedding } from "../../../utils/vectorMatch"
 
-import { type Tag } from "../../data/tags"
+import { type Tag } from "../../../data/tags"
 
 interface TagsJSON {
   categorias: Array<{
@@ -169,36 +169,50 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
   }
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-header">
-          <h2>Filtrar por Tags</h2>
+    <div 
+      className="fixed inset-0 bg-black/50 flex items-center justify-center z-[1000] p-4" 
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white rounded-xl max-w-[600px] w-full max-h-[80vh] flex flex-col shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)]" 
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between p-6 border-b border-[#e5e5e5]">
+          <h2 className="text-2xl font-bold text-[#1a1a1a] m-0">Filtrar por Tags</h2>
         </div>
 
-        <div className="modal-body">
+        {/* Body */}
+        <div className="p-6 overflow-y-auto flex-1">
           {!tagsData ? (
-            <div style={{ textAlign: 'center', padding: '2rem' }}>
+            <div className="text-center p-8">
               Carregando tags...
             </div>
           ) : Object.keys(tagsBySubcategory).length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '2rem' }}>
+            <div className="text-center p-8">
               Nenhuma tag encontrada
             </div>
           ) : (
             Object.entries(tagsBySubcategory).map(([subcategory, subcategoryTags]) => (
-              <div key={subcategory} className="tag-category">
-                <h3>{subcategory}</h3>
-                <div className="tags-list">
+              <div key={subcategory} className="mb-8 last:mb-0">
+                <h3 className="text-base font-semibold text-[#1a1a1a] mb-4 pb-2 border-b-2 border-[#e5e5e5]">
+                  {subcategory}
+                </h3>
+                <div className="flex flex-wrap gap-2">
                   {subcategoryTags.map((tag) => {
                     const isSelected = selectedTags.includes(tag.id)
                     return (
                       <button
                         key={tag.id}
                         onClick={() => onTagToggle(tag.id)}
-                        className={`tag-button ${isSelected ? "selected" : ""}`}
+                        className={`py-2 px-4 border rounded-md text-sm cursor-pointer transition-all duration-200 flex items-center gap-2 font-medium ${
+                          isSelected 
+                            ? "bg-[#1a7f4e] text-white border-[#1a7f4e]" 
+                            : "bg-white text-[#333] border-[#e5e5e5] hover:border-[#1a7f4e] hover:bg-[#f0f9f4]"
+                        }`}
                       >
                         {tag.label}
-                        {isSelected && <span className="tag-check">✓</span>}
+                        {isSelected && <span className="text-base">✓</span>}
                       </button>
                     )
                   })}
@@ -208,17 +222,21 @@ export default function TagsFilterModal({ isOpen, onClose, tags, selectedTags, o
           )}
         </div>
 
-        <div className="modal-footer">
+        {/* Footer */}
+        <div className="flex gap-4 p-6 border-t border-[#e5e5e5] justify-end">
           <button
             onClick={() => {
               selectedTags.forEach(onTagToggle)
             }}
-            className="modal-clear-button"
+            className="py-3 px-6 bg-[#ef4444] border-none rounded-lg text-base font-semibold text-white cursor-pointer transition-all duration-200 hover:bg-[#dc2626] disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={selectedTags.length === 0}
           >
             Limpar Seleção ({selectedTags.length})
           </button>
-          <button className="modal-save" onClick={handleSave}>
+          <button 
+            className="py-3 px-6 bg-[#1a7f4e] border-none rounded-lg text-base font-semibold text-white cursor-pointer transition-all duration-200 hover:bg-[#156b42] hover:-translate-y-px hover:shadow-[0_2px_4px_rgba(26,127,78,0.2)] active:translate-y-0" 
+            onClick={handleSave}
+          >
             Salvar
           </button>
         </div>

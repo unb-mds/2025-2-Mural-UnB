@@ -1,0 +1,5 @@
+export { default as GitHubIcon } from "./GitHubIcon"
+export { default as DeveloperCard } from "./DeveloperCard"
+export { default as DevelopersGrid } from "./DevelopersGrid"
+export { default as AboutDescription } from "./AboutDescription"
+export { default as PageTitle } from "./PageTitle"
