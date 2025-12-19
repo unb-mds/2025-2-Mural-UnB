@@ -37,10 +37,10 @@ interface UseFeedDataReturn {
 
 const ITEMS_PER_PAGE = 8
 
-export function useFeedData(): UseFeedDataReturn {
+export function useFeedData(initialCategory?: string): UseFeedDataReturn {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedTags, setSelectedTags] = useState<string[]>([])
-  const [selectedCategory, setSelectedCategory] = useState<string>("Todos")
+  const [selectedCategory, setSelectedCategory] = useState<string>(initialCategory || "Todos")
 
   const [fetchedOpportunities, setFetchedOpportunities] = useState<OpportunityWithScore[]>([])
   const [allTagsFetched, setAllTagsFetched] = useState<Tag[] | null>(null)

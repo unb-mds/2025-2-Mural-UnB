@@ -36,8 +36,8 @@ const Carousel = () => {
   }, [nextSlide]);
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      <div className="carousel w-full h-[400px] rounded-box shadow-xl mx-auto">
+    <div className="relative w-full max-w-5xl mx-auto px-2 sm:px-4">
+      <div className="carousel w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] rounded-2xl shadow-xl mx-auto overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -54,13 +54,13 @@ const Carousel = () => {
         ))}
       </div>
 
-      {/* Indicadores - centralizados corretamente */}
-      <div className="flex justify-center w-full py-4 gap-2">
+      {/* Indicadores */}
+      <div className="flex justify-center w-full py-4 sm:py-6 gap-2 sm:gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`btn btn-xs ${index === currentSlide ? 'btn-secondary' : 'btn-ghost'}`}
+            className={`btn btn-sm sm:btn-md ${index === currentSlide ? 'btn-secondary' : 'btn-ghost'}`}
           >
             {index + 1}
           </button>

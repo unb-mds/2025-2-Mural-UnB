@@ -1,3 +1,4 @@
+import { useSearchParams } from "react-router-dom"
 import {
   FeedHeader,
   LoadingState,
@@ -9,6 +10,9 @@ import {
 import { useFeedData } from "./hooks/useFeedData"
 
 export default function Feed() {
+  const [searchParams] = useSearchParams()
+  const categoryParam = searchParams.get("category") || undefined
+  
   const {
     isLoading,
     allTags,
@@ -21,7 +25,7 @@ export default function Feed() {
     setCurrentPage,
     handleTagToggle,
     clearFilters,
-  } = useFeedData()
+  } = useFeedData(categoryParam)
 
   return (
     <div className="min-h-[calc(100vh-80px)] p-8 bg-[#f6f6ed] max-md:p-4">

@@ -1,39 +1,28 @@
 import { Link } from "react-router-dom"
+import LogoUnB from "assets/images/logo-unb-branco.png"
 
 function Footer() {
   return (
-    <footer className="relative bg-[#2e8b57] text-white px-8 pt-8 pb-4 overflow-hidden">
-      {/* Watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8rem] font-bold text-[#2f6b57] opacity-15 z-0 whitespace-nowrap lowercase tracking-[0.1em] pointer-events-none max-md:text-[5rem]">
-        mural unb
-      </div>
-
+    <footer className="bg-[#2e8b57] text-white px-4 sm:px-8 pt-8 pb-4">
       {/* Content */}
-      <div className="relative z-[1] max-w-[1400px] mx-auto grid grid-cols-2 gap-12 mb-6 max-md:grid-cols-1 max-md:gap-10">
+      <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12 mb-6">
         {/* Left Section */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-5 items-center sm:items-start">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <img src="/MuralLogo_S.svg" alt="Mural UnB" className="w-10 h-10 brightness-0 invert" />
-            <span className="text-xl font-semibold text-white">Mural UnB</span>
-          </div>
-
-          {/* Separators */}
-          <div className="flex flex-col gap-[0.2rem] my-1">
-            <div className="h-[2px] bg-white opacity-30 w-10"></div>
-            <div className="h-[2px] bg-white opacity-30 w-[35px]"></div>
-            <div className="h-[2px] bg-white opacity-30 w-[30px]"></div>
+            <img src="/MuralLogo_S.svg" alt="Mural UnB" className="w-12 h-12 brightness-0 invert" />
+            <span className="text-2xl font-bold text-white">Mural UnB</span>
           </div>
 
           {/* Contact */}
-          <div className="flex flex-col gap-2">
-            <h3 className="text-base font-semibold text-white m-0">Contate-nos</h3>
-            <p className="text-[0.9rem] text-white m-0 leading-6">unb.mural@gmail.com</p>
-            <p className="text-[0.9rem] text-white m-0 leading-6">+55 61 9 91231231</p>
+          <div className="flex flex-col gap-2 items-center sm:items-start">
+            <h3 className="text-lg font-bold text-white m-0">Contate-nos</h3>
+            <p className="text-sm text-white/90 m-0 leading-6">unb.mural@gmail.com</p>
+            <p className="text-sm text-white/90 m-0 leading-6">+55 61 9 91231231</p>
           </div>
 
           {/* Social */}
-          <div className="flex gap-3 mt-1">
+          <div className="flex gap-4 mt-2">
             <a
               href="https://instagram.com/muralunb"
               target="_blank"
@@ -66,21 +55,24 @@ function Footer() {
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-col gap-3 max-md:mt-4">
-          <h3 className="text-base font-semibold text-white m-0">Páginas</h3>
-          <nav className="flex flex-col gap-2">
-            <Link to="/" className="text-white underline text-[0.9rem] transition-opacity duration-200 hover:opacity-80">Home</Link>
-            <Link to="/about" className="text-white underline text-[0.9rem] transition-opacity duration-200 hover:opacity-80">Sobre</Link>
-            <Link to="/feed" className="text-white underline text-[0.9rem] transition-opacity duration-200 hover:opacity-80">Mural</Link>
-            <Link to="https://tiagosbittencourt.github.io/Mural-UnB/" className="text-white underline text-[0.9rem] transition-opacity duration-200 hover:opacity-80">Docs</Link>
+        <div className="flex flex-col gap-4 items-center sm:items-start">
+          <h3 className="text-2xl font-bold text-white m-0">Páginas</h3>
+          <nav className="flex flex-col gap-3 items-center sm:items-start">
+            <Link to="/" className="text-white no-underline text-base font-medium transition-all duration-200 hover:opacity-80 hover:translate-x-1">Home</Link>
+            <Link to="/about" className="text-white no-underline text-base font-medium transition-all duration-200 hover:opacity-80 hover:translate-x-1">Sobre</Link>
+            <Link to="/feed" className="text-white no-underline text-base font-medium transition-all duration-200 hover:opacity-80 hover:translate-x-1">Mural</Link>
+            <Link to="https://tiagosbittencourt.github.io/Mural-UnB/" className="text-white no-underline text-base font-medium transition-all duration-200 hover:opacity-80 hover:translate-x-1">Docs</Link>
           </nav>
         </div>
       </div>
 
       {/* Bottom */}
-      <div className="relative z-[1] max-w-[1400px] mx-auto pt-4">
-        <div className="w-full h-px bg-white opacity-30 mb-3"></div>
-        <p className="text-center text-sm text-white m-0">Copyright © 2025 NBTI. All rights reserved.</p>
+      <div className="max-w-[1400px] mx-auto pt-6">
+        <div className="w-full h-px bg-white/30 mb-4"></div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+          <img src={LogoUnB} alt="Universidade de Brasília" className="h-4 sm:h-5" />
+          <p className="text-center text-xs sm:text-sm text-white/80 m-0">© 2025 Mural UnB. Todos os direitos reservados.</p>
+        </div>
       </div>
     </footer>
   )
