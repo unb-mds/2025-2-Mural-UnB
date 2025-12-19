@@ -1,27 +1,23 @@
+
 const AboutDescription = () => {
   return (
-    <div className="max-w-3xl mx-auto flex flex-row gap-10 p-5 bg-base-100 rounded-xl drop-shadow-xl mb-10">
-      <div>
-        <p className="font-gowunBold text-lg md:text-xl wrap-break-words leading-relaxed md:leading-loose mb-2">
-          Como alunos da UnB no campus da FGA, percebemos que não existia um
-          ambiente que centralizasse informações sobre atividades extras. A
-          busca por diferentes tipos de eventos ou detalhes era complicada, com
-          materiais dispersos em diversos arquivos e sites.
-        </p>
-      </div>
-      <div>
-        <p className="font-gowunBold text-lg md:text-xl wrap-break-words leading-relaxed md:leading-loose">
-          Nasceu assim o <strong className="text-primary">Mural UnB</strong>,
-          nosso projeto da disciplina de Métodos de Desenvolvimento de Software.
-          É uma plataforma intuitiva que simplifica a busca por atividades e
-          oportunidades, utilizando{" "}
-          <strong className="text-secondary">IA para organização</strong>,
-          sistema de{" "}
-          <strong className="text-secondary">tags categorizadas</strong> e uma
-          <strong className="text-secondary"> ferramenta de pesquisa</strong>.
-        </p>
-      </div>
-    </div>
+    <section className="max-w-3xl mx-auto bg-base-100 rounded-xl drop-shadow-xl mb-10 px-6 py-8 flex flex-col gap-4">
+      <h2 className="text-2xl md:text-3xl font-gowunBold text-primary mb-2">Por que criamos o Mural UnB?</h2>
+      <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+        Durante nossa trajetória na UnB/FGA, sentimos na pele a dificuldade de encontrar informações sobre oportunidades, eventos e atividades extracurriculares. Tudo estava espalhado em grupos, planilhas, murais físicos e sites diferentes. Isso dificultava o acesso e fazia muitos estudantes perderem chances valiosas.
+      </p>
+      <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+        O <span className="font-bold text-primary">Mural UnB</span> nasceu para resolver esse problema: centralizar, organizar e facilitar o acesso a tudo que pode impulsionar sua vida acadêmica e profissional.
+      </p>
+      <ul className="list-disc pl-6 text-base md:text-lg text-gray-700 leading-relaxed mb-2">
+        <li><span className="font-semibold text-secondary">Busca inteligente</span> com IA para recomendar oportunidades alinhadas ao seu perfil.</li>
+        <li><span className="font-semibold text-secondary">Tags e filtros</span> para você encontrar rapidamente o que procura.</li>
+        <li><span className="font-semibold text-secondary">Interface intuitiva</span> e responsiva, feita por e para estudantes.</li>
+      </ul>
+      <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+        Nosso objetivo é que nenhum talento da FGA perca oportunidades por falta de informação. O Mural UnB é feito por alunos, para alunos - e está em constante evolução!
+      </p>
+    </section>
   )
 }
 

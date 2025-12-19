@@ -8,22 +8,27 @@ import MG from "assets/images/fotos/devs/MG.jpeg"
 export interface Developer {
   id: string
   name: string
+  role: string
   image: string
   imageAlt: string
-  githubUrl: string
+  githubUrl?: string
+  linkedinUrl?: string
 }
 
 export const developers: Developer[] = [
   {
     id: "tiago",
     name: "Tiago Bittencourt",
+    role: "SM • Desenvolvedor",
     image: TB,
     imageAlt: "TiagoB",
     githubUrl: "https://github.com/TiagoSBittencourt",
+    linkedinUrl: "https://www.linkedin.com/in/tiagosbittencourt/",
   },
   {
     id: "joao",
     name: "João Gonzaga",
+    role: "PO •Desenvolvedor",
     image: JG,
     imageAlt: "JoaoG",
     githubUrl: "https://github.com/Karmantinedev",
@@ -31,6 +36,7 @@ export const developers: Developer[] = [
   {
     id: "lucas",
     name: "Lucas Fujimoto",
+    role: "Desenvolvedor",
     image: LF,
     imageAlt: "LucasF",
     githubUrl: "https://github.com/Lucasft16",
@@ -38,6 +44,7 @@ export const developers: Developer[] = [
   {
     id: "maria",
     name: "Maria Gontijo",
+    role: "Desenvolvedora",
     image: MG,
     imageAlt: "MariaG",
     githubUrl: "https://github.com/MariaClara-Canuto",
@@ -45,6 +52,7 @@ export const developers: Developer[] = [
   {
     id: "matheus",
     name: "Matheus Saraiva",
+    role: "Desenvolvedor",
     image: MS,
     imageAlt: "MatheusS",
     githubUrl: "https://github.com/apptrx",
@@ -52,6 +60,7 @@ export const developers: Developer[] = [
   {
     id: "luan",
     name: "Luan Ludry",
+    role: "Desenvolvedor",
     image: LL,
     imageAlt: "LuanL",
     githubUrl: "https://github.com/luanludry",
