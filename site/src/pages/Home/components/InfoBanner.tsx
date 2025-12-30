@@ -33,15 +33,16 @@ const InfoBanner = () => {
 
   return (
     <div className="w-full px-4 sm:px-6 mb-10 sm:mb-16 mt-4 sm:mt-6 md:mt-8">
-      <div className="max-w-5xl mx-auto bg-base-100 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden relative border-t-4 border-primary">
-        {/* Decoração de fundo */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+      <div className="max-w-5xl mx-auto bg-base-100 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden relative border-t-4 border-primary transform-gpu">
+        
+        {/* Decoração de fundo - Agora ficam atrás de tudo */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gray-100 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none z-0"></div>
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-gray-100 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none z-0"></div>
         
         <div className="flex flex-col md:flex-row items-center relative z-10">
-          {/* Conteúdo */}
+          {/* Conteúdo Principal */}
           <div className="flex-1 p-8 sm:p-10 md:p-12 lg:p-16 text-center md:text-left">
-            <span className="inline-block bg-primary/10 text-primary text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+            <span className="inline-block bg-gray-200 text-primary text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
               🎓 Para cursos da FGA
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 sm:mb-6 leading-tight">
@@ -67,13 +68,13 @@ const InfoBanner = () => {
             </Link>
           </div>
 
-          {/* Ícones das categorias com links */}
+          {/* Ícones Desktop */}
           <div className="hidden md:flex flex-col gap-4 p-8 lg:p-12">
             {categories.map((cat) => (
               <Link 
                 key={cat.category}
                 to={`/feed?category=${encodeURIComponent(cat.category)}`}
-                className="bg-primary/10 w-24 h-24 lg:w-28 lg:h-28 rounded-2xl hover:bg-primary/20 hover:scale-110 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-center gap-2"
+                className="bg-gray-200 w-24 h-24 lg:w-28 lg:h-28 rounded-2xl hover:bg-gray-300 hover:scale-110 transition-all duration-300 cursor-pointer group flex flex-col items-center justify-center gap-2"
               >
                 {cat.icon}
                 <p className="text-primary text-xs lg:text-sm font-semibold">{cat.label}</p>
@@ -82,18 +83,18 @@ const InfoBanner = () => {
           </div>
         </div>
 
-        {/* Ícones mobile */}
-        <div className="flex md:hidden justify-center gap-4 pb-8 px-4">
+        {/* Ícones Mobile - CORREÇÃO AQUI */}
+        <div className="flex md:hidden justify-center gap-4 pb-8 px-4 relative z-10">
           {categories.map((cat) => (
             <Link 
               key={cat.category}
               to={`/feed?category=${encodeURIComponent(cat.category)}`}
-              className="bg-primary/10 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl hover:bg-primary/20 active:scale-95 transition-all duration-300 flex flex-col items-center justify-center gap-1"
+              className="bg-gray-200 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl hover:bg-gray-300 active:scale-95 transition-all duration-300 flex flex-col items-center justify-center gap-1"
             >
               <div className="h-8 w-8 sm:h-10 sm:w-10 text-primary [&>svg]:h-full [&>svg]:w-full">
                 {cat.icon}
               </div>
-              <p className="text-primary/80 text-[10px] sm:text-xs font-medium">{cat.label}</p>
+              <p className="text-gray-700 text-[10px] sm:text-xs font-medium">{cat.label}</p>
             </Link>
           ))}
         </div>
