@@ -17,9 +17,8 @@ const Navbar: React.FC = () => {
       .catch((error) => console.error("Erro ao buscar oportunidades:", error))
   }, [])
 
-  // Fechar menu ao clicar fora
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setIsMenuOpen(false)
       }
@@ -27,14 +26,18 @@ const Navbar: React.FC = () => {
     
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside)
+      document.addEventListener("touchstart", handleClickOutside)
     }
     
-    return () => document.removeEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("touchstart", handleClickOutside)
+    }
   }, [isMenuOpen])
 
   const filteredOpportunities = opportunities.filter(opp =>
     opp.name.toLowerCase().includes(input.toLowerCase())
-  ).slice(0, 10) // Mostra apenas os top 10
+  ).slice(0, 10)
 
   const highlightMatch = (name: string, searchTerm: string) => {
     if (!searchTerm) return name
@@ -66,13 +69,16 @@ const Navbar: React.FC = () => {
   ]
 
   return (
-    <div className="navbar bg-base-100 shadow-sm relative px-4 lg:pr-10">
+    <div className="navbar bg-base-100 shadow-sm relative px-4 lg:pr-10 z-50">
       <div className="navbar-start">
-        {/* Menu Hamburger - Mobile */}
-        <div className="dropdown lg:hidden" ref={menuRef}>
+        
+        <div className="relative lg:hidden" ref={menuRef}>
           <button
             className="btn btn-ghost"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={(e) => {
+              e.stopPropagation(); 
+              setIsMenuOpen(!isMenuOpen);
+            }}
             aria-label="Menu"
           >
             <svg
@@ -83,30 +89,20 @@ const Navbar: React.FC = () => {
               stroke="currentColor"
             >
               {isMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
           
           {isMenuOpen && (
-            <ul className="menu menu-sm dropdown-content mt-3 z-[100] p-2 shadow-lg bg-base-100 rounded-box w-52 border border-gray-200">
+            <ul className="absolute top-full left-0 mt-2 z-[100] menu menu-sm p-2 shadow-lg bg-base-100 rounded-box w-52 border border-gray-200">
               {navLinks.map((link) => (
                 <li key={link.to}>
                   <Link
                     to={link.to}
-                    className={`font-gowunBold py-3 transition-all duration-200 hover:text-primary hover:bg-primary/10 border-l-2 border-transparent hover:border-secondary ${location.pathname === link.to ? "bg-primary/10 text-primary border-l-2 border-secondary" : ""}`}
+                    className={`font-gowunBold py-3 transition-all duration-200 hover:text-primary hover:bg-gray-100 border-l-2 border-transparent hover:border-secondary ${location.pathname === link.to ? "bg-primary/10 text-primary border-l-2 border-secondary" : ""}`}
                     onClick={() => setIsMenuOpen(false)}
                     {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   >
