@@ -168,6 +168,21 @@ export const EQUIPES_COMPETICAO_FIXAS: Opportunity[] = [
       instagram: "https://www.instagram.com/capitalrocketteam"
     },
     embedding: []
+  },
+  {
+    id: "equipe-300012",
+    name: "Gama Cube Design",
+    campus: "FGA",
+    shortDescription: "Equipe de desenvolvimento tecnológico em nanossatélites da Universidade de Brasília (FCTE).",
+    category: "Equipe de Competição",
+    logo: resolveImagePath("/images/eqc/300012.jpg"),
+    tags: ["equipe_competicao", "foguetes", "engenharia_aeroespacial", "propulsao", "estruturas_aeroespaciais"],
+    about: "A Gama Cubedesign tem como missão promover o desenvolvimento de tecnologias que impulsionem a área de satélites no setor aeroespacial brasileiro. Formada por acadêmicos da Universidade de Brasília, buscamos representar a universidade em competições nacionais e internacionais, além de capacitar estudantes no desenvolvimento de subsistemas aeroespaciais.",
+    social: {
+      website: "https://www.linkedin.com/company/gama-cubedesign/",
+      instagram: "https://www.instagram.com/gamacubedesign/"
+    },
+    embedding: []
   }
 ]
     

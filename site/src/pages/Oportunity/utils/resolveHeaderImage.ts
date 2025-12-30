@@ -23,6 +23,7 @@ const nameMap: { [key: string]: string } = {
   ailab: "ailab.png",
   matriz: "matriz.png",
   "ai lab": "ailab.png",
+  "cube": "cubedesign.png",
   comsoc: "comsoc.png",
   cs: "cs.png",
   struct: "struct.png",
