@@ -136,7 +136,7 @@ npm run dev
     <td align="center">
       <a href="https://github.com/Karmantinedev">
         <img src="https://github.com/Karmantinedev.png" width="100px;" alt="João Souza"/>
-        <br /><sub><b>João Gonzaga</b></sub>
+        <br /><sub><b>João Souza</b></sub>
       </a>
       <br /><span>PO • Backend Developer</span>
     </td>
